@@ -66,7 +66,7 @@ services:
     entrypoint: /bin/sh
     command:
       - "-c"
-      - "cd /home/node/.n8n/custom/n8n-nodes-clicksign && npm install --include=dev && npm run build"
+      - "cd /home/node/.n8n/custom/n8n-nodes-clicksign && rm -rf dist node_modules && npm install --include=dev && npm run build"
     volumes:
       - .:/home/node/.n8n/custom/n8n-nodes-clicksign
     depends_on:
@@ -84,7 +84,7 @@ services:
       - n8n_storage:/home/node/.n8n
       - ./n8n/demo-data:/demo-data
       - ./shared:/data/shared
-      - .:/home/node/.n8n/custom
+      - .:/home/node/.n8n/custom/n8n-nodes-clicksign
     depends_on:
       postgres:
         condition: service_healthy
