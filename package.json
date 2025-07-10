@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-clicksign",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Clicksign API integration for n8n",
   "keywords": [
     "n8n-community-node-package"
@@ -35,14 +35,10 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/ClicksignApi.credentials.js",
-      "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
+      "dist/credentials/ClicksignApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/Clicksign/Clicksign.node.js",
-      "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
+      "dist/nodes/Clicksign/Clicksign.node.js"
     ]
   },
   "devDependencies": {

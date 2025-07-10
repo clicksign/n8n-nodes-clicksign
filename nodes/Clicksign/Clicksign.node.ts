@@ -6,6 +6,7 @@ export class Clicksign implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Clicksign',
 		name: 'clicksign',
+		icon: { light: 'file:clicksign.svg', dark: 'file:httpbin.svg' },
 		group: ['transform'],
 		version: 1,
 		description: 'Interact with Clicksign API',
