@@ -1,5 +1,5 @@
-import { Clicksign } from '../Clicksign.node';
-import { clicksignOperations, clicksignFields } from '../ClicksignDescription';
+import { Clicksign } from './Clicksign.node';
+import { clicksignOperations, clicksignFields } from './ClicksignDescription';
 
 describe('Clicksign Node', () => {
   let clicksignNode: Clicksign;

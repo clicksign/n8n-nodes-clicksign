@@ -3,7 +3,7 @@ import type {
   IHttpRequestOptions,
 } from 'n8n-workflow';
 
-import { ClicksignApi } from '../ClicksignApi.credentials';
+import { ClicksignApi } from './ClicksignApi.credentials';
 
 describe('Clicksign API Credentials', () => {
   describe('properties', () => {
