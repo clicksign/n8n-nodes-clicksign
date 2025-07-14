@@ -1,8 +1,12 @@
+# Folgers
 node_modules
-.DS_Store
-.tmp
-tmp
 dist
+tmp
+.vscode/
+.DS_Store
+
+# Files
+.env
 npm-debug.log*
-yarn.lock
-.vscode/launch.json
+.tmp
+!.vscode/extensions.json

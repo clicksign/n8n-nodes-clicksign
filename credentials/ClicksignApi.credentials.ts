@@ -46,7 +46,8 @@ export class ClicksignApi implements ICredentialType {
 
   test: ICredentialTestRequest = {
     request: {
-      baseURL: '=https://{{$credentials.clicksign_environment}}.clicksign.com/api/v3/envelopes',
+      baseURL:
+        '=https://{{$credentials.clicksign_environment}}.clicksign.com/api/v3/envelopes',
       url: '',
     },
   };

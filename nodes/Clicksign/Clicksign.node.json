@@ -1,18 +1,18 @@
 {
-	"node": "n8n-nodes-base.clicksign",
-	"nodeVersion": "1.0",
-	"codexVersion": "1.0",
-	"categories": ["Development", "Developer Tools"],
-	"resources": {
-		"credentialDocumentation": [
-			{
-				"url": "https://developers.clicksign.com/docs/primeiros-passos"
-			}
-		],
-		"primaryDocumentation": [
-			{
-				"url": "https://developers.clicksign.com/"
-			}
-		]
-	}
+  "node": "n8n-nodes-base.clicksign",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": ["Development", "Developer Tools"],
+  "resources": {
+    "credentialDocumentation": [
+      {
+        "url": "https://developers.clicksign.com/docs/primeiros-passos"
+      }
+    ],
+    "primaryDocumentation": [
+      {
+        "url": "https://developers.clicksign.com/"
+      }
+    ]
+  }
 }
