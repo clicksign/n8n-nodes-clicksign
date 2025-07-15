@@ -20,12 +20,13 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "npx rimraf dist && tsc && gulp build:icons",
+    "preinstall": "npx only-allow pnpm",
+    "build": "pnpm dlx rimraf dist && tsc && gulp build:icons",
     "dev": "tsc --watch",
-    "format": "prettier nodes credentials --write",
-    "lint": "eslint nodes credentials package.json",
-    "lintfix": "eslint nodes credentials package.json --fix",
-    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json",
+    "format": "prettier *.{ts,js,json} --write",
+    "lint": "eslint *.{ts,js,json}",
+    "lintfix": "eslint *.{ts,js,json} --fix",
+    "prepublishOnly": "pnpm build && pnpm lint -c eslint.prepublish.config.js nodes credentials package.json",
     "test": "jest",
     "test:watch": "jest --watch",
     "prepare": "husky"
@@ -44,14 +45,14 @@
   },
   "lint-staged": {
     "*.{ts,js,json}": [
-      "npm run format",
-      "npm run lintfix"
+      "pnpm format",
+      "pnpm lintfix"
     ]
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "@typescript-eslint/parser": "~8.32.0",
-    "eslint": "^8.57.0",
+    "eslint": "^9.31.0",
     "eslint-plugin-n8n-nodes-base": "^1.16.3",
     "gulp": "^5.0.0",
     "husky": "^9.1.7",

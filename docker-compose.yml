@@ -6,7 +6,7 @@ networks:
   n8n_network:
 
 x-n8n: &service-n8n
-  image: n8nio/n8n:latest
+  build: .
   networks: ['n8n_network']
   environment:
     - DB_TYPE=postgresdb
@@ -40,7 +40,11 @@ services:
     volumes:
       - postgres_storage:/var/lib/postgresql/data
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -h localhost -U ${POSTGRES_USER} -d ${POSTGRES_DB}']
+      test:
+        [
+          'CMD-SHELL',
+          'pg_isready -h localhost -U ${POSTGRES_USER} -d ${POSTGRES_DB}',
+        ]
       interval: 5s
       timeout: 5s
       retries: 10
@@ -51,8 +55,8 @@ services:
     container_name: n8n-import
     entrypoint: /bin/sh
     command:
-      - "-c"
-      - "n8n import:credentials --separate --input=/demo-data/credentials && n8n import:workflow --separate --input=/demo-data/workflows"
+      - '-c'
+      - 'n8n import:credentials --separate --input=/demo-data/credentials && n8n import:workflow --separate --input=/demo-data/workflows'
     volumes:
       - ./n8n/demo-data:/demo-data
     depends_on:
@@ -65,8 +69,8 @@ services:
     container_name: n8n-build-custom
     entrypoint: /bin/sh
     command:
-      - "-c"
-      - "cd /home/node/.n8n/custom/n8n-nodes-clicksign && rm -rf dist node_modules && npm install --include=dev && npm run build"
+      - '-c'
+      - 'cd /home/node/.n8n/custom/n8n-nodes-clicksign && rm -rf dist node_modules && pnpm install --prod false && pnpm run build'
     volumes:
       - .:/home/node/.n8n/custom/n8n-nodes-clicksign
     depends_on:

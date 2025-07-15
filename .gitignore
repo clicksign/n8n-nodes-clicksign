@@ -4,6 +4,7 @@ dist
 tmp
 .vscode/
 .DS_Store
+.pnpm-store
 
 # Files
 .env
