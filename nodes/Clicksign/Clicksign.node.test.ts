@@ -1,5 +1,10 @@
 import { Clicksign } from './Clicksign.node';
-import { clicksignOperations, clicksignFields } from './ClicksignDescription';
+import { envelopeOperations as envelopeOp } from './properties/envelope.operations';
+import { createEnvelopeFields } from './properties/envelope.fields.createEnvelope';
+import { envelopeDocumentsFields } from './properties/envelope.fields.envelopeDocuments';
+
+const envelopeFields = [...createEnvelopeFields, ...envelopeDocumentsFields];
+const envelopeOperations = [envelopeOp];
 
 describe('Clicksign Node', () => {
   let clicksignNode: Clicksign;
@@ -67,7 +72,6 @@ describe('Clicksign Node', () => {
       const description = clicksignNode.description;
       const properties = description.properties;
 
-      // Check that resource property exists
       const resourceProperty = properties.find(
         (prop) => prop.name === 'resource',
       );
@@ -81,16 +85,15 @@ describe('Clicksign Node', () => {
       ]);
       expect(resourceProperty?.default).toBe('envelopes');
 
-      // Check that all operations are included
-      expect(properties).toEqual(expect.arrayContaining(clicksignOperations));
-      expect(properties).toEqual(expect.arrayContaining(clicksignFields));
+      expect(properties).toEqual(expect.arrayContaining(envelopeOperations));
+      expect(properties).toEqual(expect.arrayContaining(envelopeFields));
     });
   });
 
   describe('Operations Configuration', () => {
     describe('List All Envelopes', () => {
       it('should have listAll operation with correct routing', () => {
-        const operationProperty = clicksignOperations.find(
+        const operationProperty = envelopeOperations.find(
           (op) => op.name === 'operation',
         );
         const listAllOption = operationProperty?.options?.find(
@@ -102,7 +105,6 @@ describe('Clicksign Node', () => {
         expect(listAllOption?.description).toBe('List all envelopes');
         expect(listAllOption?.action).toBe('List all envelopes');
 
-        // Check routing configuration
         expect(listAllOption?.routing).toBeDefined();
         expect(listAllOption?.routing?.request).toBeDefined();
         expect(listAllOption?.routing?.request?.method).toBe('GET');
@@ -112,7 +114,7 @@ describe('Clicksign Node', () => {
 
     describe('List Documents in an Envelope', () => {
       it('should have envelopeDocuments operation with correct display options', () => {
-        const operationProperty = clicksignOperations.find(
+        const operationProperty = envelopeOperations.find(
           (op) => op.name === 'operation',
         );
         const envelopeDocumentsOption = operationProperty?.options?.find(
@@ -126,7 +128,6 @@ describe('Clicksign Node', () => {
         expect(envelopeDocumentsOption?.description).toBe('List documents');
         expect(envelopeDocumentsOption?.action).toBe('List documents');
 
-        // Check display options
         expect(envelopeDocumentsOption?.displayOptions).toBeDefined();
         expect(envelopeDocumentsOption?.displayOptions?.show).toBeDefined();
         expect(envelopeDocumentsOption?.displayOptions?.show?.resource).toEqual(
@@ -140,7 +141,7 @@ describe('Clicksign Node', () => {
 
     describe('Create Envelope', () => {
       it('should have createEnvelope operation with correct routing and display options', () => {
-        const operationProperty = clicksignOperations.find(
+        const operationProperty = envelopeOperations.find(
           (op) => op.name === 'operation',
         );
         const createEnvelopeOption = operationProperty?.options?.find(
@@ -152,7 +153,6 @@ describe('Clicksign Node', () => {
         expect(createEnvelopeOption?.description).toBe('Create a new envelope');
         expect(createEnvelopeOption?.action).toBe('Create envelope');
 
-        // Check display options
         expect(createEnvelopeOption?.displayOptions).toBeDefined();
         expect(createEnvelopeOption?.displayOptions?.show).toBeDefined();
         expect(createEnvelopeOption?.displayOptions?.show?.resource).toEqual([
@@ -162,7 +162,6 @@ describe('Clicksign Node', () => {
           'createEnvelope',
         ]);
 
-        // Check routing configuration
         expect(createEnvelopeOption?.routing).toBeDefined();
         expect(createEnvelopeOption?.routing?.request).toBeDefined();
         expect(createEnvelopeOption?.routing?.request?.method).toBe('POST');
@@ -175,7 +174,7 @@ describe('Clicksign Node', () => {
   describe('Fields Configuration', () => {
     describe('List Documents in an Envelope', () => {
       it('should have envelopeId field for envelopeDocuments operation', () => {
-        const envelopeIdField = clicksignFields.find(
+        const envelopeIdField = envelopeFields.find(
           (field) => field.name === 'envelopeId',
         );
 
@@ -185,7 +184,6 @@ describe('Clicksign Node', () => {
         expect(envelopeIdField?.required).toBe(true);
         expect(envelopeIdField?.default).toBe('');
 
-        // Check display options
         expect(envelopeIdField?.displayOptions).toBeDefined();
         expect(envelopeIdField?.displayOptions?.show?.resource).toEqual([
           'envelopes',
@@ -194,7 +192,6 @@ describe('Clicksign Node', () => {
           'envelopeDocuments',
         ]);
 
-        // Check routing
         expect(envelopeIdField?.routing).toBeDefined();
         expect(envelopeIdField?.routing?.request?.url).toBe(
           '=/envelopes/{{$parameter.envelopeId}}/documents',
@@ -204,7 +201,7 @@ describe('Clicksign Node', () => {
 
     describe('Create Envelope', () => {
       it('should have envelopeName field for createEnvelope operation', () => {
-        const envelopeNameField = clicksignFields.find(
+        const envelopeNameField = envelopeFields.find(
           (field) => field.name === 'envelopeName',
         );
 
@@ -214,7 +211,6 @@ describe('Clicksign Node', () => {
         expect(envelopeNameField?.type).toBe('string');
         expect(envelopeNameField?.required).toBe(true);
 
-        // Check display options
         expect(envelopeNameField?.displayOptions).toBeDefined();
         expect(envelopeNameField?.displayOptions?.show?.resource).toEqual([
           'envelopes',
@@ -225,7 +221,7 @@ describe('Clicksign Node', () => {
       });
 
       it('should have locale field with correct options', () => {
-        const localeField = clicksignFields.find(
+        const localeField = envelopeFields.find(
           (field) => field.name === 'locale',
         );
 
@@ -235,7 +231,6 @@ describe('Clicksign Node', () => {
         expect(localeField?.type).toBe('options');
         expect(localeField?.default).toBe('pt-BR');
 
-        // Check options
         expect(localeField?.options).toBeDefined();
         expect(localeField?.options).toEqual([
           { name: 'Pt-BR', value: 'pt-BR' },
@@ -244,7 +239,7 @@ describe('Clicksign Node', () => {
       });
 
       it('should have autoClose field with correct configuration', () => {
-        const autoCloseField = clicksignFields.find(
+        const autoCloseField = envelopeFields.find(
           (field) => field.name === 'autoClose',
         );
 
@@ -258,7 +253,7 @@ describe('Clicksign Node', () => {
       });
 
       it('should have remindInterval field with correct configuration', () => {
-        const remindIntervalField = clicksignFields.find(
+        const remindIntervalField = envelopeFields.find(
           (field) => field.name === 'remindInterval',
         );
 
@@ -270,13 +265,12 @@ describe('Clicksign Node', () => {
         expect(remindIntervalField?.type).toBe('number');
         expect(remindIntervalField?.default).toBe(3);
 
-        // Check type options
         expect(remindIntervalField?.typeOptions).toBeDefined();
         expect(remindIntervalField?.typeOptions?.integerOnly).toBe(true);
       });
 
       it('should have blockAfterRefusal field with correct configuration', () => {
-        const blockAfterRefusalField = clicksignFields.find(
+        const blockAfterRefusalField = envelopeFields.find(
           (field) => field.name === 'blockAfterRefusal',
         );
 
@@ -290,7 +284,7 @@ describe('Clicksign Node', () => {
       });
 
       it('should have deadlineAt field with correct configuration', () => {
-        const deadlineAtField = clicksignFields.find(
+        const deadlineAtField = envelopeFields.find(
           (field) => field.name === 'deadlineAt',
         );
 
@@ -304,7 +298,7 @@ describe('Clicksign Node', () => {
       });
 
       it('should have defaultSubject field with correct configuration', () => {
-        const defaultSubjectField = clicksignFields.find(
+        const defaultSubjectField = envelopeFields.find(
           (field) => field.name === 'defaultSubject',
         );
 
@@ -318,7 +312,7 @@ describe('Clicksign Node', () => {
       });
 
       it('should have defaultMessage field with correct configuration', () => {
-        const defaultMessageField = clicksignFields.find(
+        const defaultMessageField = envelopeFields.find(
           (field) => field.name === 'defaultMessage',
         );
 
@@ -335,7 +329,7 @@ describe('Clicksign Node', () => {
 
   describe('Routing Configuration', () => {
     it('should have correct body structure for createEnvelope operation', () => {
-      const operationProperty = clicksignOperations.find(
+      const operationProperty = envelopeOperations.find(
         (op) => op.name === 'operation',
       );
       const createEnvelopeOption = operationProperty?.options?.find(
@@ -348,7 +342,6 @@ describe('Clicksign Node', () => {
       expect(body?.data?.type).toBe('envelopes');
       expect(body?.data?.attributes).toBeDefined();
 
-      // Check attribute mappings
       const attributes = body?.data?.attributes;
       expect(attributes?.name).toBe('={{$parameter.envelopeName}}');
       expect(attributes?.locale).toBe('={{$parameter.locale}}');

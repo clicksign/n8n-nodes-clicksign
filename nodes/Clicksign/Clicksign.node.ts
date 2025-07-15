@@ -1,12 +1,11 @@
 import type { INodeType, INodeTypeDescription } from 'n8n-workflow';
 import { NodeConnectionType } from 'n8n-workflow';
-import { clicksignOperations, clicksignFields } from './ClicksignDescription';
+import { clicksignProperties } from './properties';
 
 export class Clicksign implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'Clicksign',
     name: 'clicksign',
-    icon: { light: 'file:clicksign.svg', dark: 'file:httpbin.svg' },
     group: ['transform'],
     version: 1,
     description: 'Interact with Clicksign API',
@@ -32,23 +31,6 @@ export class Clicksign implements INodeType {
         Authorization: '={{$credentials.clicksign_access_token}}',
       },
     },
-    properties: [
-      {
-        displayName: 'Resource',
-        name: 'resource',
-        type: 'options',
-        noDataExpression: true,
-        options: [
-          {
-            name: 'Envelope',
-            value: 'envelopes',
-          },
-        ],
-        default: 'envelopes',
-      },
-
-      ...clicksignOperations,
-      ...clicksignFields,
-    ],
+    properties: clicksignProperties,
   };
 }
