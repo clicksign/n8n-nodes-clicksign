@@ -9,6 +9,7 @@ export class ClicksignApi implements ICredentialType {
   name = 'clicksignApi';
   displayName = 'Clicksign API';
   documentationUrl = 'https://developers.clicksign.com/docs/primeiros-passos';
+
   properties: INodeProperties[] = [
     {
       displayName: 'Access Token',
