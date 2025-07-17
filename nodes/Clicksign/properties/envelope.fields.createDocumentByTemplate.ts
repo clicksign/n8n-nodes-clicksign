@@ -55,4 +55,17 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
       },
     },
   },
+  {
+    displayName: 'Metadata',
+    name: 'metadata',
+    type: 'json',
+    default: '{}',
+    description: 'JSON object containing metadata for the document',
+    displayOptions: {
+      show: {
+        resource: ['envelopes'],
+        operation: ['createDocumentByTemplate'],
+      },
+    },
+  },
 ];

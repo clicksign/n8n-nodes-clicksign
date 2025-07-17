@@ -31,6 +31,7 @@ export const createDocumentByTemplateOption:
               key: '={{$parameter.templateId}}',
               data: '={{JSON.parse($parameter.templateData)}}',
             },
+            metadata: '={{JSON.parse($parameter.metadata)}}',
           },
         },
       },

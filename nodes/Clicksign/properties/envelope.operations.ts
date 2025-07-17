@@ -17,5 +17,9 @@ export const envelopeOperations: INodeProperties = {
     createDocumentByTemplateOption,
   ],
   default: '',
-  required: true,
+  displayOptions: {
+    show: {
+      resource: ['envelopes'],
+    },
+  },
 };
