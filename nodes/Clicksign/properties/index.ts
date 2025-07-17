@@ -1,15 +1,6 @@
 import { resourceOptions } from './resources';
 
-import { envelopeOperations } from './envelope.operations';
+import { envelope } from './envelope';
+import { signer } from './signer';
 
-import { createEnvelopeFields } from './envelope.fields.createEnvelope';
-import { envelopeDocumentsFields } from './envelope.fields.envelopeDocuments';
-import { createDocumentByTemplateFields } from './envelope.fields.createDocumentByTemplate';
-
-export const clicksignProperties = [
-  resourceOptions,
-  envelopeOperations,
-  ...createEnvelopeFields,
-  ...envelopeDocumentsFields,
-  ...createDocumentByTemplateFields,
-];
+export const clicksignProperties = [resourceOptions, ...envelope, ...signer];

@@ -10,6 +10,10 @@ export const resourceOptions: INodeProperties = {
       name: 'Envelope',
       value: 'envelopes',
     },
+    {
+      name: 'Signer',
+      value: 'signer-api',
+    },
   ],
   default: 'envelopes',
 };
