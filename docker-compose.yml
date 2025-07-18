@@ -6,7 +6,7 @@ networks:
   n8n_network:
 
 x-n8n: &service-n8n
-  build: .
+  image: n8nio/n8n:latest
   networks: ['n8n_network']
   environment:
     - DB_TYPE=postgresdb
@@ -70,7 +70,7 @@ services:
     entrypoint: /bin/sh
     command:
       - '-c'
-      - 'cd /home/node/.n8n/custom/n8n-nodes-clicksign && rm -rf dist node_modules && pnpm install --prod false && pnpm run build'
+      - 'cd /home/node/.n8n/custom/n8n-nodes-clicksign && HUSKY=0 npm install --include=dev && npm run build'
     volumes:
       - .:/home/node/.n8n/custom/n8n-nodes-clicksign
     depends_on:

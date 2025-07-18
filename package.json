@@ -20,13 +20,12 @@
   },
   "main": "index.js",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "build": "pnpm dlx rimraf dist && tsc && gulp build:icons",
+    "build": "npx rimraf dist && tsc && gulp build:icons",
     "dev": "tsc --watch",
     "format": "prettier *.{ts,js,json} --write",
     "lint": "eslint *.{ts,js,json}",
-    "lintfix": "eslint *.{ts,js,json} --fix",
-    "prepublishOnly": "pnpm build && pnpm lint -c eslint.prepublish.config.js nodes credentials package.json",
+    "lint:fix": "eslint *.{ts,js,json} --fix",
+    "prepublishOnly": "npm run build && npm run lint -c eslint.prepublish.config.js nodes credentials package.json",
     "test": "jest",
     "test:watch": "jest --watch",
     "prepare": "husky"
@@ -45,8 +44,8 @@
   },
   "lint-staged": {
     "*.{ts,js,json}": [
-      "pnpm format",
-      "pnpm lintfix"
+      "npm run format",
+      "npm run lint:fix"
     ]
   },
   "devDependencies": {
