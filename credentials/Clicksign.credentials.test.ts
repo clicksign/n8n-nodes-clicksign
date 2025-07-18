@@ -18,14 +18,14 @@ describe('Clicksign API Credentials', () => {
       expect(clicksign.properties).toEqual([
         {
           displayName: 'Access Token',
-          name: 'clicksign_access_token',
+          name: 'clicksignAccessToken',
           type: 'string',
           typeOptions: { password: true },
           default: '',
         },
         {
           displayName: 'Environment',
-          name: 'clicksign_environment',
+          name: 'clicksignEnvironment',
           type: 'options',
           options: [
             { name: 'Sandbox', value: 'sandbox' },
@@ -42,8 +42,8 @@ describe('Clicksign API Credentials', () => {
 
     it('should generate a valid query string with access token', async () => {
       const credentials: ICredentialDataDecryptedObject = {
-        clicksign_access_token: 'test-access-token',
-        clicksign_environment: 'sandbox',
+        clicksignAccessToken: 'test-access-token',
+        clicksignEnvironment: 'sandbox',
       };
 
       const requestOptions: IHttpRequestOptions = {
@@ -59,14 +59,14 @@ describe('Clicksign API Credentials', () => {
       const result = {
         ...requestOptions,
         qs: {
-          access_token: credentials.clicksign_access_token,
+          access_token: credentials.clicksignAccessToken,
         },
       };
 
       expect(result.qs?.access_token).toBe('test-access-token');
       expect(authProperty.type).toBe('generic');
       expect(authProperty.properties?.qs?.access_token).toBe(
-        '={{$credentials.clicksign_access_token}}',
+        '={{$credentials.clicksignAccessToken}}',
       );
     });
   });
@@ -78,7 +78,7 @@ describe('Clicksign API Credentials', () => {
       expect(clicksignApi.test).toBeDefined();
       expect(clicksignApi.test.request).toBeDefined();
       expect(clicksignApi.test.request.baseURL).toBe(
-        '=https://{{$credentials.clicksign_environment}}.clicksign.com/api/v3/envelopes',
+        '=https://{{$credentials.clicksignEnvironment}}.clicksign.com/api/v3/envelopes',
       );
       expect(clicksignApi.test.request.url).toBe('');
     });

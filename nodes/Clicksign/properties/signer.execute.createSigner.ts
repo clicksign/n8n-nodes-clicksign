@@ -2,8 +2,9 @@ import {
   IExecuteFunctions,
   IHttpRequestMethods,
   IRequestOptions,
-  NodeOperationError,
 } from 'n8n-workflow';
+
+import { clicksignRequest } from './utils/request';
 
 function formatCpf(cpfString: string): string {
   const cpf = cpfString.replace(/\D/g, '');
@@ -15,99 +16,75 @@ function formatCpf(cpfString: string): string {
   return cpfString;
 }
 
-export async function createSigner(ef: IExecuteFunctions) {
-  try {
-    const documentationRaw = ef.getNodeParameter('documentation', 0) as string;
-    const birthdayRaw = ef.getNodeParameter('birthday', 0) as string;
+export async function createSigner(executeFunctions: IExecuteFunctions) {
+  const documentationRaw = executeFunctions.getNodeParameter(
+    'documentation',
+    0,
+  ) as string;
+  const birthdayRaw = executeFunctions.getNodeParameter(
+    'birthday',
+    0,
+  ) as string;
 
-    const formattedDocumentation = formatCpf(documentationRaw);
-    const formattedBirthday = birthdayRaw ? birthdayRaw.split('T')[0] : null;
+  const formattedDocumentation = formatCpf(documentationRaw);
+  const formattedBirthday = birthdayRaw ? birthdayRaw.split('T')[0] : null;
 
-    const envelopeId = ef.getNodeParameter('envelopeId', 0) as string;
-    const name = ef.getNodeParameter('name', 0) as string;
-    const email = ef.getNodeParameter('email', 0) as string;
-    const phoneNumber = ef.getNodeParameter('phoneNumber', 0) as string;
-    const hasDocumentation = ef.getNodeParameter(
-      'hasDocumentation',
-      0,
-    ) as boolean;
-    const group = ef.getNodeParameter('group', 0) as string;
-    const refusable = ef.getNodeParameter('refusable', 0) as boolean;
-    const locationRequired = ef.getNodeParameter(
-      'locationRequired',
-      0,
-    ) as boolean;
-    const communicateEvents = ef.getNodeParameter(
-      'communicateEvents',
-      0,
-    ) as Record<string, string>;
+  const envelopeId = executeFunctions.getNodeParameter(
+    'envelopeId',
+    0,
+  ) as string;
+  const name = executeFunctions.getNodeParameter('name', 0) as string;
+  const email = executeFunctions.getNodeParameter('email', 0) as string;
+  const phoneNumber = executeFunctions.getNodeParameter(
+    'phoneNumber',
+    0,
+  ) as string;
+  const hasDocumentation = executeFunctions.getNodeParameter(
+    'hasDocumentation',
+    0,
+  ) as boolean;
+  const group = executeFunctions.getNodeParameter('group', 0) as string;
+  const refusable = executeFunctions.getNodeParameter(
+    'refusable',
+    0,
+  ) as boolean;
+  const locationRequired = executeFunctions.getNodeParameter(
+    'locationRequired',
+    0,
+  ) as boolean;
+  const communicateEvents = executeFunctions.getNodeParameter(
+    'communicateEvents',
+    0,
+  ) as Record<string, string>;
 
-    const requestBody = {
-      data: {
-        type: 'signers',
-        attributes: {
-          name: name,
-          email: email,
-          phone_number: phoneNumber,
-          has_documentation: hasDocumentation,
-          documentation: formattedDocumentation,
-          birthday: formattedBirthday,
-          group: group,
-          refusable: refusable,
-          location_required_enabled: locationRequired,
-          communicate_events: communicateEvents.events,
-        },
+  const requestBody = {
+    data: {
+      type: 'signers',
+      attributes: {
+        name: name,
+        email: email,
+        phone_number: phoneNumber,
+        has_documentation: hasDocumentation,
+        documentation: formattedDocumentation,
+        birthday: formattedBirthday,
+        group: group,
+        refusable: refusable,
+        location_required_enabled: locationRequired,
+        communicate_events: communicateEvents.events,
       },
-    };
+    },
+  };
 
-    const credentials = await ef.getCredentials('clicksignApi');
+  const options: IRequestOptions = {
+    method: 'POST' as IHttpRequestMethods,
+    body: requestBody,
+    json: true,
+    uri: `/envelopes/${envelopeId}/signers`,
+  };
 
-    const serverEnv = credentials['clicksign_environment'];
-    const accessToken = credentials['clicksign_access_token'];
-    const options: IRequestOptions = {
-      method: 'POST' as IHttpRequestMethods,
-      body: requestBody,
-      json: true,
-    };
-
-    const requestOptions: IRequestOptions = {
-      ...options,
-      headers: {
-        Authorization: accessToken,
-        ...(options.headers || {}),
-      },
-      uri: `https://${serverEnv}.clicksign.com/api/v3/envelopes/${envelopeId}/signers`,
-    };
-
-    const returnData = await ef.helpers.request(requestOptions);
-
-    return {
-      json: {
-        success: true,
-        data: returnData,
-      },
-    };
-  } catch (error) {
-    const errorData = {
-      success: false,
-      error: {
-        message: error.message,
-        details: 'Erro ao criar o signatário',
-        code: error.code || 'UNKNOWN_ERROR',
-        timestamp: new Date().toISOString(),
-      },
-    };
-
-    if (!ef.continueOnFail()) {
-      throw new NodeOperationError(ef.getNode(), error.message, {
-        message: errorData.error.message,
-        description: errorData.error.details,
-      });
-    }
-
-    return {
-      json: errorData,
-      error: errorData,
-    };
-  }
+  return await clicksignRequest(
+    executeFunctions,
+    options,
+    'Erro ao criar o signatário',
+  );
 }

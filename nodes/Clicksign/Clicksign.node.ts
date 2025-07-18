@@ -42,12 +42,12 @@ export class Clicksign implements INodeType {
     ],
     requestDefaults: {
       baseURL:
-        '=https://{{$credentials.clicksign_environment}}.clicksign.com/api/v3',
+        '=https://{{$credentials.clicksignEnvironment}}.clicksign.com/api/v3',
       url: '',
       headers: {
         Accept: 'application/vnd.api+json',
         'Content-Type': 'application/vnd.api+json',
-        Authorization: '={{$credentials.clicksign_access_token}}',
+        Authorization: '={{$credentials.clicksignAccessToken}}',
       },
     },
     properties: clicksignProperties,

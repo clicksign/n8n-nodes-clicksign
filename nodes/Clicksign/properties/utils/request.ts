@@ -1,0 +1,57 @@
+import {
+  IExecuteFunctions,
+  IRequestOptions,
+  NodeOperationError,
+} from 'n8n-workflow';
+
+export async function clicksignRequest(
+  executeFunctions: IExecuteFunctions,
+  options: IRequestOptions,
+  errorMessage: string = 'Unexpected error occurred',
+) {
+  const credentials = await executeFunctions.getCredentials('clicksignApi');
+  const environment = credentials.clicksignEnvironment;
+  const accessToken = credentials.clicksignAccessToken;
+
+  const requestOptions: IRequestOptions = {
+    ...options,
+    headers: {
+      Authorization: accessToken,
+      ...(options.headers || {}),
+    },
+    uri: `https://${environment}.clicksign.com/api/v3${options.uri}`,
+  };
+
+  try {
+    const response = await executeFunctions.helpers.request(requestOptions);
+
+    return {
+      json: {
+        success: true,
+        data: response,
+      },
+    };
+  } catch (error) {
+    const errorData = {
+      success: false,
+      error: {
+        message: error.message,
+        details: errorMessage,
+        code: error.code || 'UNKNOWN_ERROR',
+        timestamp: new Date().toISOString(),
+      },
+    };
+
+    if (!executeFunctions.continueOnFail()) {
+      throw new NodeOperationError(executeFunctions.getNode(), error.message, {
+        message: errorData.error.message,
+        description: errorData.error.details,
+      });
+    }
+
+    return {
+      json: errorData,
+      error: errorData,
+    };
+  }
+}

@@ -13,14 +13,14 @@ export class ClicksignApi implements ICredentialType {
   properties: INodeProperties[] = [
     {
       displayName: 'Access Token',
-      name: 'clicksign_access_token',
+      name: 'clicksignAccessToken',
       type: 'string',
       typeOptions: { password: true },
       default: '',
     },
     {
       displayName: 'Environment',
-      name: 'clicksign_environment',
+      name: 'clicksignEnvironment',
       type: 'options',
       options: [
         {
@@ -40,7 +40,7 @@ export class ClicksignApi implements ICredentialType {
     type: 'generic',
     properties: {
       qs: {
-        access_token: '={{$credentials.clicksign_access_token}}',
+        access_token: '={{$credentials.clicksignAccessToken}}',
       },
     },
   };
@@ -48,7 +48,7 @@ export class ClicksignApi implements ICredentialType {
   test: ICredentialTestRequest = {
     request: {
       baseURL:
-        '=https://{{$credentials.clicksign_environment}}.clicksign.com/api/v3/envelopes',
+        '=https://{{$credentials.clicksignEnvironment}}.clicksign.com/api/v3/envelopes',
       url: '',
     },
   };
