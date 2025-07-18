@@ -9,7 +9,7 @@ export const createSignerFields: INodeProperties[] = [
     default: '',
     displayOptions: {
       show: {
-        resource: ['signer-api'],
+        resource: ['api-signatarios'],
         operation: ['create-signer'],
       },
     },
@@ -22,7 +22,7 @@ export const createSignerFields: INodeProperties[] = [
     placeholder: 'John Doe',
     displayOptions: {
       show: {
-        resource: ['signer-api'],
+        resource: ['api-signatarios'],
         operation: ['create-signer'],
       },
     },
@@ -35,7 +35,7 @@ export const createSignerFields: INodeProperties[] = [
     placeholder: 'john@email.com',
     displayOptions: {
       show: {
-        resource: ['signer-api'],
+        resource: ['api-signatarios'],
         operation: ['create-signer'],
       },
     },
@@ -47,7 +47,7 @@ export const createSignerFields: INodeProperties[] = [
     default: '',
     displayOptions: {
       show: {
-        resource: ['signer-api'],
+        resource: ['api-signatarios'],
         operation: ['create-signer'],
       },
     },
@@ -59,7 +59,7 @@ export const createSignerFields: INodeProperties[] = [
     default: true,
     displayOptions: {
       show: {
-        resource: ['signer-api'],
+        resource: ['api-signatarios'],
         operation: ['create-signer'],
       },
     },
@@ -71,7 +71,7 @@ export const createSignerFields: INodeProperties[] = [
     default: '',
     displayOptions: {
       show: {
-        resource: ['signer-api'],
+        resource: ['api-signatarios'],
         operation: ['create-signer'],
         hasDocumentation: [true],
       },
@@ -85,7 +85,7 @@ export const createSignerFields: INodeProperties[] = [
     placeholder: '1990-10-10',
     displayOptions: {
       show: {
-        resource: ['signer-api'],
+        resource: ['api-signatarios'],
         operation: ['create-signer'],
         hasDocumentation: [true],
       },
@@ -98,7 +98,7 @@ export const createSignerFields: INodeProperties[] = [
     default: 1,
     displayOptions: {
       show: {
-        resource: ['signer-api'],
+        resource: ['api-signatarios'],
         operation: ['create-signer'],
       },
     },
@@ -110,7 +110,7 @@ export const createSignerFields: INodeProperties[] = [
     default: false,
     displayOptions: {
       show: {
-        resource: ['signer-api'],
+        resource: ['api-signatarios'],
         operation: ['create-signer'],
       },
     },
@@ -122,7 +122,7 @@ export const createSignerFields: INodeProperties[] = [
     default: false,
     displayOptions: {
       show: {
-        resource: ['signer-api'],
+        resource: ['api-signatarios'],
         operation: ['create-signer'],
       },
     },
@@ -138,7 +138,7 @@ export const createSignerFields: INodeProperties[] = [
     },
     displayOptions: {
       show: {
-        resource: ['signer-api'],
+        resource: ['api-signatarios'],
         operation: ['create-signer'],
       },
     },

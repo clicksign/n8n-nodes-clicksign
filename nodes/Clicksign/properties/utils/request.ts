@@ -19,6 +19,7 @@ export async function clicksignRequest(
       Authorization: accessToken,
       ...(options.headers || {}),
     },
+    json: true,
     uri: `https://${environment}.clicksign.com/api/v3${options.uri}`,
   };
 

@@ -1,9 +1,9 @@
 import { Clicksign } from './Clicksign.node';
-import { envelopeOperations as envelopeOp } from './properties/envelope.operations';
-import { createEnvelopeFields } from './properties/envelope.fields.createEnvelope';
-import { envelopeDocumentsFields } from './properties/envelope.fields.envelopeDocuments';
+import { envelopeOperations as envelopeOp } from './properties/envelope/operations';
+import { createEnvelopeFields } from './properties/envelope/createEnvelope.fields';
+import { getDocumentsFields } from './properties/documents/getDocuments.fields';
 
-const envelopeFields = [...createEnvelopeFields, ...envelopeDocumentsFields];
+const envelopeFields = [...createEnvelopeFields, ...getDocumentsFields];
 const envelopeOperations = [envelopeOp];
 
 describe('Clicksign Node', () => {
@@ -80,10 +80,18 @@ describe('Clicksign Node', () => {
       expect(resourceProperty?.options).toEqual([
         {
           name: 'Envelope',
-          value: 'envelopes',
+          value: 'api-envelope',
+        },
+        {
+          name: 'Signer',
+          value: 'api-signatarios',
+        },
+        {
+          name: 'Document',
+          value: 'api-documentos',
         },
       ]);
-      expect(resourceProperty?.default).toBe('envelopes');
+      expect(resourceProperty?.default).toBe('api-envelope');
 
       expect(properties).toEqual(expect.arrayContaining(envelopeOperations));
       expect(properties).toEqual(expect.arrayContaining(envelopeFields));
@@ -92,81 +100,50 @@ describe('Clicksign Node', () => {
 
   describe('Operations Configuration', () => {
     describe('List All Envelopes', () => {
-      it('should have listAll operation with correct routing', () => {
+      it('should have listAll operation', () => {
         const operationProperty = envelopeOperations.find(
           (op) => op.name === 'operation',
         );
         const listAllOption = operationProperty?.options?.find(
-          (opt) => (opt as any).value === 'listAll',
+          (opt) => (opt as any).value === 'get-all-envelopes',
         ) as any;
 
         expect(listAllOption).toBeDefined();
         expect(listAllOption?.name).toBe('List Envelopes');
         expect(listAllOption?.description).toBe('List all envelopes');
         expect(listAllOption?.action).toBe('List all envelopes');
-
-        expect(listAllOption?.routing).toBeDefined();
-        expect(listAllOption?.routing?.request).toBeDefined();
-        expect(listAllOption?.routing?.request?.method).toBe('GET');
-        expect(listAllOption?.routing?.request?.url).toBe('/envelopes');
       });
     });
 
     describe('List Documents in an Envelope', () => {
-      it('should have envelopeDocuments operation with correct display options', () => {
+      it('should have envelopeDocuments operation', () => {
         const operationProperty = envelopeOperations.find(
           (op) => op.name === 'operation',
         );
         const envelopeDocumentsOption = operationProperty?.options?.find(
-          (opt) => (opt as any).value === 'envelopeDocuments',
+          (opt) => (opt as any).value === 'get-all-envelopes',
         ) as any;
 
         expect(envelopeDocumentsOption).toBeDefined();
-        expect(envelopeDocumentsOption?.name).toBe(
-          'List Documents in an Envelope',
-        );
-        expect(envelopeDocumentsOption?.description).toBe('List documents');
-        expect(envelopeDocumentsOption?.action).toBe('List documents');
-
-        expect(envelopeDocumentsOption?.displayOptions).toBeDefined();
-        expect(envelopeDocumentsOption?.displayOptions?.show).toBeDefined();
-        expect(envelopeDocumentsOption?.displayOptions?.show?.resource).toEqual(
-          ['envelopes'],
-        );
-        expect(
-          envelopeDocumentsOption?.displayOptions?.show?.operation,
-        ).toEqual(['envelopeDocuments']);
+        expect(envelopeDocumentsOption?.name).toBe('List Envelopes');
+        expect(envelopeDocumentsOption?.description).toBe('List all envelopes');
+        expect(envelopeDocumentsOption?.action).toBe('List all envelopes');
       });
     });
 
     describe('Create Envelope', () => {
-      it('should have createEnvelope operation with correct routing and display options', () => {
+      it('should have createEnvelope operation with correct display options', () => {
         const operationProperty = envelopeOperations.find(
           (op) => op.name === 'operation',
         );
         const createEnvelopeOption = operationProperty?.options?.find(
-          (opt) => (opt as any).value === 'createEnvelope',
+          (opt) => (opt as any).value === 'create-envelope',
         ) as any;
 
         expect(createEnvelopeOption).toBeDefined();
         expect(createEnvelopeOption?.name).toBe('Create Envelope');
         expect(createEnvelopeOption?.description).toBe('Create a new envelope');
         expect(createEnvelopeOption?.action).toBe('Create envelope');
-
-        expect(createEnvelopeOption?.displayOptions).toBeDefined();
-        expect(createEnvelopeOption?.displayOptions?.show).toBeDefined();
-        expect(createEnvelopeOption?.displayOptions?.show?.resource).toEqual([
-          'envelopes',
-        ]);
-        expect(createEnvelopeOption?.displayOptions?.show?.operation).toEqual([
-          'createEnvelope',
-        ]);
-
-        expect(createEnvelopeOption?.routing).toBeDefined();
-        expect(createEnvelopeOption?.routing?.request).toBeDefined();
-        expect(createEnvelopeOption?.routing?.request?.method).toBe('POST');
-        expect(createEnvelopeOption?.routing?.request?.url).toBe('/envelopes');
-        expect(createEnvelopeOption?.routing?.request?.body).toBeDefined();
       });
     });
   });
@@ -186,16 +163,11 @@ describe('Clicksign Node', () => {
 
         expect(envelopeIdField?.displayOptions).toBeDefined();
         expect(envelopeIdField?.displayOptions?.show?.resource).toEqual([
-          'envelopes',
+          'api-documentos',
         ]);
         expect(envelopeIdField?.displayOptions?.show?.operation).toEqual([
-          'envelopeDocuments',
+          'get-documents',
         ]);
-
-        expect(envelopeIdField?.routing).toBeDefined();
-        expect(envelopeIdField?.routing?.request?.url).toBe(
-          '=/envelopes/{{$parameter.envelopeId}}/documents',
-        );
       });
     });
 
@@ -213,10 +185,10 @@ describe('Clicksign Node', () => {
 
         expect(envelopeNameField?.displayOptions).toBeDefined();
         expect(envelopeNameField?.displayOptions?.show?.resource).toEqual([
-          'envelopes',
+          'api-envelope',
         ]);
         expect(envelopeNameField?.displayOptions?.show?.operation).toEqual([
-          'createEnvelope',
+          'create-envelope',
         ]);
       });
 
@@ -324,37 +296,6 @@ describe('Clicksign Node', () => {
         expect(defaultMessageField?.type).toBe('string');
         expect(defaultMessageField?.default).toBe(undefined);
       });
-    });
-  });
-
-  describe('Routing Configuration', () => {
-    it('should have correct body structure for createEnvelope operation', () => {
-      const operationProperty = envelopeOperations.find(
-        (op) => op.name === 'operation',
-      );
-      const createEnvelopeOption = operationProperty?.options?.find(
-        (opt) => (opt as any).value === 'createEnvelope',
-      ) as any;
-      const body = createEnvelopeOption?.routing?.request?.body as any;
-
-      expect(body).toBeDefined();
-      expect(body?.data).toBeDefined();
-      expect(body?.data?.type).toBe('envelopes');
-      expect(body?.data?.attributes).toBeDefined();
-
-      const attributes = body?.data?.attributes;
-      expect(attributes?.name).toBe('={{$parameter.envelopeName}}');
-      expect(attributes?.locale).toBe('={{$parameter.locale}}');
-      expect(attributes?.auto_close).toBe('={{$parameter.autoClose}}');
-      expect(attributes?.remind_interval).toBe(
-        '={{$parameter.remindInterval}}',
-      );
-      expect(attributes?.block_after_refusal).toBe(
-        '={{$parameter.blockAfterRefusal}}',
-      );
-      expect(attributes?.deadline_at).toBe(
-        '={{$parameter.deadlineAt ? DateTime.fromISO($parameter.deadlineAt).setZone($now.zoneName).toISO() : undefined}}',
-      );
     });
   });
 

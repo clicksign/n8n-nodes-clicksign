@@ -1,17 +1,22 @@
 import { INodeProperties } from 'n8n-workflow';
 
-import { createSignerOption } from './signer.option.createSigner';
-
 export const signerOperations: INodeProperties = {
   displayName: 'Operation',
   name: 'operation',
   type: 'options',
-  default: '',
+  default: 'create-signer',
   noDataExpression: true,
-  options: [createSignerOption],
+  options: [
+    {
+      name: 'Create Signer',
+      value: 'create-signer',
+      action: 'Create a signer',
+      description: 'Create a signer',
+    },
+  ],
   displayOptions: {
     show: {
-      resource: ['signer-api'],
+      resource: ['api-signatarios'],
     },
   },
 };

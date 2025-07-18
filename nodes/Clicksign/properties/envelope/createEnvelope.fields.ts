@@ -10,8 +10,8 @@ export const createEnvelopeFields: INodeProperties[] = [
     default: 'My First Envelope',
     displayOptions: {
       show: {
-        resource: ['envelopes'],
-        operation: ['createEnvelope'],
+        resource: ['api-envelope'],
+        operation: ['create-envelope'],
       },
     },
   },
@@ -23,8 +23,8 @@ export const createEnvelopeFields: INodeProperties[] = [
     default: 'pt-BR',
     displayOptions: {
       show: {
-        resource: ['envelopes'],
-        operation: ['createEnvelope'],
+        resource: ['api-envelope'],
+        operation: ['create-envelope'],
       },
     },
     type: 'options',
@@ -48,8 +48,8 @@ export const createEnvelopeFields: INodeProperties[] = [
     default: true,
     displayOptions: {
       show: {
-        resource: ['envelopes'],
-        operation: ['createEnvelope'],
+        resource: ['api-envelope'],
+        operation: ['create-envelope'],
       },
     },
   },
@@ -63,8 +63,8 @@ export const createEnvelopeFields: INodeProperties[] = [
     default: 3,
     displayOptions: {
       show: {
-        resource: ['envelopes'],
-        operation: ['createEnvelope'],
+        resource: ['api-envelope'],
+        operation: ['create-envelope'],
       },
     },
     typeOptions: {
@@ -80,8 +80,8 @@ export const createEnvelopeFields: INodeProperties[] = [
     default: false,
     displayOptions: {
       show: {
-        resource: ['envelopes'],
-        operation: ['createEnvelope'],
+        resource: ['api-envelope'],
+        operation: ['create-envelope'],
       },
     },
   },
@@ -93,8 +93,8 @@ export const createEnvelopeFields: INodeProperties[] = [
     default: undefined,
     displayOptions: {
       show: {
-        resource: ['envelopes'],
-        operation: ['createEnvelope'],
+        resource: ['api-envelope'],
+        operation: ['create-envelope'],
       },
     },
   },
@@ -106,8 +106,8 @@ export const createEnvelopeFields: INodeProperties[] = [
     default: undefined,
     displayOptions: {
       show: {
-        resource: ['envelopes'],
-        operation: ['createEnvelope'],
+        resource: ['api-envelope'],
+        operation: ['create-envelope'],
       },
     },
   },
@@ -119,8 +119,8 @@ export const createEnvelopeFields: INodeProperties[] = [
     default: undefined,
     displayOptions: {
       show: {
-        resource: ['envelopes'],
-        operation: ['createEnvelope'],
+        resource: ['api-envelope'],
+        operation: ['create-envelope'],
       },
     },
   },

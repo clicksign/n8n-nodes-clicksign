@@ -6,19 +6,9 @@ import type {
 } from 'n8n-workflow';
 import { NodeApiError, NodeConnectionType } from 'n8n-workflow';
 import { clicksignProperties } from './properties';
-import { createSigner } from './properties/signer.execute.createSigner';
 
-type ResourceOperationFunctions = {
-  [resource: string]: {
-    [operation: string]: (ef: IExecuteFunctions) => Promise<any>;
-  };
-};
-
-const resourceOperationsFunctions: ResourceOperationFunctions = {
-  'signer-api': {
-    'create-signer': createSigner,
-  },
-};
+import { getNodeParameterTyped } from './properties/utils/getNodeTyped';
+import { resourceOperationsFunctions } from './properties/executors';
 
 export class Clicksign implements INodeType {
   description: INodeTypeDescription = {
@@ -53,8 +43,8 @@ export class Clicksign implements INodeType {
     properties: clicksignProperties,
   };
   async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
-    const resource = this.getNodeParameter('resource', 0) as string;
-    const operation = this.getNodeParameter('operation', 0) as string;
+    const resource = getNodeParameterTyped<string>(this, 'resource');
+    const operation = getNodeParameterTyped<string>(this, 'operation');
 
     const fn = resourceOperationsFunctions[resource][operation];
 

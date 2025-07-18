@@ -9,22 +9,22 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
     default: '',
     displayOptions: {
       show: {
-        resource: ['envelopes'],
-        operation: ['createDocumentByTemplate'],
+        resource: ['api-documentos'],
+        operation: ['create-document-by-template'],
       },
     },
   },
   {
     displayName: 'File Name (.docx)',
-    name: 'fileName',
+    name: 'filename',
     type: 'string',
     required: true,
     default: '',
     description: 'The name of the document to be created',
     displayOptions: {
       show: {
-        resource: ['envelopes'],
-        operation: ['createDocumentByTemplate'],
+        resource: ['api-documentos'],
+        operation: ['create-document-by-template'],
       },
     },
   },
@@ -37,8 +37,8 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
     description: 'The ID of the template to create the document from',
     displayOptions: {
       show: {
-        resource: ['envelopes'],
-        operation: ['createDocumentByTemplate'],
+        resource: ['api-documentos'],
+        operation: ['create-document-by-template'],
       },
     },
   },
@@ -50,8 +50,8 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
     description: 'JSON object containing additional data for the template',
     displayOptions: {
       show: {
-        resource: ['envelopes'],
-        operation: ['createDocumentByTemplate'],
+        resource: ['api-documentos'],
+        operation: ['create-document-by-template'],
       },
     },
   },
@@ -63,8 +63,8 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
     description: 'JSON object containing metadata for the document',
     displayOptions: {
       show: {
-        resource: ['envelopes'],
-        operation: ['createDocumentByTemplate'],
+        resource: ['api-documentos'],
+        operation: ['create-document-by-template'],
       },
     },
   },

@@ -8,12 +8,16 @@ export const resourceOptions: INodeProperties = {
   options: [
     {
       name: 'Envelope',
-      value: 'envelopes',
+      value: 'api-envelope',
     },
     {
       name: 'Signer',
-      value: 'signer-api',
+      value: 'api-signatarios',
+    },
+    {
+      name: 'Document',
+      value: 'api-documentos',
     },
   ],
-  default: 'envelopes',
+  default: 'api-envelope',
 };
