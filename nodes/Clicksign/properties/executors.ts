@@ -5,6 +5,8 @@ import { getAllDocuments } from './document/getDocuments.execute';
 import { createDocumentByTemplate } from './document/createDocumentByTemplate.execute';
 import { createEnvelope } from './envelope/createEnvelope.execute';
 import { getAllEnvelopes } from './envelope/getAllEnvelopes.execute';
+import { addAuthRequirement } from './requirement/addAuthRequirement.execute';
+import { addQualificationRequirement } from './requirement/addQualificationRequirement.execute';
 
 type ResourceOperationFunctions = {
   [resource: string]: {
@@ -23,5 +25,9 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
   },
   signer: {
     create: createSigner,
+  },
+  requirement: {
+    addAuth: addAuthRequirement,
+    addQualification: addQualificationRequirement,
   },
 };

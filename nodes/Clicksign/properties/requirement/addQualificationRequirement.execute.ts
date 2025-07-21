@@ -1,0 +1,21 @@
+import { IExecuteFunctions } from 'n8n-workflow';
+
+import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
+import { addRequirement } from './shared/addRequirement.request';
+
+export async function addQualificationRequirement(ef: IExecuteFunctions) {
+  const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');
+  const documentId = getNodeParameterTyped<string>(ef, 'documentId');
+  const signerId = getNodeParameterTyped<string>(ef, 'signerId');
+
+  return await addRequirement(ef, {
+    attributes: {
+      action: 'agree',
+      role: 'sign',
+    },
+    documentId,
+    envelopeId,
+    signerId,
+    errorMessage: 'Erro ao adicionar requisito de qualificação',
+  });
+}

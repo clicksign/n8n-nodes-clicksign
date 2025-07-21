@@ -92,7 +92,7 @@ export const createEnvelopeFields: INodeProperties[] = [
     displayName: 'Prazo Final',
     name: 'deadlineAt',
     type: 'dateTime',
-    default: undefined,
+    default: null,
     description:
       'Data limite para o envelope e seus documentos (formato RFC 3339)',
     displayOptions: {
@@ -106,7 +106,7 @@ export const createEnvelopeFields: INodeProperties[] = [
     displayName: 'Assunto Padrão',
     name: 'defaultSubject',
     type: 'string',
-    default: undefined,
+    default: '',
     description:
       'Define o assunto do e-mail que será enviado aos signatários na solicitação de assinatura',
     displayOptions: {
@@ -120,7 +120,7 @@ export const createEnvelopeFields: INodeProperties[] = [
     displayName: 'Mensagem Padrão',
     name: 'defaultMessage',
     type: 'string',
-    default: undefined,
+    default: '',
     description: 'Define a mensagem padrão que será enviada aos signatários',
     displayOptions: {
       show: {

@@ -18,6 +18,10 @@ export const resourceOptions: INodeProperties = {
       name: 'Documento',
       value: 'document',
     },
+    {
+      name: 'Requisito',
+      value: 'requirement',
+    },
   ],
   default: 'envelope',
 };
