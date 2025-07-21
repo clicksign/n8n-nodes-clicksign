@@ -7,7 +7,7 @@ export const getDocumentsFields: INodeProperties[] = [
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do envelope ao qual será adicionado o signatário',
+    description: 'ID do envelope ao qual deseja listar os documentos',
     displayOptions: {
       show: {
         resource: ['document'],

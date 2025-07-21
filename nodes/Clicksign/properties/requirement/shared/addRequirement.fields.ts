@@ -12,7 +12,7 @@ export function addRequirementFields(
       type: 'string',
       required: true,
       default: '',
-      description: 'ID do envelope ao qual será adicionado o signatário',
+      description: 'ID do Envelope que receberá o requisito',
       displayOptions: {
         show: {
           resource: ['requirement'],

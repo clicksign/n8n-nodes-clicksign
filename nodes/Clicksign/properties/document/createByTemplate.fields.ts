@@ -7,7 +7,7 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do envelope ao qual será adicionado o signatário',
+    description: 'ID do envelope no qual o documento será adicionado',
     displayOptions: {
       show: {
         resource: ['document'],

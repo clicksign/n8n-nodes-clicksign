@@ -7,7 +7,7 @@ export const activateEnvelopeFields: INodeProperties[] = [
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do Envelope que deseja atualizar',
+    description: 'ID do Envelope que deseja ativar',
     displayOptions: {
       show: {
         resource: ['envelope'],
