@@ -7,6 +7,7 @@ import { createEnvelope } from './envelope/createEnvelope.execute';
 import { getAllEnvelopes } from './envelope/getAllEnvelopes.execute';
 import { addAuthRequirement } from './requirement/addAuthRequirement.execute';
 import { addQualificationRequirement } from './requirement/addQualificationRequirement.execute';
+import { activateEnvelope } from './envelope/activateEnvelope.execute';
 
 type ResourceOperationFunctions = {
   [resource: string]: {
@@ -22,6 +23,7 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
   envelope: {
     create: createEnvelope,
     getAll: getAllEnvelopes,
+    activate: activateEnvelope,
   },
   signer: {
     create: createSigner,

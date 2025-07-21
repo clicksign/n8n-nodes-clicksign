@@ -19,6 +19,12 @@ export const envelopeOperations: INodeProperties = {
       description: 'Listar envelopes',
       action: 'Listar envelopes',
     },
+    {
+      name: 'Ativar',
+      value: 'activate',
+      description: 'Ativar envelope',
+      action: 'Ativar envelope',
+    },
   ],
   default: 'getAll',
   displayOptions: {
