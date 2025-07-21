@@ -1,7 +1,7 @@
 import { Clicksign } from './Clicksign.node';
 import { envelopeOperations as envelopeOp } from './properties/envelope/operations';
-import { createEnvelopeFields } from './properties/envelope/createEnvelope.fields';
-import { getDocumentsFields } from './properties/document/getDocuments.fields';
+import { createEnvelopeFields } from './properties/envelope/create.fields';
+import { getDocumentsFields } from './properties/document/getAll.fields';
 
 const envelopeFields = [...createEnvelopeFields, ...getDocumentsFields];
 const envelopeOperations = [envelopeOp];
@@ -89,6 +89,10 @@ describe('Clicksign Node', () => {
         {
           name: 'Documento',
           value: 'document',
+        },
+        {
+          name: 'Requisito',
+          value: 'requirement',
         },
       ]);
       expect(resourceProperty?.default).toBe('envelope');
@@ -237,7 +241,7 @@ describe('Clicksign Node', () => {
 
         expect(deadlineAtField).toBeDefined();
         expect(deadlineAtField?.type).toBe('dateTime');
-        expect(deadlineAtField?.default).toBe(undefined);
+        expect(deadlineAtField?.default).toBe(null);
       });
 
       it('should have defaultSubject field with correct configuration', () => {
@@ -247,7 +251,7 @@ describe('Clicksign Node', () => {
 
         expect(defaultSubjectField).toBeDefined();
         expect(defaultSubjectField?.type).toBe('string');
-        expect(defaultSubjectField?.default).toBe(undefined);
+        expect(defaultSubjectField?.default).toBe('');
       });
 
       it('should have defaultMessage field with correct configuration', () => {
@@ -257,7 +261,7 @@ describe('Clicksign Node', () => {
 
         expect(defaultMessageField).toBeDefined();
         expect(defaultMessageField?.type).toBe('string');
-        expect(defaultMessageField?.default).toBe(undefined);
+        expect(defaultMessageField?.default).toBe('');
       });
     });
   });

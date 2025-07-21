@@ -1,9 +1,9 @@
 import { documentsOperations } from './operations';
 
-import { createDocumentByTemplateFields } from './createDocumentByTemplate.fields';
-import { getDocumentsFields } from './getDocuments.fields';
+import { createDocumentByTemplateFields } from './createByTemplate.fields';
+import { getDocumentsFields } from './getAll.fields';
 
-export const documents = [
+export const document = [
   documentsOperations,
   ...createDocumentByTemplateFields,
   ...getDocumentsFields,

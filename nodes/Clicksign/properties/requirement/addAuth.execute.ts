@@ -1,7 +1,7 @@
 import { IExecuteFunctions } from 'n8n-workflow';
 
 import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
-import { addRequirement } from './shared/addRequirement.request';
+import { addRequirement } from './shared/addRequirement.execute';
 
 export async function addAuthRequirement(ef: IExecuteFunctions) {
   const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');

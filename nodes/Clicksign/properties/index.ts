@@ -1,14 +1,14 @@
 import { resourceOptions } from './resources';
 
 import { envelope } from './envelope';
+import { document } from './document';
 import { signer } from './signer';
-import { documents } from './document';
 import { requirement } from './requirement';
 
 export const clicksignProperties = [
   resourceOptions,
   ...envelope,
+  ...document,
   ...signer,
-  ...documents,
   ...requirement,
 ];

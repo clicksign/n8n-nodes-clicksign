@@ -1,8 +1,7 @@
 import { envelopeOperations } from './operations';
 
-import { createEnvelopeFields } from './createEnvelope.fields';
-
-import { activateEnvelopeFields } from './activateEnvelope.fields';
+import { createEnvelopeFields } from './create.fields';
+import { activateEnvelopeFields } from './activate.fields';
 
 export const envelope = [
   envelopeOperations,

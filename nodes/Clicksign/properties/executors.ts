@@ -1,13 +1,16 @@
 import { IExecuteFunctions } from 'n8n-workflow';
 
-import { createSigner } from './signer/createSigner.execute';
-import { getAllDocuments } from './document/getDocuments.execute';
-import { createDocumentByTemplate } from './document/createDocumentByTemplate.execute';
-import { createEnvelope } from './envelope/createEnvelope.execute';
-import { getAllEnvelopes } from './envelope/getAllEnvelopes.execute';
-import { addAuthRequirement } from './requirement/addAuthRequirement.execute';
-import { addQualificationRequirement } from './requirement/addQualificationRequirement.execute';
-import { activateEnvelope } from './envelope/activateEnvelope.execute';
+import { createEnvelope } from './envelope/create.execute';
+import { getAllEnvelopes } from './envelope/getAll.execute';
+import { activateEnvelope } from './envelope/activate.execute';
+
+import { getAllDocuments } from './document/getAll.execute';
+import { createDocumentByTemplate } from './document/createByTemplate.execute';
+
+import { createSigner } from './signer/create.execute';
+
+import { addAuthRequirement } from './requirement/addAuth.execute';
+import { addQualificationRequirement } from './requirement/addQualification.execute';
 
 type ResourceOperationFunctions = {
   [resource: string]: {
@@ -16,14 +19,14 @@ type ResourceOperationFunctions = {
 };
 
 export const resourceOperationsFunctions: ResourceOperationFunctions = {
-  document: {
-    getAll: getAllDocuments,
-    createByTemplate: createDocumentByTemplate,
-  },
   envelope: {
     create: createEnvelope,
     getAll: getAllEnvelopes,
     activate: activateEnvelope,
+  },
+  document: {
+    getAll: getAllDocuments,
+    createByTemplate: createDocumentByTemplate,
   },
   signer: {
     create: createSigner,
