@@ -7,7 +7,7 @@ import type {
 import { NodeApiError, NodeConnectionType } from 'n8n-workflow';
 import { clicksignProperties } from './properties';
 
-import { getNodeParameterTyped } from './properties/utils/getNodeTyped';
+import { getNodeParameterTyped } from './properties/utils/getNodeParameterTyped';
 import { resourceOperationsFunctions } from './properties/executors';
 
 export class Clicksign implements INodeType {

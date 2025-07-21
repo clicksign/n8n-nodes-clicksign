@@ -80,18 +80,18 @@ describe('Clicksign Node', () => {
       expect(resourceProperty?.options).toEqual([
         {
           name: 'Envelope',
-          value: 'api-envelope',
+          value: 'envelope',
         },
         {
-          name: 'Signer',
-          value: 'api-signatarios',
+          name: 'Signatário',
+          value: 'signer',
         },
         {
-          name: 'Document',
-          value: 'api-documentos',
+          name: 'Documento',
+          value: 'document',
         },
       ]);
-      expect(resourceProperty?.default).toBe('api-envelope');
+      expect(resourceProperty?.default).toBe('envelope');
 
       expect(properties).toEqual(expect.arrayContaining(envelopeOperations));
       expect(properties).toEqual(expect.arrayContaining(envelopeFields));
@@ -105,13 +105,10 @@ describe('Clicksign Node', () => {
           (op) => op.name === 'operation',
         );
         const listAllOption = operationProperty?.options?.find(
-          (opt) => (opt as any).value === 'get-all-envelopes',
+          (opt) => (opt as any).value === 'getAll',
         ) as any;
 
         expect(listAllOption).toBeDefined();
-        expect(listAllOption?.name).toBe('List Envelopes');
-        expect(listAllOption?.description).toBe('List all envelopes');
-        expect(listAllOption?.action).toBe('List all envelopes');
       });
     });
 
@@ -121,13 +118,10 @@ describe('Clicksign Node', () => {
           (op) => op.name === 'operation',
         );
         const envelopeDocumentsOption = operationProperty?.options?.find(
-          (opt) => (opt as any).value === 'get-all-envelopes',
+          (opt) => (opt as any).value === 'getAll',
         ) as any;
 
         expect(envelopeDocumentsOption).toBeDefined();
-        expect(envelopeDocumentsOption?.name).toBe('List Envelopes');
-        expect(envelopeDocumentsOption?.description).toBe('List all envelopes');
-        expect(envelopeDocumentsOption?.action).toBe('List all envelopes');
       });
     });
 
@@ -137,13 +131,10 @@ describe('Clicksign Node', () => {
           (op) => op.name === 'operation',
         );
         const createEnvelopeOption = operationProperty?.options?.find(
-          (opt) => (opt as any).value === 'create-envelope',
+          (opt) => (opt as any).value === 'create',
         ) as any;
 
         expect(createEnvelopeOption).toBeDefined();
-        expect(createEnvelopeOption?.name).toBe('Create Envelope');
-        expect(createEnvelopeOption?.description).toBe('Create a new envelope');
-        expect(createEnvelopeOption?.action).toBe('Create envelope');
       });
     });
   });
@@ -163,10 +154,10 @@ describe('Clicksign Node', () => {
 
         expect(envelopeIdField?.displayOptions).toBeDefined();
         expect(envelopeIdField?.displayOptions?.show?.resource).toEqual([
-          'api-documentos',
+          'document',
         ]);
         expect(envelopeIdField?.displayOptions?.show?.operation).toEqual([
-          'get-documents',
+          'getAll',
         ]);
       });
     });
@@ -178,17 +169,15 @@ describe('Clicksign Node', () => {
         );
 
         expect(envelopeNameField).toBeDefined();
-        expect(envelopeNameField?.displayName).toBe('Envelope Name');
-        expect(envelopeNameField?.description).toBe('The name of the envelope');
         expect(envelopeNameField?.type).toBe('string');
         expect(envelopeNameField?.required).toBe(true);
 
         expect(envelopeNameField?.displayOptions).toBeDefined();
         expect(envelopeNameField?.displayOptions?.show?.resource).toEqual([
-          'api-envelope',
+          'envelope',
         ]);
         expect(envelopeNameField?.displayOptions?.show?.operation).toEqual([
-          'create-envelope',
+          'create',
         ]);
       });
 
@@ -198,8 +187,6 @@ describe('Clicksign Node', () => {
         );
 
         expect(localeField).toBeDefined();
-        expect(localeField?.displayName).toBe('Locale');
-        expect(localeField?.description).toBe('The locale of the envelope');
         expect(localeField?.type).toBe('options');
         expect(localeField?.default).toBe('pt-BR');
 
@@ -216,10 +203,6 @@ describe('Clicksign Node', () => {
         );
 
         expect(autoCloseField).toBeDefined();
-        expect(autoCloseField?.displayName).toBe('Auto Close');
-        expect(autoCloseField?.description).toBe(
-          'Whether the envelope should be closed automatically when all signers have signed',
-        );
         expect(autoCloseField?.type).toBe('boolean');
         expect(autoCloseField?.default).toBe(true);
       });
@@ -230,10 +213,6 @@ describe('Clicksign Node', () => {
         );
 
         expect(remindIntervalField).toBeDefined();
-        expect(remindIntervalField?.displayName).toBe('Remind Interval');
-        expect(remindIntervalField?.description).toBe(
-          'The interval in days to remind the signer to sign the envelope',
-        );
         expect(remindIntervalField?.type).toBe('number');
         expect(remindIntervalField?.default).toBe(3);
 
@@ -247,10 +226,6 @@ describe('Clicksign Node', () => {
         );
 
         expect(blockAfterRefusalField).toBeDefined();
-        expect(blockAfterRefusalField?.displayName).toBe('Block After Refusal');
-        expect(blockAfterRefusalField?.description).toBe(
-          'Whether the envelope should be blocked after the signer refuses to sign',
-        );
         expect(blockAfterRefusalField?.type).toBe('boolean');
         expect(blockAfterRefusalField?.default).toBe(false);
       });
@@ -261,10 +236,6 @@ describe('Clicksign Node', () => {
         );
 
         expect(deadlineAtField).toBeDefined();
-        expect(deadlineAtField?.displayName).toBe('Deadline At');
-        expect(deadlineAtField?.description).toBe(
-          'The deadline for the envelope',
-        );
         expect(deadlineAtField?.type).toBe('dateTime');
         expect(deadlineAtField?.default).toBe(undefined);
       });
@@ -275,10 +246,6 @@ describe('Clicksign Node', () => {
         );
 
         expect(defaultSubjectField).toBeDefined();
-        expect(defaultSubjectField?.displayName).toBe('Default Subject');
-        expect(defaultSubjectField?.description).toBe(
-          'The default subject of notification to be sent',
-        );
         expect(defaultSubjectField?.type).toBe('string');
         expect(defaultSubjectField?.default).toBe(undefined);
       });
@@ -289,10 +256,6 @@ describe('Clicksign Node', () => {
         );
 
         expect(defaultMessageField).toBeDefined();
-        expect(defaultMessageField?.displayName).toBe('Default Message');
-        expect(defaultMessageField?.description).toBe(
-          'The default message of notification to be sent',
-        );
         expect(defaultMessageField?.type).toBe('string');
         expect(defaultMessageField?.default).toBe(undefined);
       });

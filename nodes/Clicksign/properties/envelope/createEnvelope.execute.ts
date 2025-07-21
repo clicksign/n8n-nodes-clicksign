@@ -1,7 +1,7 @@
 import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
 
-import { clicksignRequest } from '../utils/request';
-import { getNodeParameterTyped } from '../utils/getNodeTyped';
+import { clicksignRequest } from '../utils/clicksignRequest';
+import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
 
 export async function createEnvelope(ef: IExecuteFunctions) {
   const name = getNodeParameterTyped<string>(ef, 'envelopeName');

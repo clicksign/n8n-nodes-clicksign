@@ -1,28 +1,29 @@
 import { INodeProperties } from 'n8n-workflow';
 
 export const envelopeOperations: INodeProperties = {
-  displayName: 'Operation',
+  displayName: 'Operação',
   name: 'operation',
   type: 'options',
   noDataExpression: true,
   options: [
     {
-      name: 'Create Envelope',
-      value: 'create-envelope',
-      description: 'Create a new envelope',
-      action: 'Create envelope',
+      name: 'Criar',
+      value: 'create',
+      description: 'Criar envelope',
+      action: 'Criar envelope',
     },
     {
-      name: 'List Envelopes',
-      value: 'get-all-envelopes',
-      description: 'List all envelopes',
-      action: 'List all envelopes',
+      // eslint-disable-next-line n8n-nodes-base/node-param-option-name-wrong-for-get-many
+      name: 'Listar',
+      value: 'getAll',
+      description: 'Listar envelopes',
+      action: 'Listar envelopes',
     },
   ],
-  default: 'get-all-envelopes',
+  default: 'getAll',
   displayOptions: {
     show: {
-      resource: ['api-envelope'],
+      resource: ['envelope'],
     },
   },
 };

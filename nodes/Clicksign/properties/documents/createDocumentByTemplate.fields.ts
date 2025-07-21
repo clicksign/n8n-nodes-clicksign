@@ -7,24 +7,26 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
     type: 'string',
     required: true,
     default: '',
+    description: 'ID do envelope ao qual será adicionado o signatário',
     displayOptions: {
       show: {
-        resource: ['api-documentos'],
-        operation: ['create-document-by-template'],
+        resource: ['document'],
+        operation: ['createByTemplate'],
       },
     },
   },
   {
-    displayName: 'File Name (.docx)',
+    displayName: 'Nome Do Arquivo (.docx)',
     name: 'filename',
     type: 'string',
     required: true,
     default: '',
-    description: 'The name of the document to be created',
+    placeholder: 'arquivo',
+    description: 'Nome do arquivo com extensão .docx',
     displayOptions: {
       show: {
-        resource: ['api-documentos'],
-        operation: ['create-document-by-template'],
+        resource: ['document'],
+        operation: ['createByTemplate'],
       },
     },
   },
@@ -34,24 +36,24 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
     type: 'string',
     required: true,
     default: '',
-    description: 'The ID of the template to create the document from',
+    description: 'ID do Modelo utilizado para a criação',
     displayOptions: {
       show: {
-        resource: ['api-documentos'],
-        operation: ['create-document-by-template'],
+        resource: ['document'],
+        operation: ['createByTemplate'],
       },
     },
   },
   {
-    displayName: 'Template Data',
+    displayName: 'Variáveis Do Modelo',
     name: 'templateData',
     type: 'json',
     default: '{}',
-    description: 'JSON object containing additional data for the template',
+    description: 'JSON com chave e valor dos valores que alimentarão o modelo',
     displayOptions: {
       show: {
-        resource: ['api-documentos'],
-        operation: ['create-document-by-template'],
+        resource: ['document'],
+        operation: ['createByTemplate'],
       },
     },
   },
@@ -60,11 +62,12 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
     name: 'metadata',
     type: 'json',
     default: '{}',
-    description: 'JSON object containing metadata for the document',
+    description:
+      'JSON com metadados que são utilizados nos retornos de documentos via webhooks',
     displayOptions: {
       show: {
-        resource: ['api-documentos'],
-        operation: ['create-document-by-template'],
+        resource: ['document'],
+        operation: ['createByTemplate'],
       },
     },
   },

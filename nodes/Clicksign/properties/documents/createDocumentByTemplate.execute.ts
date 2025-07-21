@@ -1,7 +1,7 @@
 import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
 
-import { clicksignRequest } from '../utils/request';
-import { getNodeParameterTyped } from '../utils/getNodeTyped';
+import { clicksignRequest } from '../utils/clicksignRequest';
+import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
 
 export async function createDocumentByTemplate(ef: IExecuteFunctions) {
   const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');

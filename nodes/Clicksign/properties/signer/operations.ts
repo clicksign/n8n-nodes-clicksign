@@ -1,22 +1,23 @@
 import { INodeProperties } from 'n8n-workflow';
 
 export const signerOperations: INodeProperties = {
-  displayName: 'Operation',
+  displayName: 'Operação',
   name: 'operation',
   type: 'options',
-  default: 'create-signer',
+  default: 'create',
   noDataExpression: true,
   options: [
     {
-      name: 'Create Signer',
-      value: 'create-signer',
-      action: 'Create a signer',
-      description: 'Create a signer',
+      name: 'Criar',
+      value: 'create',
+      // eslint-disable-next-line n8n-nodes-base/node-param-operation-option-action-miscased
+      action: 'Criar signatário',
+      description: 'Criar signatário',
     },
   ],
   displayOptions: {
     show: {
-      resource: ['api-signatarios'],
+      resource: ['signer'],
     },
   },
 };

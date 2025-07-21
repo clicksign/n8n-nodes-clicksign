@@ -1,6 +1,6 @@
 import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
 
-import { clicksignRequest } from '../utils/request';
+import { clicksignRequest } from '../utils/clicksignRequest';
 
 export async function getAllEnvelopes(ef: IExecuteFunctions) {
   const options: IRequestOptions = {

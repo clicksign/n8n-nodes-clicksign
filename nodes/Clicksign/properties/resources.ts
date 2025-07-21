@@ -1,23 +1,23 @@
 import { INodeProperties } from 'n8n-workflow';
 
 export const resourceOptions: INodeProperties = {
-  displayName: 'Resource',
+  displayName: 'Recurso',
   name: 'resource',
   type: 'options',
   noDataExpression: true,
   options: [
     {
       name: 'Envelope',
-      value: 'api-envelope',
+      value: 'envelope',
     },
     {
-      name: 'Signer',
-      value: 'api-signatarios',
+      name: 'Signatário',
+      value: 'signer',
     },
     {
-      name: 'Document',
-      value: 'api-documentos',
+      name: 'Documento',
+      value: 'document',
     },
   ],
-  default: 'api-envelope',
+  default: 'envelope',
 };

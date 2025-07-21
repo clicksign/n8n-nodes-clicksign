@@ -2,32 +2,33 @@ import { INodeProperties } from 'n8n-workflow';
 
 export const createEnvelopeFields: INodeProperties[] = [
   {
-    displayName: 'Envelope Name',
+    displayName: 'Nome',
     name: 'envelopeName',
-    description: 'The name of the envelope',
     type: 'string',
     required: true,
-    default: 'My First Envelope',
+    default: 'Meu envelope',
+    description: 'Nome do envelope',
     displayOptions: {
       show: {
-        resource: ['api-envelope'],
-        operation: ['create-envelope'],
+        resource: ['envelope'],
+        operation: ['create'],
       },
     },
   },
   {
-    displayName: 'Locale',
+    displayName: 'Idioma',
     name: 'locale',
-    description: 'The locale of the envelope',
+    type: 'options',
     required: true,
     default: 'pt-BR',
+    description:
+      'Idioma utilizado nos e-mails, página de assinatura e log do documento',
     displayOptions: {
       show: {
-        resource: ['api-envelope'],
-        operation: ['create-envelope'],
+        resource: ['envelope'],
+        operation: ['create'],
       },
     },
-    type: 'options',
     options: [
       {
         name: 'Pt-BR',
@@ -40,31 +41,32 @@ export const createEnvelopeFields: INodeProperties[] = [
     ],
   },
   {
-    displayName: 'Auto Close',
+    displayName: 'Finalizar Automaticamente Após Assinaturas Finalizadas',
     name: 'autoClose',
-    description:
-      'Whether the envelope should be closed automatically when all signers have signed',
     type: 'boolean',
     default: true,
+    // eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+    description:
+      'Se ativado, o envelope será fechado automaticamente após a assinatura do último signatários',
     displayOptions: {
       show: {
-        resource: ['api-envelope'],
-        operation: ['create-envelope'],
+        resource: ['envelope'],
+        operation: ['create'],
       },
     },
   },
   {
-    displayName: 'Remind Interval',
+    displayName: 'Intervalo De Lembrete',
     name: 'remindInterval',
-    description:
-      'The interval in days to remind the signer to sign the envelope',
     type: 'number',
     required: true,
     default: 3,
+    description:
+      'Determina se o documento terá opção de lembretes automáticos ativada (1,2,3,7,14)',
     displayOptions: {
       show: {
-        resource: ['api-envelope'],
-        operation: ['create-envelope'],
+        resource: ['envelope'],
+        operation: ['create'],
       },
     },
     typeOptions: {
@@ -72,55 +74,58 @@ export const createEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Block After Refusal',
+    displayName: 'Bloqueio De Assinatura Após Recusa Por Signatário',
     name: 'blockAfterRefusal',
-    description:
-      'Whether the envelope should be blocked after the signer refuses to sign',
     type: 'boolean',
     default: false,
+    // eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+    description:
+      'Determina se o processo de assinatura tem que ser pausado ou não após um signatário ter recusado',
     displayOptions: {
       show: {
-        resource: ['api-envelope'],
-        operation: ['create-envelope'],
+        resource: ['envelope'],
+        operation: ['create'],
       },
     },
   },
   {
-    displayName: 'Deadline At',
+    displayName: 'Prazo Final',
     name: 'deadlineAt',
-    description: 'The deadline for the envelope',
     type: 'dateTime',
     default: undefined,
+    description:
+      'Data limite para o envelope e seus documentos (formato RFC 3339)',
     displayOptions: {
       show: {
-        resource: ['api-envelope'],
-        operation: ['create-envelope'],
+        resource: ['envelope'],
+        operation: ['create'],
       },
     },
   },
   {
-    displayName: 'Default Subject',
+    displayName: 'Assunto Padrão',
     name: 'defaultSubject',
-    description: 'The default subject of notification to be sent',
     type: 'string',
     default: undefined,
+    description:
+      'Define o assunto do e-mail que será enviado aos signatários na solicitação de assinatura',
     displayOptions: {
       show: {
-        resource: ['api-envelope'],
-        operation: ['create-envelope'],
+        resource: ['envelope'],
+        operation: ['create'],
       },
     },
   },
   {
-    displayName: 'Default Message',
+    displayName: 'Mensagem Padrão',
     name: 'defaultMessage',
-    description: 'The default message of notification to be sent',
     type: 'string',
     default: undefined,
+    description: 'Define a mensagem padrão que será enviada aos signatários',
     displayOptions: {
       show: {
-        resource: ['api-envelope'],
-        operation: ['create-envelope'],
+        resource: ['envelope'],
+        operation: ['create'],
       },
     },
   },

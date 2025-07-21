@@ -7,10 +7,11 @@ export const getDocumentsFields: INodeProperties[] = [
     type: 'string',
     required: true,
     default: '',
+    description: 'ID do envelope ao qual será adicionado o signatário',
     displayOptions: {
       show: {
-        resource: ['api-documentos'],
-        operation: ['get-documents'],
+        resource: ['document'],
+        operation: ['getAll'],
       },
     },
   },
