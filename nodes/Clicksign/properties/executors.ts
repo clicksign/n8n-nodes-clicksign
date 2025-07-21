@@ -1,8 +1,8 @@
 import { IExecuteFunctions } from 'n8n-workflow';
 
 import { createSigner } from './signer/createSigner.execute';
-import { getAllDocuments } from './documents/getDocuments.execute';
-import { createDocumentByTemplate } from './documents/createDocumentByTemplate.execute';
+import { getAllDocuments } from './document/getDocuments.execute';
+import { createDocumentByTemplate } from './document/createDocumentByTemplate.execute';
 import { createEnvelope } from './envelope/createEnvelope.execute';
 import { getAllEnvelopes } from './envelope/getAllEnvelopes.execute';
 

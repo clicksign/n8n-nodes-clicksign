@@ -1,7 +1,7 @@
 import { Clicksign } from './Clicksign.node';
 import { envelopeOperations as envelopeOp } from './properties/envelope/operations';
 import { createEnvelopeFields } from './properties/envelope/createEnvelope.fields';
-import { getDocumentsFields } from './properties/documents/getDocuments.fields';
+import { getDocumentsFields } from './properties/document/getDocuments.fields';
 
 const envelopeFields = [...createEnvelopeFields, ...getDocumentsFields];
 const envelopeOperations = [envelopeOp];

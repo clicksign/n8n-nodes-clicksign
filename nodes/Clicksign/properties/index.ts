@@ -2,7 +2,7 @@ import { resourceOptions } from './resources';
 
 import { envelope } from './envelope';
 import { signer } from './signer';
-import { documents } from './documents';
+import { documents } from './document';
 
 export const clicksignProperties = [
   resourceOptions,
