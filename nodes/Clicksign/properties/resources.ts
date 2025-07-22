@@ -7,20 +7,24 @@ export const resourceOptions: INodeProperties = {
   noDataExpression: true,
   options: [
     {
-      name: 'Envelope',
-      value: 'envelope',
-    },
-    {
-      name: 'Signatário',
-      value: 'signer',
-    },
-    {
       name: 'Documento',
       value: 'document',
     },
     {
+      name: 'Envelope',
+      value: 'envelope',
+    },
+    {
+      name: 'Notificação',
+      value: 'notification',
+    },
+    {
       name: 'Requisito',
       value: 'requirement',
+    },
+    {
+      name: 'Signatário',
+      value: 'signer',
     },
   ],
   default: 'envelope',

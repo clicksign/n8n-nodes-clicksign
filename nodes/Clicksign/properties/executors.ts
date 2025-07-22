@@ -12,6 +12,8 @@ import { createSigner } from './signer/create.execute';
 import { addAuthRequirement } from './requirement/addAuth.execute';
 import { addQualificationRequirement } from './requirement/addQualification.execute';
 
+import { notifyAll } from './notification/notifyAll.execute';
+
 type ResourceOperationFunctions = {
   [resource: string]: {
     [operation: string]: (ef: IExecuteFunctions) => Promise<any>;
@@ -34,5 +36,8 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
   requirement: {
     addAuth: addAuthRequirement,
     addQualification: addQualificationRequirement,
+  },
+  notification: {
+    notifyAll,
   },
 };

@@ -4,6 +4,7 @@ import { envelope } from './envelope';
 import { document } from './document';
 import { signer } from './signer';
 import { requirement } from './requirement';
+import { notification } from './notification';
 
 export const clicksignProperties = [
   resourceOptions,
@@ -11,4 +12,5 @@ export const clicksignProperties = [
   ...document,
   ...signer,
   ...requirement,
+  ...notification,
 ];

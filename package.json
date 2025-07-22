@@ -22,9 +22,9 @@
   "scripts": {
     "build": "npx rimraf dist && tsc && gulp build:icons",
     "dev": "tsc --watch",
-    "format": "prettier *.{ts,js,json} --write",
-    "lint": "eslint *.{ts,js,json}",
-    "lint:fix": "eslint *.{ts,js,json} --fix",
+    "format": "prettier --write",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "prepublishOnly": "npm run build && npm run lint -c eslint.prepublish.config.js nodes credentials package.json",
     "test": "jest",
     "test:watch": "jest --watch",
