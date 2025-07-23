@@ -13,11 +13,15 @@ function formatDocumentation(doc: string): string {
   return doc;
 }
 
+function formatPhoneNumber(phone: string): string {
+  return phone.replace(/\D/g, '');
+}
+
 export async function createSigner(ef: IExecuteFunctions) {
   const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');
   const name = getNodeParameterTyped<string>(ef, 'name');
   const email = getNodeParameterTyped<string>(ef, 'email');
-  const phoneNumber = getNodeParameterTyped<string>(ef, 'phoneNumber');
+  const phoneNumberRaw = getNodeParameterTyped<string>(ef, 'phoneNumber');
   const hasDocumentation = getNodeParameterTyped<boolean>(
     ef,
     'hasDocumentation',
@@ -35,6 +39,7 @@ export async function createSigner(ef: IExecuteFunctions) {
 
   let cpf = null;
   let birthday = null;
+  const phoneNumber = phoneNumberRaw ? formatPhoneNumber(phoneNumberRaw) : null;
 
   if (hasDocumentation) {
     const documentationRaw = getNodeParameterTyped<string>(ef, 'documentation');
