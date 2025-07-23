@@ -4,25 +4,16 @@ import {
   NodeOperationError,
 } from 'n8n-workflow';
 
-export type SuccessResponse = {
-  json: {
-    success: true;
-    data: Record<string, unknown>;
-  };
-};
+export type SuccessResponse = Record<string, unknown>;
 
 export type ErrorData = {
-  success: false;
-  error: {
-    message: string;
-    details: string;
-    code: string;
-    timestamp: string;
-  };
+  message: string;
+  details: string;
+  code: string;
+  timestamp: string;
 };
 
 export type ErrorResponse = {
-  json: ErrorData;
   error: ErrorData;
 };
 
@@ -50,32 +41,23 @@ export async function clicksignRequest(
   try {
     const response = await executeFunctions.helpers.request(requestOptions);
 
-    return {
-      json: {
-        success: true,
-        data: response,
-      },
-    };
+    return response;
   } catch (error) {
     const errorData: ErrorData = {
-      success: false,
-      error: {
-        message: error.message,
-        details: errorMessage,
-        code: error.code || 'UNKNOWN_ERROR',
-        timestamp: new Date().toISOString(),
-      },
+      message: error.message,
+      details: errorMessage,
+      code: error.code || 'UNKNOWN_ERROR',
+      timestamp: new Date().toISOString(),
     };
 
     if (!executeFunctions.continueOnFail()) {
       throw new NodeOperationError(executeFunctions.getNode(), error.message, {
-        message: errorData.error.message,
-        description: errorData.error.details,
+        message: errorData.message,
+        description: errorData.details,
       });
     }
 
     return {
-      json: errorData,
       error: errorData,
     };
   }

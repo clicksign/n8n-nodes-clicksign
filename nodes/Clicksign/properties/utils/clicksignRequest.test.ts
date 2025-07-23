@@ -3,19 +3,12 @@ import {
   clicksignRequest,
   ClicksignRequestResponse,
   ErrorResponse,
-  SuccessResponse,
 } from './clicksignRequest';
 
 function isErrorResponse(
   response: ClicksignRequestResponse,
 ): response is ErrorResponse {
-  return response.json.success === false;
-}
-
-function isSuccessResponse(
-  response: ClicksignRequestResponse,
-): response is SuccessResponse {
-  return response.json.success === true;
+  return (response as ErrorResponse).error !== undefined;
 }
 
 describe('clicksignRequest', () => {
@@ -77,9 +70,8 @@ describe('clicksignRequest', () => {
       },
     });
 
-    if (isSuccessResponse(result)) {
-      expect(result.json.success).toBe(true);
-      expect(result.json.data).toEqual(mockApiResponse);
+    if (!isErrorResponse(result)) {
+      expect(result).toEqual(mockApiResponse);
     } else {
       fail('Expected a success response, but received an error response.');
     }
@@ -105,17 +97,13 @@ describe('clicksignRequest', () => {
     expect(isErrorResponse(result)).toBe(true);
 
     const expectedErrorData = {
-      success: false,
-      error: {
-        message: 'Something went wrong',
-        details: 'Unexpected error occurred',
-        code: 'UNKNOWN_ERROR',
-        timestamp: expect.any(String),
-      },
+      message: 'Something went wrong',
+      details: 'Unexpected error occurred',
+      code: 'UNKNOWN_ERROR',
+      timestamp: expect.any(String),
     };
 
     if (isErrorResponse(result)) {
-      expect(result.json).toEqual(expectedErrorData);
       expect(result.error).toEqual(expectedErrorData);
     } else {
       fail('Expected an error response, but received a success response.');

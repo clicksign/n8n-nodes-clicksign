@@ -5,8 +5,8 @@ import type {
   INodeTypeDescription,
 } from 'n8n-workflow';
 import { NodeApiError, NodeConnectionType } from 'n8n-workflow';
-import { clicksignProperties } from './properties';
 
+import { clicksignProperties } from './properties';
 import { getNodeParameterTyped } from './properties/utils/getNodeParameterTyped';
 import { resourceOperationsFunctions } from './properties/executors';
 
@@ -45,7 +45,6 @@ export class Clicksign implements INodeType {
   async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
     const resource = getNodeParameterTyped<string>(this, 'resource');
     const operation = getNodeParameterTyped<string>(this, 'operation');
-
     const fn = resourceOperationsFunctions[resource][operation];
 
     if (!fn) {
