@@ -3,7 +3,7 @@ import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
 import { clicksignRequest } from '../utils/clicksignRequest';
 import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
 
-export async function notifyAll(ef: IExecuteFunctions) {
+export async function notifyEnvelope(ef: IExecuteFunctions) {
   const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');
   const message = getNodeParameterTyped<string>(ef, 'message');
 

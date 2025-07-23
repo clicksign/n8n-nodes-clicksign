@@ -7,15 +7,13 @@ export const notificationOperations: INodeProperties = {
   noDataExpression: true,
   options: [
     {
-      name: 'Notificar Todos',
-      value: 'notifyAll',
-      // eslint-disable-next-line n8n-nodes-base/node-param-operation-option-action-miscased
-      action: 'Notificar signatários',
-      description:
-        'Notifica os signatários do envelope com uma mensagem personalizada',
+      name: 'Notificar Envelope',
+      value: 'notifyEnvelope',
+      action: 'Notificar envelope',
+      description: 'Notifica os signatários do envelope',
     },
   ],
-  default: 'notifyAll',
+  default: 'notifyEnvelope',
   displayOptions: {
     show: {
       resource: ['notification'],

@@ -1,6 +1,6 @@
 import { INodeProperties } from 'n8n-workflow';
 
-export const notifyAllFields: INodeProperties[] = [
+export const notifyEnvelopeFields: INodeProperties[] = [
   {
     displayName: 'Envelope ID',
     name: 'envelopeId',
@@ -11,7 +11,7 @@ export const notifyAllFields: INodeProperties[] = [
     displayOptions: {
       show: {
         resource: ['notification'],
-        operation: ['notifyAll'],
+        operation: ['notifyEnvelope'],
       },
     },
   },
@@ -25,7 +25,7 @@ export const notifyAllFields: INodeProperties[] = [
     displayOptions: {
       show: {
         resource: ['notification'],
-        operation: ['notifyAll'],
+        operation: ['notifyEnvelope'],
       },
     },
   },

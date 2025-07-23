@@ -12,7 +12,7 @@ import { createSigner } from './signer/create.execute';
 import { addAuthRequirement } from './requirement/addAuth.execute';
 import { addQualificationRequirement } from './requirement/addQualification.execute';
 
-import { notifyAll } from './notification/notifyAll.execute';
+import { notifyEnvelope } from './notification/notifyEnvelope.execute';
 
 type ResourceOperationFunctions = {
   [resource: string]: {
@@ -38,6 +38,6 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
     addQualification: addQualificationRequirement,
   },
   notification: {
-    notifyAll,
+    notifyEnvelope,
   },
 };

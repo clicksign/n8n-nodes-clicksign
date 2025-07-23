@@ -4,11 +4,35 @@ import {
   NodeOperationError,
 } from 'n8n-workflow';
 
+export type SuccessResponse = {
+  json: {
+    success: true;
+    data: Record<string, unknown>;
+  };
+};
+
+export type ErrorData = {
+  success: false;
+  error: {
+    message: string;
+    details: string;
+    code: string;
+    timestamp: string;
+  };
+};
+
+export type ErrorResponse = {
+  json: ErrorData;
+  error: ErrorData;
+};
+
+export type ClicksignRequestResponse = SuccessResponse | ErrorResponse;
+
 export async function clicksignRequest(
   executeFunctions: IExecuteFunctions,
   options: IRequestOptions,
   errorMessage: string = 'Unexpected error occurred',
-) {
+): Promise<ClicksignRequestResponse> {
   const credentials = await executeFunctions.getCredentials('clicksignApi');
   const environment = credentials.clicksignEnvironment;
   const accessToken = credentials.clicksignAccessToken;
@@ -33,7 +57,7 @@ export async function clicksignRequest(
       },
     };
   } catch (error) {
-    const errorData = {
+    const errorData: ErrorData = {
       success: false,
       error: {
         message: error.message,
