@@ -3,7 +3,7 @@ import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
 jest.mock('../utils/clicksignRequest');
 jest.mock('../utils/getNodeParameterTyped');
 
-import { createEnvelope } from './create.execute';
+import { createEnvelope, formatLocalISO } from './create.execute';
 import { clicksignRequest } from '../utils/clicksignRequest';
 import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
 
@@ -96,7 +96,7 @@ describe('create: envelope', () => {
 
   it('should correctly format and include deadlineAt when provided', async () => {
     const mockDate = '2025-07-23T10:00:00Z';
-    const expectedIsoDate = new Date(mockDate).toISOString();
+    const expectedIsoDate = formatLocalISO(new Date(mockDate));
 
     (getNodeParameterTyped as jest.Mock).mockImplementation(
       (ef: IExecuteFunctions, name: string) => {

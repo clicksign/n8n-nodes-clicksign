@@ -3,6 +3,17 @@ import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
 import { clicksignRequest } from '../utils/clicksignRequest';
 import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
 
+export function formatLocalISO(date: Date) {
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const day = date.getDate().toString().padStart(2, '0');
+  const hours = date.getHours().toString().padStart(2, '0');
+  const mins = date.getMinutes().toString().padStart(2, '0');
+  const secs = date.getSeconds().toString().padStart(2, '0');
+
+  return `${year}-${month}-${day}T${hours}:${mins}:${secs}`;
+}
+
 export async function createEnvelope(ef: IExecuteFunctions) {
   const name = getNodeParameterTyped<string>(ef, 'envelopeName');
   const locale = getNodeParameterTyped<string>(ef, 'locale');
@@ -17,7 +28,7 @@ export async function createEnvelope(ef: IExecuteFunctions) {
   const defaultMessage = getNodeParameterTyped<string>(ef, 'defaultMessage');
 
   const deadlineAt = deadlineAtRaw
-    ? new Date(deadlineAtRaw).toISOString()
+    ? formatLocalISO(new Date(deadlineAtRaw))
     : undefined;
 
   const body = {
