@@ -93,10 +93,11 @@ export const createSignerFields: INodeProperties[] = [
   {
     displayName: 'Data De Nascimento',
     name: 'birthday',
-    type: 'dateTime',
-    default: null,
-    placeholder: '1990-10-10',
-    description: 'Data de nascimento do signatário',
+    type: 'string',
+    default: '',
+    placeholder: '10/10/1990',
+    description:
+      'Data de nascimento do signatário (ex: 10/10/1990, 1990-10-10)',
     displayOptions: {
       show: {
         resource: ['signer'],

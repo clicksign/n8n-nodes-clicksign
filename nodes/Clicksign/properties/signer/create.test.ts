@@ -234,6 +234,62 @@ describe('create: signer', () => {
     );
   });
 
+  it('should correctly build request body with a formatted birthday', async () => {
+    mockImplementation(getNodeParameterTyped, {
+      name: 'Fulano De Tal',
+      email: 'fulano@example.com',
+      phoneNumber: '(84)-9-9999-8888',
+      hasDocumentation: true,
+      documentation: '12345678901',
+      birthday: '10/10/1990',
+      group: 3,
+      refusable: false,
+      locationRequired: false,
+      communicateEvents: { signature_request: 'email' },
+    });
+
+    await createSigner(mockExecuteFunctions);
+
+    expect(getNodeParameterTyped).toHaveBeenCalledWith(
+      mockExecuteFunctions,
+      'documentation',
+    );
+    expect(getNodeParameterTyped).toHaveBeenCalledWith(
+      mockExecuteFunctions,
+      'birthday',
+    );
+    expect(clicksignRequest).toHaveBeenCalledTimes(1);
+
+    const expectedBody = {
+      data: {
+        type: 'signers',
+        attributes: {
+          name: 'Fulano De Tal',
+          email: 'fulano@example.com',
+          phone_number: '84999998888',
+          has_documentation: true,
+          documentation: '123.456.789-01',
+          birthday: '1990-10-10',
+          group: 3,
+          refusable: false,
+          location_required_enabled: false,
+          communicate_events: { signature_request: 'email' },
+        },
+      },
+    };
+    const expectedOptions: IRequestOptions = {
+      method: 'POST',
+      body: expectedBody,
+      uri: '/envelopes/12345/signers',
+    };
+
+    expect(clicksignRequest).toHaveBeenCalledWith(
+      mockExecuteFunctions,
+      expectedOptions,
+      'Erro ao criar o signatário',
+    );
+  });
+
   it('should handle null/empty documentation or birthday when hasDocumentation is true', async () => {
     mockImplementation(getNodeParameterTyped, {
       name: 'Test Null Docs',

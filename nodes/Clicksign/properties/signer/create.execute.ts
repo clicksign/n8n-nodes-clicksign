@@ -17,6 +17,34 @@ function formatPhoneNumber(phone: string): string {
   return phone.replace(/\D/g, '');
 }
 
+function formatBirthday(birthday: string): string {
+  let date = new Date(birthday);
+
+  if (isNaN(date.getTime())) {
+    const digits = birthday.split('/');
+
+    if (digits.length === 3) {
+      const day = parseInt(digits[0]);
+      const month = parseInt(digits[1]) - 1;
+      const year = parseInt(digits[2]);
+
+      date = new Date(year, month, day);
+
+      if (isNaN(date.getTime())) {
+        return birthday;
+      }
+    } else {
+      return birthday;
+    }
+  }
+
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
+}
+
 export async function createSigner(ef: IExecuteFunctions) {
   const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');
   const name = getNodeParameterTyped<string>(ef, 'name');
@@ -46,7 +74,7 @@ export async function createSigner(ef: IExecuteFunctions) {
     const birthdayRaw = getNodeParameterTyped<string>(ef, 'birthday');
 
     cpf = documentationRaw ? formatDocumentation(documentationRaw) : null;
-    birthday = birthdayRaw ? birthdayRaw.split('T')[0] : null;
+    birthday = birthdayRaw ? formatBirthday(birthdayRaw) : null;
   }
 
   const body = {
