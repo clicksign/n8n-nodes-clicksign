@@ -132,10 +132,6 @@ export function addQualificationFields(): INodeProperties[] {
           value: 'director',
         },
         {
-          name: 'Distratada',
-          value: 'detracted',
-        },
-        {
           name: 'Distratante',
           value: 'distracting',
         },
@@ -286,10 +282,6 @@ export function addQualificationFields(): INodeProperties[] {
         {
           name: 'Testemunha',
           value: 'witness',
-        },
-        {
-          name: 'Validador',
-          value: 'validate',
         },
         {
           name: 'Vistoriador',
