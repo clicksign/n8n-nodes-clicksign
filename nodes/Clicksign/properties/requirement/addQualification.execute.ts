@@ -7,11 +7,12 @@ export async function addQualificationRequirement(ef: IExecuteFunctions) {
   const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');
   const documentId = getNodeParameterTyped<string>(ef, 'documentId');
   const signerId = getNodeParameterTyped<string>(ef, 'signerId');
+  const role = getNodeParameterTyped<string>(ef, 'role');
 
   return await addRequirement(ef, {
     attributes: {
       action: 'agree',
-      role: 'sign',
+      role,
     },
     documentId,
     envelopeId,

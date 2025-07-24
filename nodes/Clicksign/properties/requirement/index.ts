@@ -1,8 +1,9 @@
 import { requirementOperations } from './operations';
-import { addRequirementFields } from './shared/addRequirement.fields';
+import { addAuthFields } from './addAuth.fields';
+import { addQualificationFields } from './addQualification.fields';
 
 export const requirement = [
   requirementOperations,
-  ...addRequirementFields('addAuth'),
-  ...addRequirementFields('addQualification'),
+  ...addAuthFields(),
+  ...addQualificationFields(),
 ];

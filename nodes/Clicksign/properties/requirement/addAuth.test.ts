@@ -24,6 +24,8 @@ describe('addAuth: requirement', () => {
             return 'mockDocumentId';
           case 'signerId':
             return 'mockSignerId';
+          case 'auth':
+            return 'email';
           default:
             return undefined;
         }

@@ -24,6 +24,8 @@ describe('addQualification: requirement', () => {
             return 'mockDocumentId';
           case 'signerId':
             return 'mockSignerId';
+          case 'role':
+            return 'sign';
           default:
             return undefined;
         }

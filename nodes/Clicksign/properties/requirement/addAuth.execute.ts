@@ -7,11 +7,12 @@ export async function addAuthRequirement(ef: IExecuteFunctions) {
   const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');
   const documentId = getNodeParameterTyped<string>(ef, 'documentId');
   const signerId = getNodeParameterTyped<string>(ef, 'signerId');
+  const auth = getNodeParameterTyped<string>(ef, 'auth');
 
   return await addRequirement(ef, {
     attributes: {
       action: 'provide_evidence',
-      auth: 'email',
+      auth,
     },
     documentId,
     envelopeId,
