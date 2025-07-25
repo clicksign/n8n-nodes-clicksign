@@ -6,6 +6,7 @@ import { activateEnvelope } from './envelope/activate.execute';
 
 import { getAllDocuments } from './document/getAll.execute';
 import { createDocumentByTemplate } from './document/createByTemplate.execute';
+import { createDocumentByBase64 } from './document/createByBase64.execute';
 
 import { createSigner } from './signer/create.execute';
 
@@ -29,6 +30,7 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
   document: {
     getAll: getAllDocuments,
     createByTemplate: createDocumentByTemplate,
+    createByBase64: createDocumentByBase64,
   },
   signer: {
     create: createSigner,

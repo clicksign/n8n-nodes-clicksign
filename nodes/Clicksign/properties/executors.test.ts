@@ -48,9 +48,9 @@ describe('executors', () => {
     expect(Object.keys(resourceOperationsFunctions.envelope).length).toBe(3);
 
     expect(Object.keys(resourceOperationsFunctions.document)).toEqual(
-      expect.arrayContaining(['getAll', 'createByTemplate']),
+      expect.arrayContaining(['getAll', 'createByTemplate', 'createByBase64']),
     );
-    expect(Object.keys(resourceOperationsFunctions.document).length).toBe(2);
+    expect(Object.keys(resourceOperationsFunctions.document).length).toBe(3);
 
     expect(Object.keys(resourceOperationsFunctions.signer)).toEqual(
       expect.arrayContaining(['create']),

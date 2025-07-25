@@ -13,6 +13,12 @@ export const documentsOperations: INodeProperties = {
       description: 'Criar documento por modelo',
     },
     {
+      name: 'Criar Por Arquivo Base 64',
+      value: 'createByBase64',
+      action: 'Criar documento por arquivo base 64',
+      description: 'Criar documento por arquivo base 64',
+    },
+    {
       // eslint-disable-next-line n8n-nodes-base/node-param-option-name-wrong-for-get-many
       name: 'Listar',
       value: 'getAll',
