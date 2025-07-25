@@ -21,6 +21,7 @@ export const createSignerFields: INodeProperties[] = [
     type: 'string',
     default: '',
     placeholder: 'Silva Silveira',
+    required: true,
     description:
       'O nome do signatário, usado para identificá-lo (é necessário enviar ao menos duas palavras)',
     displayOptions: {
@@ -36,6 +37,7 @@ export const createSignerFields: INodeProperties[] = [
     type: 'string',
     default: '',
     placeholder: 'silva@email.com',
+    required: true,
     description:
       'O email do signatário (obrigatório quando houver configuração de notificação por email)',
     displayOptions: {
