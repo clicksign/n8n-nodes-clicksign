@@ -9,9 +9,10 @@ describe('executors', () => {
         'signer',
         'requirement',
         'notification',
+        'template',
       ]),
     );
-    expect(Object.keys(resourceOperationsFunctions).length).toEqual(5);
+    expect(Object.keys(resourceOperationsFunctions).length).toEqual(6);
   });
 
   it('should map all expected operations to defined functions', () => {
@@ -34,6 +35,7 @@ describe('executors', () => {
       'signer',
       'requirement',
       'notification',
+      'template',
     ];
     expect(Object.keys(resourceOperationsFunctions)).toEqual(
       expect.arrayContaining(expectedResources),
@@ -68,5 +70,10 @@ describe('executors', () => {
     expect(Object.keys(resourceOperationsFunctions.notification).length).toBe(
       1,
     );
+
+    expect(Object.keys(resourceOperationsFunctions.template)).toEqual(
+      expect.arrayContaining(['create']),
+    );
+    expect(Object.keys(resourceOperationsFunctions.template).length).toBe(1);
   });
 });

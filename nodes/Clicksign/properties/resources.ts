@@ -15,6 +15,10 @@ export const resourceOptions: INodeProperties = {
       value: 'envelope',
     },
     {
+      name: 'Modelo',
+      value: 'template',
+    },
+    {
       name: 'Notificação',
       value: 'notification',
     },

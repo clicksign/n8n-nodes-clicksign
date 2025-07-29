@@ -15,6 +15,8 @@ import { addQualificationRequirement } from './requirement/addQualification.exec
 
 import { notifyEnvelope } from './notification/notifyEnvelope.execute';
 
+import { createTemplate } from './template/create.execute';
+
 type ResourceOperationFunctions = {
   [resource: string]: {
     [operation: string]: (ef: IExecuteFunctions) => Promise<any>;
@@ -41,5 +43,8 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
   },
   notification: {
     notifyEnvelope,
+  },
+  template: {
+    create: createTemplate,
   },
 };

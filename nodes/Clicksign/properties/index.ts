@@ -5,6 +5,7 @@ import { document } from './document';
 import { signer } from './signer';
 import { requirement } from './requirement';
 import { notification } from './notification';
+import { template } from './template';
 
 export const clicksignProperties = [
   resourceOptions,
@@ -13,4 +14,5 @@ export const clicksignProperties = [
   ...signer,
   ...requirement,
   ...notification,
+  ...template,
 ];
