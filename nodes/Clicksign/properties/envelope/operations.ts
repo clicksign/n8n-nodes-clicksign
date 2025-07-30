@@ -25,6 +25,12 @@ export const envelopeOperations: INodeProperties = {
       description: 'Ativar envelope',
       action: 'Ativar envelope',
     },
+    {
+      name: 'Obter Detalhes',
+      value: 'getDetails',
+      description: 'Obter detalhes de um envelope',
+      action: 'Obter detalhes',
+    },
   ],
   default: 'getAll',
   displayOptions: {

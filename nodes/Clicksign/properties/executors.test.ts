@@ -45,9 +45,9 @@ describe('executors', () => {
     );
 
     expect(Object.keys(resourceOperationsFunctions.envelope)).toEqual(
-      expect.arrayContaining(['create', 'getAll', 'activate']),
+      expect.arrayContaining(['create', 'getAll', 'activate', 'getDetails']),
     );
-    expect(Object.keys(resourceOperationsFunctions.envelope).length).toBe(3);
+    expect(Object.keys(resourceOperationsFunctions.envelope).length).toBe(4);
 
     expect(Object.keys(resourceOperationsFunctions.document)).toEqual(
       expect.arrayContaining(['getAll', 'createByTemplate', 'createByBase64']),

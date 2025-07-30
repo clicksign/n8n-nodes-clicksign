@@ -3,6 +3,7 @@ import { IExecuteFunctions } from 'n8n-workflow';
 import { createEnvelope } from './envelope/create.execute';
 import { getAllEnvelopes } from './envelope/getAll.execute';
 import { activateEnvelope } from './envelope/activate.execute';
+import { getEnvelopeDetails } from './envelope/getDetails.execute';
 
 import { getAllDocuments } from './document/getAll.execute';
 import { createDocumentByTemplate } from './document/createByTemplate.execute';
@@ -28,6 +29,7 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
     create: createEnvelope,
     getAll: getAllEnvelopes,
     activate: activateEnvelope,
+    getDetails: getEnvelopeDetails,
   },
   document: {
     getAll: getAllDocuments,
