@@ -7,6 +7,18 @@ export const envelopeOperations: INodeProperties = {
   noDataExpression: true,
   options: [
     {
+      name: 'Ativar',
+      value: 'activate',
+      description: 'Ativar envelope',
+      action: 'Ativar envelope',
+    },
+    {
+      name: 'Atualizar',
+      value: 'update',
+      description: 'Atualizar envelope',
+      action: 'Atualizar envelope',
+    },
+    {
       name: 'Criar',
       value: 'create',
       description: 'Criar envelope',
@@ -18,12 +30,6 @@ export const envelopeOperations: INodeProperties = {
       value: 'getAll',
       description: 'Listar envelopes',
       action: 'Listar envelopes',
-    },
-    {
-      name: 'Ativar',
-      value: 'activate',
-      description: 'Ativar envelope',
-      action: 'Ativar envelope',
     },
     {
       name: 'Obter Detalhes',

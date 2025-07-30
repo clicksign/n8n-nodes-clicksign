@@ -1,6 +1,52 @@
 import { INodeProperties } from 'n8n-workflow';
 
-export const createEnvelopeFields: INodeProperties[] = [
+export const updateEnvelopeFields: INodeProperties[] = [
+  {
+    displayName: 'Envelope ID',
+    name: 'envelopeId',
+    type: 'string',
+    required: true,
+    default: '',
+    description: 'ID do Envelope que deseja atualizar',
+    displayOptions: {
+      show: {
+        resource: ['envelope'],
+        operation: ['update'],
+      },
+    },
+  },
+  {
+    displayName: 'Status',
+    name: 'status',
+    type: 'options',
+    default: 'draft',
+    description:
+      'O status do envelope deve ser running para ativá-lo e não é possível retornar ao draft',
+    displayOptions: {
+      show: {
+        resource: ['envelope'],
+        operation: ['update'],
+      },
+    },
+    options: [
+      {
+        name: 'Rascunho',
+        value: 'draft',
+      },
+      {
+        name: 'Em Processo',
+        value: 'running',
+      },
+      {
+        name: 'Cancelado',
+        value: 'canceled',
+      },
+      {
+        name: 'Finalizado',
+        value: 'closed',
+      },
+    ],
+  },
   {
     displayName: 'Nome',
     name: 'envelopeName',
@@ -11,7 +57,7 @@ export const createEnvelopeFields: INodeProperties[] = [
     displayOptions: {
       show: {
         resource: ['envelope'],
-        operation: ['create'],
+        operation: ['update'],
       },
     },
   },
@@ -26,7 +72,7 @@ export const createEnvelopeFields: INodeProperties[] = [
     displayOptions: {
       show: {
         resource: ['envelope'],
-        operation: ['create'],
+        operation: ['update'],
       },
     },
     options: [
@@ -51,7 +97,7 @@ export const createEnvelopeFields: INodeProperties[] = [
     displayOptions: {
       show: {
         resource: ['envelope'],
-        operation: ['create'],
+        operation: ['update'],
       },
     },
   },
@@ -66,7 +112,7 @@ export const createEnvelopeFields: INodeProperties[] = [
     displayOptions: {
       show: {
         resource: ['envelope'],
-        operation: ['create'],
+        operation: ['update'],
       },
     },
     typeOptions: {
@@ -84,7 +130,7 @@ export const createEnvelopeFields: INodeProperties[] = [
     displayOptions: {
       show: {
         resource: ['envelope'],
-        operation: ['create'],
+        operation: ['update'],
       },
     },
   },
@@ -98,7 +144,7 @@ export const createEnvelopeFields: INodeProperties[] = [
     displayOptions: {
       show: {
         resource: ['envelope'],
-        operation: ['create'],
+        operation: ['update'],
       },
     },
   },
@@ -112,7 +158,7 @@ export const createEnvelopeFields: INodeProperties[] = [
     displayOptions: {
       show: {
         resource: ['envelope'],
-        operation: ['create'],
+        operation: ['update'],
       },
     },
   },
@@ -125,7 +171,7 @@ export const createEnvelopeFields: INodeProperties[] = [
     displayOptions: {
       show: {
         resource: ['envelope'],
-        operation: ['create'],
+        operation: ['update'],
       },
     },
   },
@@ -138,7 +184,7 @@ export const createEnvelopeFields: INodeProperties[] = [
     displayOptions: {
       show: {
         resource: ['envelope'],
-        operation: ['create'],
+        operation: ['update'],
       },
     },
   },

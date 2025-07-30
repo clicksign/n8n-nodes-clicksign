@@ -4,6 +4,7 @@ import { createEnvelopeFields } from './create.fields';
 import { activateEnvelopeFields } from './activate.fields';
 import { getAllFields } from './getAll.fields';
 import { getDetailsFields } from './getDetails.fields';
+import { updateEnvelopeFields } from './update.fields';
 
 export const envelope = [
   envelopeOperations,
@@ -11,4 +12,5 @@ export const envelope = [
   ...activateEnvelopeFields,
   ...getAllFields,
   ...getDetailsFields,
+  ...updateEnvelopeFields,
 ];

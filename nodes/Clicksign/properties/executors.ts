@@ -4,6 +4,7 @@ import { createEnvelope } from './envelope/create.execute';
 import { getAllEnvelopes } from './envelope/getAll.execute';
 import { activateEnvelope } from './envelope/activate.execute';
 import { getEnvelopeDetails } from './envelope/getDetails.execute';
+import { updateEnvelope } from './envelope/update.execute';
 
 import { getAllDocuments } from './document/getAll.execute';
 import { createDocumentByTemplate } from './document/createByTemplate.execute';
@@ -32,6 +33,7 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
     getAll: getAllEnvelopes,
     activate: activateEnvelope,
     getDetails: getEnvelopeDetails,
+    update: updateEnvelope,
   },
   document: {
     getAll: getAllDocuments,

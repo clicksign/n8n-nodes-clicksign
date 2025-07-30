@@ -14,7 +14,8 @@ export function formatLocalISO(date: Date) {
   return `${year}-${month}-${day}T${hours}:${mins}:${secs}`;
 }
 
-export async function createEnvelope(ef: IExecuteFunctions) {
+export async function updateEnvelope(ef: IExecuteFunctions) {
+  const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');
   const name = getNodeParameterTyped<string>(ef, 'envelopeName');
   const locale = getNodeParameterTyped<string>(ef, 'locale');
   const autoClose = getNodeParameterTyped<boolean>(ef, 'autoClose');
@@ -47,6 +48,7 @@ export async function createEnvelope(ef: IExecuteFunctions) {
   const body = {
     data: {
       type: 'envelopes',
+      id: envelopeId,
       attributes: {
         name,
         locale,
@@ -62,10 +64,10 @@ export async function createEnvelope(ef: IExecuteFunctions) {
   };
 
   const options: IRequestOptions = {
-    method: 'POST',
+    method: 'PATCH',
     body,
-    uri: `/envelopes`,
+    uri: `/envelopes/${envelopeId}`,
   };
 
-  return await clicksignRequest(ef, options, 'Erro ao criar envelope');
+  return await clicksignRequest(ef, options, 'Erro ao atualizar envelope');
 }
