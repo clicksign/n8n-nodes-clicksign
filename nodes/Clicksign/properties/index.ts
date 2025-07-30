@@ -6,6 +6,7 @@ import { signer } from './signer';
 import { requirement } from './requirement';
 import { notification } from './notification';
 import { template } from './template';
+import { folder } from './folder';
 
 export const clicksignProperties = [
   resourceOptions,
@@ -15,4 +16,5 @@ export const clicksignProperties = [
   ...requirement,
   ...notification,
   ...template,
+  ...folder,
 ];

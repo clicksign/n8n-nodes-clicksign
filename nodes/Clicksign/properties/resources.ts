@@ -23,6 +23,10 @@ export const resourceOptions: INodeProperties = {
       value: 'notification',
     },
     {
+      name: 'Pasta',
+      value: 'folder',
+    },
+    {
       name: 'Requisito',
       value: 'requirement',
     },

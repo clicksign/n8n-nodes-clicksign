@@ -18,6 +18,8 @@ import { notifyEnvelope } from './notification/notifyEnvelope.execute';
 
 import { createTemplate } from './template/create.execute';
 
+import { createFolder } from './folder/create.execute';
+
 type ResourceOperationFunctions = {
   [resource: string]: {
     [operation: string]: (ef: IExecuteFunctions) => Promise<any>;
@@ -48,5 +50,8 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
   },
   template: {
     create: createTemplate,
+  },
+  folder: {
+    create: createFolder,
   },
 };
