@@ -16,43 +16,10 @@ export const updateEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Status',
-    name: 'status',
-    type: 'options',
-    default: 'draft',
-    description:
-      'O status do envelope deve ser running para ativá-lo e não é possível retornar ao draft',
-    displayOptions: {
-      show: {
-        resource: ['envelope'],
-        operation: ['update'],
-      },
-    },
-    options: [
-      {
-        name: 'Rascunho',
-        value: 'draft',
-      },
-      {
-        name: 'Em Processo',
-        value: 'running',
-      },
-      {
-        name: 'Cancelado',
-        value: 'canceled',
-      },
-      {
-        name: 'Finalizado',
-        value: 'closed',
-      },
-    ],
-  },
-  {
     displayName: 'Nome',
     name: 'envelopeName',
     type: 'string',
-    required: true,
-    default: 'Meu envelope',
+    default: '',
     description: 'Nome do envelope',
     displayOptions: {
       show: {
@@ -65,7 +32,6 @@ export const updateEnvelopeFields: INodeProperties[] = [
     displayName: 'Idioma',
     name: 'locale',
     type: 'options',
-    required: true,
     default: 'pt-BR',
     description:
       'Idioma utilizado nos e-mails, página de assinatura e log do documento',
@@ -87,7 +53,7 @@ export const updateEnvelopeFields: INodeProperties[] = [
     ],
   },
   {
-    displayName: 'Finalizar Automaticamente Após Assinaturas Finalizadas',
+    displayName: 'Finalizar Automaticamente Após Todos Assinarem',
     name: 'autoClose',
     type: 'boolean',
     default: true,
@@ -105,8 +71,7 @@ export const updateEnvelopeFields: INodeProperties[] = [
     displayName: 'Intervalo De Lembrete',
     name: 'remindInterval',
     type: 'number',
-    required: true,
-    default: 3,
+    default: null,
     description:
       'Determina se o documento terá opção de lembretes automáticos ativada (1,2,3,7,14)',
     displayOptions: {

@@ -2,17 +2,7 @@ import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../utils/clicksignRequest';
 import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
-
-export function formatLocalISO(date: Date) {
-  const year = date.getFullYear();
-  const month = (date.getMonth() + 1).toString().padStart(2, '0');
-  const day = date.getDate().toString().padStart(2, '0');
-  const hours = date.getHours().toString().padStart(2, '0');
-  const mins = date.getMinutes().toString().padStart(2, '0');
-  const secs = date.getSeconds().toString().padStart(2, '0');
-
-  return `${year}-${month}-${day}T${hours}:${mins}:${secs}`;
-}
+import { formatLocalISODate } from './utils/formatLocalISODate';
 
 export async function updateEnvelope(ef: IExecuteFunctions) {
   const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');
@@ -28,6 +18,7 @@ export async function updateEnvelope(ef: IExecuteFunctions) {
   const defaultSubject = getNodeParameterTyped<string>(ef, 'defaultSubject');
   const defaultMessage = getNodeParameterTyped<string>(ef, 'defaultMessage');
   const folderId = getNodeParameterTyped<string>(ef, 'folderId');
+
   const relationshipObj = folderId
     ? {
         relationships: {
@@ -40,24 +31,25 @@ export async function updateEnvelope(ef: IExecuteFunctions) {
         },
       }
     : {};
-
   const deadlineAt = deadlineAtRaw
-    ? formatLocalISO(new Date(deadlineAtRaw))
+    ? formatLocalISODate(new Date(deadlineAtRaw))
     : undefined;
+
+  const undefinedIfFalsy = (value: any) => (value ? value : undefined);
 
   const body = {
     data: {
       type: 'envelopes',
       id: envelopeId,
       attributes: {
-        name,
+        name: undefinedIfFalsy(name),
         locale,
         auto_close: autoClose,
-        remind_interval: remindInterval,
+        remind_interval: undefinedIfFalsy(remindInterval),
         block_after_refusal: blockAfterRefusal,
-        deadline_at: deadlineAt,
-        default_subject: defaultSubject,
-        default_message: defaultMessage,
+        deadline_at: undefinedIfFalsy(deadlineAt),
+        default_subject: undefinedIfFalsy(defaultSubject),
+        default_message: undefinedIfFalsy(defaultMessage),
       },
       ...relationshipObj,
     },

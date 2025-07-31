@@ -41,7 +41,7 @@ export const createEnvelopeFields: INodeProperties[] = [
     ],
   },
   {
-    displayName: 'Finalizar Automaticamente Após Assinaturas Finalizadas',
+    displayName: 'Finalizar Automaticamente Após Todos Assinarem',
     name: 'autoClose',
     type: 'boolean',
     default: true,
