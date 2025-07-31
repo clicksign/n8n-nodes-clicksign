@@ -25,6 +25,12 @@ export const envelopeOperations: INodeProperties = {
       action: 'Criar envelope',
     },
     {
+      name: 'Excluir',
+      value: 'delete',
+      description: 'Excluir envelope',
+      action: 'Excluir envelope',
+    },
+    {
       // eslint-disable-next-line n8n-nodes-base/node-param-option-name-wrong-for-get-many
       name: 'Listar',
       value: 'getAll',
