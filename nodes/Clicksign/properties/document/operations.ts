@@ -25,6 +25,12 @@ export const documentsOperations: INodeProperties = {
       description: 'Criar documento por modelo',
     },
     {
+      name: 'Excluir',
+      value: 'delete',
+      action: 'Excluir documento',
+      description: 'Excluir documento',
+    },
+    {
       // eslint-disable-next-line n8n-nodes-base/node-param-option-name-wrong-for-get-many
       name: 'Listar',
       value: 'getAll',

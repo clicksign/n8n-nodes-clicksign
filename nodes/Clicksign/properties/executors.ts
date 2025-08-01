@@ -12,6 +12,7 @@ import { createDocumentByTemplate } from './document/createByTemplate.execute';
 import { createDocumentByBase64 } from './document/createByBase64.execute';
 import { updateDocument } from './document/update.execute';
 import { getDocumentDetails } from './document/getDetails.execute';
+import { deleteDocument } from './document/delete.execute';
 // Signer
 import { createSigner } from './signer/create.execute';
 // Requirement
@@ -45,6 +46,7 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
     createByBase64: createDocumentByBase64,
     update: updateDocument,
     getDetails: getDocumentDetails,
+    delete: deleteDocument,
   },
   signer: {
     create: createSigner,

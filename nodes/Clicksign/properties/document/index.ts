@@ -5,6 +5,7 @@ import { getDocumentsFields } from './getAll.fields';
 import { createDocumentByBase64 } from './createByBase64.fields';
 import { updateDocumentFields } from './update.fields';
 import { getDocumentDetailsFields } from './getDetails.fields';
+import { deleteDocumentFields } from './delete.fields';
 
 export const document = [
   documentsOperations,
@@ -13,4 +14,5 @@ export const document = [
   ...createDocumentByBase64,
   ...updateDocumentFields,
   ...getDocumentDetailsFields,
+  ...deleteDocumentFields,
 ];
