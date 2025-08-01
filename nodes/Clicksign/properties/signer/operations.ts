@@ -22,6 +22,13 @@ export const signerOperations: INodeProperties = {
       action: 'Listar Signatários',
       description: 'Listar signatários',
     },
+    {
+      name: 'Obter Detalhes',
+      value: 'getDetails',
+      // eslint-disable-next-line n8n-nodes-base/node-param-operation-option-action-miscased
+      action: 'Obter detalhes do signatário',
+      description: 'Obter detalhes de um signatário de um envelope',
+    },
   ],
   displayOptions: {
     show: {
