@@ -12,6 +12,13 @@ export const notificationOperations: INodeProperties = {
       action: 'Notificar envelope',
       description: 'Notifica os signatários do envelope',
     },
+    {
+      name: 'Notificar Signatário',
+      value: 'notifySigner',
+      // eslint-disable-next-line n8n-nodes-base/node-param-operation-option-action-miscased
+      action: 'Notificar signatário',
+      description: 'Notifica um signatário do envelope',
+    },
   ],
   default: 'notifyEnvelope',
   displayOptions: {

@@ -23,6 +23,7 @@ import { addAuthRequirement } from './requirement/addAuth.execute';
 import { addQualificationRequirement } from './requirement/addQualification.execute';
 // Notification
 import { notifyEnvelope } from './notification/notifyEnvelope.execute';
+import { notifySigner } from './notification/notifySigner.execute';
 // Template
 import { createTemplate } from './template/create.execute';
 // Folder
@@ -63,6 +64,7 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
   },
   notification: {
     notifyEnvelope,
+    notifySigner,
   },
   template: {
     create: createTemplate,

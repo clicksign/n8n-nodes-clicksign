@@ -81,10 +81,10 @@ describe('executors', () => {
     expect(Object.keys(resourceOperationsFunctions.requirement).length).toBe(2);
 
     expect(Object.keys(resourceOperationsFunctions.notification)).toEqual(
-      expect.arrayContaining(['notifyEnvelope']),
+      expect.arrayContaining(['notifyEnvelope', 'notifySigner']),
     );
     expect(Object.keys(resourceOperationsFunctions.notification).length).toBe(
-      1,
+      2,
     );
 
     expect(Object.keys(resourceOperationsFunctions.template)).toEqual(
