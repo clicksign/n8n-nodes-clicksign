@@ -17,6 +17,7 @@ import { deleteDocument } from './document/delete.execute';
 import { createSigner } from './signer/create.execute';
 import { getAllSigners } from './signer/getAll.execute';
 import { getSignerDetails } from './signer/getDetails.execute';
+import { deleteSigner } from './signer/delete.execute';
 // Requirement
 import { addAuthRequirement } from './requirement/addAuth.execute';
 import { addQualificationRequirement } from './requirement/addQualification.execute';
@@ -54,6 +55,7 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
     create: createSigner,
     getAll: getAllSigners,
     getDetails: getSignerDetails,
+    delete: deleteSigner,
   },
   requirement: {
     addAuth: addAuthRequirement,
