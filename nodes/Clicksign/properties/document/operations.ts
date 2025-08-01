@@ -19,6 +19,12 @@ export const documentsOperations: INodeProperties = {
       description: 'Criar documento por arquivo base 64',
     },
     {
+      name: 'Atualizar',
+      value: 'update',
+      action: 'Atualizar documento',
+      description: 'Atualizar documento',
+    },
+    {
       // eslint-disable-next-line n8n-nodes-base/node-param-option-name-wrong-for-get-many
       name: 'Listar',
       value: 'getAll',

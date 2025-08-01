@@ -10,6 +10,7 @@ import { deleteEnvelope } from './envelope/delete.execute';
 import { getAllDocuments } from './document/getAll.execute';
 import { createDocumentByTemplate } from './document/createByTemplate.execute';
 import { createDocumentByBase64 } from './document/createByBase64.execute';
+import { updateDocument } from './document/update.execute';
 // Signer
 import { createSigner } from './signer/create.execute';
 // Requirement
@@ -41,6 +42,7 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
     getAll: getAllDocuments,
     createByTemplate: createDocumentByTemplate,
     createByBase64: createDocumentByBase64,
+    update: updateDocument,
   },
   signer: {
     create: createSigner,
