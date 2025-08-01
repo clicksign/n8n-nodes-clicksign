@@ -71,9 +71,9 @@ describe('executors', () => {
     expect(Object.keys(resourceOperationsFunctions.document).length).toBe(6);
 
     expect(Object.keys(resourceOperationsFunctions.signer)).toEqual(
-      expect.arrayContaining(['create']),
+      expect.arrayContaining(['create', 'getAll']),
     );
-    expect(Object.keys(resourceOperationsFunctions.signer).length).toBe(1);
+    expect(Object.keys(resourceOperationsFunctions.signer).length).toBe(2);
 
     expect(Object.keys(resourceOperationsFunctions.requirement)).toEqual(
       expect.arrayContaining(['addAuth', 'addQualification']),
