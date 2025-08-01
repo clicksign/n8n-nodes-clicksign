@@ -7,10 +7,10 @@ export const documentsOperations: INodeProperties = {
   noDataExpression: true,
   options: [
     {
-      name: 'Criar Por Modelo',
-      value: 'createByTemplate',
-      action: 'Criar documento por modelo',
-      description: 'Criar documento por modelo',
+      name: 'Atualizar',
+      value: 'update',
+      action: 'Atualizar documento',
+      description: 'Atualizar documento',
     },
     {
       name: 'Criar Por Arquivo Base 64',
@@ -19,10 +19,10 @@ export const documentsOperations: INodeProperties = {
       description: 'Criar documento por arquivo base 64',
     },
     {
-      name: 'Atualizar',
-      value: 'update',
-      action: 'Atualizar documento',
-      description: 'Atualizar documento',
+      name: 'Criar Por Modelo',
+      value: 'createByTemplate',
+      action: 'Criar documento por modelo',
+      description: 'Criar documento por modelo',
     },
     {
       // eslint-disable-next-line n8n-nodes-base/node-param-option-name-wrong-for-get-many
@@ -30,6 +30,12 @@ export const documentsOperations: INodeProperties = {
       value: 'getAll',
       description: 'Listar documentos',
       action: 'Listar documentos',
+    },
+    {
+      name: 'Obter Detalhes',
+      value: 'getDetails',
+      description: 'Obter detalhes de um documento',
+      action: 'Obter detalhes do documento',
     },
   ],
   default: 'getAll',
