@@ -3,6 +3,7 @@ import { addAuthFields } from './addAuth.fields';
 import { addQualificationFields } from './addQualification.fields';
 import { getAllRequirementFields } from './getAll.fields';
 import { addRubricFields } from './addRubric.fields';
+import { getRequirementDetailsFields } from './getDetails.fields';
 
 export const requirement = [
   requirementOperations,
@@ -10,4 +11,5 @@ export const requirement = [
   ...addQualificationFields,
   ...getAllRequirementFields,
   ...addRubricFields,
+  ...getRequirementDetailsFields,
 ];

@@ -81,9 +81,10 @@ describe('executors', () => {
         'addQualification',
         'addRubric',
         'getAll',
+        'getDetails',
       ]),
     );
-    expect(Object.keys(resourceOperationsFunctions.requirement).length).toBe(4);
+    expect(Object.keys(resourceOperationsFunctions.requirement).length).toBe(5);
 
     expect(Object.keys(resourceOperationsFunctions.notification)).toEqual(
       expect.arrayContaining(['notifyEnvelope', 'notifySigner']),

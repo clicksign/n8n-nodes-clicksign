@@ -34,6 +34,12 @@ export const requirementOperations: INodeProperties = {
       action: 'Listar requisitos',
       description: 'Listar requisitos',
     },
+    {
+      name: 'Obter Detalhes',
+      value: 'getDetails',
+      action: 'Obter detalhes do requisito',
+      description: 'Obter detalhes do requisito',
+    },
   ],
   displayOptions: {
     show: {
