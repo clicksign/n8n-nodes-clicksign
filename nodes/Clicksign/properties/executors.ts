@@ -21,6 +21,7 @@ import { deleteSigner } from './signer/delete.execute';
 // Requirement
 import { addAuthRequirement } from './requirement/addAuth.execute';
 import { addQualificationRequirement } from './requirement/addQualification.execute';
+import { getAllRequirements } from './requirement/getAll.execute';
 // Notification
 import { notifyEnvelope } from './notification/notifyEnvelope.execute';
 import { notifySigner } from './notification/notifySigner.execute';
@@ -61,6 +62,7 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
   requirement: {
     addAuth: addAuthRequirement,
     addQualification: addQualificationRequirement,
+    getAll: getAllRequirements,
   },
   notification: {
     notifyEnvelope,
