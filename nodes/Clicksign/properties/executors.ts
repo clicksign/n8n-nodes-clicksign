@@ -24,6 +24,7 @@ import { addQualificationRequirement } from './requirement/addQualification.exec
 import { addRubricRequirement } from './requirement/addRubric.execute';
 import { getAllRequirements } from './requirement/getAll.execute';
 import { getRequirementDetails } from './requirement/getDetails.execute';
+import { deleteRequirement } from './requirement/delete.execute';
 // Notification
 import { notifyEnvelope } from './notification/notifyEnvelope.execute';
 import { notifySigner } from './notification/notifySigner.execute';
@@ -67,6 +68,7 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
     addRubric: addRubricRequirement,
     getAll: getAllRequirements,
     getDetails: getRequirementDetails,
+    delete: deleteRequirement,
   },
   notification: {
     notifyEnvelope,

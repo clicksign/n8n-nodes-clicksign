@@ -82,9 +82,10 @@ describe('executors', () => {
         'addRubric',
         'getAll',
         'getDetails',
+        'delete',
       ]),
     );
-    expect(Object.keys(resourceOperationsFunctions.requirement).length).toBe(5);
+    expect(Object.keys(resourceOperationsFunctions.requirement).length).toBe(6);
 
     expect(Object.keys(resourceOperationsFunctions.notification)).toEqual(
       expect.arrayContaining(['notifyEnvelope', 'notifySigner']),

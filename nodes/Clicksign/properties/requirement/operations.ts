@@ -28,6 +28,12 @@ export const requirementOperations: INodeProperties = {
       description: 'Adicionar requisito de rubrica',
     },
     {
+      name: 'Excluir',
+      value: 'delete',
+      action: 'Excluir requisito',
+      description: 'Excluir requisito',
+    },
+    {
       // eslint-disable-next-line n8n-nodes-base/node-param-option-name-wrong-for-get-many
       name: 'Listar',
       value: 'getAll',
