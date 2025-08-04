@@ -1,6 +1,6 @@
 import { INodeProperties } from 'n8n-workflow';
 
-type RequirementOperation = 'addAuth' | 'addQualification';
+type RequirementOperation = 'addAuth' | 'addQualification' | 'addRubric';
 
 export function addRequirementFields(
   operation: RequirementOperation,

@@ -22,6 +22,12 @@ export const requirementOperations: INodeProperties = {
       description: 'Adicionar requisito de qualificação',
     },
     {
+      name: 'Adicionar Rubrica',
+      value: 'addRubric',
+      action: 'Adicionar requisito de rubrica',
+      description: 'Adicionar requisito de rubrica',
+    },
+    {
       // eslint-disable-next-line n8n-nodes-base/node-param-option-name-wrong-for-get-many
       name: 'Listar',
       value: 'getAll',
