@@ -32,6 +32,7 @@ import { notifySigner } from './notification/notifySigner.execute';
 import { createTemplate } from './template/create.execute';
 // Folder
 import { createFolder } from './folder/create.execute';
+import { getAllFolders } from './folder/getAll.execute';
 
 type ResourceOperationFunctions = {
   [resource: string]: {
@@ -79,5 +80,6 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
   },
   folder: {
     create: createFolder,
+    getAll: getAllFolders,
   },
 };

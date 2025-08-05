@@ -100,8 +100,8 @@ describe('executors', () => {
     expect(Object.keys(resourceOperationsFunctions.template).length).toBe(1);
 
     expect(Object.keys(resourceOperationsFunctions.folder)).toEqual(
-      expect.arrayContaining(['create']),
+      expect.arrayContaining(['create', 'getAll']),
     );
-    expect(Object.keys(resourceOperationsFunctions.folder).length).toBe(1);
+    expect(Object.keys(resourceOperationsFunctions.folder).length).toBe(2);
   });
 });
