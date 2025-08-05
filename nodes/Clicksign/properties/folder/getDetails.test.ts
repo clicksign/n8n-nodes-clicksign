@@ -3,11 +3,11 @@ import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
 jest.mock('../utils/clicksignRequest');
 jest.mock('../utils/getNodeParameterTyped');
 
-import { getAllFolders } from './getAll.execute';
+import { getFolderDetails } from './getDetails.execute';
 import { clicksignRequest } from '../utils/clicksignRequest';
 import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
 
-describe('getAll: folder', () => {
+describe('getDetails: folder', () => {
   let mockExecuteFunctions: IExecuteFunctions;
 
   beforeEach(() => {
@@ -17,85 +17,56 @@ describe('getAll: folder', () => {
 
     (getNodeParameterTyped as jest.Mock).mockImplementation(
       (ef: IExecuteFunctions, name: string) => {
-        if (name === 'inRoot') return true;
+        if (name === 'folderId') return 'mockFolderId123';
         return undefined;
       },
     );
 
     (clicksignRequest as jest.Mock).mockResolvedValue({
       success: true,
-      data: [],
+      data: { id: 'mockFolderId123', name: 'Detailed Folder' },
     });
   });
 
-  it('should get inRoot=true and call clicksignRequest with correct GET options', async () => {
-    await getAllFolders(mockExecuteFunctions);
+  it('should get folderId and call clicksignRequest with correct GET options', async () => {
+    await getFolderDetails(mockExecuteFunctions);
 
     expect(getNodeParameterTyped).toHaveBeenCalledTimes(1);
     expect(getNodeParameterTyped).toHaveBeenCalledWith(
       mockExecuteFunctions,
-      'inRoot',
+      'folderId',
     );
     expect(clicksignRequest).toHaveBeenCalledTimes(1);
 
     const expectedOptions: IRequestOptions = {
       method: 'GET',
-      uri: '/folders?filter[in_root]=true',
+      uri: '/folders/mockFolderId123',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao listar pastas',
-    );
-  });
-
-  it('should get inRoot=false and call clicksignRequest with correct GET options', async () => {
-    (getNodeParameterTyped as jest.Mock).mockImplementation(
-      (ef: IExecuteFunctions, name: string) => {
-        if (name === 'inRoot') return false;
-        return undefined;
-      },
-    );
-
-    await getAllFolders(mockExecuteFunctions);
-
-    expect(getNodeParameterTyped).toHaveBeenCalledTimes(1);
-    expect(getNodeParameterTyped).toHaveBeenCalledWith(
-      mockExecuteFunctions,
-      'inRoot',
-    );
-    expect(clicksignRequest).toHaveBeenCalledTimes(1);
-
-    const expectedOptions: IRequestOptions = {
-      method: 'GET',
-      uri: '/folders?filter[in_root]=false',
-    };
-
-    expect(clicksignRequest).toHaveBeenCalledWith(
-      mockExecuteFunctions,
-      expectedOptions,
-      'Erro ao listar pastas',
+      'Erro ao obter detalhes da pasta',
     );
   });
 
   it('should return the result from clicksignRequest', async () => {
     const mockApiResponse = {
       status: 'success',
-      data: [{ id: 'fld1' }, { id: 'fld2' }],
+      data: { id: 'fldDetails1', name: 'My Details' },
     };
     (clicksignRequest as jest.Mock).mockResolvedValue(mockApiResponse);
 
-    const result = await getAllFolders(mockExecuteFunctions);
+    const result = await getFolderDetails(mockExecuteFunctions);
 
     expect(result).toEqual(mockApiResponse);
   });
 
   it('should propagate errors from clicksignRequest', async () => {
-    const mockError = new Error('API error during fetching folders');
+    const mockError = new Error('API error during fetching folder details');
     (clicksignRequest as jest.Mock).mockRejectedValue(mockError);
 
-    await expect(getAllFolders(mockExecuteFunctions)).rejects.toThrow(
+    await expect(getFolderDetails(mockExecuteFunctions)).rejects.toThrow(
       mockError,
     );
   });

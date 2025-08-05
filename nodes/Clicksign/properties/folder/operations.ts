@@ -20,6 +20,12 @@ export const folderOperations: INodeProperties = {
       action: 'Listar pastas',
       description: 'Listar pastas',
     },
+    {
+      name: 'Obter Detalhes',
+      value: 'getDetails',
+      action: 'Obter detalhes da pasta',
+      description: 'Obter detalhes da pasta',
+    },
   ],
   displayOptions: {
     show: {

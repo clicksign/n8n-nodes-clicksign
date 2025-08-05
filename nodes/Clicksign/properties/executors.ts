@@ -33,6 +33,7 @@ import { createTemplate } from './template/create.execute';
 // Folder
 import { createFolder } from './folder/create.execute';
 import { getAllFolders } from './folder/getAll.execute';
+import { getFolderDetails } from './folder/getDetails.execute';
 
 type ResourceOperationFunctions = {
   [resource: string]: {
@@ -81,5 +82,6 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
   folder: {
     create: createFolder,
     getAll: getAllFolders,
+    getDetails: getFolderDetails,
   },
 };
