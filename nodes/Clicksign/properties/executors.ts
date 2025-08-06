@@ -30,6 +30,7 @@ import { notifyEnvelope } from './notification/notifyEnvelope.execute';
 import { notifySigner } from './notification/notifySigner.execute';
 // Template
 import { createTemplate } from './template/create.execute';
+import { getAllTemplates } from './template/getAll.execute';
 // Folder
 import { createFolder } from './folder/create.execute';
 import { getAllFolders } from './folder/getAll.execute';
@@ -78,6 +79,7 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
   },
   template: {
     create: createTemplate,
+    getAll: getAllTemplates,
   },
   folder: {
     create: createFolder,
