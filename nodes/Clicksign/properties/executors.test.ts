@@ -95,9 +95,9 @@ describe('executors', () => {
     );
 
     expect(Object.keys(resourceOperationsFunctions.template)).toEqual(
-      expect.arrayContaining(['create', 'getAll']),
+      expect.arrayContaining(['create', 'getAll', 'update']),
     );
-    expect(Object.keys(resourceOperationsFunctions.template).length).toBe(2);
+    expect(Object.keys(resourceOperationsFunctions.template).length).toBe(3);
 
     expect(Object.keys(resourceOperationsFunctions.folder)).toEqual(
       expect.arrayContaining(['create', 'getAll', 'getDetails']),

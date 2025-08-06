@@ -20,6 +20,12 @@ export const templateOperations: INodeProperties = {
       action: 'Listar modelos',
       description: 'Listar modelos',
     },
+    {
+      name: 'Atualizar',
+      value: 'update',
+      action: 'Atualizar modelo',
+      description: 'Atualizar modelo',
+    },
   ],
   displayOptions: {
     show: {

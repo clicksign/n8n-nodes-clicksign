@@ -1,33 +1,31 @@
 import { INodeProperties } from 'n8n-workflow';
 import { templateColors } from './shared/colors.options';
 
-export const createTemplateFields: INodeProperties[] = [
+export const updateTemplateFields: INodeProperties[] = [
+  {
+    displayName: 'Modelo ID',
+    name: 'templateId',
+    type: 'string',
+    required: true,
+    default: '',
+    description: 'ID do Modelo a ser atualizado',
+    displayOptions: {
+      show: {
+        resource: ['template'],
+        operation: ['update'],
+      },
+    },
+  },
   {
     displayName: 'Nome',
     name: 'name',
     type: 'string',
-    required: true,
     default: '',
     description: 'Define o nome do Modelo para facilitar consultas futuras',
     displayOptions: {
       show: {
         resource: ['template'],
-        operation: ['create'],
-      },
-    },
-  },
-  {
-    displayName: 'Arquivo Em Base 64',
-    name: 'base64',
-    type: 'string',
-    required: true,
-    default: '',
-    description:
-      'Conteúdo do arquivo em formato base 64 que está sendo enviado para a Clicksign',
-    displayOptions: {
-      show: {
-        resource: ['template'],
-        operation: ['create'],
+        operation: ['update'],
       },
     },
   },
@@ -41,7 +39,7 @@ export const createTemplateFields: INodeProperties[] = [
     displayOptions: {
       show: {
         resource: ['template'],
-        operation: ['create'],
+        operation: ['update'],
       },
     },
   },
