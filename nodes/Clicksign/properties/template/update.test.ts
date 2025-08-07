@@ -7,7 +7,7 @@ import { updateTemplate } from './update.execute';
 import { clicksignRequest } from '../utils/clicksignRequest';
 import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
 
-describe('updateTemplate', () => {
+describe('update: template', () => {
   let mockExecuteFunctions: IExecuteFunctions;
 
   beforeEach(() => {

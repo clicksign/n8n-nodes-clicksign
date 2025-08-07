@@ -26,6 +26,12 @@ export const templateOperations: INodeProperties = {
       action: 'Atualizar modelo',
       description: 'Atualizar modelo',
     },
+    {
+      name: 'Obter Detalhes',
+      value: 'getDetails',
+      action: 'Obter detalhes do modelo',
+      description: 'Obter detalhes do modelo',
+    },
   ],
   displayOptions: {
     show: {

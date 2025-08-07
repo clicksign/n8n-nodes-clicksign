@@ -32,6 +32,7 @@ import { notifySigner } from './notification/notifySigner.execute';
 import { createTemplate } from './template/create.execute';
 import { getAllTemplates } from './template/getAll.execute';
 import { updateTemplate } from './template/update.execute';
+import { getTemplateDetails } from './template/getDetails.execute';
 // Folder
 import { createFolder } from './folder/create.execute';
 import { getAllFolders } from './folder/getAll.execute';
@@ -82,6 +83,7 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
     create: createTemplate,
     getAll: getAllTemplates,
     update: updateTemplate,
+    getDetails: getTemplateDetails,
   },
   folder: {
     create: createFolder,
