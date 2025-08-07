@@ -8,10 +8,22 @@ export const templateOperations: INodeProperties = {
   noDataExpression: true,
   options: [
     {
+      name: 'Atualizar',
+      value: 'update',
+      action: 'Atualizar modelo',
+      description: 'Atualizar modelo',
+    },
+    {
       name: 'Criar',
       value: 'create',
       action: 'Criar modelo',
       description: 'Criar modelo',
+    },
+    {
+      name: 'Excluir',
+      value: 'delete',
+      action: 'Excluir modelo',
+      description: 'Excluir modelo',
     },
     {
       // eslint-disable-next-line n8n-nodes-base/node-param-option-name-wrong-for-get-many
@@ -19,12 +31,6 @@ export const templateOperations: INodeProperties = {
       value: 'getAll',
       action: 'Listar modelos',
       description: 'Listar modelos',
-    },
-    {
-      name: 'Atualizar',
-      value: 'update',
-      action: 'Atualizar modelo',
-      description: 'Atualizar modelo',
     },
     {
       name: 'Obter Detalhes',
