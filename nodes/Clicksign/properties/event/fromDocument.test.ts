@@ -3,7 +3,7 @@ import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
 jest.mock('../utils/clicksignRequest');
 jest.mock('../utils/getNodeParameterTyped');
 
-import { eventsFromEnvelope } from './fromEnvelope.execute';
+import { eventsFromDocument } from './fromDocument.execute';
 import { clicksignRequest } from '../utils/clicksignRequest';
 import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
 
@@ -20,6 +20,8 @@ describe('fromEnvelope: event', () => {
         switch (name) {
           case 'envelopeId':
             return 'mockEnvelopeId123';
+          case 'documentId':
+            return 'mockDocumentId123';
           default:
             return undefined;
         }
@@ -32,23 +34,27 @@ describe('fromEnvelope: event', () => {
   });
 
   it('should get parameters and call clicksignRequest with correct GET request', async () => {
-    await eventsFromEnvelope(mockExecuteFunctions);
+    await eventsFromDocument(mockExecuteFunctions);
 
     expect(getNodeParameterTyped).toHaveBeenCalledWith(
       mockExecuteFunctions,
       'envelopeId',
     );
+    expect(getNodeParameterTyped).toHaveBeenCalledWith(
+      mockExecuteFunctions,
+      'documentId',
+    );
     expect(clicksignRequest).toHaveBeenCalledTimes(1);
 
     const expectedOptions: IRequestOptions = {
       method: 'GET',
-      uri: '/envelopes/mockEnvelopeId123/events',
+      uri: '/envelopes/mockEnvelopeId123/documents/mockDocumentId123/events',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao obter eventos do envelope',
+      'Erro ao obter eventos do documento',
     );
   });
 
@@ -57,7 +63,7 @@ describe('fromEnvelope: event', () => {
 
     (clicksignRequest as jest.Mock).mockResolvedValue(mockApiResponse);
 
-    const result = await eventsFromEnvelope(mockExecuteFunctions);
+    const result = await eventsFromDocument(mockExecuteFunctions);
 
     expect(result).toEqual(mockApiResponse);
   });
@@ -67,7 +73,7 @@ describe('fromEnvelope: event', () => {
 
     (clicksignRequest as jest.Mock).mockRejectedValue(mockError);
 
-    await expect(eventsFromEnvelope(mockExecuteFunctions)).rejects.toThrow(
+    await expect(eventsFromDocument(mockExecuteFunctions)).rejects.toThrow(
       mockError,
     );
   });

@@ -113,8 +113,8 @@ describe('executors', () => {
     expect(Object.keys(resourceOperationsFunctions.folder).length).toBe(3);
 
     expect(Object.keys(resourceOperationsFunctions.event)).toEqual(
-      expect.arrayContaining(['fromEnvelope']),
+      expect.arrayContaining(['fromEnvelope', 'fromDocument']),
     );
-    expect(Object.keys(resourceOperationsFunctions.event).length).toBe(1);
+    expect(Object.keys(resourceOperationsFunctions.event).length).toBe(2);
   });
 });

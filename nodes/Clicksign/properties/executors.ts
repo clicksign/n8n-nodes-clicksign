@@ -40,6 +40,7 @@ import { getAllFolders } from './folder/getAll.execute';
 import { getFolderDetails } from './folder/getDetails.execute';
 // Event
 import { eventsFromEnvelope } from './event/fromEnvelope.execute';
+import { eventsFromDocument } from './event/fromDocument.execute';
 
 type ResourceOperationFunctions = {
   [resource: string]: {
@@ -96,5 +97,6 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
   },
   event: {
     fromEnvelope: eventsFromEnvelope,
+    fromDocument: eventsFromDocument,
   },
 };

@@ -12,6 +12,12 @@ export const eventOperations: INodeProperties = {
       action: 'Eventos do envelope',
       description: 'Listar eventos dos documentos do envelope',
     },
+    {
+      name: 'Eventos Do Documento',
+      value: 'fromDocument',
+      action: 'Eventos do documento',
+      description: 'Listar eventos de um documento do envelope',
+    },
   ],
   default: 'fromEnvelope',
   displayOptions: {
