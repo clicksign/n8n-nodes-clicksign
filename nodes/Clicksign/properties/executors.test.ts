@@ -11,9 +11,10 @@ describe('executors', () => {
         'notification',
         'template',
         'folder',
+        'event',
       ]),
     );
-    expect(Object.keys(resourceOperationsFunctions).length).toEqual(7);
+    expect(Object.keys(resourceOperationsFunctions).length).toEqual(8);
   });
 
   it('should map all expected operations to defined functions', () => {
@@ -38,6 +39,7 @@ describe('executors', () => {
       'notification',
       'template',
       'folder',
+      'event',
     ];
     expect(Object.keys(resourceOperationsFunctions)).toEqual(
       expect.arrayContaining(expectedResources),
@@ -109,5 +111,10 @@ describe('executors', () => {
       expect.arrayContaining(['create', 'getAll', 'getDetails']),
     );
     expect(Object.keys(resourceOperationsFunctions.folder).length).toBe(3);
+
+    expect(Object.keys(resourceOperationsFunctions.event)).toEqual(
+      expect.arrayContaining(['fromEnvelope']),
+    );
+    expect(Object.keys(resourceOperationsFunctions.event).length).toBe(1);
   });
 });

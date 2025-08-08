@@ -38,6 +38,8 @@ import { deleteTemplate } from './template/delete.execute';
 import { createFolder } from './folder/create.execute';
 import { getAllFolders } from './folder/getAll.execute';
 import { getFolderDetails } from './folder/getDetails.execute';
+// Event
+import { eventsFromEnvelope } from './event/fromEnvelope.execute';
 
 type ResourceOperationFunctions = {
   [resource: string]: {
@@ -91,5 +93,8 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
     create: createFolder,
     getAll: getAllFolders,
     getDetails: getFolderDetails,
+  },
+  event: {
+    fromEnvelope: eventsFromEnvelope,
   },
 };

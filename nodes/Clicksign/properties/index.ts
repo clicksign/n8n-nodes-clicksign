@@ -7,6 +7,7 @@ import { requirement } from './requirement';
 import { notification } from './notification';
 import { template } from './template';
 import { folder } from './folder';
+import { event } from './event';
 
 export const clicksignProperties = [
   resourceOptions,
@@ -17,4 +18,5 @@ export const clicksignProperties = [
   ...notification,
   ...template,
   ...folder,
+  ...event,
 ];
