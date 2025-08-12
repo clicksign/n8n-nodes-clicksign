@@ -26,6 +26,12 @@ export const watcherOperations: INodeProperties = {
       action: 'Obter detalhes do observador',
       description: 'Obter detalhes do observador',
     },
+    {
+      name: 'Excluir',
+      value: 'delete',
+      action: 'Excluir observador',
+      description: 'Excluir observador',
+    },
   ],
   displayOptions: {
     show: {
