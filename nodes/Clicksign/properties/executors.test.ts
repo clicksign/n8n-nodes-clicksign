@@ -85,9 +85,10 @@ describe('executors', () => {
         'getAll',
         'getDetails',
         'delete',
+        'bulk',
       ]),
     );
-    expect(Object.keys(resourceOperationsFunctions.requirement).length).toBe(6);
+    expect(Object.keys(resourceOperationsFunctions.requirement).length).toBe(7);
 
     expect(Object.keys(resourceOperationsFunctions.notification)).toEqual(
       expect.arrayContaining(['notifyEnvelope', 'notifySigner']),

@@ -46,6 +46,12 @@ export const requirementOperations: INodeProperties = {
       action: 'Obter detalhes do requisito',
       description: 'Obter detalhes do requisito',
     },
+    {
+      name: 'Operações Em Massa',
+      value: 'bulk',
+      // eslint-disable-next-line n8n-nodes-base/node-param-operation-option-action-miscased
+      action: 'Operações em massa',
+    },
   ],
   displayOptions: {
     show: {

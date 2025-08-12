@@ -5,6 +5,7 @@ import { getAllRequirementFields } from './getAll.fields';
 import { addRubricFields } from './addRubric.fields';
 import { getRequirementDetailsFields } from './getDetails.fields';
 import { deleteRequirementFields } from './delete.fields';
+import { bulkFields } from './bulk.fields';
 
 export const requirement = [
   requirementOperations,
@@ -14,4 +15,5 @@ export const requirement = [
   ...addRubricFields,
   ...getRequirementDetailsFields,
   ...deleteRequirementFields,
+  ...bulkFields,
 ];
