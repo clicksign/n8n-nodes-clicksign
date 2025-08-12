@@ -121,8 +121,8 @@ describe('executors', () => {
     expect(Object.keys(resourceOperationsFunctions.event).length).toBe(2);
 
     expect(Object.keys(resourceOperationsFunctions.watcher)).toEqual(
-      expect.arrayContaining(['create']),
+      expect.arrayContaining(['create', 'getAll']),
     );
-    expect(Object.keys(resourceOperationsFunctions.watcher).length).toBe(1);
+    expect(Object.keys(resourceOperationsFunctions.watcher).length).toBe(2);
   });
 });

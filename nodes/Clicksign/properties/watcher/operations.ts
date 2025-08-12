@@ -4,7 +4,7 @@ export const watcherOperations: INodeProperties = {
   displayName: 'Operação',
   name: 'operation',
   type: 'options',
-  default: 'create',
+  default: 'getAll',
   noDataExpression: true,
   options: [
     {
@@ -12,6 +12,13 @@ export const watcherOperations: INodeProperties = {
       value: 'create',
       action: 'Criar observador',
       description: 'Criar observador',
+    },
+    {
+      // eslint-disable-next-line n8n-nodes-base/node-param-option-name-wrong-for-get-many
+      name: 'Listar',
+      value: 'getAll',
+      action: 'Listar observador',
+      description: 'Listar observador',
     },
   ],
   displayOptions: {
