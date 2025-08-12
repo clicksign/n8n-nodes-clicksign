@@ -42,6 +42,8 @@ import { getFolderDetails } from './folder/getDetails.execute';
 // Event
 import { eventsFromEnvelope } from './event/fromEnvelope.execute';
 import { eventsFromDocument } from './event/fromDocument.execute';
+// Watcher
+import { createWatcher } from './watcher/create.execute';
 
 type ResourceOperationFunctions = {
   [resource: string]: {
@@ -100,5 +102,8 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
   event: {
     fromEnvelope: eventsFromEnvelope,
     fromDocument: eventsFromDocument,
+  },
+  watcher: {
+    create: createWatcher,
   },
 };

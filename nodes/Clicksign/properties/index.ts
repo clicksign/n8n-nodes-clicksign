@@ -8,6 +8,7 @@ import { notification } from './notification';
 import { template } from './template';
 import { folder } from './folder';
 import { event } from './event';
+import { watcher } from './watcher';
 
 export const clicksignProperties = [
   resourceOptions,
@@ -19,4 +20,5 @@ export const clicksignProperties = [
   ...template,
   ...folder,
   ...event,
+  ...watcher,
 ];

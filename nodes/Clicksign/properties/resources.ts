@@ -27,6 +27,10 @@ export const resourceOptions: INodeProperties = {
       value: 'notification',
     },
     {
+      name: 'Observador',
+      value: 'watcher',
+    },
+    {
       name: 'Pasta',
       value: 'folder',
     },
