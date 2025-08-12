@@ -20,6 +20,12 @@ export const watcherOperations: INodeProperties = {
       action: 'Listar observador',
       description: 'Listar observador',
     },
+    {
+      name: 'Obter Detalhes',
+      value: 'getDetails',
+      action: 'Obter detalhes do observador',
+      description: 'Obter detalhes do observador',
+    },
   ],
   displayOptions: {
     show: {

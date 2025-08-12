@@ -45,6 +45,7 @@ import { eventsFromDocument } from './event/fromDocument.execute';
 // Watcher
 import { createWatcher } from './watcher/create.execute';
 import { getAllWatchers } from './watcher/getAll.execute';
+import { getWatcherDetails } from './watcher/getDetails.execute';
 
 type ResourceOperationFunctions = {
   [resource: string]: {
@@ -107,5 +108,6 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
   watcher: {
     create: createWatcher,
     getAll: getAllWatchers,
+    getDetails: getWatcherDetails,
   },
 };
