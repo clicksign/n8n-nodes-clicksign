@@ -4,6 +4,10 @@ export const authOptions = [
     value: 'handwritten',
   },
   {
+    name: 'Assinatura Automática',
+    value: 'auto_signature',
+  },
+  {
     name: 'Biometria',
     value: 'biometric',
   },
