@@ -67,7 +67,6 @@ export const createSignerFields: INodeProperties[] = [
     name: 'hasDocumentation',
     type: 'boolean',
     default: true,
-    // eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
     description:
       'Define se o signatário deve informar CPF e Data de nascimento',
     displayOptions: {
@@ -127,7 +126,7 @@ export const createSignerFields: INodeProperties[] = [
     name: 'refusable',
     type: 'boolean',
     default: false,
-    // eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+
     description: 'Define se o signatário pode recusar a solicitação',
     displayOptions: {
       show: {
@@ -141,7 +140,7 @@ export const createSignerFields: INodeProperties[] = [
     name: 'locationRequired',
     type: 'boolean',
     default: false,
-    // eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
+
     description:
       'Determina se o signatário deve compartilhar sua localização no momento da assinatura',
     displayOptions: {

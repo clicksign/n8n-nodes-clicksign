@@ -84,7 +84,6 @@ export const bulkFields: INodeProperties[] = [
               {
                 displayName: 'Detalhes Do Requisito',
                 name: 'details',
-                // eslint-disable-next-line n8n-nodes-base/node-param-fixed-collection-type-unsorted-items
                 values: [
                   {
                     displayName: 'Tipo',

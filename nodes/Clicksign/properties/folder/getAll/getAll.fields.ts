@@ -6,7 +6,6 @@ export const getAllFoldersFields: INodeProperties[] = [
     name: 'inRoot',
     type: 'boolean',
     default: true,
-    // eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
     description:
       'Informe se deseja listar apenas pastas na raiz de sua estrutura de pastas',
     displayOptions: {

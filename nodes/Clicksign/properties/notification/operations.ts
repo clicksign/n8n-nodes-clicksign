@@ -15,7 +15,6 @@ export const notificationOperations: INodeProperties = {
     {
       name: 'Notificar Signatário',
       value: 'notifySigner',
-      // eslint-disable-next-line n8n-nodes-base/node-param-operation-option-action-miscased
       action: 'Notificar signatário',
       description: 'Notifica um signatário do envelope',
     },

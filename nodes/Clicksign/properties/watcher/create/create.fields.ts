@@ -61,7 +61,6 @@ export const createWatcherFields: INodeProperties[] = [
     type: 'boolean',
     required: true,
     default: false,
-    // eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
     description:
       'Determina se o observador deve receber os documentos finalizados',
     displayOptions: {

@@ -26,7 +26,6 @@ export const templateOperations: INodeProperties = {
       description: 'Excluir modelo',
     },
     {
-      // eslint-disable-next-line n8n-nodes-base/node-param-option-name-wrong-for-get-many
       name: 'Listar',
       value: 'getAll',
       action: 'Listar modelos',

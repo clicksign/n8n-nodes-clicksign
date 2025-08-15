@@ -10,14 +10,12 @@ export const requirementOperations: INodeProperties = {
     {
       name: 'Adicionar Autenticação',
       value: 'addAuth',
-      // eslint-disable-next-line n8n-nodes-base/node-param-operation-option-action-miscased
       action: 'Adicionar requisito de autenticação',
       description: 'Adicionar requisito de autenticação',
     },
     {
       name: 'Adicionar Qualificação',
       value: 'addQualification',
-      // eslint-disable-next-line n8n-nodes-base/node-param-operation-option-action-miscased
       action: 'Adicionar requisito de qualificação',
       description: 'Adicionar requisito de qualificação',
     },
@@ -34,7 +32,6 @@ export const requirementOperations: INodeProperties = {
       description: 'Excluir requisito',
     },
     {
-      // eslint-disable-next-line n8n-nodes-base/node-param-option-name-wrong-for-get-many
       name: 'Listar',
       value: 'getAll',
       action: 'Listar requisitos',
@@ -49,7 +46,7 @@ export const requirementOperations: INodeProperties = {
     {
       name: 'Operações Em Massa',
       value: 'bulk',
-      // eslint-disable-next-line n8n-nodes-base/node-param-operation-option-action-miscased
+
       action: 'Operações em massa',
     },
   ],

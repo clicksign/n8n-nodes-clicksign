@@ -57,7 +57,6 @@ export const updateEnvelopeFields: INodeProperties[] = [
     name: 'autoClose',
     type: 'boolean',
     default: true,
-    // eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
     description:
       'Se ativado, o envelope será fechado automaticamente após a assinatura do último signatários',
     displayOptions: {
@@ -89,7 +88,6 @@ export const updateEnvelopeFields: INodeProperties[] = [
     name: 'blockAfterRefusal',
     type: 'boolean',
     default: false,
-    // eslint-disable-next-line n8n-nodes-base/node-param-description-boolean-without-whether
     description:
       'Determina se o processo de assinatura tem que ser pausado ou não após um signatário ter recusado',
     displayOptions: {
