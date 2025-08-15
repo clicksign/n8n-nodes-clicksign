@@ -17,7 +17,7 @@ jest.mock('./properties/executors', () => ({
   },
 }));
 
-import { getNodeParameterTyped } from './properties/utils/getNodeParameterTyped';
+import { getNodeParameterTyped } from './properties/shared/getNodeParameterTyped';
 import { resourceOperationsFunctions } from './properties/executors';
 
 function mockOptionImplementation(

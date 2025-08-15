@@ -4,8 +4,8 @@ jest.mock('../utils/clicksignRequest');
 jest.mock('../utils/getNodeParameterTyped');
 
 import { updateTemplate } from './update.execute';
-import { clicksignRequest } from '../utils/clicksignRequest';
-import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
+import { clicksignRequest } from '../shared/clicksignRequest';
+import { getNodeParameterTyped } from '../shared/getNodeParameterTyped';
 
 describe('update: template', () => {
   let mockExecuteFunctions: IExecuteFunctions;

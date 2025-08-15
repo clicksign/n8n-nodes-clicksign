@@ -4,8 +4,8 @@ jest.mock('../utils/clicksignRequest');
 jest.mock('../utils/getNodeParameterTyped');
 
 import { getFolderDetails } from './getDetails.execute';
-import { clicksignRequest } from '../utils/clicksignRequest';
-import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
+import { clicksignRequest } from '../shared/clicksignRequest';
+import { getNodeParameterTyped } from '../shared/getNodeParameterTyped';
 
 describe('getDetails: folder', () => {
   let mockExecuteFunctions: IExecuteFunctions;

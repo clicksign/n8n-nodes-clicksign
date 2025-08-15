@@ -8,8 +8,8 @@ import {
   formatAddOperation,
   formatRemoveOperation,
 } from './bulk.execute';
-import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
-import { clicksignRequest } from '../utils/clicksignRequest';
+import { getNodeParameterTyped } from '../shared/getNodeParameterTyped';
+import { clicksignRequest } from '../shared/clicksignRequest';
 
 describe('bulk: requirement', () => {
   let mockExecuteFunctions: IExecuteFunctions;

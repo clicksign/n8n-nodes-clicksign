@@ -1,7 +1,7 @@
 import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
 
-import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
-import { clicksignRequest } from '../utils/clicksignRequest';
+import { getNodeParameterTyped } from '../shared/getNodeParameterTyped';
+import { clicksignRequest } from '../shared/clicksignRequest';
 
 type Requirements = 'agree' | 'provide_evidence' | 'rubricate';
 

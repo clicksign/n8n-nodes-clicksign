@@ -4,8 +4,8 @@ jest.mock('../utils/clicksignRequest');
 jest.mock('../utils/getNodeParameterTyped');
 
 import { getAllWatchers } from './getAll.execute';
-import { clicksignRequest } from '../utils/clicksignRequest';
-import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
+import { clicksignRequest } from '../shared/clicksignRequest';
+import { getNodeParameterTyped } from '../shared/getNodeParameterTyped';
 
 describe('getAll: watcher', () => {
   let mockExecuteFunctions: IExecuteFunctions;

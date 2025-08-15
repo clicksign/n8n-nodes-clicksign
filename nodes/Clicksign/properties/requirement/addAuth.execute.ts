@@ -1,6 +1,6 @@
 import { IExecuteFunctions } from 'n8n-workflow';
 
-import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
+import { getNodeParameterTyped } from '../shared/getNodeParameterTyped';
 import { addRequirement } from './shared/addRequirement.execute';
 
 export async function addAuthRequirement(ef: IExecuteFunctions) {

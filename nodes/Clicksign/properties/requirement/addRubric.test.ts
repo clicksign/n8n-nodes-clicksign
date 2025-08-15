@@ -4,7 +4,7 @@ jest.mock('../utils/getNodeParameterTyped');
 jest.mock('./shared/addRequirement.execute');
 
 import { addRubricRequirement } from './addRubric.execute';
-import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
+import { getNodeParameterTyped } from '../shared/getNodeParameterTyped';
 import { addRequirement } from './shared/addRequirement.execute';
 
 describe('addRubric: requirement', () => {

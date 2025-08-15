@@ -4,8 +4,8 @@ jest.mock('../utils/clicksignRequest');
 jest.mock('../utils/getNodeParameterTyped');
 
 import { createDocumentByBase64 } from './createByBase64.execute';
-import { clicksignRequest } from '../utils/clicksignRequest';
-import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
+import { clicksignRequest } from '../shared/clicksignRequest';
+import { getNodeParameterTyped } from '../shared/getNodeParameterTyped';
 
 describe('createByBase64 : document', () => {
   let mockExecuteFunctions: IExecuteFunctions;

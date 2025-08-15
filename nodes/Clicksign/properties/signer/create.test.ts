@@ -4,8 +4,8 @@ jest.mock('../utils/clicksignRequest');
 jest.mock('../utils/getNodeParameterTyped');
 
 import { createSigner } from './create.execute';
-import { clicksignRequest } from '../utils/clicksignRequest';
-import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
+import { clicksignRequest } from '../shared/clicksignRequest';
+import { getNodeParameterTyped } from '../shared/getNodeParameterTyped';
 
 function mockImplementation(mock: any, data: Record<string, unknown> = {}) {
   (mock as jest.Mock).mockImplementation(

@@ -3,7 +3,7 @@ import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
 jest.mock('../utils/clicksignRequest');
 
 import { getAllTemplates } from './getAll.execute';
-import { clicksignRequest } from '../utils/clicksignRequest';
+import { clicksignRequest } from '../shared/clicksignRequest';
 
 describe('getAll: template', () => {
   let mockExecuteFunctions: IExecuteFunctions;

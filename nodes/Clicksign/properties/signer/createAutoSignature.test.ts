@@ -8,8 +8,8 @@ jest.mock('./shared/formatters', () => ({
 }));
 
 import { createAutoSignature } from './createAutoSignature.execute';
-import { clicksignRequest } from '../utils/clicksignRequest';
-import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
+import { clicksignRequest } from '../shared/clicksignRequest';
+import { getNodeParameterTyped } from '../shared/getNodeParameterTyped';
 import { formatBirthday, formatDocumentation } from './shared/formatters';
 
 describe('createAutoSignature: signer', () => {

@@ -4,9 +4,9 @@ jest.mock('../utils/clicksignRequest');
 jest.mock('../utils/getNodeParameterTyped');
 
 import { updateEnvelope } from './update.execute';
-import { clicksignRequest } from '../utils/clicksignRequest';
-import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
-import { formatLocalISODate } from './utils/formatLocalISODate';
+import { clicksignRequest } from '../shared/clicksignRequest';
+import { getNodeParameterTyped } from '../shared/getNodeParameterTyped';
+import { formatLocalISODate } from './shared/formatLocalISODate';
 
 describe('updateEnvelope', () => {
   let mockExecuteFunctions: IExecuteFunctions;

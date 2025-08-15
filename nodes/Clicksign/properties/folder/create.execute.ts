@@ -1,7 +1,7 @@
 import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
 
-import { clicksignRequest } from '../utils/clicksignRequest';
-import { getNodeParameterTyped } from '../utils/getNodeParameterTyped';
+import { clicksignRequest } from '../shared/clicksignRequest';
+import { getNodeParameterTyped } from '../shared/getNodeParameterTyped';
 
 export async function createFolder(ef: IExecuteFunctions) {
   const name = getNodeParameterTyped<string>(ef, 'name');

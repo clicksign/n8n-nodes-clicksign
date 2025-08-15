@@ -1,6 +1,6 @@
 import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
 
-import { clicksignRequest } from '../../utils/clicksignRequest';
+import { clicksignRequest } from '../../shared/clicksignRequest';
 
 type RequirementPayload = {
   envelopeId: string;
