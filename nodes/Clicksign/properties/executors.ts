@@ -1,53 +1,53 @@
 import { IExecuteFunctions } from 'n8n-workflow';
 // Envelope
-import { createEnvelope } from './envelope/create.execute';
-import { getAllEnvelopes } from './envelope/getAll.execute';
-import { activateEnvelope } from './envelope/activate.execute';
-import { getEnvelopeDetails } from './envelope/getDetails.execute';
-import { updateEnvelope } from './envelope/update.execute';
-import { deleteEnvelope } from './envelope/delete.execute';
+import { createEnvelope } from './envelope/create/create.execute';
+import { getAllEnvelopes } from './envelope/getAll/getAll.execute';
+import { activateEnvelope } from './envelope/activate/activate.execute';
+import { getEnvelopeDetails } from './envelope/getDetails/getDetails.execute';
+import { updateEnvelope } from './envelope/update/update.execute';
+import { deleteEnvelope } from './envelope/delete/delete.execute';
 // Document
-import { getAllDocuments } from './document/getAll.execute';
-import { createDocumentByTemplate } from './document/createByTemplate.execute';
-import { createDocumentByBase64 } from './document/createByBase64.execute';
-import { updateDocument } from './document/update.execute';
-import { getDocumentDetails } from './document/getDetails.execute';
-import { deleteDocument } from './document/delete.execute';
+import { getAllDocuments } from './document/getAll/getAll.execute';
+import { createDocumentByTemplate } from './document/createByTemplate/createByTemplate.execute';
+import { createDocumentByBase64 } from './document/createByBase64/createByBase64.execute';
+import { updateDocument } from './document/update/update.execute';
+import { getDocumentDetails } from './document/getDetails/getDetails.execute';
+import { deleteDocument } from './document/delete/delete.execute';
 // Signer
-import { createSigner } from './signer/create.execute';
-import { getAllSigners } from './signer/getAll.execute';
-import { getSignerDetails } from './signer/getDetails.execute';
-import { deleteSigner } from './signer/delete.execute';
-import { createAutoSignature } from './signer/createAutoSignature.execute';
+import { createSigner } from './signer/create/create.execute';
+import { getAllSigners } from './signer/getAll/getAll.execute';
+import { getSignerDetails } from './signer/getDetails/getDetails.execute';
+import { deleteSigner } from './signer/delete/delete.execute';
+import { createAutoSignature } from './signer/createAutoSignature/createAutoSignature.execute';
 // Requirement
-import { addAuthRequirement } from './requirement/addAuth.execute';
-import { addQualificationRequirement } from './requirement/addQualification.execute';
-import { addRubricRequirement } from './requirement/addRubric.execute';
-import { getAllRequirements } from './requirement/getAll.execute';
-import { getRequirementDetails } from './requirement/getDetails.execute';
-import { deleteRequirement } from './requirement/delete.execute';
-import { bulkRequirements } from './requirement/bulk.execute';
+import { addAuthRequirement } from './requirement/addAuth/addAuth.execute';
+import { addQualificationRequirement } from './requirement/addQualification/addQualification.execute';
+import { addRubricRequirement } from './requirement/addRubric/addRubric.execute';
+import { getAllRequirements } from './requirement/getAll/getAll.execute';
+import { getRequirementDetails } from './requirement/getDetails/getDetails.execute';
+import { deleteRequirement } from './requirement/delete/delete.execute';
+import { bulkRequirements } from './requirement/bulk/bulk.execute';
 // Notification
-import { notifyEnvelope } from './notification/notifyEnvelope.execute';
-import { notifySigner } from './notification/notifySigner.execute';
+import { notifyEnvelope } from './notification/notifyEnvelope/notifyEnvelope.execute';
+import { notifySigner } from './notification/notifySigner/notifySigner.execute';
 // Template
-import { createTemplate } from './template/create.execute';
-import { getAllTemplates } from './template/getAll.execute';
-import { updateTemplate } from './template/update.execute';
-import { getTemplateDetails } from './template/getDetails.execute';
-import { deleteTemplate } from './template/delete.execute';
+import { createTemplate } from './template/create/create.execute';
+import { getAllTemplates } from './template/getAll/getAll.execute';
+import { updateTemplate } from './template/update/update.execute';
+import { getTemplateDetails } from './template/getDetails/getDetails.execute';
+import { deleteTemplate } from './template/delete/delete.execute';
 // Folder
-import { createFolder } from './folder/create.execute';
-import { getAllFolders } from './folder/getAll.execute';
-import { getFolderDetails } from './folder/getDetails.execute';
+import { createFolder } from './folder/create/create.execute';
+import { getAllFolders } from './folder/getAll/getAll.execute';
+import { getFolderDetails } from './folder/getDetails/getDetails.execute';
 // Event
-import { eventsFromEnvelope } from './event/fromEnvelope.execute';
-import { eventsFromDocument } from './event/fromDocument.execute';
+import { eventsFromEnvelope } from './event/fromEnvelope/fromEnvelope.execute';
+import { eventsFromDocument } from './event/fromDocument/fromDocument.execute';
 // Watcher
-import { createWatcher } from './watcher/create.execute';
-import { getAllWatchers } from './watcher/getAll.execute';
-import { getWatcherDetails } from './watcher/getDetails.execute';
-import { deleteWatcher } from './watcher/delete.execute';
+import { createWatcher } from './watcher/create/create.execute';
+import { getAllWatchers } from './watcher/getAll/getAll.execute';
+import { getWatcherDetails } from './watcher/getDetails/getDetails.execute';
+import { deleteWatcher } from './watcher/delete/delete.execute';
 
 type ResourceOperationFunctions = {
   [resource: string]: {

@@ -1,7 +1,7 @@
 import { notificationOperations } from './operations';
 
-import { notifyEnvelopeFields } from './notifyEnvelope.fields';
-import { notifySignerFields } from './notifySigner.fields';
+import { notifyEnvelopeFields } from './notifyEnvelope/notifyEnvelope.fields';
+import { notifySignerFields } from './notifySigner/notifySigner.fields';
 
 export const notification = [
   notificationOperations,

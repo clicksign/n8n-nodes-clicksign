@@ -1,7 +1,7 @@
 import { Clicksign } from './Clicksign.node';
 import { NodeApiError } from 'n8n-workflow';
 
-jest.mock('./properties/utils/getNodeParameterTyped', () => ({
+jest.mock('./properties/shared/getNodeParameterTyped', () => ({
   getNodeParameterTyped: jest.fn(),
 }));
 
