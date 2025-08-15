@@ -10,8 +10,8 @@ export const deleteEnvelopeFields: INodeProperties[] = [
     description: 'ID do Envelope que deseja excluir',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['delete'],
+        resource: ['envelope'],
       },
     },
   },

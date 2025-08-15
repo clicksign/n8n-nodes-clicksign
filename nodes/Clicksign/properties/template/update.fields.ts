@@ -11,8 +11,8 @@ export const updateTemplateFields: INodeProperties[] = [
     description: 'ID do Modelo a ser atualizado',
     displayOptions: {
       show: {
-        resource: ['template'],
         operation: ['update'],
+        resource: ['template'],
       },
     },
   },
@@ -24,8 +24,8 @@ export const updateTemplateFields: INodeProperties[] = [
     description: 'Define o nome do Modelo para facilitar consultas futuras',
     displayOptions: {
       show: {
-        resource: ['template'],
         operation: ['update'],
+        resource: ['template'],
       },
     },
   },
@@ -38,8 +38,8 @@ export const updateTemplateFields: INodeProperties[] = [
     options: templateColors,
     displayOptions: {
       show: {
-        resource: ['template'],
         operation: ['update'],
+        resource: ['template'],
       },
     },
   },

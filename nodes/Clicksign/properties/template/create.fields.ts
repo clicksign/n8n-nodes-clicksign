@@ -11,8 +11,8 @@ export const createTemplateFields: INodeProperties[] = [
     description: 'Define o nome do Modelo para facilitar consultas futuras',
     displayOptions: {
       show: {
-        resource: ['template'],
         operation: ['create'],
+        resource: ['template'],
       },
     },
   },
@@ -26,8 +26,8 @@ export const createTemplateFields: INodeProperties[] = [
       'Conteúdo do arquivo em formato base 64 que está sendo enviado para a Clicksign',
     displayOptions: {
       show: {
-        resource: ['template'],
         operation: ['create'],
+        resource: ['template'],
       },
     },
   },
@@ -40,8 +40,8 @@ export const createTemplateFields: INodeProperties[] = [
     options: templateColors,
     displayOptions: {
       show: {
-        resource: ['template'],
         operation: ['create'],
+        resource: ['template'],
       },
     },
   },

@@ -10,8 +10,8 @@ export const getDetailsFolderFields: INodeProperties[] = [
     description: 'ID da pasta que deseja ver suas subpastas',
     displayOptions: {
       show: {
-        resource: ['folder'],
         operation: ['getDetails'],
+        resource: ['folder'],
       },
     },
   },

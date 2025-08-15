@@ -12,8 +12,8 @@ export const bulkFields: INodeProperties[] = [
     description: 'ID do envelope ao qual deseja realizar as operações em massa',
     displayOptions: {
       show: {
-        resource: ['requirement'],
         operation: ['bulk'],
+        resource: ['requirement'],
       },
     },
   },
@@ -27,8 +27,8 @@ export const bulkFields: INodeProperties[] = [
     required: true,
     displayOptions: {
       show: {
-        resource: ['requirement'],
         operation: ['bulk'],
+        resource: ['requirement'],
       },
     },
     typeOptions: {

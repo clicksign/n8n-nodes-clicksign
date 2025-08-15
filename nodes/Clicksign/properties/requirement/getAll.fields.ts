@@ -10,8 +10,8 @@ export const getAllRequirementFields: INodeProperties[] = [
     description: 'ID do envelope ao qual deseja listar os requisitos',
     displayOptions: {
       show: {
-        resource: ['requirement'],
         operation: ['getAll'],
+        resource: ['requirement'],
       },
     },
   },

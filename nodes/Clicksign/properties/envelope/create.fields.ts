@@ -10,8 +10,8 @@ export const createEnvelopeFields: INodeProperties[] = [
     description: 'Nome do envelope',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['create'],
+        resource: ['envelope'],
       },
     },
   },
@@ -25,8 +25,8 @@ export const createEnvelopeFields: INodeProperties[] = [
       'Idioma utilizado nos e-mails, página de assinatura e log do documento',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['create'],
+        resource: ['envelope'],
       },
     },
     options: [
@@ -50,8 +50,8 @@ export const createEnvelopeFields: INodeProperties[] = [
       'Se ativado, o envelope será fechado automaticamente após a assinatura do último signatários',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['create'],
+        resource: ['envelope'],
       },
     },
   },
@@ -65,8 +65,8 @@ export const createEnvelopeFields: INodeProperties[] = [
       'Determina se o documento terá opção de lembretes automáticos ativada (1,2,3,7,14)',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['create'],
+        resource: ['envelope'],
       },
     },
     typeOptions: {
@@ -83,8 +83,8 @@ export const createEnvelopeFields: INodeProperties[] = [
       'Determina se o processo de assinatura tem que ser pausado ou não após um signatário ter recusado',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['create'],
+        resource: ['envelope'],
       },
     },
   },
@@ -97,8 +97,8 @@ export const createEnvelopeFields: INodeProperties[] = [
       'Data limite para o envelope e seus documentos (formato RFC 3339)',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['create'],
+        resource: ['envelope'],
       },
     },
   },
@@ -111,8 +111,8 @@ export const createEnvelopeFields: INodeProperties[] = [
       'Define o assunto do e-mail que será enviado aos signatários na solicitação de assinatura',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['create'],
+        resource: ['envelope'],
       },
     },
   },
@@ -124,8 +124,8 @@ export const createEnvelopeFields: INodeProperties[] = [
     description: 'Define a mensagem padrão que será enviada aos signatários',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['create'],
+        resource: ['envelope'],
       },
     },
   },
@@ -137,8 +137,8 @@ export const createEnvelopeFields: INodeProperties[] = [
     description: 'ID da pasta de origem',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['create'],
+        resource: ['envelope'],
       },
     },
   },

@@ -10,8 +10,8 @@ export const deleteSignerFields: INodeProperties[] = [
     description: 'ID do Envelope que possui o signatário',
     displayOptions: {
       show: {
-        resource: ['signer'],
         operation: ['delete'],
+        resource: ['signer'],
       },
     },
   },
@@ -24,8 +24,8 @@ export const deleteSignerFields: INodeProperties[] = [
     description: 'ID do Signatário que deseja excluir',
     displayOptions: {
       show: {
-        resource: ['signer'],
         operation: ['delete'],
+        resource: ['signer'],
       },
     },
   },

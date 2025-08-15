@@ -10,8 +10,8 @@ export const getDocumentDetailsFields: INodeProperties[] = [
     description: 'ID do Envelope que possui o documento',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['getDetails'],
+        resource: ['document'],
       },
     },
   },
@@ -24,8 +24,8 @@ export const getDocumentDetailsFields: INodeProperties[] = [
     description: 'ID do documento que deseja visualizar',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['getDetails'],
+        resource: ['document'],
       },
     },
   },

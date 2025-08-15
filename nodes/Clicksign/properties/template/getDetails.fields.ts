@@ -10,8 +10,8 @@ export const getTemplateDetailsFields: INodeProperties[] = [
     description: 'ID do Modelo a ser detalhado',
     displayOptions: {
       show: {
-        resource: ['template'],
         operation: ['getDetails'],
+        resource: ['template'],
       },
     },
   },

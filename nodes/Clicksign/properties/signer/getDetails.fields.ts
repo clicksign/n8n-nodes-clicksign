@@ -10,8 +10,8 @@ export const getSignerDetailsFields: INodeProperties[] = [
     description: 'ID do Envelope que possui o signatário',
     displayOptions: {
       show: {
-        resource: ['signer'],
         operation: ['getDetails'],
+        resource: ['signer'],
       },
     },
   },
@@ -24,8 +24,8 @@ export const getSignerDetailsFields: INodeProperties[] = [
     description: 'ID do Signatário que deseja visualizar',
     displayOptions: {
       show: {
-        resource: ['signer'],
         operation: ['getDetails'],
+        resource: ['signer'],
       },
     },
   },

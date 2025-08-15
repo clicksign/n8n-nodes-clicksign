@@ -15,8 +15,8 @@ export function addRequirementFields(
       description: 'ID do Envelope que receberá o requisito',
       displayOptions: {
         show: {
-          resource: ['requirement'],
           operation: [operation],
+          resource: ['requirement'],
         },
       },
     },
@@ -29,8 +29,8 @@ export function addRequirementFields(
       description: 'ID do documento que receberá o requisito',
       displayOptions: {
         show: {
-          resource: ['requirement'],
           operation: [operation],
+          resource: ['requirement'],
         },
       },
     },
@@ -43,8 +43,8 @@ export function addRequirementFields(
       description: 'ID do signatário que receberá o requisito',
       displayOptions: {
         show: {
-          resource: ['requirement'],
           operation: [operation],
+          resource: ['requirement'],
         },
       },
     },

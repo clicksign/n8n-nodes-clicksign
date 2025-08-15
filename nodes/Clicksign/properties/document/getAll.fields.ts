@@ -10,8 +10,8 @@ export const getDocumentsFields: INodeProperties[] = [
     description: 'ID do envelope ao qual deseja listar os documentos',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['getAll'],
+        resource: ['document'],
       },
     },
   },

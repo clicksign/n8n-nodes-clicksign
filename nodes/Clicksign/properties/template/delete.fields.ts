@@ -10,8 +10,8 @@ export const deleteTemplateFields: INodeProperties[] = [
     description: 'ID do Modelo a ser excluído',
     displayOptions: {
       show: {
-        resource: ['template'],
         operation: ['delete'],
+        resource: ['template'],
       },
     },
   },

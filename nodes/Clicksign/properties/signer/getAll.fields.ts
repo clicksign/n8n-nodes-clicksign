@@ -10,8 +10,8 @@ export const getAllSignersFields: INodeProperties[] = [
     description: 'ID do envelope ao qual deseja listar os signatários',
     displayOptions: {
       show: {
-        resource: ['signer'],
         operation: ['getAll'],
+        resource: ['signer'],
       },
     },
   },

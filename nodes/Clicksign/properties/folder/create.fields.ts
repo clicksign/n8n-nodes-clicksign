@@ -10,8 +10,8 @@ export const createFolderFields: INodeProperties[] = [
     description: 'Nome da Pasta a ser criada',
     displayOptions: {
       show: {
-        resource: ['folder'],
         operation: ['create'],
+        resource: ['folder'],
       },
     },
   },
@@ -23,8 +23,8 @@ export const createFolderFields: INodeProperties[] = [
     description: 'ID da pasta de origem',
     displayOptions: {
       show: {
-        resource: ['folder'],
         operation: ['create'],
+        resource: ['folder'],
       },
     },
   },

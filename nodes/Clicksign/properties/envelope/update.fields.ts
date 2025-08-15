@@ -10,8 +10,8 @@ export const updateEnvelopeFields: INodeProperties[] = [
     description: 'ID do Envelope que deseja atualizar',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['update'],
+        resource: ['envelope'],
       },
     },
   },
@@ -23,8 +23,8 @@ export const updateEnvelopeFields: INodeProperties[] = [
     description: 'Nome do envelope',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['update'],
+        resource: ['envelope'],
       },
     },
   },
@@ -37,8 +37,8 @@ export const updateEnvelopeFields: INodeProperties[] = [
       'Idioma utilizado nos e-mails, página de assinatura e log do documento',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['update'],
+        resource: ['envelope'],
       },
     },
     options: [
@@ -62,8 +62,8 @@ export const updateEnvelopeFields: INodeProperties[] = [
       'Se ativado, o envelope será fechado automaticamente após a assinatura do último signatários',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['update'],
+        resource: ['envelope'],
       },
     },
   },
@@ -76,8 +76,8 @@ export const updateEnvelopeFields: INodeProperties[] = [
       'Determina se o documento terá opção de lembretes automáticos ativada (1,2,3,7,14)',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['update'],
+        resource: ['envelope'],
       },
     },
     typeOptions: {
@@ -94,8 +94,8 @@ export const updateEnvelopeFields: INodeProperties[] = [
       'Determina se o processo de assinatura tem que ser pausado ou não após um signatário ter recusado',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['update'],
+        resource: ['envelope'],
       },
     },
   },
@@ -108,8 +108,8 @@ export const updateEnvelopeFields: INodeProperties[] = [
       'Data limite para o envelope e seus documentos (formato RFC 3339)',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['update'],
+        resource: ['envelope'],
       },
     },
   },
@@ -122,8 +122,8 @@ export const updateEnvelopeFields: INodeProperties[] = [
       'Define o assunto do e-mail que será enviado aos signatários na solicitação de assinatura',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['update'],
+        resource: ['envelope'],
       },
     },
   },
@@ -135,8 +135,8 @@ export const updateEnvelopeFields: INodeProperties[] = [
     description: 'Define a mensagem padrão que será enviada aos signatários',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['update'],
+        resource: ['envelope'],
       },
     },
   },
@@ -148,8 +148,8 @@ export const updateEnvelopeFields: INodeProperties[] = [
     description: 'ID da pasta de origem',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['update'],
+        resource: ['envelope'],
       },
     },
   },

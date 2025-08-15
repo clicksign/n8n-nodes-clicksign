@@ -14,8 +14,8 @@ export const addQualificationFields: INodeProperties[] = [
       'Determina a Qualificação desejada para aceitar as assinaturas',
     displayOptions: {
       show: {
-        resource: ['requirement'],
         operation: ['addQualification'],
+        resource: ['requirement'],
       },
     },
     options: qualificationsOptions,

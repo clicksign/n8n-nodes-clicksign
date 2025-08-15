@@ -10,8 +10,8 @@ export const getAllFields: INodeProperties[] = [
       'Informe um status caso deseje filtrar: draft, running, closed, canceled',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['getAll'],
+        resource: ['envelope'],
       },
     },
   },
@@ -23,8 +23,8 @@ export const getAllFields: INodeProperties[] = [
     description: 'Informe o nome completo do envelope a ser consultado',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['getAll'],
+        resource: ['envelope'],
       },
     },
   },
@@ -37,8 +37,8 @@ export const getAllFields: INodeProperties[] = [
       'Informe os intervalos de datas de criação no padrão da especificação (ISO 8601 e separadas por vírgula)',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['getAll'],
+        resource: ['envelope'],
       },
     },
   },
@@ -51,8 +51,8 @@ export const getAllFields: INodeProperties[] = [
       'Informe os intervalos de datas de atualização no padrão da especificação (ISO 8601 e separadas por vírgula)',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['getAll'],
+        resource: ['envelope'],
       },
     },
   },
@@ -65,8 +65,8 @@ export const getAllFields: INodeProperties[] = [
       'Informe os intervalos de datas de deadline conforme padrão da especificação (ISO 8601 e separadas por vírgula)',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['getAll'],
+        resource: ['envelope'],
       },
     },
   },
@@ -79,8 +79,8 @@ export const getAllFields: INodeProperties[] = [
       'Ordene por propriedade do envelope (ex: name para ordenar por nome de forma crescente e -name para ordenar por nome de forma decrescente)',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['getAll'],
+        resource: ['envelope'],
       },
     },
   },

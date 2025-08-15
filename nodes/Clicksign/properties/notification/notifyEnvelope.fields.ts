@@ -10,8 +10,8 @@ export const notifyEnvelopeFields: INodeProperties[] = [
     description: 'ID do Envelope que deseja notificar',
     displayOptions: {
       show: {
-        resource: ['notification'],
         operation: ['notifyEnvelope'],
+        resource: ['notification'],
       },
     },
   },
@@ -24,8 +24,8 @@ export const notifyEnvelopeFields: INodeProperties[] = [
       'Mensagem que deve ser enviada aos signatários, se o campo não for preenchido a mensagem enviada será a configurada no envelope#default_message',
     displayOptions: {
       show: {
-        resource: ['notification'],
         operation: ['notifyEnvelope'],
+        resource: ['notification'],
       },
     },
   },

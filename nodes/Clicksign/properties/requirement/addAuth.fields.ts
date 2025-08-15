@@ -13,8 +13,8 @@ export const addAuthFields: INodeProperties[] = [
     description: 'Determina a Autenticação desejada para assinar',
     displayOptions: {
       show: {
-        resource: ['requirement'],
         operation: ['addAuth'],
+        resource: ['requirement'],
       },
     },
     options: authOptions,

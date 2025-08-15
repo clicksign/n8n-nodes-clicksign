@@ -11,8 +11,8 @@ export const fromEnvelopeFields: INodeProperties[] = [
       'ID do envelope ao qual deseja listar os eventos dos documentos',
     displayOptions: {
       show: {
-        resource: ['event'],
         operation: ['fromEnvelope'],
+        resource: ['event'],
       },
     },
   },

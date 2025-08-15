@@ -10,8 +10,8 @@ export const getDetailsFields: INodeProperties[] = [
     description: 'ID do Envelope que deseja visualizar',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['getDetails'],
+        resource: ['envelope'],
       },
     },
   },

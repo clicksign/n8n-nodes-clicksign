@@ -11,8 +11,8 @@ export const getAllFoldersFields: INodeProperties[] = [
       'Informe se deseja listar apenas pastas na raiz de sua estrutura de pastas',
     displayOptions: {
       show: {
-        resource: ['folder'],
         operation: ['getAll'],
+        resource: ['folder'],
       },
     },
   },

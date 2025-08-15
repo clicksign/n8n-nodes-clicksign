@@ -11,8 +11,8 @@ export const fromDocumentFields: INodeProperties[] = [
       'ID do envelope ao qual o documento pertence para consultar eventos',
     displayOptions: {
       show: {
-        resource: ['event'],
         operation: ['fromDocument'],
+        resource: ['event'],
       },
     },
   },
@@ -25,8 +25,8 @@ export const fromDocumentFields: INodeProperties[] = [
     description: 'ID do Documento que deseja listar os eventos',
     displayOptions: {
       show: {
-        resource: ['event'],
         operation: ['fromDocument'],
+        resource: ['event'],
       },
     },
   },

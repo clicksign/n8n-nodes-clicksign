@@ -10,8 +10,8 @@ export const deleteDocumentFields: INodeProperties[] = [
     description: 'ID do Envelope que possui o documento',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['delete'],
+        resource: ['document'],
       },
     },
   },
@@ -24,8 +24,8 @@ export const deleteDocumentFields: INodeProperties[] = [
     description: 'ID do documento que deseja excluir',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['delete'],
+        resource: ['document'],
       },
     },
   },

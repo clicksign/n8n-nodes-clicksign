@@ -10,8 +10,8 @@ export const createSignerFields: INodeProperties[] = [
     description: 'ID do envelope ao qual será adicionado o signatário',
     displayOptions: {
       show: {
-        resource: ['signer'],
         operation: ['create'],
+        resource: ['signer'],
       },
     },
   },
@@ -26,8 +26,8 @@ export const createSignerFields: INodeProperties[] = [
       'O nome do signatário, usado para identificá-lo (é necessário enviar ao menos duas palavras)',
     displayOptions: {
       show: {
-        resource: ['signer'],
         operation: ['create'],
+        resource: ['signer'],
       },
     },
   },
@@ -42,8 +42,8 @@ export const createSignerFields: INodeProperties[] = [
       'O email do signatário (obrigatório quando houver configuração de notificação por email)',
     displayOptions: {
       show: {
-        resource: ['signer'],
         operation: ['create'],
+        resource: ['signer'],
       },
     },
   },
@@ -57,8 +57,8 @@ export const createSignerFields: INodeProperties[] = [
       'Número de telefone do signatário, que deve possuir 10 ou 11 números (obrigatório quando houver configuração de notificação que exija telefone)',
     displayOptions: {
       show: {
-        resource: ['signer'],
         operation: ['create'],
+        resource: ['signer'],
       },
     },
   },
@@ -72,8 +72,8 @@ export const createSignerFields: INodeProperties[] = [
       'Define se o signatário deve informar CPF e Data de nascimento',
     displayOptions: {
       show: {
-        resource: ['signer'],
         operation: ['create'],
+        resource: ['signer'],
       },
     },
   },
@@ -86,8 +86,8 @@ export const createSignerFields: INodeProperties[] = [
     description: 'O CPF do signatário',
     displayOptions: {
       show: {
-        resource: ['signer'],
         operation: ['create'],
+        resource: ['signer'],
         hasDocumentation: [true],
       },
     },
@@ -102,8 +102,8 @@ export const createSignerFields: INodeProperties[] = [
       'Data de nascimento do signatário (ex: 10/10/1990, 1990-10-10)',
     displayOptions: {
       show: {
-        resource: ['signer'],
         operation: ['create'],
+        resource: ['signer'],
         hasDocumentation: [true],
       },
     },
@@ -117,8 +117,8 @@ export const createSignerFields: INodeProperties[] = [
       'Determina em qual grupo o signatário deve ser vinculado, conforme ordem de assinatura',
     displayOptions: {
       show: {
-        resource: ['signer'],
         operation: ['create'],
+        resource: ['signer'],
       },
     },
   },
@@ -131,8 +131,8 @@ export const createSignerFields: INodeProperties[] = [
     description: 'Define se o signatário pode recusar a solicitação',
     displayOptions: {
       show: {
-        resource: ['signer'],
         operation: ['create'],
+        resource: ['signer'],
       },
     },
   },
@@ -146,8 +146,8 @@ export const createSignerFields: INodeProperties[] = [
       'Determina se o signatário deve compartilhar sua localização no momento da assinatura',
     displayOptions: {
       show: {
-        resource: ['signer'],
         operation: ['create'],
+        resource: ['signer'],
       },
     },
   },
@@ -163,8 +163,8 @@ export const createSignerFields: INodeProperties[] = [
     },
     displayOptions: {
       show: {
-        resource: ['signer'],
         operation: ['create'],
+        resource: ['signer'],
       },
     },
     options: [

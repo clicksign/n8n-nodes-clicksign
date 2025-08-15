@@ -10,8 +10,8 @@ export const getRequirementDetailsFields: INodeProperties[] = [
     description: 'ID do Envelope que possui os requisitos',
     displayOptions: {
       show: {
-        resource: ['requirement'],
         operation: ['getDetails'],
+        resource: ['requirement'],
       },
     },
   },
@@ -24,8 +24,8 @@ export const getRequirementDetailsFields: INodeProperties[] = [
     description: 'ID do Requisito que deseja visualizar',
     displayOptions: {
       show: {
-        resource: ['requirement'],
         operation: ['getDetails'],
+        resource: ['requirement'],
       },
     },
   },

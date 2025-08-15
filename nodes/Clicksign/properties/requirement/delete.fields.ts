@@ -10,8 +10,8 @@ export const deleteRequirementFields: INodeProperties[] = [
     description: 'ID do Envelope que possui os requisitos',
     displayOptions: {
       show: {
-        resource: ['requirement'],
         operation: ['delete'],
+        resource: ['requirement'],
       },
     },
   },
@@ -24,8 +24,8 @@ export const deleteRequirementFields: INodeProperties[] = [
     description: 'ID do Requisito que deseja excluir',
     displayOptions: {
       show: {
-        resource: ['requirement'],
         operation: ['delete'],
+        resource: ['requirement'],
       },
     },
   },

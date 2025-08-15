@@ -10,8 +10,8 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
     description: 'ID do envelope no qual o documento será adicionado',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['createByTemplate'],
+        resource: ['document'],
       },
     },
   },
@@ -25,8 +25,8 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
     description: 'Nome do arquivo com extensão .docx',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['createByTemplate'],
+        resource: ['document'],
       },
     },
   },
@@ -39,8 +39,8 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
     description: 'ID do Modelo utilizado para a criação',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['createByTemplate'],
+        resource: ['document'],
       },
     },
   },
@@ -52,8 +52,8 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
     description: 'JSON com chave e valor dos valores que alimentarão o modelo',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['createByTemplate'],
+        resource: ['document'],
       },
     },
   },
@@ -66,8 +66,8 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
       'JSON com metadados que são utilizados nos retornos de documentos via webhooks',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['createByTemplate'],
+        resource: ['document'],
       },
     },
   },

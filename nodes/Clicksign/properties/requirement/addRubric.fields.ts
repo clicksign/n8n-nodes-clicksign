@@ -14,8 +14,8 @@ export const addRubricFields: INodeProperties[] = [
       'Informe as páginas que receberão as iniciais do signatário separadas por vírgula',
     displayOptions: {
       show: {
-        resource: ['requirement'],
         operation: ['addRubric'],
+        resource: ['requirement'],
       },
     },
   },

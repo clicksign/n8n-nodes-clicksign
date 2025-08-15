@@ -10,8 +10,8 @@ export const createDocumentByBase64: INodeProperties[] = [
     description: 'ID do envelope no qual o documento será adicionado',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['createByBase64'],
+        resource: ['document'],
       },
     },
   },
@@ -25,8 +25,8 @@ export const createDocumentByBase64: INodeProperties[] = [
     description: 'Nome do arquivo com extensão do arquivo',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['createByBase64'],
+        resource: ['document'],
       },
     },
   },
@@ -40,8 +40,8 @@ export const createDocumentByBase64: INodeProperties[] = [
       'Base64 do arquivo desejado, consulte os formatos aceitos na documentação',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['createByBase64'],
+        resource: ['document'],
       },
     },
   },
@@ -54,8 +54,8 @@ export const createDocumentByBase64: INodeProperties[] = [
       'JSON com metadados que são utilizados nos retornos de documentos via webhooks',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['createByBase64'],
+        resource: ['document'],
       },
     },
   },

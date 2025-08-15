@@ -10,8 +10,8 @@ export const activateEnvelopeFields: INodeProperties[] = [
     description: 'ID do Envelope que deseja ativar',
     displayOptions: {
       show: {
-        resource: ['envelope'],
         operation: ['activate'],
+        resource: ['envelope'],
       },
     },
   },

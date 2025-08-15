@@ -10,8 +10,8 @@ export const updateDocumentFields: INodeProperties[] = [
     description: 'ID do Envelope que possui o documento',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['update'],
+        resource: ['document'],
       },
     },
   },
@@ -24,8 +24,8 @@ export const updateDocumentFields: INodeProperties[] = [
     description: 'ID do documento que deseja atualizar',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['update'],
+        resource: ['document'],
       },
     },
   },
@@ -38,8 +38,8 @@ export const updateDocumentFields: INodeProperties[] = [
       'Só é possível alterar status de documentos running (em progresso/ativados)',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['update'],
+        resource: ['document'],
       },
     },
     options: [
@@ -62,8 +62,8 @@ export const updateDocumentFields: INodeProperties[] = [
       'JSON com metadados que são utilizados nos retornos de documentos via webhooks',
     displayOptions: {
       show: {
-        resource: ['document'],
         operation: ['update'],
+        resource: ['document'],
       },
     },
   },
