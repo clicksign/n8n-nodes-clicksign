@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 jest.mock('../../shared/clicksignRequest');
 jest.mock('../../shared/getNodeParameterTyped');
@@ -55,10 +55,10 @@ describe('update: template', () => {
         },
       },
     };
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'PATCH',
       body: expectedBody,
-      uri: '/templates/mockTemplateId123',
+      url: '/templates/mockTemplateId123',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(
@@ -91,10 +91,10 @@ describe('update: template', () => {
       },
     };
 
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'PATCH',
       body: expectedBody,
-      uri: '/templates/mockTemplateId123',
+      url: '/templates/mockTemplateId123',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(
@@ -125,10 +125,10 @@ describe('update: template', () => {
       },
     };
 
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'PATCH',
       body: expectedBody,
-      uri: '/templates/mockTemplateId123',
+      url: '/templates/mockTemplateId123',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(

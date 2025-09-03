@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 import {
   clicksignRequest,
   ClicksignRequestResponse,
@@ -42,8 +42,8 @@ describe('clicksignRequest', () => {
       status: 'created',
       url: 'http://example.com/doc',
     };
-    const requestOptions: IRequestOptions = {
-      uri: '/documents',
+    const requestOptions: IHttpRequestOptions = {
+      url: '/documents',
       method: 'POST',
       body: { filename: 'report.pdf' },
       headers: { 'X-Custom-Header': 'MyValue' },
@@ -60,7 +60,7 @@ describe('clicksignRequest', () => {
     expect(mockGetCredentials).toHaveBeenCalledWith('clicksignApi');
     expect(mockRequest).toHaveBeenCalledTimes(1);
     expect(mockRequest).toHaveBeenCalledWith({
-      uri: 'https://sandbox.clicksign.com/api/v3/documents',
+      url: 'https://sandbox.clicksign.com/api/v3/documents',
       method: 'POST',
       body: { filename: 'report.pdf' },
       json: true,
@@ -83,7 +83,10 @@ describe('clicksignRequest', () => {
       clicksignAccessToken: 'generic-token',
     };
     const genericError = new Error('Something went wrong');
-    const requestOptions: IRequestOptions = { uri: '/data', method: 'POST' };
+    const requestOptions: IHttpRequestOptions = {
+      url: '/data',
+      method: 'POST',
+    };
 
     mockGetCredentials.mockResolvedValue(mockCredentials);
     mockRequest.mockRejectedValue(genericError);
@@ -115,8 +118,8 @@ describe('clicksignRequest', () => {
       clicksignEnvironment: 'sandbox',
       clicksignAccessToken: 'token-no-headers',
     };
-    const requestOptions: IRequestOptions = {
-      uri: '/simple',
+    const requestOptions: IHttpRequestOptions = {
+      url: '/simple',
       method: 'GET',
     };
 

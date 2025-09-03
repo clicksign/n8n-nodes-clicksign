@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
@@ -28,10 +28,10 @@ export async function createAutoSignature(ef: IExecuteFunctions) {
     },
   };
 
-  const options: IRequestOptions = {
+  const options: IHttpRequestOptions = {
     method: 'POST',
     body,
-    uri: `/auto_signature/terms`,
+    url: `/auto_signature/terms`,
   };
 
   return await clicksignRequest(

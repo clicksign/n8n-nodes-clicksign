@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 jest.mock('../../shared/clicksignRequest');
 jest.mock('../../shared/getNodeParameterTyped');
@@ -63,10 +63,10 @@ describe('create: template', () => {
         },
       },
     };
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'POST',
       body: expectedBody,
-      uri: '/templates',
+      url: '/templates',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(

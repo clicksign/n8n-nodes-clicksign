@@ -1,6 +1,6 @@
 import {
   IExecuteFunctions,
-  IRequestOptions,
+  IHttpRequestOptions,
   NodeOperationError,
 } from 'n8n-workflow';
 
@@ -21,21 +21,21 @@ export type ClicksignRequestResponse = SuccessResponse | ErrorResponse;
 
 export async function clicksignRequest(
   executeFunctions: IExecuteFunctions,
-  options: IRequestOptions,
+  options: IHttpRequestOptions,
   errorMessage: string = 'Unexpected error occurred',
 ): Promise<ClicksignRequestResponse> {
   const credentials = await executeFunctions.getCredentials('clicksignApi');
   const environment = credentials.clicksignEnvironment;
   const accessToken = credentials.clicksignAccessToken;
 
-  const requestOptions: IRequestOptions = {
+  const requestOptions: IHttpRequestOptions = {
     ...options,
     headers: {
       Authorization: accessToken,
       ...(options.headers || {}),
     },
     json: true,
-    uri: `https://${environment}.clicksign.com/api/v3${options.uri}`,
+    url: `https://${environment}.clicksign.com/api/v3${options.url}`,
   };
 
   try {

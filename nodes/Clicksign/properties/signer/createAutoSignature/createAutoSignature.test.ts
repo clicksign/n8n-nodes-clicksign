@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 jest.mock('../../shared/clicksignRequest');
 jest.mock('../../shared/getNodeParameterTyped');
@@ -108,10 +108,10 @@ describe('createAutoSignature: signer', () => {
       },
     };
 
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'POST',
       body: expectedBody,
-      uri: '/auto_signature/terms',
+      url: '/auto_signature/terms',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(

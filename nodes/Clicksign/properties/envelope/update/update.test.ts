@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 jest.mock('../../shared/clicksignRequest');
 jest.mock('../../shared/getNodeParameterTyped');
@@ -87,10 +87,10 @@ describe('updateEnvelope', () => {
         },
       },
     };
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'PATCH',
       body: expectedBody,
-      uri: '/envelopes/12345',
+      url: '/envelopes/12345',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(
@@ -143,10 +143,10 @@ describe('updateEnvelope', () => {
       },
     };
 
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'PATCH',
       body: expectedBody,
-      uri: '/envelopes/12345',
+      url: '/envelopes/12345',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(
@@ -193,10 +193,10 @@ describe('updateEnvelope', () => {
         },
       },
     };
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'PATCH',
       body: expectedBody,
-      uri: '/envelopes/envWithDeadline',
+      url: '/envelopes/envWithDeadline',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(

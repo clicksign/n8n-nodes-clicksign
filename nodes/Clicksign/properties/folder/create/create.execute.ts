@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
@@ -28,10 +28,10 @@ export async function createFolder(ef: IExecuteFunctions) {
       ...relationshipObj,
     },
   };
-  const options: IRequestOptions = {
+  const options: IHttpRequestOptions = {
     method: 'POST',
     body,
-    uri: `/folders`,
+    url: `/folders`,
   };
 
   return await clicksignRequest(ef, options, 'Erro ao criar pasta');

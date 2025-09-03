@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
@@ -19,10 +19,10 @@ export async function updateTemplate(ef: IExecuteFunctions) {
       },
     },
   };
-  const options: IRequestOptions = {
+  const options: IHttpRequestOptions = {
     method: 'PATCH',
     body,
-    uri: `/templates/${templateId}`,
+    url: `/templates/${templateId}`,
   };
 
   return await clicksignRequest(ef, options, 'Erro ao atualizar modelo');

@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 jest.mock('../../shared/getNodeParameterTyped');
 jest.mock('../../shared/clicksignRequest');
@@ -76,10 +76,10 @@ describe('bulk: requirement', () => {
       'atomic:operations': [expectedAddOp1, expectedRemoveOp, expectedAddOp2],
     };
 
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'POST',
       body: expectedBody,
-      uri: `/envelopes/${mockEnvelopeId}/bulk_requirements`,
+      url: `/envelopes/${mockEnvelopeId}/bulk_requirements`,
     };
 
     expect(clicksignRequest).toHaveBeenCalledTimes(1);
@@ -133,10 +133,10 @@ describe('bulk: requirement', () => {
       ],
     };
 
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'POST',
       body: expectedBody,
-      uri: `/envelopes/${mockEnvelopeId}/bulk_requirements`,
+      url: `/envelopes/${mockEnvelopeId}/bulk_requirements`,
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(
@@ -170,10 +170,10 @@ describe('bulk: requirement', () => {
       ],
     };
 
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'POST',
       body: expectedBody,
-      uri: `/envelopes/${mockEnvelopeId}/bulk_requirements`,
+      url: `/envelopes/${mockEnvelopeId}/bulk_requirements`,
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(

@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
@@ -20,10 +20,10 @@ export async function updateDocument(ef: IExecuteFunctions) {
     },
   };
 
-  const options: IRequestOptions = {
+  const options: IHttpRequestOptions = {
     method: 'PATCH',
     body,
-    uri: `/envelopes/${envelopeId}/documents/${documentId}`,
+    url: `/envelopes/${envelopeId}/documents/${documentId}`,
   };
 
   return await clicksignRequest(ef, options, 'Erro ao atualizar documento');

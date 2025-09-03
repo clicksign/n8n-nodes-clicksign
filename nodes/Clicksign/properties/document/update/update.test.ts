@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 jest.mock('../../shared/clicksignRequest');
 jest.mock('../../shared/getNodeParameterTyped');
@@ -73,10 +73,10 @@ describe('update: document', () => {
         },
       },
     };
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'PATCH',
       body: expectedBody,
-      uri: '/envelopes/envelope-id/documents/document-id',
+      url: '/envelopes/envelope-id/documents/document-id',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(

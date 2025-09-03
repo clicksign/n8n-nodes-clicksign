@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 jest.mock('../../shared/clicksignRequest');
 jest.mock('../../shared/getNodeParameterTyped');
@@ -55,10 +55,10 @@ describe('createFolder', () => {
         },
       },
     };
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'POST',
       body: expectedBody,
-      uri: '/folders',
+      url: '/folders',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(
@@ -105,10 +105,10 @@ describe('createFolder', () => {
         },
       },
     };
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'POST',
       body: expectedBody,
-      uri: '/folders',
+      url: '/folders',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(

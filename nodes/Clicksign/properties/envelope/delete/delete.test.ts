@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 jest.mock('../../shared/clicksignRequest');
 jest.mock('../../shared/getNodeParameterTyped');
@@ -37,9 +37,9 @@ describe('delete: envelope', () => {
     );
     expect(clicksignRequest).toHaveBeenCalledTimes(1);
 
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'DELETE',
-      uri: '/envelopes/12345',
+      url: '/envelopes/12345',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(

@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
@@ -6,9 +6,9 @@ import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 export async function getAllDocuments(ef: IExecuteFunctions) {
   const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');
 
-  const options: IRequestOptions = {
+  const options: IHttpRequestOptions = {
     method: 'GET',
-    uri: `/envelopes/${envelopeId}/documents`,
+    url: `/envelopes/${envelopeId}/documents`,
   };
 
   return await clicksignRequest(ef, options, 'Erro ao obter documentos');

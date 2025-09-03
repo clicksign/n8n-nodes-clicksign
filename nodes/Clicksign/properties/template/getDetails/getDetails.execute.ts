@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
@@ -6,9 +6,9 @@ import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 export async function getTemplateDetails(ef: IExecuteFunctions) {
   const templateId = getNodeParameterTyped<string>(ef, 'templateId');
 
-  const options: IRequestOptions = {
+  const options: IHttpRequestOptions = {
     method: 'GET',
-    uri: `/templates/${templateId}`,
+    url: `/templates/${templateId}`,
   };
 
   return await clicksignRequest(

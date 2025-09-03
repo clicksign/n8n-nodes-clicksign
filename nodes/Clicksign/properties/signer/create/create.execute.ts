@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
@@ -58,10 +58,10 @@ export async function createSigner(ef: IExecuteFunctions) {
     },
   };
 
-  const options: IRequestOptions = {
+  const options: IHttpRequestOptions = {
     method: 'POST',
     body,
-    uri: `/envelopes/${envelopeId}/signers`,
+    url: `/envelopes/${envelopeId}/signers`,
   };
 
   return await clicksignRequest(ef, options, 'Erro ao criar o signatário');

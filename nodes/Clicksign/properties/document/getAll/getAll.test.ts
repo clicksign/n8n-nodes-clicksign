@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 jest.mock('../../shared/clicksignRequest');
 jest.mock('../../shared/getNodeParameterTyped');
@@ -38,9 +38,9 @@ describe('getAll: document', () => {
     );
     expect(clicksignRequest).toHaveBeenCalledTimes(1);
 
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'GET',
-      uri: '/envelopes/mockEnvelopeId123/documents',
+      url: '/envelopes/mockEnvelopeId123/documents',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(

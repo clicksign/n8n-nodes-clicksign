@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 import { clicksignRequest } from '../../shared/clicksignRequest';
@@ -124,10 +124,10 @@ export async function bulkRequirements(ef: IExecuteFunctions) {
   const body = {
     'atomic:operations': atomicOperations,
   };
-  const options: IRequestOptions = {
+  const options: IHttpRequestOptions = {
     method: 'POST',
     body,
-    uri: `/envelopes/${envelopeId}/bulk_requirements`,
+    url: `/envelopes/${envelopeId}/bulk_requirements`,
   };
 
   return await clicksignRequest(

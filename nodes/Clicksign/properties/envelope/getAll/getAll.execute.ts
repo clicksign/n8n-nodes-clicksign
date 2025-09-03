@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
@@ -40,9 +40,9 @@ export async function getAllEnvelopes(ef: IExecuteFunctions) {
     : parameters;
   parameters = parameters ? `?${parameters}` : parameters;
 
-  const options: IRequestOptions = {
+  const options: IHttpRequestOptions = {
     method: 'GET',
-    uri: `/envelopes${parameters}`,
+    url: `/envelopes${parameters}`,
   };
 
   return await clicksignRequest(ef, options, 'Erro ao obter envelopes');

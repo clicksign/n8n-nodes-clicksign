@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../../shared/clicksignRequest';
 
@@ -35,10 +35,10 @@ export async function addRequirement(
     },
   };
 
-  const options: IRequestOptions = {
+  const options: IHttpRequestOptions = {
     method: 'POST',
     body,
-    uri: `/envelopes/${payload.envelopeId}/requirements`,
+    url: `/envelopes/${payload.envelopeId}/requirements`,
   };
 
   return await clicksignRequest(ef, options, payload.errorMessage);

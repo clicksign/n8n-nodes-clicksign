@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 jest.mock('../../shared/clicksignRequest');
 jest.mock('../../shared/getNodeParameterTyped');
@@ -78,10 +78,10 @@ describe('createByBase64 : document', () => {
         },
       },
     };
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'POST',
       body: expectedBody,
-      uri: '/envelopes/env-main-base64/documents',
+      url: '/envelopes/env-main-base64/documents',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(

@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 jest.mock('../../shared/clicksignRequest');
 jest.mock('../../shared/getNodeParameterTyped');
@@ -109,10 +109,10 @@ describe('create: signer', () => {
         },
       },
     };
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'POST',
       body: expectedBody,
-      uri: '/envelopes/12345/signers',
+      url: '/envelopes/12345/signers',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(
@@ -165,10 +165,10 @@ describe('create: signer', () => {
         },
       },
     };
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'POST',
       body: expectedBody,
-      uri: '/envelopes/12345/signers',
+      url: '/envelopes/12345/signers',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(
@@ -221,10 +221,10 @@ describe('create: signer', () => {
         },
       },
     };
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'POST',
       body: expectedBody,
-      uri: '/envelopes/12345/signers',
+      url: '/envelopes/12345/signers',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(
@@ -277,10 +277,10 @@ describe('create: signer', () => {
         },
       },
     };
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'POST',
       body: expectedBody,
-      uri: '/envelopes/12345/signers',
+      url: '/envelopes/12345/signers',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(
@@ -331,10 +331,10 @@ describe('create: signer', () => {
         },
       },
     };
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'POST',
       body: expectedBody,
-      uri: '/envelopes/12345/signers',
+      url: '/envelopes/12345/signers',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(

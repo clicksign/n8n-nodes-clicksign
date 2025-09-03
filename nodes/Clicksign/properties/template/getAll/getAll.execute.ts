@@ -1,11 +1,11 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 
 export async function getAllTemplates(ef: IExecuteFunctions) {
-  const options: IRequestOptions = {
+  const options: IHttpRequestOptions = {
     method: 'GET',
-    uri: `/templates`,
+    url: `/templates`,
   };
 
   return await clicksignRequest(ef, options, 'Erro ao listar modelos');

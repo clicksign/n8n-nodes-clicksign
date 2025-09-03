@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 jest.mock('../../shared/clicksignRequest');
 jest.mock('../../shared/getNodeParameterTyped');
@@ -62,10 +62,10 @@ describe('notifySigner: notification', () => {
       },
     };
 
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'POST',
       body: expectedBody,
-      uri: '/envelopes/mockEnvelopeId123/signers/mockSignerId456/notifications',
+      url: '/envelopes/mockEnvelopeId123/signers/mockSignerId456/notifications',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(
@@ -101,10 +101,10 @@ describe('notifySigner: notification', () => {
         },
       },
     };
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'POST',
       body: expectedBody,
-      uri: '/envelopes/envEmptyMsg/signers/signerEmptyMsg/notifications',
+      url: '/envelopes/envEmptyMsg/signers/signerEmptyMsg/notifications',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(

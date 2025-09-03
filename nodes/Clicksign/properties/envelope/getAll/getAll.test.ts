@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 jest.mock('../../shared/clicksignRequest');
 jest.mock('../../shared/getNodeParameterTyped');
@@ -31,9 +31,9 @@ describe('getAll: envelope', () => {
 
     expect(clicksignRequest).toHaveBeenCalledTimes(1);
 
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'GET',
-      uri: '/envelopes',
+      url: '/envelopes',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(
@@ -55,9 +55,9 @@ describe('getAll: envelope', () => {
 
       await getAllEnvelopes(mockExecuteFunctions);
 
-      const expectedOptions: IRequestOptions = {
+      const expectedOptions: IHttpRequestOptions = {
         method: 'GET',
-        uri: `/envelopes?filter[${filter === 'deadline' ? 'deadline_at' : filter}]=filter`,
+        url: `/envelopes?filter[${filter === 'deadline' ? 'deadline_at' : filter}]=filter`,
       };
       expect(clicksignRequest).toHaveBeenCalledWith(
         mockExecuteFunctions,
@@ -78,9 +78,9 @@ describe('getAll: envelope', () => {
 
     await getAllEnvelopes(mockExecuteFunctions);
 
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'GET',
-      uri: '/envelopes?filter[status]=closed&filter[name]=Another Doc',
+      url: '/envelopes?filter[status]=closed&filter[name]=Another Doc',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(
@@ -101,9 +101,9 @@ describe('getAll: envelope', () => {
 
     await getAllEnvelopes(mockExecuteFunctions);
 
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'GET',
-      uri: '/envelopes?filter[status]=active&sort=name',
+      url: '/envelopes?filter[status]=active&sort=name',
     };
 
     expect(clicksignRequest).toHaveBeenCalledWith(
@@ -137,9 +137,9 @@ describe('getAll: envelope', () => {
 
     await getAllEnvelopes(mockExecuteFunctions);
 
-    const expectedOptions: IRequestOptions = {
+    const expectedOptions: IHttpRequestOptions = {
       method: 'GET',
-      uri: '/envelopes?filter[status]=draft&filter[name]=Project Alpha&filter[created]=2024-01-01&filter[modified]=2024-06-30&filter[deadline_at]=2025-12-31&sort=-name',
+      url: '/envelopes?filter[status]=draft&filter[name]=Project Alpha&filter[created]=2024-01-01&filter[modified]=2024-06-30&filter[deadline_at]=2025-12-31&sort=-name',
     };
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,

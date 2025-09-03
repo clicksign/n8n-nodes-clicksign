@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 import { clicksignRequest } from '../../shared/clicksignRequest';
@@ -16,10 +16,10 @@ export async function notifySigner(ef: IExecuteFunctions) {
       },
     },
   };
-  const options: IRequestOptions = {
+  const options: IHttpRequestOptions = {
     method: 'POST',
     body,
-    uri: `/envelopes/${envelopeId}/signers/${signerId}/notifications`,
+    url: `/envelopes/${envelopeId}/signers/${signerId}/notifications`,
   };
 
   return await clicksignRequest(

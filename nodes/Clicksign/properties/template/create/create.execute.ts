@@ -1,4 +1,4 @@
-import { IExecuteFunctions, IRequestOptions } from 'n8n-workflow';
+import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
@@ -18,10 +18,10 @@ export async function createTemplate(ef: IExecuteFunctions) {
       },
     },
   };
-  const options: IRequestOptions = {
+  const options: IHttpRequestOptions = {
     method: 'POST',
     body,
-    uri: `/templates`,
+    url: `/templates`,
   };
 
   return await clicksignRequest(ef, options, 'Erro ao criar modelo');
