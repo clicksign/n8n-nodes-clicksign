@@ -41,6 +41,8 @@ export class ClicksignApi implements ICredentialType {
     type: 'generic',
     properties: {
       qs: {
+        // Essa variável é somente uma interpolação de string, ou seja, o $credentials.clicksignAccessToken representa uma variável
+        // que será substituída por um valor em tempo de execução dentro do ambiente do n8n de forma segura
         access_token: '={{$credentials.clicksignAccessToken}}',
       },
     },
