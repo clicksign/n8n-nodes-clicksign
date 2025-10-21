@@ -39,7 +39,12 @@ export async function clicksignRequest(
   };
 
   try {
-    const response = await executeFunctions.helpers.request(requestOptions);
+    const response =
+      await executeFunctions.helpers.httpRequestWithAuthentication.call(
+        executeFunctions,
+        'clicksignApi',
+        requestOptions,
+      );
 
     return response;
   } catch (error) {
