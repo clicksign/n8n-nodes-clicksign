@@ -32,6 +32,8 @@ export async function clicksignRequest(
     ...options,
     headers: {
       Authorization: accessToken,
+      Accept: 'application/vnd.api+json',
+      'Content-Type': 'application/vnd.api+json',
       ...(options.headers || {}),
     },
     json: true,

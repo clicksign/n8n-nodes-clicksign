@@ -30,16 +30,6 @@ export class Clicksign implements INodeType {
         required: true,
       },
     ],
-    requestDefaults: {
-      baseURL:
-        '=https://{{$credentials.clicksignEnvironment}}.clicksign.com/api/v3',
-      url: '',
-      headers: {
-        Accept: 'application/vnd.api+json',
-        'Content-Type': 'application/vnd.api+json',
-        Authorization: '={{$credentials.clicksignAccessToken}}',
-      },
-    },
     properties: clicksignProperties,
   };
   async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
