@@ -49,13 +49,26 @@ export class Clicksign implements INodeType {
 
     if (!fn) {
       throw new NodeApiError(this.getNode(), {
-        message: 'Operação não suportada.',
-        description: `A função "${operation}" para o recurso "${resource}" não é suportada!`,
+        message: 'Unsupported operation',
+        description: `The function "${operation}" for resource "${resource}" is not supported!`,
       });
     }
 
     const responseData = await fn(this);
 
-    return [this.helpers.returnJsonArray(responseData)];
+    if (!Array.isArray(responseData)) {
+      return [this.helpers.returnJsonArray(responseData)];
+    }
+
+    const outputData: INodeExecutionData[] = responseData.map((data, index) => {
+      return {
+        json: data,
+        pairedItem: {
+          item: index,
+        },
+      };
+    });
+
+    return [outputData];
   }
 }
