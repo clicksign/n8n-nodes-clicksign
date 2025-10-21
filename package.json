@@ -28,7 +28,7 @@
     "prepublishOnly": "npm run build && npm run lint -c eslint.prepublish.config.js nodes credentials package.json",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prepare": "husky"
+    "setup-hooks": "husky"
   },
   "files": [
     "dist"
