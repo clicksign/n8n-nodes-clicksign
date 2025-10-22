@@ -2,6 +2,7 @@ import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
+import { t } from '../../shared/translations';
 
 export async function updateDocument(ef: IExecuteFunctions) {
   const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');
@@ -26,5 +27,5 @@ export async function updateDocument(ef: IExecuteFunctions) {
     url: `/envelopes/${envelopeId}/documents/${documentId}`,
   };
 
-  return await clicksignRequest(ef, options, 'Erro ao atualizar documento');
+  return await clicksignRequest(ef, options, t('document.errors.update'));
 }
