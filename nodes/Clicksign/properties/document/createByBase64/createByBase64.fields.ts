@@ -1,13 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../../shared/translations';
 
 export const createDocumentByBase64: INodeProperties[] = [
   {
-    displayName: 'Envelope ID',
+    displayName: t('document.fields.createByBase64.envelopeId.displayName'),
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do envelope no qual o documento será adicionado',
+    description: t('document.fields.createByBase64.envelopeId.description'),
     displayOptions: {
       show: {
         operation: ['createByBase64'],
@@ -16,13 +17,13 @@ export const createDocumentByBase64: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Nome Do Arquivo (Com a Extensão)',
+    displayName: t('document.fields.createByBase64.filename.displayName'),
     name: 'filename',
     type: 'string',
     required: true,
     default: '',
     placeholder: 'arquivo.pdf',
-    description: 'Nome do arquivo com extensão do arquivo',
+    description: t('document.fields.createByBase64.filename.description'),
     displayOptions: {
       show: {
         operation: ['createByBase64'],
@@ -31,13 +32,12 @@ export const createDocumentByBase64: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Arquivo Na Base64',
+    displayName: t('document.fields.createByBase64.fileBase64.displayName'),
     name: 'fileBase64',
     type: 'string',
     required: true,
     default: '',
-    description:
-      'Base64 do arquivo desejado, consulte os formatos aceitos na documentação',
+    description: t('document.fields.createByBase64.fileBase64.description'),
     displayOptions: {
       show: {
         operation: ['createByBase64'],
@@ -46,12 +46,11 @@ export const createDocumentByBase64: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Metadata',
+    displayName: t('document.fields.createByBase64.metadata.displayName'),
     name: 'metadata',
     type: 'json',
     default: '{}',
-    description:
-      'JSON com metadados que são utilizados nos retornos de documentos via webhooks',
+    description: t('document.fields.createByBase64.metadata.description'),
     displayOptions: {
       show: {
         operation: ['createByBase64'],

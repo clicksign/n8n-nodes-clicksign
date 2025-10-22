@@ -1,0 +1,153 @@
+{
+  "operation": "Operation",
+  "resources": {
+    "displayName": "Resource",
+    "document": "Document",
+    "envelope": "Envelope",
+    "event": "Event",
+    "template": "Template",
+    "notification": "Notification",
+    "watcher": "Watcher",
+    "folder": "Folder",
+    "requirement": "Requirement",
+    "signer": "Signer"
+  },
+  "document": {
+    "operations": {
+      "update": {
+        "name": "Update",
+        "value": "update",
+        "action": "Update document",
+        "description": "Update document"
+      },
+      "createByBase64": {
+        "name": "Create By Base64",
+        "value": "createByBase64",
+        "action": "Create document by base64",
+        "description": "Create document by base64"
+      },
+      "createByTemplate": {
+        "name": "Create By Template",
+        "value": "createByTemplate",
+        "action": "Create document by template",
+        "description": "Create document by template"
+      },
+      "delete": {
+        "name": "Delete",
+        "value": "delete",
+        "action": "Delete document",
+        "description": "Delete document"
+      },
+      "getAll": {
+        "name": "List All",
+        "value": "getAll",
+        "action": "List all documents",
+        "description": "List all documents"
+      },
+      "getDetails": {
+        "name": "Get Details",
+        "value": "getDetails",
+        "action": "Get details of a document",
+        "description": "Get details of a document"
+      }
+    },
+    "fields": {
+      "createByBase64": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that contains the document to create"
+        },
+        "filename": {
+          "displayName": "Filename (With Extension)",
+          "description": "Name of the file to create with extension"
+        },
+        "fileBase64": {
+          "displayName": "File Base64",
+          "description": "Base64 of the file to create"
+        },
+        "metadata": {
+          "displayName": "Metadata",
+          "description": "JSON with metadata that is used in document webhooks returns"
+        }
+      },
+      "createByTemplate": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that contains the document to create"
+        },
+        "filename": {
+          "displayName": "Filename (.docx)",
+          "description": "Name of the file to create with extension .docx"
+        },
+        "templateId": {
+          "displayName": "Template ID",
+          "description": "ID of the template to use for the creation"
+        },
+        "templateData": {
+          "displayName": "Template Data",
+          "description": "JSON with key and value of the values that will fill the template"
+        },
+        "metadata": {
+          "displayName": "Metadata",
+          "description": "JSON with metadata that is used in document webhooks returns"
+        }
+      },
+      "delete": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that contains the document to delete"
+        },
+        "documentId": {
+          "displayName": "Document ID",
+          "description": "ID of the document to delete"
+        }
+      },
+      "getAll": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that contains the documents to list"
+        }
+      },
+      "getDetails": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that contains the document to get details"
+        },
+        "documentId": {
+          "displayName": "Document ID",
+          "description": "ID of the document to get details"
+        }
+      },
+      "update": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that contains the document to update"
+        },
+        "documentId": {
+          "displayName": "Document ID",
+          "description": "ID of the document to update"
+        },
+        "status": {
+          "displayName": "Status",
+          "description": "Only possible to change status of running documents (in progress/activated)",
+          "options": {
+            "canceled": "Canceled",
+            "closed": "Completed"
+          }
+        },
+        "metadata": {
+          "displayName": "Metadata",
+          "description": "JSON with metadata that is used in document webhooks returns"
+        }
+      }
+    },
+    "errors": {
+      "createByBase64": "Error creating document by base 64",
+      "createByTemplate": "Error creating document by template",
+      "delete": "Error deleting document",
+      "getAll": "Error getting documents",
+      "getDetails": "Error getting details of a document",
+      "update": "Error updating document"
+    }
+  }
+}

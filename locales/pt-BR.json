@@ -1,0 +1,153 @@
+{
+  "operation": "Operação",
+  "resources": {
+    "displayName": "Recurso",
+    "document": "Documento",
+    "envelope": "Envelope",
+    "event": "Evento",
+    "template": "Modelo",
+    "notification": "Notificação",
+    "watcher": "Observador",
+    "folder": "Pasta",
+    "requirement": "Requisito",
+    "signer": "Signatário"
+  },
+  "document": {
+    "operations": {
+      "update": {
+        "name": "Atualizar",
+        "value": "update",
+        "action": "Atualizar documento",
+        "description": "Atualizar documento"
+      },
+      "createByBase64": {
+        "name": "Criar Por Arquivo Base 64",
+        "value": "createByBase64",
+        "action": "Criar documento por arquivo base 64",
+        "description": "Criar documento por arquivo base 64"
+      },
+      "createByTemplate": {
+        "name": "Criar Por Modelo",
+        "value": "createByTemplate",
+        "action": "Criar documento por modelo",
+        "description": "Criar documento por modelo"
+      },
+      "delete": {
+        "name": "Excluir",
+        "value": "delete",
+        "action": "Excluir documento",
+        "description": "Excluir documento"
+      },
+      "getAll": {
+        "name": "Listar",
+        "value": "getAll",
+        "action": "Listar documentos",
+        "description": "Listar documentos"
+      },
+      "getDetails": {
+        "name": "Obter Detalhes",
+        "value": "getDetails",
+        "action": "Obter detalhes do documento",
+        "description": "Obter detalhes de um documento"
+      }
+    },
+    "fields": {
+      "createByBase64": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope no qual o documento será adicionado"
+        },
+        "filename": {
+          "displayName": "Nome do Arquivo (Com a Extensão)",
+          "description": "Nome do arquivo com extensão do arquivo"
+        },
+        "fileBase64": {
+          "displayName": "Arquivo Base 64",
+          "description": "Arquivo base 64 do documento"
+        },
+        "metadata": {
+          "displayName": "Metadados",
+          "description": "JSON com metadados que são utilizados nos retornos de documentos via webhooks"
+        }
+      },
+      "createByTemplate": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope no qual o documento será adicionado"
+        },
+        "filename": {
+          "displayName": "Nome do Arquivo (.docx)",
+          "description": "Nome do arquivo com extensão .docx"
+        },
+        "templateId": {
+          "displayName": "Template ID",
+          "description": "ID do Modelo utilizado para a  criação"
+        },
+        "templateData": {
+          "displayName": "Variáveis Do Modelo",
+          "description": "JSON com chave e valor dos valores que alimentarão o modelo"
+        },
+        "metadata": {
+          "displayName": "Metadados",
+          "description": "JSON com metadados que são utilizados nos retornos de documentos via webhooks"
+        }
+      },
+      "delete": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope que possui o documento"
+        },
+        "documentId": {
+          "displayName": "Documento ID",
+          "description": "ID do documento que deseja excluir"
+        }
+      },
+      "getAll": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope que possui os documentos"
+        }
+      },
+      "getDetails": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope que possui o documento"
+        },
+        "documentId": {
+          "displayName": "Documento ID",
+          "description": "ID do documento que deseja visualizar"
+        }
+      },
+      "update": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope que possui o documento"
+        },
+        "documentId": {
+          "displayName": "Documento ID",
+          "description": "ID do documento que deseja atualizar"
+        },
+        "status": {
+          "displayName": "Status",
+          "description": "Só é possível alterar status de documentos running (em progresso/ativados)",
+          "options": {
+            "canceled": "Cancelado",
+            "closed": "Finalizado"
+          }
+        },
+        "metadata": {
+          "displayName": "Metadados",
+          "description": "JSON com metadados que são utilizados nos retornos de documentos via webhooks"
+        }
+      }
+    },
+    "errors": {
+      "createByBase64": "Erro ao criar documento por arquivo base 64",
+      "createByTemplate": "Erro ao criar documento por modelo",
+      "delete": "Erro ao excluir documento",
+      "getAll": "Erro ao obter documentos",
+      "getDetails": "Erro ao obter detalhes do documento",
+      "update": "Erro ao atualizar documento"
+    }
+  }
+}

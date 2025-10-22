@@ -1,13 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../../shared/translations';
 
 export const deleteDocumentFields: INodeProperties[] = [
   {
-    displayName: 'Envelope ID',
+    displayName: t('document.fields.delete.envelopeId.displayName'),
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do Envelope que possui o documento',
+    description: t('document.fields.delete.envelopeId.description'),
     displayOptions: {
       show: {
         operation: ['delete'],
@@ -16,12 +17,12 @@ export const deleteDocumentFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Documento ID',
+    displayName: t('document.fields.delete.documentId.displayName'),
     name: 'documentId',
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do documento que deseja excluir',
+    description: t('document.fields.delete.documentId.description'),
     displayOptions: {
       show: {
         operation: ['delete'],
