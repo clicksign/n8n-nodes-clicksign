@@ -13,7 +13,11 @@ describe('getDetails: requirement', () => {
   beforeEach(() => {
     jest.clearAllMocks();
 
-    mockExecuteFunctions = {} as IExecuteFunctions;
+    mockExecuteFunctions = {
+      helpers: {
+        httpRequestWithAuthentication: jest.fn(),
+      },
+    } as unknown as IExecuteFunctions;
 
     (getNodeParameterTyped as jest.Mock).mockImplementation(
       (ef: IExecuteFunctions, name: string) => {

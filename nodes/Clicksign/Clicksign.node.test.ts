@@ -120,9 +120,9 @@ describe('Clicksign Node', () => {
     }
 
     expect(thrownError).toBeInstanceOf(NodeApiError);
-    expect(thrownError.message).toBe('Operação não suportada.');
+    expect(thrownError.message).toBe('Unsupported operation');
     expect(thrownError.description).toBe(
-      'A função "unsupportedOperation" para o recurso "envelope" não é suportada!',
+      'The function "unsupportedOperation" for resource "envelope" is not supported!',
     );
 
     expect(resourceOperationsFunctions.envelope.create).not.toHaveBeenCalled();

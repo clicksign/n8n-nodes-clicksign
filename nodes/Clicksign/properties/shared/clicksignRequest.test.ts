@@ -25,7 +25,7 @@ describe('clicksignRequest', () => {
     mockExecuteFunctions = {
       getCredentials: mockGetCredentials,
       helpers: {
-        request: mockRequest,
+        httpRequestWithAuthentication: mockRequest,
       },
       continueOnFail: mockContinueOnFail,
       getNode: jest.fn(() => ({ name: 'TestNode', id: 'node123' })),
@@ -59,13 +59,15 @@ describe('clicksignRequest', () => {
 
     expect(mockGetCredentials).toHaveBeenCalledWith('clicksignApi');
     expect(mockRequest).toHaveBeenCalledTimes(1);
-    expect(mockRequest).toHaveBeenCalledWith({
+    expect(mockRequest).toHaveBeenCalledWith('clicksignApi', {
       url: 'https://sandbox.clicksign.com/api/v3/documents',
       method: 'POST',
       body: { filename: 'report.pdf' },
       json: true,
       headers: {
         Authorization: 'test-access-token-123',
+        Accept: 'application/vnd.api+json',
+        'Content-Type': 'application/vnd.api+json',
         'X-Custom-Header': 'MyValue',
       },
     });
@@ -129,10 +131,14 @@ describe('clicksignRequest', () => {
     await clicksignRequest(mockExecuteFunctions, requestOptions);
 
     expect(mockRequest).toHaveBeenCalledWith(
+      'clicksignApi',
       expect.objectContaining({
-        headers: {
+        method: 'GET',
+        url: 'https://sandbox.clicksign.com/api/v3/simple',
+        json: true,
+        headers: expect.objectContaining({
           Authorization: 'token-no-headers',
-        },
+        }),
       }),
     );
   });
