@@ -4,11 +4,16 @@ import type {
   INodeType,
   INodeTypeDescription,
 } from 'n8n-workflow';
+<<<<<<< HEAD
 import { NodeApiError, NodeConnectionTypes } from 'n8n-workflow';
+=======
+import { NodeApiError } from 'n8n-workflow';
+>>>>>>> 592ecc6 (undo)
 
 import { clicksignProperties } from './properties';
 import { getNodeParameterTyped } from './properties/shared/getNodeParameterTyped';
 import { resourceOperationsFunctions } from './properties/executors';
+import { t } from './properties/shared/simpleTranslations';
 
 export class Clicksign implements INodeType {
   description: INodeTypeDescription = {
@@ -22,8 +27,13 @@ export class Clicksign implements INodeType {
     defaults: {
       name: 'Clicksign',
     },
+<<<<<<< HEAD
     inputs: [NodeConnectionTypes.Main],
     outputs: [NodeConnectionTypes.Main],
+=======
+    inputs: ['main'],
+    outputs: ['main'],
+>>>>>>> 592ecc6 (undo)
     credentials: [
       {
         name: 'clicksignApi',
@@ -39,8 +49,13 @@ export class Clicksign implements INodeType {
 
     if (!fn) {
       throw new NodeApiError(this.getNode(), {
+<<<<<<< HEAD
         message: 'Unsupported operation',
         description: `The function "${operation}" for resource "${resource}" is not supported!`,
+=======
+        message: t('errors.unsupportedOperation'),
+        description: t('errors.unsupportedOperationDescription', { operation, resource }),
+>>>>>>> 592ecc6 (undo)
       });
     }
 

@@ -20,7 +20,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "npx rimraf dist && tsc && gulp build:icons",
+    "build": "npx rimraf dist && tsc && gulp build",
     "dev": "tsc --watch",
     "format": "prettier --write",
     "lint": "eslint",
@@ -40,7 +40,8 @@
     ],
     "nodes": [
       "dist/nodes/Clicksign/Clicksign.node.js"
-    ]
+    ],
+    "locale": "locales"
   },
   "lint-staged": {
     "*.{ts,js,json}": [
@@ -55,6 +56,8 @@
     "eslint-plugin-n8n-nodes-base": "^1.16.3",
     "gulp": "^5.0.1",
     "husky": "^9.1.7",
+    "i18next": "^23.7.6",
+    "i18next-fs-backend": "^2.3.1",
     "jest": "^30.0.5",
     "jest-mock-extended": "^4.0.0",
     "lint-staged": "^16.1.5",

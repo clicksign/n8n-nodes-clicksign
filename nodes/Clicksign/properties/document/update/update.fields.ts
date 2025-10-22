@@ -1,13 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
+import { getFieldName, getFieldDescription, getOptionName } from '../../shared/translations';
 
 export const updateDocumentFields: INodeProperties[] = [
   {
-    displayName: 'Envelope ID',
+    displayName: getFieldName('envelopeId'),
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do Envelope que possui o documento',
+    description: getFieldDescription('envelopeId'),
     displayOptions: {
       show: {
         operation: ['update'],
@@ -16,12 +17,12 @@ export const updateDocumentFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Documento ID',
+    displayName: getFieldName('documentId'),
     name: 'documentId',
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do documento que deseja atualizar',
+    description: getFieldDescription('documentId'),
     displayOptions: {
       show: {
         operation: ['update'],
@@ -30,12 +31,11 @@ export const updateDocumentFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Status',
+    displayName: getFieldName('status'),
     name: 'status',
     type: 'options',
     default: 'canceled',
-    description:
-      'Só é possível alterar status de documentos running (em progresso/ativados)',
+    description: getFieldDescription('status'),
     displayOptions: {
       show: {
         operation: ['update'],
@@ -44,22 +44,21 @@ export const updateDocumentFields: INodeProperties[] = [
     },
     options: [
       {
-        name: 'Cancelado',
+        name: getOptionName('canceled'),
         value: 'canceled',
       },
       {
-        name: 'Finalizado',
+        name: getOptionName('closed'),
         value: 'closed',
       },
     ],
   },
   {
-    displayName: 'Metadata',
+    displayName: getFieldName('metadata'),
     name: 'metadata',
     type: 'json',
     default: '{}',
-    description:
-      'JSON com metadados que são utilizados nos retornos de documentos via webhooks',
+    description: getFieldDescription('metadata'),
     displayOptions: {
       show: {
         operation: ['update'],

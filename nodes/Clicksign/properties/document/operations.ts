@@ -1,4 +1,5 @@
 import { INodeProperties } from 'n8n-workflow';
+import { getOperationName, getActionText, getDescription } from '../shared/translations';
 
 export const documentsOperations: INodeProperties = {
   displayName: 'Operação',
@@ -7,40 +8,40 @@ export const documentsOperations: INodeProperties = {
   noDataExpression: true,
   options: [
     {
-      name: 'Atualizar',
+      name: getOperationName('update'),
       value: 'update',
-      action: 'Atualizar documento',
-      description: 'Atualizar documento',
+      action: getActionText('document', 'update'),
+      description: getDescription('document', 'update'),
     },
     {
-      name: 'Criar Por Arquivo Base 64',
+      name: getOperationName('createByBase64'),
       value: 'createByBase64',
-      action: 'Criar documento por arquivo base 64',
-      description: 'Criar documento por arquivo base 64',
+      action: getActionText('document', 'createByBase64'),
+      description: getDescription('document', 'createByBase64'),
     },
     {
-      name: 'Criar Por Modelo',
+      name: getOperationName('createByTemplate'),
       value: 'createByTemplate',
-      action: 'Criar documento por modelo',
-      description: 'Criar documento por modelo',
+      action: getActionText('document', 'createByTemplate'),
+      description: getDescription('document', 'createByTemplate'),
     },
     {
-      name: 'Excluir',
+      name: getOperationName('delete'),
       value: 'delete',
-      action: 'Excluir documento',
-      description: 'Excluir documento',
+      action: getActionText('document', 'delete'),
+      description: getDescription('document', 'delete'),
     },
     {
-      name: 'Listar',
+      name: getOperationName('getAll'),
       value: 'getAll',
-      description: 'Listar documentos',
-      action: 'Listar documentos',
+      description: getDescription('document', 'getAll'),
+      action: getActionText('document', 'getAll'),
     },
     {
-      name: 'Obter Detalhes',
+      name: getOperationName('getDetails'),
       value: 'getDetails',
-      description: 'Obter detalhes de um documento',
-      action: 'Obter detalhes do documento',
+      description: getDescription('document', 'getDetails'),
+      action: getActionText('document', 'getDetails'),
     },
   ],
   default: 'getAll',

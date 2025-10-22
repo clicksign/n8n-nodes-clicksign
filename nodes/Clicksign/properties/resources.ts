@@ -1,4 +1,5 @@
 import { INodeProperties } from 'n8n-workflow';
+import { getResourceName } from './shared/translations';
 
 export const resourceOptions: INodeProperties = {
   displayName: 'Recurso',
@@ -7,39 +8,39 @@ export const resourceOptions: INodeProperties = {
   noDataExpression: true,
   options: [
     {
-      name: 'Documento',
+      name: getResourceName('document'),
       value: 'document',
     },
     {
-      name: 'Envelope',
+      name: getResourceName('envelope'),
       value: 'envelope',
     },
     {
-      name: 'Evento',
+      name: getResourceName('event'),
       value: 'event',
     },
     {
-      name: 'Modelo',
+      name: getResourceName('template'),
       value: 'template',
     },
     {
-      name: 'Notificação',
+      name: getResourceName('notification'),
       value: 'notification',
     },
     {
-      name: 'Observador',
+      name: getResourceName('watcher'),
       value: 'watcher',
     },
     {
-      name: 'Pasta',
+      name: getResourceName('folder'),
       value: 'folder',
     },
     {
-      name: 'Requisito',
+      name: getResourceName('requirement'),
       value: 'requirement',
     },
     {
-      name: 'Signatário',
+      name: getResourceName('signer'),
       value: 'signer',
     },
   ],
