@@ -68,6 +68,7 @@ describe('clicksignRequest', () => {
         Authorization: 'test-access-token-123',
         Accept: 'application/vnd.api+json',
         'Content-Type': 'application/vnd.api+json',
+        'User-Agent': 'n8n-nodes-clicksign',
         'X-Custom-Header': 'MyValue',
       },
     });
