@@ -1,43 +1,43 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../shared/translations';
 
 export const signerOperations: INodeProperties = {
   displayName: 'Operação',
   name: 'operation',
   type: 'options',
+  // eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-options
   default: 'create',
   noDataExpression: true,
   options: [
     {
-      name: 'Criar',
       value: 'create',
-
-      action: 'Criar signatário',
-      description: 'Criar signatário',
+      name: t('singer.operations.create.name'),
+      action: t('singer.operations.create.action'),
+      description: t('singer.operations.create.description'),
     },
     {
-      name: 'Criar Assinatura Automática',
       value: 'createAutoSignature',
-      action: 'Criar assinatura automática',
+      name: t('singer.operations.createAutoSignature.name'),
+      action: t('singer.operations.createAutoSignature.action'),
+      description: t('singer.operations.createAutoSignature.description'),
     },
     {
-      name: 'Excluir',
       value: 'delete',
-
-      action: 'Excluir signatário',
-      description: 'Excluir signatário do envelope',
+      name: t('singer.operations.delete.name'),
+      action: t('singer.operations.delete.action'),
+      description: t('singer.operations.delete.description'),
     },
     {
-      name: 'Listar',
       value: 'getAll',
-
-      action: 'Listar Signatários',
-      description: 'Listar signatários',
+      name: t('singer.operations.getAll.name'),
+      action: t('singer.operations.getAll.action'),
+      description: t('singer.operations.getAll.description'),
     },
     {
-      name: 'Obter Detalhes',
       value: 'getDetails',
-      action: 'Obter detalhes do signatário',
-      description: 'Obter detalhes de um signatário de um envelope',
+      name: t('singer.operations.getDetails.name'),
+      action: t('singer.operations.getDetails.action'),
+      description: t('singer.operations.getDetails.description'),
     },
   ],
   displayOptions: {

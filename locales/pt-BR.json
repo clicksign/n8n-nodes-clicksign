@@ -16,37 +16,31 @@
     "operations": {
       "update": {
         "name": "Atualizar",
-        "value": "update",
         "action": "Atualizar documento",
         "description": "Atualizar documento"
       },
       "createByBase64": {
         "name": "Criar Por Arquivo Base 64",
-        "value": "createByBase64",
         "action": "Criar documento por arquivo base 64",
         "description": "Criar documento por arquivo base 64"
       },
       "createByTemplate": {
         "name": "Criar Por Modelo",
-        "value": "createByTemplate",
         "action": "Criar documento por modelo",
         "description": "Criar documento por modelo"
       },
       "delete": {
         "name": "Excluir",
-        "value": "delete",
         "action": "Excluir documento",
         "description": "Excluir documento"
       },
       "getAll": {
         "name": "Listar",
-        "value": "getAll",
         "action": "Listar documentos",
         "description": "Listar documentos"
       },
       "getDetails": {
         "name": "Obter Detalhes",
-        "value": "getDetails",
         "action": "Obter detalhes do documento",
         "description": "Obter detalhes de um documento"
       }
@@ -154,37 +148,31 @@
     "operations": {
       "activate": {
         "name": "Ativar",
-        "value": "activate",
         "action": "Ativar envelope",
         "description": "Ativar envelope"
       },
       "update": {
         "name": "Atualizar",
-        "value": "update",
         "action": "Atualizar envelope",
         "description": "Atualizar envelope"
       },
       "create": {
         "name": "Criar",
-        "value": "create",
         "action": "Criar envelope",
         "description": "Criar envelope"
       },
       "delete": {
         "name": "Excluir",
-        "value": "delete",
         "action": "Excluir envelope",
         "description": "Excluir envelope"
       },
       "getAll": {
         "name": "Listar",
-        "value": "getAll",
         "action": "Listar envelopes",
         "description": "Listar envelopes"
       },
       "getDetails": {
         "name": "Obter Detalhes",
-        "value": "getDetails",
         "action": "Obter detalhes do envelope",
         "description": "Obter detalhes de um envelope"
       }
@@ -322,6 +310,152 @@
       "getAll": "Erro ao obter envelopes",
       "getDetails": "Erro ao obter detalhes do envelope",
       "update": "Erro ao atualizar envelope"
+    }
+  },
+  "signer": {
+    "operations": {
+      "create": {
+        "name": "Criar",
+        "action": "Criar signatário",
+        "description": "Criar signatário"
+      },
+      "createAutoSignature": {
+        "name": "Criar Assinatura Automática",
+        "action": "Criar assinatura automática",
+        "description": "Criar assinatura automática"
+      },
+      "delete": {
+        "name": "Excluir",
+        "action": "Excluir signatário",
+        "description": "Excluir signatário do envelope"
+      },
+      "getAll": {
+        "name": "Listar",
+        "action": "Listar Signatários",
+        "description": "Listar signatários"
+      },
+      "getDetails": {
+        "name": "Obter Detalhes",
+        "action": "Obter detalhes do signatário",
+        "description": "Obter detalhes de um signatário de um envelope"
+      }
+    },
+    "fields": {
+      "create": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do envelope ao qual será adicionado o signatário"
+        },
+        "name": {
+          "displayName": "Nome",
+          "description": "O nome do signatário, usado para identificá-lo (é necessário enviar ao menos duas palavras)"
+        },
+        "email": {
+          "displayName": "Email",
+          "description": "O email do signatário (obrigatório quando houver configuração de notificação por email)"
+        },
+        "phoneNumber": {
+          "displayName": "Telefone",
+          "description": "Número de telefone do signatário, que deve possuir 10 ou 11 números (obrigatório quando houver configuração de notificação que exija telefone)"
+        },
+        "hasDocumentation": {
+          "displayName": "Possui CPF",
+          "description": "Define se o signatário deve informar CPF e Data de nascimento"
+        },
+        "documentation": {
+          "displayName": "CPF",
+          "description": "O CPF do signatário"
+        },
+        "group": {
+          "displayName": "Grupo",
+          "description": "Determina em qual grupo o signatário deve ser vinculado, conforme ordem de assinatura"
+        },
+        "refusable": {
+          "displayName": "Permitir Recusar a Solicitação De Assinatura",
+          "description": "Define se o signatário pode recusar a solicitação"
+        },
+        "birthday": {
+          "displayName": "Data De Nascimento",
+          "description": "Data de nascimento do signatário (ex: 10/10/1990, 1990-10-10)"
+        },
+        "locationRequired": {
+          "displayName": "Localização Necessária",
+          "description": "Determina se o signatário deve compartilhar sua localização no momento da assinatura"
+        },
+        "communicateEvents": {
+          "displayName": "Notificação De Eventos",
+          "description": "Configura notificações ao signatário",
+          "events": {
+            "displayName": "Configuração De Notificações",
+            "signature_request": "Solicitação De Assinatura",
+            "signature_reminder": "Lembrete De Assinatura",
+            "document_signed": "Documento Assinado",
+            "none": "Nenhum",
+            "email": "Email",
+            "whatsapp": "Whatsapp",
+            "sms": "SMS"
+          }
+        }
+      },
+      "createAutoSignature": {
+        "name": {
+          "displayName": "Nome",
+          "description": "O nome do signatário, usado para identificá-lo (é necessário enviar ao menos duas palavras)"
+        },
+        "email": {
+          "displayName": "Email",
+          "description": "O email do signatário"
+        },
+        "documentation": {
+          "displayName": "CPF",
+          "description": "O CPF do signatário"
+        },
+        "birthday": {
+          "displayName": "Data De Nascimento",
+          "description": "Data de nascimento do signatário (ex: 10/10/1990, 1990-10-10)"
+        },
+        "apiEmail": {
+          "displayName": "Email API",
+          "description": "O email da API"
+        },
+        "adminEmail": {
+          "displayName": "Email Admin",
+          "description": "O email do administrador"
+        }
+      },
+      "delete": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope que possui o signatário"
+        },
+        "signerId": {
+          "displayName": "Signatário ID",
+          "description": "ID do Signatário que deseja excluir"
+        }
+      },
+      "getAll": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do envelope ao qual deseja listar os signatários"
+        }
+      },
+      "getDetails": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope que possui o signatário"
+        },
+        "signerId": {
+          "displayName": "Signatário ID",
+          "description": "ID do Signatário que deseja visualizar"
+        }
+      }
+    },
+    "errors": {
+      "create": "Erro ao criar o signatário",
+      "createAutoSignature": "Erro ao criar assinatura automática",
+      "delete": "Erro ao excluir signatário",
+      "getAll": "Erro ao listar signatários do envelope",
+      "getDetails": "Erro ao obter detalhes do signatário"
     }
   }
 }

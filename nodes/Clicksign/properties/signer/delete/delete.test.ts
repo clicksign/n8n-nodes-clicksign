@@ -56,7 +56,7 @@ describe('delete: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao excluir signatário',
+      'signer.errors.delete',
     );
   });
 

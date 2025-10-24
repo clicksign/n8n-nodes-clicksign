@@ -46,7 +46,7 @@ describe('getAll: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao listar signatários do envelope',
+      'signer.errors.getAll',
     );
   });
 

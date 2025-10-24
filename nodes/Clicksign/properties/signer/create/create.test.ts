@@ -118,7 +118,7 @@ describe('create: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao criar o signatário',
+      'signer.errors.create',
     );
   });
 
@@ -174,7 +174,7 @@ describe('create: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao criar o signatário',
+      'signer.errors.create',
     );
   });
 
@@ -230,7 +230,7 @@ describe('create: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao criar o signatário',
+      'signer.errors.create',
     );
   });
 
@@ -286,7 +286,7 @@ describe('create: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao criar o signatário',
+      'signer.errors.create',
     );
   });
 
@@ -340,7 +340,7 @@ describe('create: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao criar o signatário',
+      'signer.errors.create',
     );
     expect(expectedBody.data.attributes.documentation).toBeNull();
     expect(expectedBody.data.attributes.birthday).toBeNull();
