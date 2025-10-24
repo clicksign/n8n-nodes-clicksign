@@ -1,13 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../../shared/translations';
 
 export const updateDocumentFields: INodeProperties[] = [
   {
-    displayName: 'Envelope ID',
+    displayName: t('document.fields.update.envelopeId.displayName'),
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do Envelope que possui o documento',
+    description: t('document.fields.update.envelopeId.description'),
     displayOptions: {
       show: {
         operation: ['update'],
@@ -16,12 +17,12 @@ export const updateDocumentFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Documento ID',
+    displayName: t('document.fields.update.documentId.displayName'),
     name: 'documentId',
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do documento que deseja atualizar',
+    description: t('document.fields.update.documentId.description'),
     displayOptions: {
       show: {
         operation: ['update'],
@@ -30,12 +31,11 @@ export const updateDocumentFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Status',
+    displayName: t('document.fields.update.status.displayName'),
     name: 'status',
     type: 'options',
     default: 'canceled',
-    description:
-      'Só é possível alterar status de documentos running (em progresso/ativados)',
+    description: t('document.fields.update.status.description'),
     displayOptions: {
       show: {
         operation: ['update'],
@@ -44,11 +44,11 @@ export const updateDocumentFields: INodeProperties[] = [
     },
     options: [
       {
-        name: 'Cancelado',
+        name: t('document.fields.update.status.options.canceled'),
         value: 'canceled',
       },
       {
-        name: 'Finalizado',
+        name: t('document.fields.update.status.options.closed'),
         value: 'closed',
       },
     ],
@@ -58,8 +58,7 @@ export const updateDocumentFields: INodeProperties[] = [
     name: 'metadata',
     type: 'json',
     default: '{}',
-    description:
-      'JSON com metadados que são utilizados nos retornos de documentos via webhooks',
+    description: t('document.fields.update.metadata.description'),
     displayOptions: {
       show: {
         operation: ['update'],

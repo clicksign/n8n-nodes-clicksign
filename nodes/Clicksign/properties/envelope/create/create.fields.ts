@@ -1,13 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../../shared/translations';
 
 export const createEnvelopeFields: INodeProperties[] = [
   {
-    displayName: 'Nome',
+    displayName: t('envelope.fields.create.envelopeName.displayName'),
     name: 'envelopeName',
     type: 'string',
     required: true,
     default: 'Meu envelope',
-    description: 'Nome do envelope',
+    description: t('envelope.fields.create.envelopeName.description'),
     displayOptions: {
       show: {
         operation: ['create'],
@@ -16,13 +17,12 @@ export const createEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Idioma',
+    displayName: t('envelope.fields.create.locale.displayName'),
     name: 'locale',
     type: 'options',
     required: true,
     default: 'pt-BR',
-    description:
-      'Idioma utilizado nos e-mails, página de assinatura e log do documento',
+    description: t('envelope.fields.create.locale.description'),
     displayOptions: {
       show: {
         operation: ['create'],
@@ -41,12 +41,11 @@ export const createEnvelopeFields: INodeProperties[] = [
     ],
   },
   {
-    displayName: 'Finalizar Automaticamente Após Todos Assinarem',
+    displayName: t('envelope.fields.create.autoClose.displayName'),
     name: 'autoClose',
     type: 'boolean',
     default: true,
-    description:
-      'Se ativado, o envelope será fechado automaticamente após a assinatura do último signatários',
+    description: t('envelope.fields.create.autoClose.description'),
     displayOptions: {
       show: {
         operation: ['create'],
@@ -55,13 +54,12 @@ export const createEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Intervalo De Lembrete',
+    displayName: t('envelope.fields.create.remindInterval.displayName'),
     name: 'remindInterval',
     type: 'number',
     required: true,
     default: 3,
-    description:
-      'Determina se o documento terá opção de lembretes automáticos ativada (1,2,3,7,14)',
+    description: t('envelope.fields.create.remindInterval.description'),
     displayOptions: {
       show: {
         operation: ['create'],
@@ -73,12 +71,11 @@ export const createEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Bloqueio De Assinatura Após Recusa Por Signatário',
+    displayName: t('envelope.fields.create.blockAfterRefusal.displayName'),
     name: 'blockAfterRefusal',
     type: 'boolean',
     default: false,
-    description:
-      'Determina se o processo de assinatura tem que ser pausado ou não após um signatário ter recusado',
+    description: t('envelope.fields.create.blockAfterRefusal.description'),
     displayOptions: {
       show: {
         operation: ['create'],
@@ -87,12 +84,11 @@ export const createEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Prazo Final',
+    displayName: t('envelope.fields.create.deadlineAt.displayName'),
     name: 'deadlineAt',
     type: 'dateTime',
     default: null,
-    description:
-      'Data limite para o envelope e seus documentos (formato RFC 3339)',
+    description: t('envelope.fields.create.deadlineAt.description'),
     displayOptions: {
       show: {
         operation: ['create'],
@@ -101,12 +97,11 @@ export const createEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Assunto Padrão',
+    displayName: t('envelope.fields.create.defaultSubject.displayName'),
     name: 'defaultSubject',
     type: 'string',
     default: '',
-    description:
-      'Define o assunto do e-mail que será enviado aos signatários na solicitação de assinatura',
+    description: t('envelope.fields.create.defaultSubject.description'),
     displayOptions: {
       show: {
         operation: ['create'],
@@ -115,11 +110,11 @@ export const createEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Mensagem Padrão',
+    displayName: t('envelope.fields.create.defaultMessage.displayName'),
     name: 'defaultMessage',
     type: 'string',
     default: '',
-    description: 'Define a mensagem padrão que será enviada aos signatários',
+    description: t('envelope.fields.create.defaultMessage.description'),
     displayOptions: {
       show: {
         operation: ['create'],
@@ -128,11 +123,11 @@ export const createEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Pasta ID',
+    displayName: t('envelope.fields.create.folderId.displayName'),
     name: 'folderId',
     type: 'string',
     default: '',
-    description: 'ID da pasta de origem',
+    description: t('envelope.fields.create.folderId.description'),
     displayOptions: {
       show: {
         operation: ['create'],

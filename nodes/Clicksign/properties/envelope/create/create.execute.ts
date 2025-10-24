@@ -3,6 +3,7 @@ import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 import { formatLocalISODate } from '../shared/formatLocalISODate';
+import { t } from '../../shared/translations';
 
 export async function createEnvelope(ef: IExecuteFunctions) {
   const name = getNodeParameterTyped<string>(ef, 'envelopeName');
@@ -59,5 +60,5 @@ export async function createEnvelope(ef: IExecuteFunctions) {
     url: `/envelopes`,
   };
 
-  return await clicksignRequest(ef, options, 'Erro ao criar envelope');
+  return await clicksignRequest(ef, options, t('envelope.errors.create'));
 }

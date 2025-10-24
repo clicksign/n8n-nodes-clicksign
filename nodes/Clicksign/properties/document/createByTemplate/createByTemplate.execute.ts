@@ -2,6 +2,7 @@ import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
+import { t } from '../../shared/translations';
 
 export async function createDocumentByTemplate(ef: IExecuteFunctions) {
   const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');
@@ -37,6 +38,6 @@ export async function createDocumentByTemplate(ef: IExecuteFunctions) {
   return await clicksignRequest(
     ef,
     options,
-    'Erro ao criar documento por modelo',
+    t('document.errors.createByTemplate'),
   );
 }
