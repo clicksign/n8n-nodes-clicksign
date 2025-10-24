@@ -1,13 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../../shared/translations';
 
 export const getAllFields: INodeProperties[] = [
   {
-    displayName: 'Filtro Status',
+    displayName: t('envelope.fields.getAll.status.displayName'),
     name: 'status',
     type: 'string',
     default: '',
-    description:
-      'Informe um status caso deseje filtrar: draft, running, closed, canceled',
+    description: t('envelope.fields.getAll.status.description'),
     displayOptions: {
       show: {
         operation: ['getAll'],
@@ -16,11 +16,11 @@ export const getAllFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Filtro Nome',
+    displayName: t('envelope.fields.getAll.name.displayName'),
     name: 'name',
     type: 'string',
     default: '',
-    description: 'Informe o nome completo do envelope a ser consultado',
+    description: t('envelope.fields.getAll.name.description'),
     displayOptions: {
       show: {
         operation: ['getAll'],
@@ -29,12 +29,11 @@ export const getAllFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Filtro Data De Criação',
+    displayName: t('envelope.fields.getAll.created.displayName'),
     name: 'created',
     type: 'string',
     default: '',
-    description:
-      'Informe os intervalos de datas de criação no padrão da especificação (ISO 8601 e separadas por vírgula)',
+    description: t('envelope.fields.getAll.created.description'),
     displayOptions: {
       show: {
         operation: ['getAll'],
@@ -43,12 +42,11 @@ export const getAllFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Filtro Data De Modificação',
+    displayName: t('envelope.fields.getAll.modified.displayName'),
     name: 'modified',
     type: 'string',
     default: '',
-    description:
-      'Informe os intervalos de datas de atualização no padrão da especificação (ISO 8601 e separadas por vírgula)',
+    description: t('envelope.fields.getAll.modified.description'),
     displayOptions: {
       show: {
         operation: ['getAll'],
@@ -57,12 +55,11 @@ export const getAllFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Filtro Prazo Final',
+    displayName: t('envelope.fields.getAll.deadline.displayName'),
     name: 'deadline',
     type: 'string',
     default: '',
-    description:
-      'Informe os intervalos de datas de deadline conforme padrão da especificação (ISO 8601 e separadas por vírgula)',
+    description: t('envelope.fields.getAll.deadline.description'),
     displayOptions: {
       show: {
         operation: ['getAll'],
@@ -71,12 +68,11 @@ export const getAllFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Ordenação',
+    displayName: t('envelope.fields.getAll.sort.displayName'),
     name: 'sort',
     type: 'string',
     default: '',
-    description:
-      'Ordene por propriedade do envelope (ex: name para ordenar por nome de forma crescente e -name para ordenar por nome de forma decrescente)',
+    description: t('envelope.fields.getAll.sort.description'),
     displayOptions: {
       show: {
         operation: ['getAll'],

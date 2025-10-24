@@ -149,5 +149,179 @@
       "getDetails": "Erro ao obter detalhes do documento",
       "update": "Erro ao atualizar documento"
     }
+  },
+  "envelope": {
+    "operations": {
+      "activate": {
+        "name": "Ativar",
+        "value": "activate",
+        "action": "Ativar envelope",
+        "description": "Ativar envelope"
+      },
+      "update": {
+        "name": "Atualizar",
+        "value": "update",
+        "action": "Atualizar envelope",
+        "description": "Atualizar envelope"
+      },
+      "create": {
+        "name": "Criar",
+        "value": "create",
+        "action": "Criar envelope",
+        "description": "Criar envelope"
+      },
+      "delete": {
+        "name": "Excluir",
+        "value": "delete",
+        "action": "Excluir envelope",
+        "description": "Excluir envelope"
+      },
+      "getAll": {
+        "name": "Listar",
+        "value": "getAll",
+        "action": "Listar envelopes",
+        "description": "Listar envelopes"
+      },
+      "getDetails": {
+        "name": "Obter Detalhes",
+        "value": "getDetails",
+        "action": "Obter detalhes do envelope",
+        "description": "Obter detalhes de um envelope"
+      }
+    },
+    "fields": {
+      "activate": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope que deseja ativar"
+        }
+      },
+      "create": {
+        "envelopeName": {
+          "displayName": "Nome do Envelope",
+          "description": "Nome do Envelope"
+        },
+        "locale": {
+          "displayName": "Locale",
+          "description": "Idioma utilizado nos e-mails, página de assinatura e log do documento"
+        },
+        "autoClose": {
+          "displayName": "Finalizar Automaticamente Após Todos Assinarem",
+          "description": "Se true, o envelope será finalizado automaticamente após todos os signatários assinarem"
+        },
+        "remindInterval": {
+          "displayName": "Intervalo De Lembrete",
+          "description": "Determina se o documento terá opção de lembretes automáticos ativada (1,2,3,7,14)"
+        },
+        "blockAfterRefusal": {
+          "displayName": "Bloqueio De Assinatura Após Recusa Por Signatário",
+          "description": "Determina se o processo de assinatura tem que ser pausado ou não após um signatário ter recusado"
+        },
+        "deadlineAt": {
+          "displayName": "Prazo Final",
+          "description": "Data limite para o envelope e seus documentos (formato RFC 3339)"
+        },
+        "defaultSubject": {
+          "displayName": "Assunto Padrão",
+          "description": "Define o assunto do e-mail que será enviado aos signatários na solicitação de assinatura"
+        },
+        "defaultMessage": {
+          "displayName": "Mensagem Padrão",
+          "description": "Define a mensagem padrão que será enviada aos signatários"
+        },
+        "folderId": {
+          "displayName": "Pasta ID",
+          "description": "ID da pasta de origem"
+        }
+      },
+      "delete": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope que deseja excluir"
+        }
+      },
+      "getAll": {
+        "status": {
+          "displayName": "Filtro Status",
+          "description": "Informe um status caso deseje filtrar: draft, running, closed, canceled"
+        },
+        "name": {
+          "displayName": "Filtro Nome",
+          "description": "Informe o nome completo do envelope a ser consultado"
+        },
+        "created": {
+          "displayName": "Filtro Data De Criação",
+          "description": "Informe os intervalos de datas de criação no padrão da especificação (ISO 8601 e separadas por vírgula)"
+        },
+        "modified": {
+          "displayName": "Filtro Data De Modificação",
+          "description": "Informe os intervalos de datas de atualização no padrão da especificação (ISO 8601 e separadas por vírgula)"
+        },
+        "deadline": {
+          "displayName": "Filtro Prazo Final",
+          "description": "Informe os intervalos de datas de deadline conforme padrão da especificação (ISO 8601 e separadas por vírgula)"
+        },
+        "sort": {
+          "displayName": "Ordenação",
+          "description": "Ordene por propriedade do envelope (ex: name para ordenar por nome de forma crescente e -name para ordenar por nome de forma decrescente)"
+        }
+      },
+      "getDetails": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope que deseja visualizar"
+        }
+      },
+      "update": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope que deseja atualizar"
+        },
+        "envelopeName": {
+          "displayName": "Nome",
+          "description": "Nome do Envelope"
+        },
+        "locale": {
+          "displayName": "Idioma",
+          "description": "Idioma utilizado nos e-mails, página de assinatura e log do documento"
+        },
+        "autoClose": {
+          "displayName": "Finalizar Automaticamente Após Todos Assinarem",
+          "description": "Se ativado, o envelope será fechado automaticamente após a assinatura do último signatários"
+        },
+        "remindInterval": {
+          "displayName": "Intervalo De Lembrete",
+          "description": "Determina se o documento terá opção de lembretes automáticos ativada (1,2,3,7,14)"
+        },
+        "blockAfterRefusal": {
+          "displayName": "Bloqueio De Assinatura Após Recusa Por Signatário",
+          "description": "Determina se o processo de assinatura tem que ser pausado ou não após um signatário ter recusado"
+        },
+        "deadlineAt": {
+          "displayName": "Prazo Final",
+          "description": "Data limite para o envelope e seus documentos (formato RFC 3339)"
+        },
+        "defaultSubject": {
+          "displayName": "Assunto Padrão",
+          "description": "Define o assunto do e-mail que será enviado aos signatários na solicitação de assinatura"
+        },
+        "defaultMessage": {
+          "displayName": "Mensagem Padrão",
+          "description": "Define a mensagem padrão que será enviada aos signatários"
+        },
+        "folderId": {
+          "displayName": "Pasta ID",
+          "description": "ID da pasta de origem"
+        }
+      }
+    },
+    "errors": {
+      "activate": "Erro ao ativar envelope",
+      "create": "Erro ao criar envelope",
+      "delete": "Erro ao excluir envelope",
+      "getAll": "Erro ao obter envelopes",
+      "getDetails": "Erro ao obter detalhes do envelope",
+      "update": "Erro ao atualizar envelope"
+    }
   }
 }
