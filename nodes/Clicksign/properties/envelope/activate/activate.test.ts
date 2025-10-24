@@ -6,6 +6,7 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { activateEnvelope } from './activate.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
+import { t } from '../../shared/translations';
 
 describe('activate: envelope', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -56,7 +57,7 @@ describe('activate: envelope', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao ativar envelope',
+      t('envelope.errors.activate'),
     );
   });
 

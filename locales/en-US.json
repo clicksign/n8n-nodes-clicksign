@@ -149,5 +149,179 @@
       "getDetails": "Error getting details of a document",
       "update": "Error updating document"
     }
+  },
+  "envelope": {
+    "operations": {
+      "activate": {
+        "name": "Activate",
+        "value": "activate",
+        "action": "Activate envelope",
+        "description": "Activate envelope"
+      },
+      "update": {
+        "name": "Update",
+        "value": "update",
+        "action": "Update envelope",
+        "description": "Update envelope"
+      },
+      "create": {
+        "name": "Create",
+        "value": "create",
+        "action": "Create envelope",
+        "description": "Create envelope"
+      },
+      "delete": {
+        "name": "Delete",
+        "value": "delete",
+        "action": "Delete envelope",
+        "description": "Delete envelope"
+      },
+      "getAll": {
+        "name": "List All",
+        "value": "getAll",
+        "action": "List all envelopes",
+        "description": "List all envelopes"
+      },
+      "getDetails": {
+        "name": "Get Details",
+        "value": "getDetails",
+        "action": "Get details of a envelope",
+        "description": "Get details of a envelope"
+      }
+    },
+    "fields": {
+      "activate": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope to activate"
+        }
+      },
+      "create": {
+        "envelopeName": {
+          "displayName": "Envelope Name",
+          "description": "Name of the envelope"
+        },
+        "locale": {
+          "displayName": "Locale",
+          "description": "Locale used in emails, signature page and document log"
+        },
+        "autoClose": {
+          "displayName": "Automatically Close After All Signers Sign",
+          "description": "If true, the envelope will be closed automatically after all signers have signed"
+        },
+        "remindInterval": {
+          "displayName": "Remind Interval",
+          "description": "Determines if the document will have automatic reminders enabled (1,2,3,7,14)"
+        },
+        "blockAfterRefusal": {
+          "displayName": "Block After Refusal By Signer",
+          "description": "Determines if the signature process will be paused or not after a signer has refused"
+        },
+        "deadlineAt": {
+          "displayName": "Deadline At",
+          "description": "Deadline for the envelope and its documents (RFC 3339 format)"
+        },
+        "defaultSubject": {
+          "displayName": "Default Subject",
+          "description": "Define the subject of the email that will be sent to signers in the signature request"
+        },
+        "defaultMessage": {
+          "displayName": "Default Message",
+          "description": "Define the default message that will be sent to signers"
+        },
+        "folderId": {
+          "displayName": "Folder ID",
+          "description": "ID of the source folder"
+        }
+      },
+      "delete": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope to delete"
+        }
+      },
+      "getAll": {
+        "status": {
+          "displayName": "Filter Status",
+          "description": "Inform a status if you want to filter: draft, running, closed, canceled"
+        },
+        "name": {
+          "displayName": "Filter Name",
+          "description": "Inform the full name of the envelope to consult"
+        },
+        "created": {
+          "displayName": "Filter Creation Date",
+          "description": "Inform the creation date intervals in the specification format (ISO 8601 and separated by comma)"
+        },
+        "modified": {
+          "displayName": "Filter Modification Date",
+          "description": "Inform the modification date intervals in the specification format (ISO 8601 and separated by comma)"
+        },
+        "deadline": {
+          "displayName": "Filter Deadline",
+          "description": "Inform the deadline intervals in the specification format (ISO 8601 and separated by comma)"
+        },
+        "sort": {
+          "displayName": "Sort",
+          "description": "Sort by envelope property (ex: name to sort by name in ascending order and -name to sort by name in descending order)"
+        }
+      },
+      "getDetails": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope to get details"
+        }
+      },
+      "update": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope to update"
+        },
+        "envelopeName": {
+          "displayName": "Name",
+          "description": "Name of the envelope"
+        },
+        "locale": {
+          "displayName": "Locale",
+          "description": "Locale used in emails, signature page and document log"
+        },
+        "autoClose": {
+          "displayName": "Automatically Close After All Signers Sign",
+          "description": "If true, the envelope will be closed automatically after all signers have signed"
+        },
+        "remindInterval": {
+          "displayName": "Remind Interval",
+          "description": "Determines if the document will have automatic reminders enabled (1,2,3,7,14)"
+        },
+        "blockAfterRefusal": {
+          "displayName": "Block After Refusal By Signer",
+          "description": "Determines if the signature process will be paused or not after a signer has refused"
+        },
+        "deadlineAt": {
+          "displayName": "Deadline At",
+          "description": "Deadline for the envelope and its documents (RFC 3339 format)"
+        },
+        "defaultSubject": {
+          "displayName": "Default Subject",
+          "description": "Define the subject of the email that will be sent to signers in the signature request"
+        },
+        "defaultMessage": {
+          "displayName": "Default Message",
+          "description": "Define the default message that will be sent to signers"
+        },
+        "folderId": {
+          "displayName": "Folder ID",
+          "description": "ID of the source folder"
+        }
+      }
+    },
+    "errors": {
+      "activate": "Error activating envelope",
+      "create": "Error creating envelope",
+      "delete": "Error deleting envelope",
+      "getAll": "Error getting envelopes",
+      "getDetails": "Error getting details of a envelope",
+      "update": "Error updating envelope"
+    }
   }
 }
