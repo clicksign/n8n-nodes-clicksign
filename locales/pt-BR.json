@@ -1,5 +1,6 @@
 {
   "operation": "Operação",
+  "operations": "Operações",
   "resources": {
     "displayName": "Recurso",
     "document": "Documento",
@@ -322,6 +323,44 @@
       "getAll": "Erro ao obter envelopes",
       "getDetails": "Erro ao obter detalhes do envelope",
       "update": "Erro ao atualizar envelope"
+    }
+  },
+  "event": {
+    "operations": {
+      "fromEnvelope": {
+        "name": "Eventos Do Envelope",
+        "value": "fromEnvelope",
+        "action": "Eventos do envelope",
+        "description": "Listar eventos dos documentos do envelope"
+      },
+      "fromDocument": {
+        "name": "Eventos Do Documento",
+        "value": "fromDocument",
+        "action": "Eventos do documento",
+        "description": "Listar eventos de um documento do envelope"
+      }
+    },
+    "fields": {
+      "fromDocument": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do envelope ao qual o documento pertence para consultar eventos"
+        },
+        "documentId": {
+          "displayName": "Documento ID",
+          "description": "ID do documento que deseja listar os eventos"
+        }
+      },
+      "fromEnvelope": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do envelope ao qual deseja listar os eventos dos documentos"
+        }
+      }
+    },
+    "errors": {
+      "fromDocument": "Erro ao obter eventos de um documento",
+      "fromEnvelope": "Erro ao obter eventos do envelope"
     }
   }
 }

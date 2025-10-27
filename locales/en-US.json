@@ -1,5 +1,6 @@
 {
   "operation": "Operation",
+  "operations": "Operations",
   "resources": {
     "displayName": "Resource",
     "document": "Document",
@@ -322,6 +323,44 @@
       "getAll": "Error getting envelopes",
       "getDetails": "Error getting details of a envelope",
       "update": "Error updating envelope"
+    }
+  },
+  "event": {
+    "operations": {
+      "fromDocument": {
+        "name": "From Document",
+        "value": "fromDocument",
+        "action": "Events from document",
+        "description": "Get events from a document"
+      },
+      "fromEnvelope": {
+        "name": "From Envelope",
+        "value": "fromEnvelope",
+        "action": "Get events from a envelope",
+        "description": "Get events from a envelope"
+      }
+    },
+    "fields": {
+      "fromDocument": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that contains the document to get events"
+        },
+        "documentId": {
+          "displayName": "Document ID",
+          "description": "ID of the document to get events"
+        }
+      },
+      "fromEnvelope": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that you want to list the document events"
+        }
+      }
+    },
+    "errors": {
+      "fromDocument": "Error getting events from a document",
+      "fromEnvelope": "Error getting events from a envelope"
     }
   }
 }

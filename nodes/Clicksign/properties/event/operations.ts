@@ -1,22 +1,23 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../shared/translations';
 
 export const eventOperations: INodeProperties = {
-  displayName: 'Operação',
+  displayName: t('operations'),
   name: 'operation',
   type: 'options',
   noDataExpression: true,
   options: [
     {
-      name: 'Eventos Do Envelope',
-      value: 'fromEnvelope',
-      action: 'Eventos do envelope',
-      description: 'Listar eventos dos documentos do envelope',
+      name: t('event.operations.fromEnvelope.name'),
+      value: t('event.operations.fromEnvelope.value'),
+      action: t('event.operations.fromEnvelope.action'),
+      description: t('event.operations.fromEnvelope.description'),
     },
     {
-      name: 'Eventos Do Documento',
-      value: 'fromDocument',
-      action: 'Eventos do documento',
-      description: 'Listar eventos de um documento do envelope',
+      name: t('event.operations.fromDocument.name'),
+      value: t('event.operations.fromDocument.value'),
+      action: t('event.operations.fromDocument.action'),
+      description: t('event.operations.fromDocument.description'),
     },
   ],
   default: 'fromEnvelope',
