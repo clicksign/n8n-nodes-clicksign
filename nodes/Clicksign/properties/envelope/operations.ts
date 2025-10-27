@@ -2,7 +2,7 @@ import { INodeProperties } from 'n8n-workflow';
 import { t } from '../shared/translations';
 
 export const envelopeOperations: INodeProperties = {
-  displayName: 'Operação',
+  displayName: t('operation'),
   name: 'operation',
   type: 'options',
   noDataExpression: true,

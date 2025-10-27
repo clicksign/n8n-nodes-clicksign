@@ -72,7 +72,7 @@ describe('create: template', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao criar modelo',
+      'Error creating template',
     );
   });
 

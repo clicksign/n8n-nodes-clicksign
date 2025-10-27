@@ -56,7 +56,7 @@ describe('delete: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'signer.errors.delete',
+      'Error deleting signer',
     );
   });
 

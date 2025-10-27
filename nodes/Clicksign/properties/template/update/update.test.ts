@@ -64,7 +64,7 @@ describe('update: template', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao atualizar modelo',
+      'Error updating template',
     );
   });
 
@@ -100,7 +100,7 @@ describe('update: template', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao atualizar modelo',
+      'Error updating template',
     );
   });
 
@@ -134,7 +134,7 @@ describe('update: template', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao atualizar modelo',
+      'Error updating template',
     );
   });
 

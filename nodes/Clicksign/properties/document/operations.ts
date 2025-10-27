@@ -6,6 +6,8 @@ export const documentsOperations: INodeProperties = {
   name: 'operation',
   type: 'options',
   noDataExpression: true,
+  // eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-options
+  default: 'getAll',
   options: [
     {
       value: 'update',
@@ -44,8 +46,6 @@ export const documentsOperations: INodeProperties = {
       description: t('document.operations.getDetails.description'),
     },
   ],
-  // eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-options
-  default: 'getAll',
   displayOptions: {
     show: {
       resource: ['document'],

@@ -46,7 +46,7 @@ describe('getDetails: template', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao obter detalhes do modelo',
+      'Error getting template details',
     );
   });
 

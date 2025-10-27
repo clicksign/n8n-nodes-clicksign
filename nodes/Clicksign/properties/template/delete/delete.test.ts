@@ -46,7 +46,7 @@ describe('delete: template', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao excluir modelo',
+      'Error deleting template',
     );
   });
 

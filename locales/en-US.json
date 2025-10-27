@@ -323,5 +323,240 @@
       "getDetails": "Error getting details of a envelope",
       "update": "Error updating envelope"
     }
+  },
+  "signer": {
+    "operations": {
+      "create": {
+        "name": "Create",
+        "action": "Create signer",
+        "description": "Create signer"
+      },
+      "createAutoSignature": {
+        "name": "Create Auto Signature",
+        "action": "Create automatic signature",
+        "description": "Create automatic signature"
+      },
+      "delete": {
+        "name": "Delete",
+        "action": "Delete signer",
+        "description": "Delete signer from the envelope"
+      },
+      "getAll": {
+        "name": "List",
+        "action": "List Signers",
+        "description": "List signers"
+      },
+      "getDetails": {
+        "name": "Get Details",
+        "action": "Get signer details",
+        "description": "Get details of a signer for an envelope"
+      }
+    },
+    "fields": {
+      "create": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope to which the signer will be added"
+        },
+        "name": {
+          "displayName": "Name",
+          "description": "The signer's name, used to identify them (at least two words must be sent)"
+        },
+        "email": {
+          "displayName": "Email",
+          "description": "The signer's email (required when email notification is configured)"
+        },
+        "phoneNumber": {
+          "displayName": "Phone",
+          "description": "The signer's phone number, which must have 10 or 11 digits (required when notification setup requires phone)"
+        },
+        "hasDocumentation": {
+          "displayName": "Has CPF",
+          "description": "Defines whether the signer must provide CPF (Brazilian ID) and Date of Birth"
+        },
+        "documentation": {
+          "displayName": "CPF",
+          "description": "The signer's CPF (Brazilian ID)"
+        },
+        "group": {
+          "displayName": "Group",
+          "description": "Determines which group the signer should be linked to, according to the signing order"
+        },
+        "refusable": {
+          "displayName": "Allow Refusing The Signature Request",
+          "description": "Defines whether the signer can refuse the request"
+        },
+        "birthday": {
+          "displayName": "Date Of Birth",
+          "description": "Signer's date of birth (e.g.: DD/MM/YYYY, YYYY-MM-DD)"
+        },
+        "locationRequired": {
+          "displayName": "Location Required",
+          "description": "Determines if the signer must share their location at the time of signing"
+        },
+        "communicateEvents": {
+          "displayName": "Event Notification",
+          "description": "Configures notifications to the signer",
+          "events": {
+            "displayName": "Notification Configuration",
+            "signature_request": "Signature Request",
+            "signature_reminder": "Signature Reminder",
+            "document_signed": "Document Signed",
+            "none": "None",
+            "email": "Email",
+            "whatsapp": "Whatsapp",
+            "sms": "SMS"
+          }
+        }
+      },
+      "createAutoSignature": {
+        "name": {
+          "displayName": "Name",
+          "description": "The signer's name, used to identify them (at least two words must be sent)"
+        },
+        "email": {
+          "displayName": "Email",
+          "description": "The signer's email"
+        },
+        "documentation": {
+          "displayName": "CPF",
+          "description": "The signer's CPF (Brazilian ID)"
+        },
+        "birthday": {
+          "displayName": "Date Of Birth",
+          "description": "Signer's date of birth (e.g.: DD/MM/YYYY, YYYY-MM-DD)"
+        },
+        "apiEmail": {
+          "displayName": "API Email",
+          "description": "The API email"
+        },
+        "adminEmail": {
+          "displayName": "Admin Email",
+          "description": "The administrator's email"
+        }
+      },
+      "delete": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the Envelope that has the signer"
+        },
+        "signerId": {
+          "displayName": "Signer ID",
+          "description": "ID of the Signer you want to delete"
+        }
+      },
+      "getAll": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope for which you want to list the signers"
+        }
+      },
+      "getDetails": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the Envelope that has the signer"
+        },
+        "signerId": {
+          "displayName": "Signer ID",
+          "description": "ID of the Signer you want to view"
+        }
+      }
+    },
+    "errors": {
+      "create": "Error creating the signer",
+      "createAutoSignature": "Error creating automatic signature",
+      "delete": "Error deleting signer",
+      "getAll": "Error listing envelope signers",
+      "getDetails": "Error getting signer details"
+    }
+  },
+  "template": {
+    "operations": {
+      "create": {
+        "name": "Create",
+        "action": "Create template",
+        "description": "Create template"
+      },
+      "update": {
+        "name": "Update",
+        "action": "Update template",
+        "description": "Update template"
+      },
+      "delete": {
+        "name": "Delete",
+        "action": "Delete template",
+        "description": "Delete template"
+      },
+      "getAll": {
+        "name": "List",
+        "action": "List templates",
+        "description": "List templates"
+      },
+      "getDetails": {
+        "name": "Get Details",
+        "action": "Get template details",
+        "description": "Get details of a template"
+      }
+    },
+    "fields": {
+      "create": {
+        "name": {
+          "displayName": "Name",
+          "description": "Defines the Template name to facilitate future consultations"
+        },
+        "base64": {
+          "displayName": "File In Base 64",
+          "description": "Content of the file in base 64 format that is being sent to Clicksign"
+        },
+        "color": {
+          "displayName": "Color",
+          "description": "The identification color of the template"
+        }
+      },
+      "delete": {
+        "templateId": {
+          "displayName": "Template ID",
+          "description": "ID of the Template to be deleted"
+        }
+      },
+      "getDetails": {
+        "templateId": {
+          "displayName": "Template ID",
+          "description": "ID of the Template whose details you want to get"
+        }
+      },
+      "update": {
+        "templateId": {
+          "displayName": "Template ID",
+          "description": "ID of the Template to be updated"
+        },
+        "name": {
+          "displayName": "Name",
+          "description": "Defines the Template name to facilitate future consultations"
+        },
+        "color": {
+          "displayName": "Color",
+          "description": "The identification color of the template"
+        }
+      }
+    },
+    "errors": {
+      "create": "Error creating template",
+      "update": "Error updating template",
+      "delete": "Error deleting template",
+      "getAll": "Error listing templates",
+      "getDetails": "Error getting template details"
+    }
+  },
+  "colors": {
+    "#1474f5": "Royal Blue",
+    "#15d3c9": "Turquoise",
+    "#05c412": "Lime Green",
+    "#fccf00": "Yellow",
+    "#f77c04": "Burnt Orange",
+    "#cf2e58": "Magenta Red",
+    "#ff86d5": "Hot Pink",
+    "#8726d9": "Purple",
+    "#577b8d": "Grayish Blue"
   }
 }

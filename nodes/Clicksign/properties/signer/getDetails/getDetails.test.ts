@@ -56,7 +56,7 @@ describe('getDetails: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'signer.errors.getDetails',
+      'Error getting signer details',
     );
   });
 

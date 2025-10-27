@@ -32,7 +32,7 @@ describe('getAll: template', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao listar modelos',
+      'Error listing templates',
     );
   });
 

@@ -457,5 +457,94 @@
       "getAll": "Erro ao listar signatários do envelope",
       "getDetails": "Erro ao obter detalhes do signatário"
     }
+  },
+  "template": {
+    "operations": {
+      "create": {
+        "name": "Criar",
+        "action": "Criar modelo",
+        "description": "Criar modelo"
+      },
+      "update": {
+        "name": "Atualizar",
+        "action": "Atualizar modelo",
+        "description": "Atualizar modelo"
+      },
+      "delete": {
+        "name": "Excluir",
+        "action": "Excluir modelo",
+        "description": "Excluir modelo"
+      },
+      "getAll": {
+        "name": "Listar",
+        "action": "Listar modelos",
+        "description": "Listar modelos"
+      },
+      "getDetails": {
+        "name": "Obter Detalhes",
+        "action": "Obter detalhes do modelo",
+        "description": "Obter detalhes de um modelo"
+      }
+    },
+    "fields": {
+      "create": {
+        "name": {
+          "displayName": "Nome",
+          "description": "Define o nome do Modelo para facilitar consultas futuras"
+        },
+        "base64": {
+          "displayName": "Arquivo Em Base 64",
+          "description": "Conteúdo do arquivo em formato base 64 que está sendo enviado para a Clicksign"
+        },
+        "color": {
+          "displayName": "Cor",
+          "description": "A cor de identificação do template"
+        }
+      },
+      "delete": {
+        "templateId": {
+          "displayName": "Modelo ID",
+          "description": "ID do Modelo a ser excluído"
+        }
+      },
+      "getDetails": {
+        "templateId": {
+          "displayName": "Modelo ID",
+          "description": "ID do Modelo que deseja obter os detalhes"
+        }
+      },
+      "update": {
+        "templateId": {
+          "displayName": "Modelo ID",
+          "description": "ID do Modelo a ser atualizado"
+        },
+        "name": {
+          "displayName": "Nome",
+          "description": "Define o nome do Modelo para facilitar consultas futuras"
+        },
+        "color": {
+          "displayName": "Cor",
+          "description": "A cor de identificação do template"
+        }
+      }
+    },
+    "errors": {
+      "create": "Erro ao criar modelo",
+      "update": "Erro ao atualizar modelo",
+      "delete": "Erro ao excluir modelo",
+      "getAll": "Erro ao listar modelos",
+      "getDetails": "Erro ao obter detalhes do modelo"
+    }
+  },
+  "colors": {
+    "#1474f5": "Azul Royal",
+    "#15d3c9": "Azul-Turquesa",
+    "#05c412": "Verde-Limão",
+    "#fccf00": "Amarelo",
+    "#f77c04": "Laranja Queimado",
+    "#cf2e58": "Vermelho-Magenta",
+    "#ff86d5": "Rosa-Choque",
+    "#8726d9": "Roxo",
+    "#577b8d": "Azul-Acinzentado"
   }
 }

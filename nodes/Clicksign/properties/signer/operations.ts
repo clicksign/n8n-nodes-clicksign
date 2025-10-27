@@ -2,7 +2,7 @@ import { INodeProperties } from 'n8n-workflow';
 import { t } from '../shared/translations';
 
 export const signerOperations: INodeProperties = {
-  displayName: 'Operação',
+  displayName: t('operation'),
   name: 'operation',
   type: 'options',
   // eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-options

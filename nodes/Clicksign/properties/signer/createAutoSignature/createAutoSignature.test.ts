@@ -117,7 +117,7 @@ describe('createAutoSignature: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'signer.errors.createAutoSignature',
+      'Error creating automatic signature',
     );
   });
 
