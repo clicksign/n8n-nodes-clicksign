@@ -5,7 +5,6 @@ export const watcherOperations: INodeProperties = {
   displayName: t('operation'),
   name: 'operation',
   type: 'options',
-  // eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-options
   default: 'getAll',
   noDataExpression: true,
   options: [

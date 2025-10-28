@@ -191,7 +191,7 @@ export const createSignerFields: INodeProperties[] = [
                 value: 'sms',
               },
             ],
-            // eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-options
+
             default: 'email',
           },
           {
@@ -210,7 +210,7 @@ export const createSignerFields: INodeProperties[] = [
                 value: 'email',
               },
             ],
-            // eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-options
+
             default: 'email',
           },
           {
@@ -231,7 +231,7 @@ export const createSignerFields: INodeProperties[] = [
                 value: 'whatsapp',
               },
             ],
-            // eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-options
+
             default: 'email',
           },
         ],

@@ -36,7 +36,6 @@ export const createWatcherFields: INodeProperties[] = [
     name: 'kind',
     type: 'options',
     required: true,
-    // eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-options
     default: 'all_steps',
     description: t('watcher.fields.create.kind.description'),
     options: [

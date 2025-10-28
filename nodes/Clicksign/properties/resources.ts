@@ -6,7 +6,6 @@ export const resourceOptions: INodeProperties = {
   name: 'resource',
   type: 'options',
   noDataExpression: true,
-  // eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-options
   default: 'envelope',
   options: [
     {
