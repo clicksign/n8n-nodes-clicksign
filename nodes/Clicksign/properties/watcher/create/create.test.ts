@@ -79,7 +79,7 @@ describe('create: watcher', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao criar observador',
+      'Error creating watcher',
     );
   });
 

@@ -548,6 +548,84 @@
       "getDetails": "Error getting template details"
     }
   },
+  "watcher": {
+    "operations": {
+      "create": {
+        "name": "Create",
+        "action": "Create watcher",
+        "description": "Create watcher"
+      },
+      "getAll": {
+        "name": "List",
+        "action": "List watchers",
+        "description": "List watchers"
+      },
+      "getDetails": {
+        "name": "Get Details",
+        "action": "Get watcher details",
+        "description": "Get watcher details"
+      },
+      "delete": {
+        "name": "Delete",
+        "action": "Delete watcher",
+        "description": "Delete watcher"
+      }
+    },
+    "fields": {
+      "create": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the Envelope that will receive the watcher"
+        },
+        "email": {
+          "displayName": "Email",
+          "description": "Watcher's email"
+        },
+        "kind": {
+          "displayName": "Step to Be Notified",
+          "description": "Defines whether the watcher will be notified throughout the process or only upon completion",
+          "all_steps": "All Steps",
+          "on_finished": "On Finish"
+        },
+        "attachDocuments": {
+          "displayName": "Send Attached Documents Upon Completion",
+          "description": "Determines whether the watcher should receive the finished documents"
+        }
+      },
+      "delete": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the Envelope that has the watcher"
+        },
+        "watcherId": {
+          "displayName": "Watcher ID",
+          "description": "ID of the Watcher to be deleted"
+        }
+      },
+      "getAll": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope for which you want to list the watchers"
+        }
+      },
+      "getDetails": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the Envelope that has the watcher"
+        },
+        "watcherId": {
+          "displayName": "Watcher ID",
+          "description": "ID of the Watcher to be viewed"
+        }
+      }
+    },
+    "errors": {
+      "create": "Error creating watcher",
+      "getAll": "Error listing watchers",
+      "getDetails": "Error getting watcher details",
+      "delete": "Error deleting watcher"
+    }
+  },
   "colors": {
     "#1474f5": "Royal Blue",
     "#15d3c9": "Turquoise",

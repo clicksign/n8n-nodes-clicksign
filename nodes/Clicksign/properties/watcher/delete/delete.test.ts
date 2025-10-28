@@ -56,7 +56,7 @@ describe('delete: watcher', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao excluir observador',
+      'Error deleting watcher',
     );
   });
 

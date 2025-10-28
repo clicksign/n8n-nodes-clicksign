@@ -536,6 +536,84 @@
       "getDetails": "Erro ao obter detalhes do modelo"
     }
   },
+  "watcher": {
+    "operations": {
+      "create": {
+        "name": "Criar",
+        "action": "Criar observador",
+        "description": "Criar observador"
+      },
+      "getAll": {
+        "name": "Listar",
+        "action": "Listar observadores",
+        "description": "Listar observadores"
+      },
+      "getDetails": {
+        "name": "Obter Detalhes",
+        "action": "Obter detalhes do observador",
+        "description": "Obter detalhes do observador"
+      },
+      "delete": {
+        "name": "Excluir",
+        "action": "Excluir observador",
+        "description": "Excluir observador"
+      }
+    },
+    "fields": {
+      "create": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope que receberá o observador"
+        },
+        "email": {
+          "displayName": "Email",
+          "description": "Email do observador"
+        },
+        "kind": {
+          "displayName": "Etapa a Ser Notificado",
+          "description": "Define se o observador será notificado em todo o processo ou apenas na conclusão",
+          "all_steps": "Todas as Etapas",
+          "on_finished": "Ao Finalizar"
+        },
+        "attachDocuments": {
+          "displayName": "Enviar Documentos Anexados Ao Finalizar",
+          "description": "Determina se o observador deve receber os documentos finalizados"
+        }
+      },
+      "delete": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope que possui o observador"
+        },
+        "watcherId": {
+          "displayName": "Observador ID",
+          "description": "ID do Observador que deseja excluir"
+        }
+      },
+      "getAll": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do envelope ao qual deseja listar os observadores"
+        }
+      },
+      "getDetails": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope que possui o observador"
+        },
+        "watcherId": {
+          "displayName": "Observador ID",
+          "description": "ID do Observador que deseja visualizar"
+        }
+      }
+    },
+    "errors": {
+      "create": "Erro ao criar observador",
+      "getAll": "Erro ao listar observadores",
+      "getDetails": "Erro ao obter detalhes do observador",
+      "delete": "Erro ao excluir observador"
+    }
+  },
   "colors": {
     "#1474f5": "Azul Royal",
     "#15d3c9": "Azul-Turquesa",

@@ -46,7 +46,7 @@ describe('getAll: watcher', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao listar observadores',
+      'Error listing watchers',
     );
   });
 

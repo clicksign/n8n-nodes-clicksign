@@ -1,13 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../../shared/translations';
 
 export const createWatcherFields: INodeProperties[] = [
   {
-    displayName: 'Envelope ID',
+    displayName: t('watcher.fields.create.envelopeId.displayName'),
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do Envelope que receberá o observador',
+    description: t('watcher.fields.create.envelopeId.description'),
     displayOptions: {
       show: {
         operation: ['create'],
@@ -16,13 +17,13 @@ export const createWatcherFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Email',
+    displayName: t('watcher.fields.create.email.displayName'),
     name: 'email',
     type: 'string',
     placeholder: 'name@email.com',
     required: true,
     default: '',
-    description: 'Email do observador e onde será notificado',
+    description: t('watcher.fields.create.email.description'),
     displayOptions: {
       show: {
         operation: ['create'],
@@ -31,20 +32,20 @@ export const createWatcherFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Etapa a Ser Notificado',
+    displayName: t('watcher.fields.create.kind.displayName'),
     name: 'kind',
     type: 'options',
     required: true,
+    // eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-options
     default: 'all_steps',
-    description:
-      'Define se o observador será notificado em todo o processo ou apenas na conclusão',
+    description: t('watcher.fields.create.kind.description'),
     options: [
       {
-        name: 'Todas Etapas',
+        name: t('watcher.fields.create.kind.all_steps'),
         value: 'all_steps',
       },
       {
-        name: 'Ao Finalizar',
+        name: t('watcher.fields.create.kind.on_finished'),
         value: 'on_finished',
       },
     ],
@@ -56,13 +57,12 @@ export const createWatcherFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Enviar Documentos Anexados Ao Finalizar',
+    displayName: t('watcher.fields.create.attachDocuments.displayName'),
     name: 'attachDocuments',
     type: 'boolean',
     required: true,
     default: false,
-    description:
-      'Determina se o observador deve receber os documentos finalizados',
+    description: t('watcher.fields.create.attachDocuments.description'),
     displayOptions: {
       show: {
         operation: ['create'],
