@@ -1,25 +1,27 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../shared/translations';
 
 export const notificationOperations: INodeProperties = {
-  displayName: 'Operação',
+  displayName: t('operation'),
   name: 'operation',
   type: 'options',
   noDataExpression: true,
+  // eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-options
+  default: 'notifyEnvelope',
   options: [
     {
-      name: 'Notificar Envelope',
       value: 'notifyEnvelope',
-      action: 'Notificar envelope',
-      description: 'Notifica os signatários do envelope',
+      name: t('notification.operations.notifyEnvelope.name'),
+      action: t('notification.operations.notifyEnvelope.action'),
+      description: t('notification.operations.notifyEnvelope.description'),
     },
     {
-      name: 'Notificar Signatário',
       value: 'notifySigner',
-      action: 'Notificar signatário',
-      description: 'Notifica um signatário do envelope',
+      name: t('notification.operations.notifySigner.name'),
+      action: t('notification.operations.notifySigner.action'),
+      description: t('notification.operations.notifySigner.description'),
     },
   ],
-  default: 'notifyEnvelope',
   displayOptions: {
     show: {
       resource: ['notification'],

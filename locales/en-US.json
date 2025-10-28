@@ -626,6 +626,50 @@
       "delete": "Error deleting watcher"
     }
   },
+  "notification": {
+    "operations": {
+      "notifyEnvelope": {
+        "name": "Notify Envelope",
+        "action": "Notify envelope",
+        "description": "Notifies the envelope's signers"
+      },
+      "notifySigner": {
+        "name": "Notify Signer",
+        "action": "Notify signer",
+        "description": "Notifies an envelope signer"
+      }
+    },
+    "fields": {
+      "notifyEnvelope": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the Envelope whose signers you want to notify"
+        },
+        "message": {
+          "displayName": "Message",
+          "description": "Custom message that will be sent in the notification"
+        }
+      },
+      "notifySigner": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the Envelope that has the signer"
+        },
+        "signerId": {
+          "displayName": "Signer ID",
+          "description": "ID of the Signer you want to notify"
+        },
+        "message": {
+          "displayName": "Message",
+          "description": "Custom message that will be sent in the notification"
+        }
+      }
+    },
+    "errors": {
+      "notifyEnvelope": "Error notifying envelope signers",
+      "notifySigner": "Error sending notification to signer"
+    }
+  },
   "colors": {
     "#1474f5": "Royal Blue",
     "#15d3c9": "Turquoise",

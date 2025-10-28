@@ -71,7 +71,7 @@ describe('notifySigner: notification', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao enviar notificação para signatário',
+      'Error sending notification to signer',
     );
   });
 
@@ -110,7 +110,7 @@ describe('notifySigner: notification', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao enviar notificação para signatário',
+      'Error sending notification to signer',
     );
   });
 

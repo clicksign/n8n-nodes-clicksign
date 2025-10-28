@@ -64,7 +64,7 @@ describe('notifyEnvelope: notification', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao notificar signatários do envelope',
+      'Error notifying envelope signers',
     );
   });
 

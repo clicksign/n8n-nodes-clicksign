@@ -1,13 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../../shared/translations';
 
 export const notifyEnvelopeFields: INodeProperties[] = [
   {
-    displayName: 'Envelope ID',
+    displayName: t('notification.fields.notifyEnvelope.envelopeId.displayName'),
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do Envelope que deseja notificar',
+    description: t('notification.fields.notifyEnvelope.envelopeId.description'),
     displayOptions: {
       show: {
         operation: ['notifyEnvelope'],
@@ -16,12 +17,11 @@ export const notifyEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Mensagem',
+    displayName: t('notification.fields.notifyEnvelope.message.displayName'),
     name: 'message',
     type: 'string',
     default: '',
-    description:
-      'Mensagem que deve ser enviada aos signatários, se o campo não for preenchido a mensagem enviada será a configurada no envelope#default_message',
+    description: t('notification.fields.notifyEnvelope.message.description'),
     displayOptions: {
       show: {
         operation: ['notifyEnvelope'],

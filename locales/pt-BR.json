@@ -614,6 +614,50 @@
       "delete": "Erro ao excluir observador"
     }
   },
+  "notification": {
+    "operations": {
+      "notifyEnvelope": {
+        "name": "Notificar Envelope",
+        "action": "Notificar envelope",
+        "description": "Notifica os signatários do envelope"
+      },
+      "notifySigner": {
+        "name": "Notificar Signatário",
+        "action": "Notificar signatário",
+        "description": "Notifica um signatário do envelope"
+      }
+    },
+    "fields": {
+      "notifyEnvelope": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope que deseja notificar os signatários"
+        },
+        "message": {
+          "displayName": "Mensagem",
+          "description": "Mensagem personalizada que será enviada na notificação"
+        }
+      },
+      "notifySigner": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope que possui o signatário"
+        },
+        "signerId": {
+          "displayName": "Signatário ID",
+          "description": "ID do Signatário que deseja notificar"
+        },
+        "message": {
+          "displayName": "Mensagem",
+          "description": "Mensagem personalizada que será enviada na notificação"
+        }
+      }
+    },
+    "errors": {
+      "notifyEnvelope": "Erro ao notificar signatários do envelope",
+      "notifySigner": "Erro ao enviar notificação para signatário"
+    }
+  },
   "colors": {
     "#1474f5": "Azul Royal",
     "#15d3c9": "Azul-Turquesa",
