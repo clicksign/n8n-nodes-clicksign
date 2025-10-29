@@ -362,5 +362,56 @@
       "fromDocument": "Erro ao obter eventos de um documento",
       "fromEnvelope": "Erro ao obter eventos do envelope"
     }
+  },
+  "folder": {
+    "operations": {
+      "create": {
+        "name": "Criar",
+        "value": "create",
+        "action": "Criar pasta",
+        "description": "Criar pasta"
+      },
+      "getAll": {
+        "name": "Listar",
+        "value": "getAll",
+        "action": "Listar pastas",
+        "description": "Listar pastas"
+      },
+      "getDetails": {
+        "name": "Obter Detalhes",
+        "value": "getDetails",
+        "action": "Obter detalhes da pasta",
+        "description": "Obter detalhes da pasta"
+      }
+    },
+    "fields": {
+      "create": {
+        "name": {
+          "displayName": "Nome",
+          "description": "Nome da pasta a ser criada"
+        },
+        "folderId": {
+          "displayName": "Pasta ID",
+          "description": "ID da pasta de origem"
+        }
+      },
+      "getAll": {
+        "inRoot": {
+          "displayName": "Apenas Pastas Na Raiz",
+          "description": "Informe se deseja listar apenas pastas na raiz de sua estrutura de pastas"
+        }
+      },
+      "getDetails": {
+        "folderId": {
+          "displayName": "Pasta ID",
+          "description": "ID da pasta que deseja ver suas subpastas"
+        }
+      }
+    }
+  },
+  "errors": {
+    "create": "Erro ao criar pasta",
+    "getAll": "Erro ao listar pastas",
+    "getDetails": "Erro ao obter detalhes da pasta"
   }
 }
