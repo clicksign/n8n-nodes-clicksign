@@ -362,5 +362,21 @@
       "fromDocument": "Error getting events from a document",
       "fromEnvelope": "Error getting events from a envelope"
     }
+  },
+  "folder": {
+    "operations": {
+      "create": {
+        "name": "Create",
+        "value": "create",
+        "action": "Create folder",
+        "description": "Create folder"
+      },
+      "getAll": {
+
+      },
+      "getDetails": {
+
+      }
+    }
   }
 }

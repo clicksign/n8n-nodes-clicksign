@@ -362,5 +362,10 @@
       "fromDocument": "Erro ao obter eventos de um documento",
       "fromEnvelope": "Erro ao obter eventos do envelope"
     }
+  },
+  "folder": {
+    "operations": {
+      "name":
+    }
   }
 }
