@@ -1,5 +1,6 @@
 {
   "operation": "Operation",
+  "operations": "Operations",
   "resources": {
     "displayName": "Resource",
     "document": "Document",
@@ -670,6 +671,163 @@
       "notifySigner": "Error sending notification to signer"
     }
   },
+  "requirement": {
+    "operations": {
+      "addAuth": {
+        "name": "Add Authentication",
+        "action": "Add authentication requirement",
+        "description": "Add authentication requirement"
+      },
+      "addQualification": {
+        "name": "Add Qualification",
+        "action": "Add qualification requirement",
+        "description": "Add qualification requirement"
+      },
+      "addRubric": {
+        "name": "Add Rubric",
+        "action": "Add rubric requirement",
+        "description": "Add rubric requirement"
+      },
+      "delete": {
+        "name": "Delete",
+        "action": "Delete requirement",
+        "description": "Delete requirement"
+      },
+      "getAll": {
+        "name": "List",
+        "action": "List requirements",
+        "description": "List requirements"
+      },
+      "getDetails": {
+        "name": "Get Details",
+        "action": "Get requirement details",
+        "description": "Get requirement details"
+      },
+      "bulk": {
+        "name": "Bulk Operations",
+        "action": "Bulk operations",
+        "description": "Bulk operations"
+      }
+    },
+    "fields": {
+      "addAuth": {
+        "auth": {
+          "displayName": "Authentication Method",
+          "description": "Determines the desired Authentication for signing"
+        }
+      },
+      "addQualification": {
+        "role": {
+          "displayName": "Sign As",
+          "description": "Determines the desired Qualification to accept the signatures"
+        }
+      },
+      "addRubric": {
+        "pages": {
+          "displayName": "Pages",
+          "description": "Inform the pages that will receive the signatory's initials, separated by a comma"
+        }
+      },
+      "delete": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the Envelope that contains the requirement"
+        },
+        "requirementId": {
+          "displayName": "Requirement ID",
+          "description": "ID of the Requirement you want to delete"
+        }
+      },
+      "getAll": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope for which you want to list the requirements"
+        }
+      },
+      "getDetails": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope for which you want to list the requirements"
+        },
+        "requirementId": {
+          "displayName": "Requirement ID",
+          "description": "ID of the Requirement you want to view"
+        }
+      },
+      "bulk": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope for which you want to perform bulk operations"
+        },
+        "operations": {
+          "displayName": "Bulk Operations",
+          "description": "Bulk requirement operations",
+          "placeholder": "Add bulk requirement operations",
+          "options": {
+            "operation": {
+              "displayName": "Operation",
+              "add": "Add",
+              "remove": "Remove"
+            },
+            "requirementId": {
+              "displayName": "Requirement ID"
+            },
+            "requirement": {
+              "displayName": "Requirement",
+              "placeholder": "Create requirement",
+              "options": {
+                "displayName": "Requirement Details",
+                "requirementType": {
+                  "displayName": "Type",
+                  "provide_evidence": "Authentication",
+                  "agree": "Qualification",
+                  "rubricate": "Rubric"
+                },
+                "role": {
+                  "displayName": "Sign As"
+                },
+                "auth": {
+                  "displayName": "Authentication Method"
+                },
+                "pages": {
+                  "displayName": "Pages"
+                },
+                "documentId": {
+                  "displayName": "Document ID"
+                },
+                "signerId": {
+                  "displayName": "Signer ID"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "shared": {
+      "envelopeId": {
+        "displayName": "Envelope ID",
+        "description": "ID of the Envelope that will receive the requirement"
+      },
+      "documentId": {
+        "displayName": "Document ID",
+        "description": "ID of the Document that will receive the requirement"
+      },
+      "signerId": {
+        "displayName": "Signer ID",
+        "description": "ID of the Signer that will receive the requirement"
+      }
+    },
+    "errors": {
+      "addAuth": "Error adding authentication requirement",
+      "addQualification": "Error adding qualification requirement",
+      "addRubric": "Error adding rubric requirement",
+      "delete": "Error deleting requirement",
+      "getAll": "Error listing envelope requirements",
+      "getDetails": "Error getting requirement details",
+      "bulk": "Error performing bulk requirement operation"
+    }
+  },
   "colors": {
     "#1474f5": "Royal Blue",
     "#15d3c9": "Turquoise",
@@ -680,5 +838,90 @@
     "#ff86d5": "Hot Pink",
     "#8726d9": "Purple",
     "#577b8d": "Grayish Blue"
+  },
+  "auth": {
+    "handwritten": "Handwritten Signature",
+    "auto_signature": "Automatic Signature",
+    "biometric": "Biometrics",
+    "facial_biometrics": "Facial Biometrics",
+    "icp_brasil": "Digital Certificate",
+    "address_proof": "Proof Of Address",
+    "official_document": "Official Document",
+    "documentscopy": "Documentoscopy",
+    "email": "Email",
+    "pix": "Pix",
+    "selfie": "Selfie With Document",
+    "liveness": "Dynamic Selfie",
+    "sms": "SMS",
+    "whatsapp": "Whatsapp"
+  },
+  "qualification": {
+    "receipt": "Acknowledge Receipt",
+    "administrator": "Administrator",
+    "lawyer": "Lawyer",
+    "secured": "Secured Party",
+    "consenting": "Consenting Party",
+    "consented": "Consented Party",
+    "approve": "Approve",
+    "sign": "Sign",
+    "associate": "Associate",
+    "guarantor": "Guarantor",
+    "collateral_provider": "Collateral Provider",
+    "transferor": "Transferor",
+    "transferee": "Transferee",
+    "comforter": "Lender (Comodante)",
+    "borrower": "Borrower (Comodatário)",
+    "guarantor_spouse": "Guarantor's Spouse",
+    "pledged": "Pledged Party",
+    "consignee": "Consignee",
+    "contractee": "Contractee",
+    "contractor": "Contractor",
+    "account_holder": "Account Holder",
+    "real_estate_broker": "Real Estate Broker",
+    "insurance_broker": "Insurance Broker",
+    "broker": "Broker",
+    "creditor": "Creditor",
+    "joint_debtor": "Joint Debtor",
+    "debtor": "Debtor(s)",
+    "director": "Director",
+    "distracting": "Rescinding Party",
+    "issuer": "Issuer",
+    "employee": "Employee",
+    "employer": "Employer",
+    "endorser": "Endorser",
+    "endorsee": "Endorsee",
+    "surety": "Surety",
+    "bailee": "Bailee",
+    "franchisee": "Franchisee",
+    "franchisor": "Franchisor",
+    "manager": "Manager",
+    "intermediary": "Intermediary",
+    "intervening": "Intervening Party",
+    "consenting_intervenor": "Consenting Intervenor",
+    "intervening_guarantor": "Intervening Guarantor",
+    "licensed": "Licensee",
+    "licensor": "Licensor",
+    "lessor": "Lessor",
+    "lessee": "Lessee",
+    "resident": "Resident",
+    "lender": "Lender (Mutuante)",
+    "grantee": "Grantee",
+    "grantor": "Grantor",
+    "buyer": "Buying Party",
+    "seller": "Selling Party",
+    "president": "President",
+    "service_provider": "Service Provider",
+    "attorney": "Attorney",
+    "owner": "Owner",
+    "legal_representative": "Legal Representative",
+    "legal_guardian": "Legal Guardian",
+    "co_responsible": "Co-Responsible Party",
+    "secretary": "Secretary",
+    "insured": "Insured",
+    "building_manager": "Building Manager",
+    "partner": "Partner",
+    "treasurer": "Treasurer",
+    "witness": "Witness",
+    "surveyor": "Surveyor"
   }
 }

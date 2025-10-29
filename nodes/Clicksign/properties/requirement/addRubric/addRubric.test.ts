@@ -56,7 +56,7 @@ describe('addRubric: requirement', () => {
       documentId: 'mockDocumentId',
       envelopeId: 'mockEnvelopeId',
       signerId: 'mockSignerId',
-      errorMessage: 'Erro ao adicionar requisito de rubrica',
+      errorMessage: 'Error adding rubric requirement',
     });
   });
 
@@ -78,7 +78,7 @@ describe('addRubric: requirement', () => {
       documentId: 'dummy',
       envelopeId: 'dummy',
       signerId: 'dummy',
-      errorMessage: 'Erro ao adicionar requisito de rubrica',
+      errorMessage: 'Error adding rubric requirement',
     });
   });
 

@@ -62,7 +62,7 @@ describe('addAuth: requirement', () => {
       documentId: 'mockDocumentId',
       envelopeId: 'mockEnvelopeId',
       signerId: 'mockSignerId',
-      errorMessage: 'Erro ao adicionar requisito de autenticação',
+      errorMessage: 'Error adding authentication requirement',
     });
   });
 

@@ -1,5 +1,6 @@
 {
   "operation": "Operação",
+  "operations": "Operações",
   "resources": {
     "displayName": "Recurso",
     "document": "Documento",
@@ -658,6 +659,163 @@
       "notifySigner": "Erro ao enviar notificação para signatário"
     }
   },
+  "requirement": {
+    "operations": {
+      "addAuth": {
+        "name": "Adicionar Autenticação",
+        "action": "Adicionar requisito de autenticação",
+        "description": "Adicionar requisito de autenticação"
+      },
+      "addQualification": {
+        "name": "Adicionar Qualificação",
+        "action": "Adicionar requisito de qualificação",
+        "description": "Adicionar requisito de qualificação"
+      },
+      "addRubric": {
+        "name": "Adicionar Rubrica",
+        "action": "Adicionar requisito de rubrica",
+        "description": "Adicionar requisito de rubrica"
+      },
+      "delete": {
+        "name": "Excluir",
+        "action": "Excluir requisito",
+        "description": "Excluir requisito"
+      },
+      "getAll": {
+        "name": "Listar",
+        "action": "Listar requisitos",
+        "description": "Listar requisitos"
+      },
+      "getDetails": {
+        "name": "Obter Detalhes",
+        "action": "Obter detalhes do requisito",
+        "description": "Obter detalhes do requisito"
+      },
+      "bulk": {
+        "name": "Operações Em Massa",
+        "action": "Operações em massa",
+        "description": "Operações em massa"
+      }
+    },
+    "fields": {
+      "addAuth": {
+        "auth": {
+          "displayName": "Método De Autenticação",
+          "description": "Determina a Autenticação desejada para assinar"
+        }
+      },
+      "addQualification": {
+        "role": {
+          "displayName": "Assinar Como",
+          "description": "Determina a Qualificação desejada para aceitar as assinaturas"
+        }
+      },
+      "addRubric": {
+        "pages": {
+          "displayName": "Páginas",
+          "description": "Informe as páginas que receberão as iniciais do signatário separadas por vírgula"
+        }
+      },
+      "delete": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do Envelope que possui o requisito"
+        },
+        "requirementId": {
+          "displayName": "Requisito ID",
+          "description": "ID do Requisito que deseja excluir"
+        }
+      },
+      "getAll": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do envelope ao qual deseja listar os requisitos"
+        }
+      },
+      "getDetails": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do envelope ao qual deseja listar os requisitos"
+        },
+        "requirementId": {
+          "displayName": "Requisito ID",
+          "description": "ID do Requisito que deseja visualizar"
+        }
+      },
+      "bulk": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID do envelope ao qual deseja realizar as operações em massa"
+        },
+        "operations": {
+          "displayName": "Operações Em Massa",
+          "description": "Operações em massa de requisitos",
+          "placeholder": "Adicione as operações em massa de requisitos",
+          "options": {
+            "operation": {
+              "displayName": "Operação",
+              "add": "Adicionar",
+              "remove": "Remover"
+            },
+            "requirementId": {
+              "displayName": "Requisito ID"
+            },
+            "requirement": {
+              "displayName": "Requisito",
+              "placeholder": "Criar requisito",
+              "options": {
+                "displayName": "Detalhes Do Requisito",
+                "requirementType": {
+                  "displayName": "Tipo",
+                  "provide_evidence": "Autenticação",
+                  "agree": "Qualificação",
+                  "rubricate": "Rubrica"
+                },
+                "role": {
+                  "displayName": "Assinar Como"
+                },
+                "auth": {
+                  "displayName": "Método De Autenticação"
+                },
+                "pages": {
+                  "displayName": "Páginas"
+                },
+                "documentId": {
+                  "displayName": "Documento ID"
+                },
+                "signerId": {
+                  "displayName": "Signatário ID"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "shared": {
+      "envelopeId": {
+        "displayName": "Envelope ID",
+        "description": "ID do Envelope que receberá o requisito"
+      },
+      "documentId": {
+        "displayName": "Documento ID",
+        "description": "ID do Documento que receberá o requisito"
+      },
+      "signerId": {
+        "displayName": "Signatário ID",
+        "description": "ID do Signatário que receberá o requisito"
+      }
+    },
+    "errors": {
+      "addAuth": "Erro ao adicionar requisito de autenticação",
+      "addQualification": "Erro ao adicionar requisito de qualificação",
+      "addRubric": "Erro ao adicionar requisito de rubrica",
+      "delete": "Erro ao excluir requisito",
+      "getAll": "Erro ao listar requisitos do envelope",
+      "getDetails": "Erro ao obter detalhes do requisito",
+      "bulk": "Erro ao realizar operação em massa de requisitos"
+    }
+  },
   "colors": {
     "#1474f5": "Azul Royal",
     "#15d3c9": "Azul-Turquesa",
@@ -668,5 +826,90 @@
     "#ff86d5": "Rosa-Choque",
     "#8726d9": "Roxo",
     "#577b8d": "Azul-Acinzentado"
+  },
+  "auth": {
+    "handwritten": "Assinatura Manuscrita",
+    "auto_signature": "Assinatura Automática",
+    "biometric": "Biometria",
+    "facial_biometrics": "Biometria Facial",
+    "icp_brasil": "Certificado Digital",
+    "address_proof": "Comprovante De Endereço",
+    "official_document": "Documento Oficial",
+    "documentscopy": "Documentoscopia",
+    "email": "Email",
+    "pix": "Pix",
+    "selfie": "Selfie Com Documento",
+    "liveness": "Selfie Dinâmica",
+    "sms": "SMS",
+    "whatsapp": "Whatsapp"
+  },
+  "qualification": {
+    "receipt": "Acusar Recebimento",
+    "administrator": "Administrador",
+    "lawyer": "Advogado(a)",
+    "secured": "Afiançado",
+    "consenting": "Anuente",
+    "consented": "Anuído",
+    "approve": "Aprovar",
+    "sign": "Assinar",
+    "associate": "Associado(a)",
+    "guarantor": "Avalista",
+    "collateral_provider": "Caucionante",
+    "transferor": "Cedente",
+    "transferee": "Cessionário",
+    "comforter": "Comodante",
+    "borrower": "Comodatário",
+    "guarantor_spouse": "Cônjuge do fiador",
+    "pledged": "Consignado(a)",
+    "consignee": "Consignatário(a)",
+    "contractee": "Contratada",
+    "contractor": "Contratante",
+    "account_holder": "Correntista",
+    "real_estate_broker": "Corretor De Imóveis",
+    "insurance_broker": "Corretor De Seguros",
+    "broker": "Corretor(a)",
+    "creditor": "Credor(a)",
+    "joint_debtor": "Devedor Solidário",
+    "debtor": "Devedor(es)",
+    "director": "Diretor(a)",
+    "distracting": "Distratante",
+    "issuer": "Emitente",
+    "employee": "Empregado(a)",
+    "employer": "Empregador(a)",
+    "endorser": "Endossante",
+    "endorsee": "Endossatário",
+    "surety": "Fiador",
+    "bailee": "Fiel Depositário(a)",
+    "franchisee": "Franqueado(a)",
+    "franchisor": "Franqueador(a)",
+    "manager": "Gestor",
+    "intermediary": "Intermediário(a)",
+    "intervening": "Interveniente",
+    "consenting_intervenor": "Interveniente Anuente",
+    "intervening_guarantor": "Interveniente Garantidor",
+    "licensed": "Licenciada",
+    "licensor": "Licenciante",
+    "lessor": "Locador",
+    "lessee": "Locatário",
+    "resident": "Morador(a)",
+    "lender": "Mutuante",
+    "grantee": "Outorgado(a)",
+    "grantor": "Outorgante",
+    "buyer": "Parte Compradora",
+    "seller": "Parte Vendedora",
+    "president": "Presidente",
+    "service_provider": "Prestador(a) De Serviços",
+    "attorney": "Procurador",
+    "owner": "Proprietário(a)",
+    "legal_representative": "Representante Legal",
+    "legal_guardian": "Responsável Legal",
+    "co_responsible": "Responsável Solidário",
+    "secretary": "Secretário(a)",
+    "insured": "Segurado(a)",
+    "building_manager": "Síndico(a)",
+    "partner": "Sócio(a)",
+    "treasurer": "Tesoureiro(a)",
+    "witness": "Testemunha",
+    "surveyor": "Vistoriador"
   }
 }

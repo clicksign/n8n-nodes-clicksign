@@ -86,7 +86,7 @@ describe('bulk: requirement', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao realizar operações em massa de requisitos',
+      'Error performing bulk requirement operation',
     );
   });
 
@@ -142,7 +142,7 @@ describe('bulk: requirement', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao realizar operações em massa de requisitos',
+      'Error performing bulk requirement operation',
     );
   });
 
@@ -179,7 +179,7 @@ describe('bulk: requirement', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao realizar operações em massa de requisitos',
+      'Error performing bulk requirement operation',
     );
   });
 

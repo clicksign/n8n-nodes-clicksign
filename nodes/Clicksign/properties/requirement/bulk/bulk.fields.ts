@@ -1,15 +1,16 @@
 import { INodeProperties } from 'n8n-workflow';
 import { qualificationsOptions } from '../shared/qualification.options';
 import { authOptions } from '../shared/auth.options';
+import { t } from '../../shared/translations';
 
 export const bulkFields: INodeProperties[] = [
   {
-    displayName: 'Envelope ID',
+    displayName: t('requirement.fields.bulk.envelopeId.displayName'),
     name: 'envelopeId',
     type: 'string',
     default: '',
     required: true,
-    description: 'ID do envelope ao qual deseja realizar as operações em massa',
+    description: t('requirement.fields.bulk.envelopeId.description'),
     displayOptions: {
       show: {
         operation: ['bulk'],
@@ -18,11 +19,11 @@ export const bulkFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Operações Em Massa',
+    displayName: t('requirement.fields.bulk.operations.displayName'),
     name: 'operations',
     type: 'fixedCollection',
-    description: 'Operações em massa de requisitos',
-    placeholder: 'Adicionar operação',
+    description: t('requirement.fields.bulk.operations.description'),
+    placeholder: t('requirement.fields.bulk.operations.placeholder'),
     default: {},
     required: true,
     displayOptions: {
@@ -36,28 +37,34 @@ export const bulkFields: INodeProperties[] = [
     },
     options: [
       {
-        displayName: 'Operações',
+        displayName: t('operations'),
         name: 'fields',
         values: [
           {
-            displayName: 'Operação',
+            displayName: t('operation'),
             name: 'operation',
             type: 'options',
             noDataExpression: true,
             options: [
               {
-                name: 'Adicionar',
+                name: t(
+                  'requirement.fields.bulk.operations.options.operation.add',
+                ),
                 value: 'add',
               },
               {
-                name: 'Remover',
+                name: t(
+                  'requirement.fields.bulk.operations.options.operation.remove',
+                ),
                 value: 'remove',
               },
             ],
             default: 'add',
           },
           {
-            displayName: 'Requisito ID',
+            displayName: t(
+              'requirement.fields.bulk.operations.options.requirementId.displayName',
+            ),
             name: 'requirementId',
             type: 'string',
             default: '',
@@ -69,10 +76,14 @@ export const bulkFields: INodeProperties[] = [
             },
           },
           {
-            displayName: 'Requisito',
+            displayName: t(
+              'requirement.fields.bulk.operations.options.requirement.displayName',
+            ),
             name: 'requirement',
             type: 'fixedCollection',
-            placeholder: 'Criar requisito',
+            placeholder: t(
+              'requirement.fields.bulk.operations.options.requirement.placeholder',
+            ),
             required: true,
             default: {},
             displayOptions: {
@@ -82,23 +93,44 @@ export const bulkFields: INodeProperties[] = [
             },
             options: [
               {
-                displayName: 'Detalhes Do Requisito',
+                displayName: t(
+                  'requirement.fields.bulk.operations.options.requirement.options.displayName',
+                ),
                 name: 'details',
                 values: [
                   {
-                    displayName: 'Tipo',
+                    displayName: t(
+                      'requirement.fields.bulk.operations.options.requirement.options.requirementType.displayName',
+                    ),
                     name: 'requirementType',
                     type: 'options',
                     required: true,
                     default: 'provide_evidence',
                     options: [
-                      { name: 'Autenticação', value: 'provide_evidence' },
-                      { name: 'Qualificação', value: 'agree' },
-                      { name: 'Rubrica', value: 'rubricate' },
+                      {
+                        name: t(
+                          'requirement.fields.bulk.operations.options.requirement.options.requirementType.provide_evidence',
+                        ),
+                        value: 'provide_evidence',
+                      },
+                      {
+                        name: t(
+                          'requirement.fields.bulk.operations.options.requirement.options.requirementType.agree',
+                        ),
+                        value: 'agree',
+                      },
+                      {
+                        name: t(
+                          'requirement.fields.bulk.operations.options.requirement.options.requirementType.rubricate',
+                        ),
+                        value: 'rubricate',
+                      },
                     ],
                   },
                   {
-                    displayName: 'Assinar Como',
+                    displayName: t(
+                      'requirement.fields.bulk.operations.options.requirement.options.role.displayName',
+                    ),
                     name: 'role',
                     type: 'options',
                     default: 'sign',
@@ -110,7 +142,9 @@ export const bulkFields: INodeProperties[] = [
                     },
                   },
                   {
-                    displayName: 'Método De Autenticação',
+                    displayName: t(
+                      'requirement.fields.bulk.operations.options.requirement.options.auth.displayName',
+                    ),
                     name: 'auth',
                     type: 'options',
                     default: 'email',
@@ -122,7 +156,9 @@ export const bulkFields: INodeProperties[] = [
                     },
                   },
                   {
-                    displayName: 'Páginas',
+                    displayName: t(
+                      'requirement.fields.bulk.operations.options.requirement.options.pages.displayName',
+                    ),
                     name: 'pages',
                     type: 'string',
                     default: '',
@@ -133,14 +169,18 @@ export const bulkFields: INodeProperties[] = [
                     },
                   },
                   {
-                    displayName: 'Documento ID',
+                    displayName: t(
+                      'requirement.fields.bulk.operations.options.requirement.options.documentId.displayName',
+                    ),
                     name: 'documentId',
                     type: 'string',
                     required: true,
                     default: '',
                   },
                   {
-                    displayName: 'Signatário ID',
+                    displayName: t(
+                      'requirement.fields.bulk.operations.options.requirement.options.signerId.displayName',
+                    ),
                     name: 'signerId',
                     type: 'string',
                     required: true,

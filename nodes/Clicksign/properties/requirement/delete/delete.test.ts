@@ -56,7 +56,7 @@ describe('deleteRequirement', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao excluir requisito',
+      'Error deleting requirement',
     );
   });
 

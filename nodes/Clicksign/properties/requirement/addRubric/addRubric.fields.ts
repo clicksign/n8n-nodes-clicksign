@@ -1,17 +1,17 @@
 import { INodeProperties } from 'n8n-workflow';
 
 import { addRequirementFields } from '../shared/addRequirement/addRequirement.fields';
+import { t } from '../../shared/translations';
 
 export const addRubricFields: INodeProperties[] = [
   ...addRequirementFields('addRubric'),
   {
-    displayName: 'Páginas',
+    displayName: t('requirement.fields.addRubric.pages.displayName'),
     name: 'pages',
     type: 'string',
     default: '',
     required: true,
-    description:
-      'Informe as páginas que receberão as iniciais do signatário separadas por vírgula',
+    description: t('requirement.fields.addRubric.pages.description'),
     displayOptions: {
       show: {
         operation: ['addRubric'],

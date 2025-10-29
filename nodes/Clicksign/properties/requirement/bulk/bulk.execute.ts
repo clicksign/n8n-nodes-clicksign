@@ -2,6 +2,7 @@ import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 import { clicksignRequest } from '../../shared/clicksignRequest';
+import { t } from '../../shared/translations';
 
 type Requirements = 'agree' | 'provide_evidence' | 'rubricate';
 
@@ -130,9 +131,5 @@ export async function bulkRequirements(ef: IExecuteFunctions) {
     url: `/envelopes/${envelopeId}/bulk_requirements`,
   };
 
-  return await clicksignRequest(
-    ef,
-    options,
-    'Erro ao realizar operações em massa de requisitos',
-  );
+  return await clicksignRequest(ef, options, t('requirement.errors.bulk'));
 }

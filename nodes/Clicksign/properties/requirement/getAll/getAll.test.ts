@@ -46,7 +46,7 @@ describe('getAll: requirement', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao listar requisitos do envelope',
+      'Error listing envelope requirements',
     );
   });
 

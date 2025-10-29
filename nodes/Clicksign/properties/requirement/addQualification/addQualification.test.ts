@@ -62,7 +62,7 @@ describe('addQualification: requirement', () => {
       documentId: 'mockDocumentId',
       envelopeId: 'mockEnvelopeId',
       signerId: 'mockSignerId',
-      errorMessage: 'Erro ao adicionar requisito de qualificação',
+      errorMessage: 'Error adding qualification requirement',
     });
   });
 
