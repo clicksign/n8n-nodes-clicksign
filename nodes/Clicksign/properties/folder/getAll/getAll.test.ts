@@ -7,6 +7,8 @@ import { getAllFolders } from './getAll.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 
+import { t } from '../../shared/translations';
+
 describe('getAll: folder', () => {
   let mockExecuteFunctions: IExecuteFunctions;
 
@@ -46,7 +48,7 @@ describe('getAll: folder', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao listar pastas',
+      t('folder.errors.getAll'),
     );
   });
 
@@ -75,7 +77,7 @@ describe('getAll: folder', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao listar pastas',
+      t('folder.errors.getAll'),
     );
   });
 

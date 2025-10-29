@@ -7,6 +7,8 @@ import { createFolder } from './create.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 
+import { t } from '../../shared/translations';
+
 describe('createFolder', () => {
   let mockExecuteFunctions: IExecuteFunctions;
 
@@ -64,7 +66,7 @@ describe('createFolder', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao criar pasta',
+      t('folder.errors.create'),
     );
   });
 
@@ -114,7 +116,7 @@ describe('createFolder', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao criar pasta',
+      t('folder.errors.create'),
     );
   });
 
