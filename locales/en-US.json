@@ -325,6 +325,95 @@
       "update": "Error updating envelope"
     }
   },
+  "event": {
+    "operations": {
+      "fromDocument": {
+        "name": "From Document",
+        "value": "fromDocument",
+        "action": "Events from document",
+        "description": "Get events from a document"
+      },
+      "fromEnvelope": {
+        "name": "From Envelope",
+        "value": "fromEnvelope",
+        "action": "Get events from a envelope",
+        "description": "Get events from a envelope"
+      }
+    },
+    "fields": {
+      "fromDocument": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that contains the document to get events"
+        },
+        "documentId": {
+          "displayName": "Document ID",
+          "description": "ID of the document to get events"
+        }
+      },
+      "fromEnvelope": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that you want to list the document events"
+        }
+      }
+    },
+    "errors": {
+      "fromDocument": "Error getting events from a document",
+      "fromEnvelope": "Error getting events from a envelope"
+    }
+  },
+  "folder": {
+    "operations": {
+      "create": {
+        "name": "Create",
+        "value": "create",
+        "action": "Create folder",
+        "description": "Create folder"
+      },
+      "getAll": {
+        "name": "List All",
+        "value": "getAll",
+        "action": "List all folders",
+        "description": "List all folders"
+      },
+      "getDetails": {
+        "name": "Get Details",
+        "value": "getDetails",
+        "action": "Get details of a folder",
+        "description": "Get details of a folder"
+      }
+    },
+    "fields": {
+      "create": {
+        "name": {
+          "displayName": "Name",
+          "description": "Name of the folder to create"
+        },
+        "folderId": {
+          "displayName": "Folder ID",
+          "description": "ID of the source folder"
+        }
+      },
+      "getAll": {
+        "inRoot": {
+          "displayName": "Only Root Folders",
+          "description": "Inform if you want to list only folders in the root of your folder structure"
+        }
+      },
+      "getDetails": {
+        "folderId": {
+          "displayName": "Folder ID",
+          "description": "ID of the folder to get details of its subfolders"
+        }
+      }
+    },
+    "errors": {
+      "create": "Error creating folder",
+      "getAll": "Error getting folders",
+      "getDetails": "Error getting details of a folder"
+    }
+  },
   "signer": {
     "operations": {
       "create": {

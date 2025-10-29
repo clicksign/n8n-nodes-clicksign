@@ -1,13 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../../shared/translations';
 
 export const getAllFoldersFields: INodeProperties[] = [
   {
-    displayName: 'Apenas Pastas Na Raiz',
+    displayName: t('folder.fields.getAll.inRoot.displayName'),
     name: 'inRoot',
     type: 'boolean',
     default: true,
-    description:
-      'Informe se deseja listar apenas pastas na raiz de sua estrutura de pastas',
+    description: t('folder.fields.getAll.inRoot.description'),
     displayOptions: {
       show: {
         operation: ['getAll'],

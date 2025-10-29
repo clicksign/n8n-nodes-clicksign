@@ -34,6 +34,7 @@ export async function clicksignRequest(
       Authorization: accessToken,
       Accept: 'application/vnd.api+json',
       'Content-Type': 'application/vnd.api+json',
+      'User-Agent': 'n8n-nodes-clicksign',
       ...(options.headers || {}),
     },
     json: true,
