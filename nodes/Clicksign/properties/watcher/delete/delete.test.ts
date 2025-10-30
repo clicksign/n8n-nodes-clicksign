@@ -6,6 +6,7 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { deleteWatcher } from './delete.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
+import { t } from '../../shared/translations';
 
 describe('delete: watcher', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -56,7 +57,7 @@ describe('delete: watcher', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Error deleting watcher',
+      t('watcher.errors.delete'),
     );
   });
 

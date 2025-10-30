@@ -6,6 +6,7 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { getAllRequirements } from './getAll.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
+import { t } from '../../shared/translations';
 
 describe('getAll: requirement', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -46,7 +47,7 @@ describe('getAll: requirement', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Error listing envelope requirements',
+      t('requirement.errors.getAll'),
     );
   });
 

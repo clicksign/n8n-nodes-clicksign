@@ -6,6 +6,7 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { createSigner } from './create.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
+import { t } from '../../shared/translations';
 
 function mockImplementation(mock: any, data: Record<string, unknown> = {}) {
   (mock as jest.Mock).mockImplementation(
@@ -118,7 +119,7 @@ describe('create: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Error creating the signer',
+      t('signer.errors.create'),
     );
   });
 
@@ -174,7 +175,7 @@ describe('create: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Error creating the signer',
+      t('signer.errors.create'),
     );
   });
 
@@ -230,7 +231,7 @@ describe('create: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Error creating the signer',
+      t('signer.errors.create'),
     );
   });
 
@@ -286,7 +287,7 @@ describe('create: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Error creating the signer',
+      t('signer.errors.create'),
     );
   });
 
@@ -340,7 +341,7 @@ describe('create: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Error creating the signer',
+      t('signer.errors.create'),
     );
     expect(expectedBody.data.attributes.documentation).toBeNull();
     expect(expectedBody.data.attributes.birthday).toBeNull();

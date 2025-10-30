@@ -6,6 +6,7 @@ jest.mock('../shared/addRequirement/addRequirement.execute');
 import { addQualificationRequirement } from './addQualification.execute';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 import { addRequirement } from '../shared/addRequirement/addRequirement.execute';
+import { t } from '../../shared/translations';
 
 describe('addQualification: requirement', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -62,7 +63,7 @@ describe('addQualification: requirement', () => {
       documentId: 'mockDocumentId',
       envelopeId: 'mockEnvelopeId',
       signerId: 'mockSignerId',
-      errorMessage: 'Error adding qualification requirement',
+      errorMessage: t('requirement.errors.addQualification'),
     });
   });
 

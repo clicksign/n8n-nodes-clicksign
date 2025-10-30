@@ -6,6 +6,7 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { getAllWatchers } from './getAll.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
+import { t } from '../../shared/translations';
 
 describe('getAll: watcher', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -46,7 +47,7 @@ describe('getAll: watcher', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Error listing watchers',
+      t('watcher.errors.getAll'),
     );
   });
 
