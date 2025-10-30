@@ -6,21 +6,21 @@ export const eventOperations: INodeProperties = {
   name: 'operation',
   type: 'options',
   noDataExpression: true,
+  default: 'fromEnvelope',
   options: [
     {
+      value: 'fromEnvelope',
       name: t('event.operations.fromEnvelope.name'),
-      value: t('event.operations.fromEnvelope.value'),
       action: t('event.operations.fromEnvelope.action'),
       description: t('event.operations.fromEnvelope.description'),
     },
     {
+      value: 'fromDocument',
       name: t('event.operations.fromDocument.name'),
-      value: t('event.operations.fromDocument.value'),
       action: t('event.operations.fromDocument.action'),
       description: t('event.operations.fromDocument.description'),
     },
   ],
-  default: 'fromEnvelope',
   displayOptions: {
     show: {
       resource: ['event'],

@@ -329,13 +329,11 @@
     "operations": {
       "fromDocument": {
         "name": "From Document",
-        "value": "fromDocument",
         "action": "Events from document",
         "description": "Get events from a document"
       },
       "fromEnvelope": {
         "name": "From Envelope",
-        "value": "fromEnvelope",
         "action": "Get events from a envelope",
         "description": "Get events from a envelope"
       }
@@ -367,19 +365,16 @@
     "operations": {
       "create": {
         "name": "Create",
-        "value": "create",
         "action": "Create folder",
         "description": "Create folder"
       },
       "getAll": {
         "name": "List All",
-        "value": "getAll",
         "action": "List all folders",
         "description": "List all folders"
       },
       "getDetails": {
         "name": "Get Details",
-        "value": "getDetails",
         "action": "Get details of a folder",
         "description": "Get details of a folder"
       }

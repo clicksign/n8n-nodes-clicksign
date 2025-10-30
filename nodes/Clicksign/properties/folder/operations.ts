@@ -9,20 +9,20 @@ export const folderOperations: INodeProperties = {
   noDataExpression: true,
   options: [
     {
+      value: 'create',
       name: t('folder.operations.create.name'),
-      value: t('folder.operations.create.value'),
       action: t('folder.operations.create.action'),
       description: t('folder.operations.create.description'),
     },
     {
+      value: 'getAll',
       name: t('folder.operations.getAll.name'),
-      value: t('folder.operations.getAll.value'),
       action: t('folder.operations.getAll.action'),
       description: t('folder.operations.getAll.description'),
     },
     {
+      value: 'getDetails',
       name: t('folder.operations.getDetails.name'),
-      value: t('folder.operations.getDetails.value'),
       action: t('folder.operations.getDetails.action'),
       description: t('folder.operations.getDetails.description'),
     },

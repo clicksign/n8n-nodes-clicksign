@@ -317,13 +317,11 @@
     "operations": {
       "fromEnvelope": {
         "name": "Eventos Do Envelope",
-        "value": "fromEnvelope",
         "action": "Eventos do envelope",
         "description": "Listar eventos dos documentos do envelope"
       },
       "fromDocument": {
         "name": "Eventos Do Documento",
-        "value": "fromDocument",
         "action": "Eventos do documento",
         "description": "Listar eventos de um documento do envelope"
       }
@@ -355,19 +353,16 @@
     "operations": {
       "create": {
         "name": "Criar",
-        "value": "create",
         "action": "Criar pasta",
         "description": "Criar pasta"
       },
       "getAll": {
         "name": "Listar",
-        "value": "getAll",
         "action": "Listar pastas",
         "description": "Listar pastas"
       },
       "getDetails": {
         "name": "Obter Detalhes",
-        "value": "getDetails",
         "action": "Obter detalhes da pasta",
         "description": "Obter detalhes da pasta"
       }
