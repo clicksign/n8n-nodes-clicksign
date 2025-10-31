@@ -6,6 +6,7 @@ export const resourceOptions: INodeProperties = {
   name: 'resource',
   type: 'options',
   noDataExpression: true,
+  default: 'envelope',
   options: [
     {
       name: t('resources.document'),
@@ -44,5 +45,4 @@ export const resourceOptions: INodeProperties = {
       value: 'signer',
     },
   ],
-  default: 'envelope',
 };

@@ -5,7 +5,6 @@ import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 
 import { t } from '../../shared/translations';
 
-
 export async function getFolderDetails(ef: IExecuteFunctions) {
   const folderId = getNodeParameterTyped<string>(ef, 'folderId');
 

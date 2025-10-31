@@ -1,58 +1,60 @@
+import { t } from '../../shared/translations';
+
 export const authOptions = [
   {
-    name: 'Assinatura Manuscrita',
+    name: t('auth.handwritten'),
     value: 'handwritten',
   },
   {
-    name: 'Assinatura Automática',
+    name: t('auth.auto_signature'),
     value: 'auto_signature',
   },
   {
-    name: 'Biometria',
+    name: t('auth.biometric'),
     value: 'biometric',
   },
   {
-    name: 'Biometria Facial',
+    name: t('auth.facial_biometrics'),
     value: 'facial_biometrics',
   },
   {
-    name: 'Certificado Digital',
+    name: t('auth.icp_brasil'),
     value: 'icp_brasil',
   },
   {
-    name: 'Comprovante De Endereço',
+    name: t('auth.address_proof'),
     value: 'address_proof',
   },
   {
-    name: 'Documento Oficial',
+    name: t('auth.official_document'),
     value: 'official_document',
   },
   {
-    name: 'Documentoscopia',
+    name: t('auth.documentscopy'),
     value: 'documentscopy',
   },
   {
-    name: 'Email',
+    name: t('auth.email'),
     value: 'email',
   },
   {
-    name: 'Pix',
+    name: t('auth.pix'),
     value: 'pix',
   },
   {
-    name: 'Selfie Com Documento',
+    name: t('auth.selfie'),
     value: 'selfie',
   },
   {
-    name: 'Selfie Dinâmica',
+    name: t('auth.liveness'),
     value: 'liveness',
   },
   {
-    name: 'SMS',
+    name: t('auth.sms'),
     value: 'sms',
   },
   {
-    name: 'Whatsapp',
+    name: t('auth.whatsapp'),
     value: 'whatsapp',
   },
 ];

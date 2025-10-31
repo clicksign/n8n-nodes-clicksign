@@ -13,9 +13,5 @@ export async function eventsFromDocument(ef: IExecuteFunctions) {
     url: `/envelopes/${envelopeId}/documents/${documentId}/events`,
   };
 
-  return await clicksignRequest(
-    ef,
-    options,
-    t('event.errors.fromDocument'),
-  );
+  return await clicksignRequest(ef, options, t('event.errors.fromDocument'));
 }

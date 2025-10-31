@@ -187,6 +187,7 @@ module.exports = defineConfig([
       'n8n-nodes-base/node-param-type-options-password-missing': 'error',
       'n8n-nodes-base/node-param-operation-option-action-miscased': 'off',
       'n8n-nodes-base/node-param-fixed-collection-type-unsorted-items': 'off',
+      'n8n-nodes-base/node-param-default-wrong-for-options': 'off',
     },
   },
 ]);

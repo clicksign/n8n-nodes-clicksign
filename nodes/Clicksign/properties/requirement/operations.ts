@@ -1,53 +1,54 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../shared/translations';
 
 export const requirementOperations: INodeProperties = {
-  displayName: 'Operação',
+  displayName: t('operation'),
   name: 'operation',
   type: 'options',
   default: 'addAuth',
   noDataExpression: true,
   options: [
     {
-      name: 'Adicionar Autenticação',
       value: 'addAuth',
-      action: 'Adicionar requisito de autenticação',
-      description: 'Adicionar requisito de autenticação',
+      name: t('requirement.operations.addAuth.name'),
+      action: t('requirement.operations.addAuth.action'),
+      description: t('requirement.operations.addAuth.description'),
     },
     {
-      name: 'Adicionar Qualificação',
       value: 'addQualification',
-      action: 'Adicionar requisito de qualificação',
-      description: 'Adicionar requisito de qualificação',
+      name: t('requirement.operations.addQualification.name'),
+      action: t('requirement.operations.addQualification.action'),
+      description: t('requirement.operations.addQualification.description'),
     },
     {
-      name: 'Adicionar Rubrica',
       value: 'addRubric',
-      action: 'Adicionar requisito de rubrica',
-      description: 'Adicionar requisito de rubrica',
+      name: t('requirement.operations.addRubric.name'),
+      action: t('requirement.operations.addRubric.action'),
+      description: t('requirement.operations.addRubric.description'),
     },
     {
-      name: 'Excluir',
       value: 'delete',
-      action: 'Excluir requisito',
-      description: 'Excluir requisito',
+      name: t('requirement.operations.delete.name'),
+      action: t('requirement.operations.delete.action'),
+      description: t('requirement.operations.delete.description'),
     },
     {
-      name: 'Listar',
       value: 'getAll',
-      action: 'Listar requisitos',
-      description: 'Listar requisitos',
+      name: t('requirement.operations.getAll.name'),
+      action: t('requirement.operations.getAll.action'),
+      description: t('requirement.operations.getAll.description'),
     },
     {
-      name: 'Obter Detalhes',
       value: 'getDetails',
-      action: 'Obter detalhes do requisito',
-      description: 'Obter detalhes do requisito',
+      name: t('requirement.operations.getDetails.name'),
+      action: t('requirement.operations.getDetails.action'),
+      description: t('requirement.operations.getDetails.description'),
     },
     {
-      name: 'Operações Em Massa',
       value: 'bulk',
-
-      action: 'Operações em massa',
+      name: t('requirement.operations.bulk.name'),
+      action: t('requirement.operations.bulk.action'),
+      description: t('requirement.operations.bulk.description'),
     },
   ],
   displayOptions: {

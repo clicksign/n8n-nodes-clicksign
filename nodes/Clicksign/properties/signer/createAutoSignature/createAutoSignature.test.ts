@@ -11,6 +11,7 @@ import { createAutoSignature } from './createAutoSignature.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 import { formatBirthday, formatDocumentation } from '../shared/formatters';
+import { t } from '../../shared/translations';
 
 describe('createAutoSignature: signer', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -117,7 +118,7 @@ describe('createAutoSignature: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao criar assinatura automática',
+      t('signer.errors.createAutoSignature'),
     );
   });
 

@@ -1,13 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../../shared/translations';
 
 export const getTemplateDetailsFields: INodeProperties[] = [
   {
-    displayName: 'Modelo ID',
+    displayName: t('template.fields.getDetails.templateId.displayName'),
     name: 'templateId',
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do Modelo a ser detalhado',
+    description: t('template.fields.getDetails.templateId.description'),
     displayOptions: {
       show: {
         operation: ['getDetails'],

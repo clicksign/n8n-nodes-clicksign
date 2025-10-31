@@ -6,6 +6,7 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { createWatcher } from './create.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
+import { t } from '../../shared/translations';
 
 describe('create: watcher', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -79,7 +80,7 @@ describe('create: watcher', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao criar observador',
+      t('watcher.errors.create'),
     );
   });
 

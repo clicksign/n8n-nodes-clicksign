@@ -3,6 +3,7 @@ import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 import { formatBirthday, formatDocumentation } from '../shared/formatters';
+import { t } from '../../shared/translations';
 
 export async function createAutoSignature(ef: IExecuteFunctions) {
   const name = getNodeParameterTyped<string>(ef, 'name');
@@ -37,6 +38,6 @@ export async function createAutoSignature(ef: IExecuteFunctions) {
   return await clicksignRequest(
     ef,
     options,
-    'Erro ao criar assinatura automática',
+    t('signer.errors.createAutoSignature'),
   );
 }
