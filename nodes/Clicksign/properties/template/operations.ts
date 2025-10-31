@@ -1,41 +1,42 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../shared/translations';
 
 export const templateOperations: INodeProperties = {
-  displayName: 'Operação',
+  displayName: t('operation'),
   name: 'operation',
   type: 'options',
   default: 'create',
   noDataExpression: true,
   options: [
     {
-      name: 'Atualizar',
       value: 'update',
-      action: 'Atualizar modelo',
-      description: 'Atualizar modelo',
+      name: t('template.operations.update.name'),
+      action: t('template.operations.update.action'),
+      description: t('template.operations.update.description'),
     },
     {
-      name: 'Criar',
       value: 'create',
-      action: 'Criar modelo',
-      description: 'Criar modelo',
+      name: t('template.operations.create.name'),
+      action: t('template.operations.create.action'),
+      description: t('template.operations.create.description'),
     },
     {
-      name: 'Excluir',
       value: 'delete',
-      action: 'Excluir modelo',
-      description: 'Excluir modelo',
+      name: t('template.operations.delete.name'),
+      action: t('template.operations.delete.action'),
+      description: t('template.operations.delete.description'),
     },
     {
-      name: 'Listar',
       value: 'getAll',
-      action: 'Listar modelos',
-      description: 'Listar modelos',
+      name: t('template.operations.getAll.name'),
+      action: t('template.operations.getAll.action'),
+      description: t('template.operations.getAll.description'),
     },
     {
-      name: 'Obter Detalhes',
       value: 'getDetails',
-      action: 'Obter detalhes do modelo',
-      description: 'Obter detalhes do modelo',
+      name: t('template.operations.getDetails.name'),
+      action: t('template.operations.getDetails.action'),
+      description: t('template.operations.getDetails.description'),
     },
   ],
   displayOptions: {

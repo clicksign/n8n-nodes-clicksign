@@ -1,13 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../../shared/translations';
 
 export const getSignerDetailsFields: INodeProperties[] = [
   {
-    displayName: 'Envelope ID',
+    displayName: t('signer.fields.getDetails.envelopeId.displayName'),
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do Envelope que possui o signatário',
+    description: t('signer.fields.getDetails.envelopeId.description'),
     displayOptions: {
       show: {
         operation: ['getDetails'],
@@ -16,12 +17,12 @@ export const getSignerDetailsFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Signatário ID',
+    displayName: t('signer.fields.getDetails.signerId.displayName'),
     name: 'signerId',
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do Signatário que deseja visualizar',
+    description: t('signer.fields.getDetails.signerId.description'),
     displayOptions: {
       show: {
         operation: ['getDetails'],

@@ -6,6 +6,7 @@ jest.mock('../shared/addRequirement/addRequirement.execute');
 import { addRubricRequirement } from './addRubric.execute';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 import { addRequirement } from '../shared/addRequirement/addRequirement.execute';
+import { t } from '../../shared/translations';
 
 describe('addRubric: requirement', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -56,7 +57,7 @@ describe('addRubric: requirement', () => {
       documentId: 'mockDocumentId',
       envelopeId: 'mockEnvelopeId',
       signerId: 'mockSignerId',
-      errorMessage: 'Erro ao adicionar requisito de rubrica',
+      errorMessage: t('requirement.errors.addRubric'),
     });
   });
 
@@ -78,7 +79,7 @@ describe('addRubric: requirement', () => {
       documentId: 'dummy',
       envelopeId: 'dummy',
       signerId: 'dummy',
-      errorMessage: 'Erro ao adicionar requisito de rubrica',
+      errorMessage: t('requirement.errors.addRubric'),
     });
   });
 

@@ -10,6 +10,7 @@ import {
 } from './bulk.execute';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 import { clicksignRequest } from '../../shared/clicksignRequest';
+import { t } from '../../shared/translations';
 
 describe('bulk: requirement', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -86,7 +87,7 @@ describe('bulk: requirement', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao realizar operações em massa de requisitos',
+      t('requirement.errors.bulk'),
     );
   });
 
@@ -142,7 +143,7 @@ describe('bulk: requirement', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao realizar operações em massa de requisitos',
+      t('requirement.errors.bulk'),
     );
   });
 
@@ -179,7 +180,7 @@ describe('bulk: requirement', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao realizar operações em massa de requisitos',
+      t('requirement.errors.bulk'),
     );
   });
 

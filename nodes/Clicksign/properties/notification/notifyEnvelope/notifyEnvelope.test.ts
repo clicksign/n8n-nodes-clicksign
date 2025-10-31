@@ -6,6 +6,7 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { notifyEnvelope } from './notifyEnvelope.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
+import { t } from '../../shared/translations';
 
 describe('notifyEnvelope: notification', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -64,7 +65,7 @@ describe('notifyEnvelope: notification', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao notificar signatários do envelope',
+      t('notification.errors.notifyEnvelope'),
     );
   });
 

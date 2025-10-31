@@ -1,13 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../../shared/translations';
 
 export const getDetailsFolderFields: INodeProperties[] = [
   {
-    displayName: 'Pasta ID',
+    displayName: t('folder.fields.getDetails.folderId.displayName'),
     name: 'folderId',
     type: 'string',
     default: '',
     required: true,
-    description: 'ID da pasta que deseja ver suas subpastas',
+    description: t('folder.fields.getDetails.folderId.description'),
     displayOptions: {
       show: {
         operation: ['getDetails'],

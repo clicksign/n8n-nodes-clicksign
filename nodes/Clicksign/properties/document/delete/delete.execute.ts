@@ -2,6 +2,7 @@ import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
+import { t } from '../../shared/translations';
 
 export async function deleteDocument(ef: IExecuteFunctions) {
   const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');
@@ -12,5 +13,5 @@ export async function deleteDocument(ef: IExecuteFunctions) {
     url: `/envelopes/${envelopeId}/documents/${documentId}`,
   };
 
-  return await clicksignRequest(ef, options, 'Erro ao excluir o documento');
+  return await clicksignRequest(ef, options, t('document.errors.delete'));
 }

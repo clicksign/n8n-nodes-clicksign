@@ -7,6 +7,8 @@ import { getFolderDetails } from './getDetails.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 
+import { t } from '../../shared/translations';
+
 describe('getDetails: folder', () => {
   let mockExecuteFunctions: IExecuteFunctions;
 
@@ -46,7 +48,7 @@ describe('getDetails: folder', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao obter detalhes da pasta',
+      t('folder.errors.getDetails'),
     );
   });
 

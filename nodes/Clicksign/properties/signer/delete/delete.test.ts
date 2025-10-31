@@ -6,6 +6,7 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { deleteSigner } from './delete.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
+import { t } from '../../shared/translations';
 
 describe('delete: signer', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -56,7 +57,7 @@ describe('delete: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao excluir signatário',
+      t('signer.errors.delete'),
     );
   });
 

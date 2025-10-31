@@ -1,13 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../../shared/translations';
 
 export const getWatcherDetailsFields: INodeProperties[] = [
   {
-    displayName: 'Envelope ID',
+    displayName: t('watcher.fields.getDetails.envelopeId.displayName'),
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do Envelope que possui o observador',
+    description: t('watcher.fields.getDetails.envelopeId.description'),
     displayOptions: {
       show: {
         operation: ['getDetails'],
@@ -16,12 +17,12 @@ export const getWatcherDetailsFields: INodeProperties[] = [
     },
   },
   {
-    displayName: 'Observador ID',
+    displayName: t('watcher.fields.getDetails.watcherId.displayName'),
     name: 'watcherId',
     type: 'string',
     required: true,
     default: '',
-    description: 'ID do Observador que deseja visualizar',
+    description: t('watcher.fields.getDetails.watcherId.description'),
     displayOptions: {
       show: {
         operation: ['getDetails'],

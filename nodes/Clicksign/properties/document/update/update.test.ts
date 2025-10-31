@@ -6,6 +6,7 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { updateDocument } from './update.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
+import { t } from '../../shared/translations';
 
 describe('update: document', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -82,7 +83,7 @@ describe('update: document', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      'Erro ao atualizar documento',
+      t('document.errors.update'),
     );
   });
 

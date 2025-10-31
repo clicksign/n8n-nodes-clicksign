@@ -1,0 +1,1011 @@
+{
+  "operation": "Operation",
+  "operations": "Operations",
+  "resources": {
+    "displayName": "Resource",
+    "document": "Document",
+    "envelope": "Envelope",
+    "event": "Event",
+    "template": "Template",
+    "notification": "Notification",
+    "watcher": "Watcher",
+    "folder": "Folder",
+    "requirement": "Requirement",
+    "signer": "Signer"
+  },
+  "document": {
+    "operations": {
+      "update": {
+        "name": "Update",
+        "value": "update",
+        "action": "Update document",
+        "description": "Update document"
+      },
+      "createByBase64": {
+        "name": "Create By Base64",
+        "value": "createByBase64",
+        "action": "Create document by base64",
+        "description": "Create document by base64"
+      },
+      "createByTemplate": {
+        "name": "Create By Template",
+        "value": "createByTemplate",
+        "action": "Create document by template",
+        "description": "Create document by template"
+      },
+      "delete": {
+        "name": "Delete",
+        "value": "delete",
+        "action": "Delete document",
+        "description": "Delete document"
+      },
+      "getAll": {
+        "name": "List All",
+        "value": "getAll",
+        "action": "List all documents",
+        "description": "List all documents"
+      },
+      "getDetails": {
+        "name": "Get Details",
+        "value": "getDetails",
+        "action": "Get details of a document",
+        "description": "Get details of a document"
+      }
+    },
+    "fields": {
+      "createByBase64": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that contains the document to create"
+        },
+        "filename": {
+          "displayName": "Filename (With Extension)",
+          "description": "Name of the file to create with extension"
+        },
+        "fileBase64": {
+          "displayName": "File Base64",
+          "description": "Base64 of the file to create"
+        },
+        "metadata": {
+          "displayName": "Metadata",
+          "description": "JSON with metadata that is used in document webhooks returns"
+        }
+      },
+      "createByTemplate": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that contains the document to create"
+        },
+        "filename": {
+          "displayName": "Filename (.docx)",
+          "description": "Name of the file to create with extension .docx"
+        },
+        "templateId": {
+          "displayName": "Template ID",
+          "description": "ID of the template to use for the creation"
+        },
+        "templateData": {
+          "displayName": "Template Data",
+          "description": "JSON with key and value of the values that will fill the template"
+        },
+        "metadata": {
+          "displayName": "Metadata",
+          "description": "JSON with metadata that is used in document webhooks returns"
+        }
+      },
+      "delete": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that contains the document to delete"
+        },
+        "documentId": {
+          "displayName": "Document ID",
+          "description": "ID of the document to delete"
+        }
+      },
+      "getAll": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that contains the documents to list"
+        }
+      },
+      "getDetails": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that contains the document to get details"
+        },
+        "documentId": {
+          "displayName": "Document ID",
+          "description": "ID of the document to get details"
+        }
+      },
+      "update": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that contains the document to update"
+        },
+        "documentId": {
+          "displayName": "Document ID",
+          "description": "ID of the document to update"
+        },
+        "status": {
+          "displayName": "Status",
+          "description": "Only possible to change status of running documents (in progress/activated)",
+          "options": {
+            "canceled": "Canceled",
+            "closed": "Completed"
+          }
+        },
+        "metadata": {
+          "displayName": "Metadata",
+          "description": "JSON with metadata that is used in document webhooks returns"
+        }
+      }
+    },
+    "errors": {
+      "createByBase64": "Error creating document by base 64",
+      "createByTemplate": "Error creating document by template",
+      "delete": "Error deleting document",
+      "getAll": "Error getting documents",
+      "getDetails": "Error getting details of a document",
+      "update": "Error updating document"
+    }
+  },
+  "envelope": {
+    "operations": {
+      "activate": {
+        "name": "Activate",
+        "value": "activate",
+        "action": "Activate envelope",
+        "description": "Activate envelope"
+      },
+      "update": {
+        "name": "Update",
+        "value": "update",
+        "action": "Update envelope",
+        "description": "Update envelope"
+      },
+      "create": {
+        "name": "Create",
+        "value": "create",
+        "action": "Create envelope",
+        "description": "Create envelope"
+      },
+      "delete": {
+        "name": "Delete",
+        "value": "delete",
+        "action": "Delete envelope",
+        "description": "Delete envelope"
+      },
+      "getAll": {
+        "name": "List All",
+        "value": "getAll",
+        "action": "List all envelopes",
+        "description": "List all envelopes"
+      },
+      "getDetails": {
+        "name": "Get Details",
+        "value": "getDetails",
+        "action": "Get details of a envelope",
+        "description": "Get details of a envelope"
+      }
+    },
+    "fields": {
+      "activate": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope to activate"
+        }
+      },
+      "create": {
+        "envelopeName": {
+          "displayName": "Envelope Name",
+          "description": "Name of the envelope"
+        },
+        "locale": {
+          "displayName": "Locale",
+          "description": "Locale used in emails, signature page and document log"
+        },
+        "autoClose": {
+          "displayName": "Automatically Close After All Signers Sign",
+          "description": "If true, the envelope will be closed automatically after all signers have signed"
+        },
+        "remindInterval": {
+          "displayName": "Remind Interval",
+          "description": "Determines if the document will have automatic reminders enabled (1,2,3,7,14)"
+        },
+        "blockAfterRefusal": {
+          "displayName": "Block After Refusal By Signer",
+          "description": "Determines if the signature process will be paused or not after a signer has refused"
+        },
+        "deadlineAt": {
+          "displayName": "Deadline At",
+          "description": "Deadline for the envelope and its documents (RFC 3339 format)"
+        },
+        "defaultSubject": {
+          "displayName": "Default Subject",
+          "description": "Define the subject of the email that will be sent to signers in the signature request"
+        },
+        "defaultMessage": {
+          "displayName": "Default Message",
+          "description": "Define the default message that will be sent to signers"
+        },
+        "folderId": {
+          "displayName": "Folder ID",
+          "description": "ID of the source folder"
+        }
+      },
+      "delete": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope to delete"
+        }
+      },
+      "getAll": {
+        "status": {
+          "displayName": "Filter Status",
+          "description": "Inform a status if you want to filter: draft, running, closed, canceled"
+        },
+        "name": {
+          "displayName": "Filter Name",
+          "description": "Inform the full name of the envelope to consult"
+        },
+        "created": {
+          "displayName": "Filter Creation Date",
+          "description": "Inform the creation date intervals in the specification format (ISO 8601 and separated by comma)"
+        },
+        "modified": {
+          "displayName": "Filter Modification Date",
+          "description": "Inform the modification date intervals in the specification format (ISO 8601 and separated by comma)"
+        },
+        "deadline": {
+          "displayName": "Filter Deadline",
+          "description": "Inform the deadline intervals in the specification format (ISO 8601 and separated by comma)"
+        },
+        "sort": {
+          "displayName": "Sort",
+          "description": "Sort by envelope property (ex: name to sort by name in ascending order and -name to sort by name in descending order)"
+        }
+      },
+      "getDetails": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope to get details"
+        }
+      },
+      "update": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope to update"
+        },
+        "envelopeName": {
+          "displayName": "Name",
+          "description": "Name of the envelope"
+        },
+        "locale": {
+          "displayName": "Locale",
+          "description": "Locale used in emails, signature page and document log"
+        },
+        "autoClose": {
+          "displayName": "Automatically Close After All Signers Sign",
+          "description": "If true, the envelope will be closed automatically after all signers have signed"
+        },
+        "remindInterval": {
+          "displayName": "Remind Interval",
+          "description": "Determines if the document will have automatic reminders enabled (1,2,3,7,14)"
+        },
+        "blockAfterRefusal": {
+          "displayName": "Block After Refusal By Signer",
+          "description": "Determines if the signature process will be paused or not after a signer has refused"
+        },
+        "deadlineAt": {
+          "displayName": "Deadline At",
+          "description": "Deadline for the envelope and its documents (RFC 3339 format)"
+        },
+        "defaultSubject": {
+          "displayName": "Default Subject",
+          "description": "Define the subject of the email that will be sent to signers in the signature request"
+        },
+        "defaultMessage": {
+          "displayName": "Default Message",
+          "description": "Define the default message that will be sent to signers"
+        },
+        "folderId": {
+          "displayName": "Folder ID",
+          "description": "ID of the source folder"
+        }
+      }
+    },
+    "errors": {
+      "activate": "Error activating envelope",
+      "create": "Error creating envelope",
+      "delete": "Error deleting envelope",
+      "getAll": "Error getting envelopes",
+      "getDetails": "Error getting details of a envelope",
+      "update": "Error updating envelope"
+    }
+  },
+  "event": {
+    "operations": {
+      "fromDocument": {
+        "name": "From Document",
+        "action": "Events from document",
+        "description": "Get events from a document"
+      },
+      "fromEnvelope": {
+        "name": "From Envelope",
+        "action": "Get events from a envelope",
+        "description": "Get events from a envelope"
+      }
+    },
+    "fields": {
+      "fromDocument": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that contains the document to get events"
+        },
+        "documentId": {
+          "displayName": "Document ID",
+          "description": "ID of the document to get events"
+        }
+      },
+      "fromEnvelope": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope that you want to list the document events"
+        }
+      }
+    },
+    "errors": {
+      "fromDocument": "Error getting events from a document",
+      "fromEnvelope": "Error getting events from a envelope"
+    }
+  },
+  "folder": {
+    "operations": {
+      "create": {
+        "name": "Create",
+        "action": "Create folder",
+        "description": "Create folder"
+      },
+      "getAll": {
+        "name": "List All",
+        "action": "List all folders",
+        "description": "List all folders"
+      },
+      "getDetails": {
+        "name": "Get Details",
+        "action": "Get details of a folder",
+        "description": "Get details of a folder"
+      }
+    },
+    "fields": {
+      "create": {
+        "name": {
+          "displayName": "Name",
+          "description": "Name of the folder to create"
+        },
+        "folderId": {
+          "displayName": "Folder ID",
+          "description": "ID of the source folder"
+        }
+      },
+      "getAll": {
+        "inRoot": {
+          "displayName": "Only Root Folders",
+          "description": "Inform if you want to list only folders in the root of your folder structure"
+        }
+      },
+      "getDetails": {
+        "folderId": {
+          "displayName": "Folder ID",
+          "description": "ID of the folder to get details of its subfolders"
+        }
+      }
+    },
+    "errors": {
+      "create": "Error creating folder",
+      "getAll": "Error getting folders",
+      "getDetails": "Error getting details of a folder"
+    }
+  },
+  "signer": {
+    "operations": {
+      "create": {
+        "name": "Create",
+        "action": "Create signer",
+        "description": "Create signer"
+      },
+      "createAutoSignature": {
+        "name": "Create Auto Signature",
+        "action": "Create automatic signature",
+        "description": "Create automatic signature"
+      },
+      "delete": {
+        "name": "Delete",
+        "action": "Delete signer",
+        "description": "Delete signer from the envelope"
+      },
+      "getAll": {
+        "name": "List",
+        "action": "List Signers",
+        "description": "List signers"
+      },
+      "getDetails": {
+        "name": "Get Details",
+        "action": "Get signer details",
+        "description": "Get details of a signer for an envelope"
+      }
+    },
+    "fields": {
+      "create": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope to which the signer will be added"
+        },
+        "name": {
+          "displayName": "Name",
+          "description": "The signer's name, used to identify them (at least two words must be sent)"
+        },
+        "email": {
+          "displayName": "Email",
+          "description": "The signer's email (required when email notification is configured)"
+        },
+        "phoneNumber": {
+          "displayName": "Phone",
+          "description": "The signer's phone number, which must have 10 or 11 digits (required when notification setup requires phone)"
+        },
+        "hasDocumentation": {
+          "displayName": "Has CPF",
+          "description": "Defines whether the signer must provide CPF (Brazilian ID) and Date of Birth"
+        },
+        "documentation": {
+          "displayName": "CPF",
+          "description": "The signer's CPF (Brazilian ID)"
+        },
+        "group": {
+          "displayName": "Group",
+          "description": "Determines which group the signer should be linked to, according to the signing order"
+        },
+        "refusable": {
+          "displayName": "Allow Refusing The Signature Request",
+          "description": "Defines whether the signer can refuse the request"
+        },
+        "birthday": {
+          "displayName": "Date Of Birth",
+          "description": "Signer's date of birth (e.g.: DD/MM/YYYY, YYYY-MM-DD)"
+        },
+        "locationRequired": {
+          "displayName": "Location Required",
+          "description": "Determines if the signer must share their location at the time of signing"
+        },
+        "communicateEvents": {
+          "displayName": "Event Notification",
+          "description": "Configures notifications to the signer",
+          "events": {
+            "displayName": "Notification Configuration",
+            "signature_request": "Signature Request",
+            "signature_reminder": "Signature Reminder",
+            "document_signed": "Document Signed",
+            "none": "None",
+            "email": "Email",
+            "whatsapp": "Whatsapp",
+            "sms": "SMS"
+          }
+        }
+      },
+      "createAutoSignature": {
+        "name": {
+          "displayName": "Name",
+          "description": "The signer's name, used to identify them (at least two words must be sent)"
+        },
+        "email": {
+          "displayName": "Email",
+          "description": "The signer's email"
+        },
+        "documentation": {
+          "displayName": "CPF",
+          "description": "The signer's CPF (Brazilian ID)"
+        },
+        "birthday": {
+          "displayName": "Date Of Birth",
+          "description": "Signer's date of birth (e.g.: DD/MM/YYYY, YYYY-MM-DD)"
+        },
+        "apiEmail": {
+          "displayName": "API Email",
+          "description": "The API email"
+        },
+        "adminEmail": {
+          "displayName": "Admin Email",
+          "description": "The administrator's email"
+        }
+      },
+      "delete": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the Envelope that has the signer"
+        },
+        "signerId": {
+          "displayName": "Signer ID",
+          "description": "ID of the Signer you want to delete"
+        }
+      },
+      "getAll": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope for which you want to list the signers"
+        }
+      },
+      "getDetails": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the Envelope that has the signer"
+        },
+        "signerId": {
+          "displayName": "Signer ID",
+          "description": "ID of the Signer you want to view"
+        }
+      }
+    },
+    "errors": {
+      "create": "Error creating the signer",
+      "createAutoSignature": "Error creating automatic signature",
+      "delete": "Error deleting signer",
+      "getAll": "Error listing envelope signers",
+      "getDetails": "Error getting signer details"
+    }
+  },
+  "template": {
+    "operations": {
+      "create": {
+        "name": "Create",
+        "action": "Create template",
+        "description": "Create template"
+      },
+      "update": {
+        "name": "Update",
+        "action": "Update template",
+        "description": "Update template"
+      },
+      "delete": {
+        "name": "Delete",
+        "action": "Delete template",
+        "description": "Delete template"
+      },
+      "getAll": {
+        "name": "List",
+        "action": "List templates",
+        "description": "List templates"
+      },
+      "getDetails": {
+        "name": "Get Details",
+        "action": "Get template details",
+        "description": "Get details of a template"
+      }
+    },
+    "fields": {
+      "create": {
+        "name": {
+          "displayName": "Name",
+          "description": "Defines the Template name to facilitate future consultations"
+        },
+        "base64": {
+          "displayName": "File In Base 64",
+          "description": "Content of the file in base 64 format that is being sent to Clicksign"
+        },
+        "color": {
+          "displayName": "Color",
+          "description": "The identification color of the template"
+        }
+      },
+      "delete": {
+        "templateId": {
+          "displayName": "Template ID",
+          "description": "ID of the Template to be deleted"
+        }
+      },
+      "getDetails": {
+        "templateId": {
+          "displayName": "Template ID",
+          "description": "ID of the Template whose details you want to get"
+        }
+      },
+      "update": {
+        "templateId": {
+          "displayName": "Template ID",
+          "description": "ID of the Template to be updated"
+        },
+        "name": {
+          "displayName": "Name",
+          "description": "Defines the Template name to facilitate future consultations"
+        },
+        "color": {
+          "displayName": "Color",
+          "description": "The identification color of the template"
+        }
+      }
+    },
+    "errors": {
+      "create": "Error creating template",
+      "update": "Error updating template",
+      "delete": "Error deleting template",
+      "getAll": "Error listing templates",
+      "getDetails": "Error getting template details"
+    }
+  },
+  "watcher": {
+    "operations": {
+      "create": {
+        "name": "Create",
+        "action": "Create watcher",
+        "description": "Create watcher"
+      },
+      "getAll": {
+        "name": "List",
+        "action": "List watchers",
+        "description": "List watchers"
+      },
+      "getDetails": {
+        "name": "Get Details",
+        "action": "Get watcher details",
+        "description": "Get watcher details"
+      },
+      "delete": {
+        "name": "Delete",
+        "action": "Delete watcher",
+        "description": "Delete watcher"
+      }
+    },
+    "fields": {
+      "create": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the Envelope that will receive the watcher"
+        },
+        "email": {
+          "displayName": "Email",
+          "description": "Watcher's email"
+        },
+        "kind": {
+          "displayName": "Step to Be Notified",
+          "description": "Defines whether the watcher will be notified throughout the process or only upon completion",
+          "all_steps": "All Steps",
+          "on_finished": "On Finish"
+        },
+        "attachDocuments": {
+          "displayName": "Send Attached Documents Upon Completion",
+          "description": "Determines whether the watcher should receive the finished documents"
+        }
+      },
+      "delete": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the Envelope that has the watcher"
+        },
+        "watcherId": {
+          "displayName": "Watcher ID",
+          "description": "ID of the Watcher to be deleted"
+        }
+      },
+      "getAll": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope for which you want to list the watchers"
+        }
+      },
+      "getDetails": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the Envelope that has the watcher"
+        },
+        "watcherId": {
+          "displayName": "Watcher ID",
+          "description": "ID of the Watcher to be viewed"
+        }
+      }
+    },
+    "errors": {
+      "create": "Error creating watcher",
+      "getAll": "Error listing watchers",
+      "getDetails": "Error getting watcher details",
+      "delete": "Error deleting watcher"
+    }
+  },
+  "notification": {
+    "operations": {
+      "notifyEnvelope": {
+        "name": "Notify Envelope",
+        "action": "Notify envelope",
+        "description": "Notifies the envelope's signers"
+      },
+      "notifySigner": {
+        "name": "Notify Signer",
+        "action": "Notify signer",
+        "description": "Notifies an envelope signer"
+      }
+    },
+    "fields": {
+      "notifyEnvelope": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the Envelope whose signers you want to notify"
+        },
+        "message": {
+          "displayName": "Message",
+          "description": "Custom message that will be sent in the notification"
+        }
+      },
+      "notifySigner": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the Envelope that has the signer"
+        },
+        "signerId": {
+          "displayName": "Signer ID",
+          "description": "ID of the Signer you want to notify"
+        },
+        "message": {
+          "displayName": "Message",
+          "description": "Custom message that will be sent in the notification"
+        }
+      }
+    },
+    "errors": {
+      "notifyEnvelope": "Error notifying envelope signers",
+      "notifySigner": "Error sending notification to signer"
+    }
+  },
+  "requirement": {
+    "operations": {
+      "addAuth": {
+        "name": "Add Authentication",
+        "action": "Add authentication requirement",
+        "description": "Add authentication requirement"
+      },
+      "addQualification": {
+        "name": "Add Qualification",
+        "action": "Add qualification requirement",
+        "description": "Add qualification requirement"
+      },
+      "addRubric": {
+        "name": "Add Rubric",
+        "action": "Add rubric requirement",
+        "description": "Add rubric requirement"
+      },
+      "delete": {
+        "name": "Delete",
+        "action": "Delete requirement",
+        "description": "Delete requirement"
+      },
+      "getAll": {
+        "name": "List",
+        "action": "List requirements",
+        "description": "List requirements"
+      },
+      "getDetails": {
+        "name": "Get Details",
+        "action": "Get requirement details",
+        "description": "Get requirement details"
+      },
+      "bulk": {
+        "name": "Bulk Operations",
+        "action": "Bulk operations",
+        "description": "Bulk operations"
+      }
+    },
+    "fields": {
+      "addAuth": {
+        "auth": {
+          "displayName": "Authentication Method",
+          "description": "Determines the desired Authentication for signing"
+        }
+      },
+      "addQualification": {
+        "role": {
+          "displayName": "Sign As",
+          "description": "Determines the desired Qualification to accept the signatures"
+        }
+      },
+      "addRubric": {
+        "pages": {
+          "displayName": "Pages",
+          "description": "Inform the pages that will receive the signatory's initials, separated by a comma"
+        }
+      },
+      "delete": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the Envelope that contains the requirement"
+        },
+        "requirementId": {
+          "displayName": "Requirement ID",
+          "description": "ID of the Requirement you want to delete"
+        }
+      },
+      "getAll": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope for which you want to list the requirements"
+        }
+      },
+      "getDetails": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope for which you want to list the requirements"
+        },
+        "requirementId": {
+          "displayName": "Requirement ID",
+          "description": "ID of the Requirement you want to view"
+        }
+      },
+      "bulk": {
+        "envelopeId": {
+          "displayName": "Envelope ID",
+          "description": "ID of the envelope for which you want to perform bulk operations"
+        },
+        "operations": {
+          "displayName": "Bulk Operations",
+          "description": "Bulk requirement operations",
+          "placeholder": "Add bulk requirement operations",
+          "options": {
+            "operation": {
+              "displayName": "Operation",
+              "add": "Add",
+              "remove": "Remove"
+            },
+            "requirementId": {
+              "displayName": "Requirement ID"
+            },
+            "requirement": {
+              "displayName": "Requirement",
+              "placeholder": "Create requirement",
+              "options": {
+                "displayName": "Requirement Details",
+                "requirementType": {
+                  "displayName": "Type",
+                  "provide_evidence": "Authentication",
+                  "agree": "Qualification",
+                  "rubricate": "Rubric"
+                },
+                "role": {
+                  "displayName": "Sign As"
+                },
+                "auth": {
+                  "displayName": "Authentication Method"
+                },
+                "pages": {
+                  "displayName": "Pages"
+                },
+                "documentId": {
+                  "displayName": "Document ID"
+                },
+                "signerId": {
+                  "displayName": "Signer ID"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "shared": {
+      "envelopeId": {
+        "displayName": "Envelope ID",
+        "description": "ID of the Envelope that will receive the requirement"
+      },
+      "documentId": {
+        "displayName": "Document ID",
+        "description": "ID of the Document that will receive the requirement"
+      },
+      "signerId": {
+        "displayName": "Signer ID",
+        "description": "ID of the Signer that will receive the requirement"
+      }
+    },
+    "errors": {
+      "addAuth": "Error adding authentication requirement",
+      "addQualification": "Error adding qualification requirement",
+      "addRubric": "Error adding rubric requirement",
+      "delete": "Error deleting requirement",
+      "getAll": "Error listing envelope requirements",
+      "getDetails": "Error getting requirement details",
+      "bulk": "Error performing bulk requirement operation"
+    }
+  },
+  "colors": {
+    "#1474f5": "Royal Blue",
+    "#15d3c9": "Turquoise",
+    "#05c412": "Lime Green",
+    "#fccf00": "Yellow",
+    "#f77c04": "Burnt Orange",
+    "#cf2e58": "Magenta Red",
+    "#ff86d5": "Hot Pink",
+    "#8726d9": "Purple",
+    "#577b8d": "Grayish Blue"
+  },
+  "auth": {
+    "handwritten": "Handwritten Signature",
+    "auto_signature": "Automatic Signature",
+    "biometric": "Biometrics",
+    "facial_biometrics": "Facial Biometrics",
+    "icp_brasil": "Digital Certificate",
+    "address_proof": "Proof Of Address",
+    "official_document": "Official Document",
+    "documentscopy": "Documentoscopy",
+    "email": "Email",
+    "pix": "Pix",
+    "selfie": "Selfie With Document",
+    "liveness": "Dynamic Selfie",
+    "sms": "SMS",
+    "whatsapp": "Whatsapp"
+  },
+  "qualification": {
+    "receipt": "Acknowledge Receipt",
+    "administrator": "Administrator",
+    "lawyer": "Lawyer",
+    "secured": "Secured Party",
+    "consenting": "Consenting Party",
+    "consented": "Consented Party",
+    "approve": "Approve",
+    "sign": "Sign",
+    "associate": "Associate",
+    "guarantor": "Guarantor",
+    "collateral_provider": "Collateral Provider",
+    "transferor": "Transferor",
+    "transferee": "Transferee",
+    "comforter": "Lender (Comodante)",
+    "borrower": "Borrower (Comodatário)",
+    "guarantor_spouse": "Guarantor's Spouse",
+    "pledged": "Pledged Party",
+    "consignee": "Consignee",
+    "contractee": "Contractee",
+    "contractor": "Contractor",
+    "account_holder": "Account Holder",
+    "real_estate_broker": "Real Estate Broker",
+    "insurance_broker": "Insurance Broker",
+    "broker": "Broker",
+    "creditor": "Creditor",
+    "joint_debtor": "Joint Debtor",
+    "debtor": "Debtor(s)",
+    "director": "Director",
+    "distracting": "Rescinding Party",
+    "issuer": "Issuer",
+    "employee": "Employee",
+    "employer": "Employer",
+    "endorser": "Endorser",
+    "endorsee": "Endorsee",
+    "surety": "Surety",
+    "bailee": "Bailee",
+    "franchisee": "Franchisee",
+    "franchisor": "Franchisor",
+    "manager": "Manager",
+    "intermediary": "Intermediary",
+    "intervening": "Intervening Party",
+    "consenting_intervenor": "Consenting Intervenor",
+    "intervening_guarantor": "Intervening Guarantor",
+    "licensed": "Licensee",
+    "licensor": "Licensor",
+    "lessor": "Lessor",
+    "lessee": "Lessee",
+    "resident": "Resident",
+    "lender": "Lender (Mutuante)",
+    "grantee": "Grantee",
+    "grantor": "Grantor",
+    "buyer": "Buying Party",
+    "seller": "Selling Party",
+    "president": "President",
+    "service_provider": "Service Provider",
+    "attorney": "Attorney",
+    "owner": "Owner",
+    "legal_representative": "Legal Representative",
+    "legal_guardian": "Legal Guardian",
+    "co_responsible": "Co-Responsible Party",
+    "secretary": "Secretary",
+    "insured": "Insured",
+    "building_manager": "Building Manager",
+    "partner": "Partner",
+    "treasurer": "Treasurer",
+    "witness": "Witness",
+    "surveyor": "Surveyor"
+  }
+}

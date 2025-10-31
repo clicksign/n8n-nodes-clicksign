@@ -20,7 +20,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "npx rimraf dist && tsc && gulp build:icons",
+    "build": "npx rimraf dist && tsc && gulp build",
     "dev": "tsc --watch",
     "format": "prettier --write",
     "lint": "eslint",

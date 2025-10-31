@@ -1,49 +1,50 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../shared/translations';
 
 export const documentsOperations: INodeProperties = {
-  displayName: 'Operação',
+  displayName: t('operation'),
   name: 'operation',
   type: 'options',
   noDataExpression: true,
+  default: 'getAll',
   options: [
     {
-      name: 'Atualizar',
       value: 'update',
-      action: 'Atualizar documento',
-      description: 'Atualizar documento',
+      name: t('document.operations.update.name'),
+      action: t('document.operations.update.action'),
+      description: t('document.operations.update.description'),
     },
     {
-      name: 'Criar Por Arquivo Base 64',
       value: 'createByBase64',
-      action: 'Criar documento por arquivo base 64',
-      description: 'Criar documento por arquivo base 64',
+      name: t('document.operations.createByBase64.name'),
+      action: t('document.operations.createByBase64.action'),
+      description: t('document.operations.createByBase64.description'),
     },
     {
-      name: 'Criar Por Modelo',
       value: 'createByTemplate',
-      action: 'Criar documento por modelo',
-      description: 'Criar documento por modelo',
+      name: t('document.operations.createByTemplate.name'),
+      action: t('document.operations.createByTemplate.action'),
+      description: t('document.operations.createByTemplate.description'),
     },
     {
-      name: 'Excluir',
       value: 'delete',
-      action: 'Excluir documento',
-      description: 'Excluir documento',
+      name: t('document.operations.delete.name'),
+      action: t('document.operations.delete.action'),
+      description: t('document.operations.delete.description'),
     },
     {
-      name: 'Listar',
       value: 'getAll',
-      description: 'Listar documentos',
-      action: 'Listar documentos',
+      name: t('document.operations.getAll.name'),
+      action: t('document.operations.getAll.action'),
+      description: t('document.operations.getAll.description'),
     },
     {
-      name: 'Obter Detalhes',
       value: 'getDetails',
-      description: 'Obter detalhes de um documento',
-      action: 'Obter detalhes do documento',
+      name: t('document.operations.getDetails.name'),
+      action: t('document.operations.getDetails.action'),
+      description: t('document.operations.getDetails.description'),
     },
   ],
-  default: 'getAll',
   displayOptions: {
     show: {
       resource: ['document'],

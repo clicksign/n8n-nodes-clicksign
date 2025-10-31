@@ -1,49 +1,50 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../shared/translations';
 
 export const envelopeOperations: INodeProperties = {
-  displayName: 'Operação',
+  displayName: t('operation'),
   name: 'operation',
   type: 'options',
   noDataExpression: true,
+  default: 'getAll',
   options: [
     {
-      name: 'Ativar',
       value: 'activate',
-      description: 'Ativar envelope',
-      action: 'Ativar envelope',
+      name: t('envelope.operations.activate.name'),
+      description: t('envelope.operations.activate.description'),
+      action: t('envelope.operations.activate.action'),
     },
     {
-      name: 'Atualizar',
       value: 'update',
-      description: 'Atualizar envelope',
-      action: 'Atualizar envelope',
+      name: t('envelope.operations.update.name'),
+      description: t('envelope.operations.update.description'),
+      action: t('envelope.operations.update.action'),
     },
     {
-      name: 'Criar',
       value: 'create',
-      description: 'Criar envelope',
-      action: 'Criar envelope',
+      name: t('envelope.operations.create.name'),
+      description: t('envelope.operations.create.description'),
+      action: t('envelope.operations.create.action'),
     },
     {
-      name: 'Excluir',
       value: 'delete',
-      description: 'Excluir envelope',
-      action: 'Excluir envelope',
+      name: t('envelope.operations.delete.name'),
+      description: t('envelope.operations.delete.description'),
+      action: t('envelope.operations.delete.action'),
     },
     {
-      name: 'Listar',
       value: 'getAll',
-      description: 'Listar envelopes',
-      action: 'Listar envelopes',
+      name: t('envelope.operations.getAll.name'),
+      description: t('envelope.operations.getAll.description'),
+      action: t('envelope.operations.getAll.action'),
     },
     {
-      name: 'Obter Detalhes',
       value: 'getDetails',
-      description: 'Obter detalhes de um envelope',
-      action: 'Obter detalhes do envelope',
+      name: t('envelope.operations.getDetails.name'),
+      description: t('envelope.operations.getDetails.description'),
+      action: t('envelope.operations.getDetails.action'),
     },
   ],
-  default: 'getAll',
   displayOptions: {
     show: {
       resource: ['envelope'],

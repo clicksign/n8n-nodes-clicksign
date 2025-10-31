@@ -1,13 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
+import { t } from '../../shared/translations';
 
 export const getAllRequirementFields: INodeProperties[] = [
   {
-    displayName: 'Envelope ID',
+    displayName: t('requirement.fields.getAll.envelopeId.displayName'),
     name: 'envelopeId',
     type: 'string',
     default: '',
     required: true,
-    description: 'ID do envelope ao qual deseja listar os requisitos',
+    description: t('requirement.fields.getAll.envelopeId.description'),
     displayOptions: {
       show: {
         operation: ['getAll'],
