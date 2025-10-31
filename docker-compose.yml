@@ -23,8 +23,6 @@ x-n8n: &service-n8n
     - N8N_LOG_OUTPUT=console
     - CODE_ENABLE_STDOUT=true
     - OLLAMA_HOST=host.docker.internal:11434
-    # - GENERIC_TIMEZONE=America/Sao_Paulo
-    # - N8N_DEFAULT_LOCALE=pt-BR
     - GENERIC_TIMEZONE=America/New_York
     - N8N_DEFAULT_LOCALE=en-US
   env_file:
