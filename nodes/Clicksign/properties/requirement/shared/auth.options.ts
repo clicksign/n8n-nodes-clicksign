@@ -1,60 +1,58 @@
-import { t } from '../../shared/translations';
-
 export const authOptions = [
   {
-    name: t('auth.handwritten'),
+    name: 'Handwritten Signature',
     value: 'handwritten',
   },
   {
-    name: t('auth.auto_signature'),
+    name: 'Automatic Signature',
     value: 'auto_signature',
   },
   {
-    name: t('auth.biometric'),
+    name: 'Biometrics',
     value: 'biometric',
   },
   {
-    name: t('auth.facial_biometrics'),
+    name: 'Facial Biometrics',
     value: 'facial_biometrics',
   },
   {
-    name: t('auth.icp_brasil'),
+    name: 'Digital Certificate',
     value: 'icp_brasil',
   },
   {
-    name: t('auth.address_proof'),
+    name: 'Proof Of Address',
     value: 'address_proof',
   },
   {
-    name: t('auth.official_document'),
+    name: 'Official Document',
     value: 'official_document',
   },
   {
-    name: t('auth.documentscopy'),
+    name: 'Documentoscopy',
     value: 'documentscopy',
   },
   {
-    name: t('auth.email'),
+    name: 'Email',
     value: 'email',
   },
   {
-    name: t('auth.pix'),
+    name: 'Pix',
     value: 'pix',
   },
   {
-    name: t('auth.selfie'),
+    name: 'Selfie With Document',
     value: 'selfie',
   },
   {
-    name: t('auth.liveness'),
+    name: 'Dynamic Selfie',
     value: 'liveness',
   },
   {
-    name: t('auth.sms'),
+    name: 'SMS',
     value: 'sms',
   },
   {
-    name: t('auth.whatsapp'),
+    name: 'Whatsapp',
     value: 'whatsapp',
   },
 ];

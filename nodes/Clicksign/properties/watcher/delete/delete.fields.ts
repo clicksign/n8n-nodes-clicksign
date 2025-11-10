@@ -1,14 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const deleteWatcherFields: INodeProperties[] = [
   {
-    displayName: t('watcher.fields.delete.envelopeId.displayName'),
+    displayName: 'Envelope ID',
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: t('watcher.fields.delete.envelopeId.description'),
+    description: 'ID of the Envelope that has the watcher',
     displayOptions: {
       show: {
         operation: ['delete'],
@@ -17,12 +16,12 @@ export const deleteWatcherFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('watcher.fields.delete.watcherId.displayName'),
+    displayName: 'Watcher ID',
     name: 'watcherId',
     type: 'string',
     required: true,
     default: '',
-    description: t('watcher.fields.delete.watcherId.description'),
+    description: 'ID of the Watcher to be deleted',
     displayOptions: {
       show: {
         operation: ['delete'],

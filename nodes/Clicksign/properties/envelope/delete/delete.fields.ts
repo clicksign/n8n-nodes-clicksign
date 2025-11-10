@@ -1,14 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const deleteEnvelopeFields: INodeProperties[] = [
   {
-    displayName: t('envelope.fields.delete.envelopeId.displayName'),
+    displayName: 'Envelope ID',
     name: 'envelopeId',
     type: 'string',
     default: '',
     required: true,
-    description: t('envelope.fields.delete.envelopeId.description'),
+    description: 'ID of the envelope to delete',
     displayOptions: {
       show: {
         operation: ['delete'],

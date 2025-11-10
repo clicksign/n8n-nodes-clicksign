@@ -1,14 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const deleteRequirementFields: INodeProperties[] = [
   {
-    displayName: t('requirement.fields.delete.envelopeId.displayName'),
+    displayName: 'Envelope ID',
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: t('requirement.fields.delete.envelopeId.description'),
+    description: 'ID of the Envelope that contains the requirement',
     displayOptions: {
       show: {
         operation: ['delete'],
@@ -17,12 +16,12 @@ export const deleteRequirementFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('requirement.fields.delete.requirementId.displayName'),
+    displayName: 'Requirement ID',
     name: 'requirementId',
     type: 'string',
     required: true,
     default: '',
-    description: t('requirement.fields.delete.requirementId.description'),
+    description: 'ID of the Requirement you want to delete',
     displayOptions: {
       show: {
         operation: ['delete'],

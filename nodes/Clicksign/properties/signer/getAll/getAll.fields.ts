@@ -1,14 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const getAllSignersFields: INodeProperties[] = [
   {
-    displayName: t('signer.fields.getAll.envelopeId.displayName'),
+    displayName: 'Envelope ID',
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: t('signer.fields.getAll.envelopeId.description'),
+    description: 'ID of the envelope for which you want to list the signers',
     displayOptions: {
       show: {
         operation: ['getAll'],

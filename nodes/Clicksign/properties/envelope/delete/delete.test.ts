@@ -6,7 +6,6 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { deleteEnvelope } from './delete.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 describe('delete: envelope', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -46,7 +45,7 @@ describe('delete: envelope', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('envelope.errors.delete'),
+      'Error deleting envelope',
     );
   });
 

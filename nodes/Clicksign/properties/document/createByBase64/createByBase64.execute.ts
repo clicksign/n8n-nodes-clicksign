@@ -2,7 +2,6 @@ import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 export async function createDocumentByBase64(ef: IExecuteFunctions) {
   const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');
@@ -30,6 +29,6 @@ export async function createDocumentByBase64(ef: IExecuteFunctions) {
   return await clicksignRequest(
     ef,
     options,
-    t('document.errors.createByBase64'),
+    'Error creating document by base 64',
   );
 }

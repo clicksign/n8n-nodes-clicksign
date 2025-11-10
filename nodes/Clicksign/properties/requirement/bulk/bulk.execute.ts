@@ -2,7 +2,6 @@ import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 import { clicksignRequest } from '../../shared/clicksignRequest';
-import { t } from '../../shared/translations';
 
 type Requirements = 'agree' | 'provide_evidence' | 'rubricate';
 
@@ -131,5 +130,9 @@ export async function bulkRequirements(ef: IExecuteFunctions) {
     url: `/envelopes/${envelopeId}/bulk_requirements`,
   };
 
-  return await clicksignRequest(ef, options, t('requirement.errors.bulk'));
+  return await clicksignRequest(
+    ef,
+    options,
+    'Error performing bulk requirement operation',
+  );
 }

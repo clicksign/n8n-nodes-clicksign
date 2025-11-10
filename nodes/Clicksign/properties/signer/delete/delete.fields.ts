@@ -1,14 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const deleteSignerFields: INodeProperties[] = [
   {
-    displayName: t('signer.fields.delete.envelopeId.displayName'),
+    displayName: 'Envelope ID',
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: t('signer.fields.delete.envelopeId.description'),
+    description: 'ID of the Envelope that has the signer',
     displayOptions: {
       show: {
         operation: ['delete'],
@@ -17,12 +16,12 @@ export const deleteSignerFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('signer.fields.delete.signerId.displayName'),
+    displayName: 'Signer ID',
     name: 'signerId',
     type: 'string',
     required: true,
     default: '',
-    description: t('signer.fields.delete.signerId.description'),
+    description: 'ID of the Signer you want to delete',
     displayOptions: {
       show: {
         operation: ['delete'],

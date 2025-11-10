@@ -1,14 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const getDocumentsFields: INodeProperties[] = [
   {
-    displayName: t('document.fields.getAll.envelopeId.displayName'),
+    displayName: 'Envelope ID',
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: t('document.fields.getAll.envelopeId.description'),
+    description: 'ID of the envelope that contains the documents to list',
     displayOptions: {
       show: {
         operation: ['getAll'],

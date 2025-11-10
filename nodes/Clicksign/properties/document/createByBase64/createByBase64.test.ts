@@ -6,7 +6,6 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { createDocumentByBase64 } from './createByBase64.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 describe('createByBase64 : document', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -88,7 +87,7 @@ describe('createByBase64 : document', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('document.errors.createByBase64'),
+      'Error creating document by base 64',
     );
   });
 

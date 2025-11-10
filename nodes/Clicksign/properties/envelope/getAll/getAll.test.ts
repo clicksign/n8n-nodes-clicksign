@@ -6,7 +6,6 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { getAllEnvelopes } from './getAll.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 describe('getAll: envelope', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -40,7 +39,7 @@ describe('getAll: envelope', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('envelope.errors.getAll'),
+      'Error getting envelopes',
     );
   });
 
@@ -63,7 +62,7 @@ describe('getAll: envelope', () => {
       expect(clicksignRequest).toHaveBeenCalledWith(
         mockExecuteFunctions,
         expectedOptions,
-        t('envelope.errors.getAll'),
+        'Error getting envelopes',
       );
     },
   );
@@ -87,7 +86,7 @@ describe('getAll: envelope', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('envelope.errors.getAll'),
+      'Error getting envelopes',
     );
   });
 
@@ -110,7 +109,7 @@ describe('getAll: envelope', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('envelope.errors.getAll'),
+      'Error getting envelopes',
     );
   });
 
@@ -145,7 +144,7 @@ describe('getAll: envelope', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('envelope.errors.getAll'),
+      'Error getting envelopes',
     );
   });
 

@@ -6,7 +6,6 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { eventsFromEnvelope } from './fromEnvelope.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 describe('fromEnvelope: event', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -49,7 +48,7 @@ describe('fromEnvelope: event', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('event.errors.fromEnvelope'),
+      'Error getting events from a envelope',
     );
   });
 

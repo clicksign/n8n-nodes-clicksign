@@ -7,7 +7,6 @@ import { createEnvelope } from './create.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 import { formatLocalISODate } from '../shared/formatLocalISODate';
-import { t } from '../../shared/translations';
 
 describe('create: envelope', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -92,7 +91,7 @@ describe('create: envelope', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('envelope.errors.create'),
+      'Error creating envelope',
     );
   });
 

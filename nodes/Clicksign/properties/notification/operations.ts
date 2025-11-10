@@ -1,24 +1,23 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../shared/translations';
 
 export const notificationOperations: INodeProperties = {
-  displayName: t('operation'),
+  displayName: 'Operation',
   name: 'operation',
   type: 'options',
   noDataExpression: true,
   default: 'notifyEnvelope',
   options: [
     {
+      name: 'Notify Envelope',
       value: 'notifyEnvelope',
-      name: t('notification.operations.notifyEnvelope.name'),
-      action: t('notification.operations.notifyEnvelope.action'),
-      description: t('notification.operations.notifyEnvelope.description'),
+      action: 'Notify envelope',
+      description: "Notifies the envelope's signers",
     },
     {
+      name: 'Notify Signer',
       value: 'notifySigner',
-      name: t('notification.operations.notifySigner.name'),
-      action: t('notification.operations.notifySigner.action'),
-      description: t('notification.operations.notifySigner.description'),
+      action: 'Notify signer',
+      description: 'Notifies an envelope signer',
     },
   ],
   displayOptions: {

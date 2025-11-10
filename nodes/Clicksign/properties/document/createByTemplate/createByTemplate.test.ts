@@ -6,7 +6,6 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { createDocumentByTemplate } from './createByTemplate.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 function mockImplementation(
   mock: any,
@@ -121,7 +120,7 @@ describe('createByTemplate: document', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('document.errors.createByTemplate'),
+      'Error creating document by template',
     );
   });
 

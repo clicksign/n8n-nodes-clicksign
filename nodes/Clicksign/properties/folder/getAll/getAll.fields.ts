@@ -1,13 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const getAllFoldersFields: INodeProperties[] = [
   {
-    displayName: t('folder.fields.getAll.inRoot.displayName'),
+    displayName: 'Only Root Folders',
     name: 'inRoot',
     type: 'boolean',
     default: true,
-    description: t('folder.fields.getAll.inRoot.description'),
+    description:
+      'Inform if you want to list only folders in the root of your folder structure',
     displayOptions: {
       show: {
         operation: ['getAll'],

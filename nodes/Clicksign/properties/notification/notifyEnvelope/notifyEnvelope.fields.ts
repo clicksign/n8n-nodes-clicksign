@@ -1,14 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const notifyEnvelopeFields: INodeProperties[] = [
   {
-    displayName: t('notification.fields.notifyEnvelope.envelopeId.displayName'),
+    displayName: 'Envelope ID',
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: t('notification.fields.notifyEnvelope.envelopeId.description'),
+    description: 'ID of the Envelope whose signers you want to notify',
     displayOptions: {
       show: {
         operation: ['notifyEnvelope'],
@@ -17,11 +16,11 @@ export const notifyEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('notification.fields.notifyEnvelope.message.displayName'),
+    displayName: 'Message',
     name: 'message',
     type: 'string',
     default: '',
-    description: t('notification.fields.notifyEnvelope.message.description'),
+    description: 'Custom message that will be sent in the notification',
     displayOptions: {
       show: {
         operation: ['notifyEnvelope'],

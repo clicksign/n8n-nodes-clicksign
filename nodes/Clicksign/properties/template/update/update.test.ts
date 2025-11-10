@@ -6,7 +6,6 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { updateTemplate } from './update.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 describe('update: template', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -65,7 +64,7 @@ describe('update: template', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('template.errors.update'),
+      'Error updating template',
     );
   });
 
@@ -101,7 +100,7 @@ describe('update: template', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('template.errors.update'),
+      'Error updating template',
     );
   });
 
@@ -135,7 +134,7 @@ describe('update: template', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('template.errors.update'),
+      'Error updating template',
     );
   });
 

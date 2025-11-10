@@ -2,7 +2,6 @@ import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 export async function getDocumentDetails(ef: IExecuteFunctions) {
   const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');
@@ -16,6 +15,6 @@ export async function getDocumentDetails(ef: IExecuteFunctions) {
   return await clicksignRequest(
     ef,
     options,
-    t('document.errors.getDetails'),
+    'Error getting details of a document',
   );
 }

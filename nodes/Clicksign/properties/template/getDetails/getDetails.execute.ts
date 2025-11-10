@@ -2,7 +2,6 @@ import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 export async function getTemplateDetails(ef: IExecuteFunctions) {
   const templateId = getNodeParameterTyped<string>(ef, 'templateId');
@@ -12,5 +11,5 @@ export async function getTemplateDetails(ef: IExecuteFunctions) {
     url: `/templates/${templateId}`,
   };
 
-  return await clicksignRequest(ef, options, t('template.errors.getDetails'));
+  return await clicksignRequest(ef, options, 'Error getting template details');
 }

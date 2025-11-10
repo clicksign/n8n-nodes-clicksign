@@ -1,48 +1,48 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../shared/translations';
 
 export const documentsOperations: INodeProperties = {
-  displayName: t('operation'),
+  displayName: 'Operation',
   name: 'operation',
   type: 'options',
   noDataExpression: true,
   default: 'getAll',
   options: [
     {
-      value: 'update',
-      name: t('document.operations.update.name'),
-      action: t('document.operations.update.action'),
-      description: t('document.operations.update.description'),
-    },
-    {
+      name: 'Create By Base64',
       value: 'createByBase64',
-      name: t('document.operations.createByBase64.name'),
-      action: t('document.operations.createByBase64.action'),
-      description: t('document.operations.createByBase64.description'),
+      action: 'Create document by base64',
+      description: 'Create document by base64',
     },
     {
+      name: 'Create By Template',
       value: 'createByTemplate',
-      name: t('document.operations.createByTemplate.name'),
-      action: t('document.operations.createByTemplate.action'),
-      description: t('document.operations.createByTemplate.description'),
+      action: 'Create document by template',
+      description: 'Create document by template',
     },
     {
+      name: 'Delete',
       value: 'delete',
-      name: t('document.operations.delete.name'),
-      action: t('document.operations.delete.action'),
-      description: t('document.operations.delete.description'),
+      action: 'Delete document',
+      description: 'Delete document',
     },
     {
-      value: 'getAll',
-      name: t('document.operations.getAll.name'),
-      action: t('document.operations.getAll.action'),
-      description: t('document.operations.getAll.description'),
-    },
-    {
+      name: 'Get Details',
       value: 'getDetails',
-      name: t('document.operations.getDetails.name'),
-      action: t('document.operations.getDetails.action'),
-      description: t('document.operations.getDetails.description'),
+      action: 'Get details of a document',
+      description: 'Get details of a document',
+    },
+    {
+      name: 'List All',
+      value: 'getAll',
+      action: 'List all documents',
+      description: 'List many documents',
+    },
+
+    {
+      name: 'Update',
+      value: 'update',
+      action: 'Update document',
+      description: 'Update document',
     },
   ],
   displayOptions: {

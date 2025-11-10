@@ -6,7 +6,6 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { getTemplateDetails } from './getDetails.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 describe('getDetails: template', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -47,7 +46,7 @@ describe('getDetails: template', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('template.errors.getDetails'),
+      'Error getting template details',
     );
   });
 

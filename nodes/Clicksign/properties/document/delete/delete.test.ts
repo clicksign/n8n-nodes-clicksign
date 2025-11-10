@@ -6,7 +6,6 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { deleteDocument } from './delete.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 describe('deleteDocument', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -57,7 +56,7 @@ describe('deleteDocument', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('document.errors.delete'),
+      'Error deleting document',
     );
   });
 

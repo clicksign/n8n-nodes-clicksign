@@ -6,7 +6,6 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { deleteRequirement } from './delete.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 describe('deleteRequirement', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -57,7 +56,7 @@ describe('deleteRequirement', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('requirement.errors.delete'),
+      'Error deleting requirement',
     );
   });
 

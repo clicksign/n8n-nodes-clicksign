@@ -1,14 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const activateEnvelopeFields: INodeProperties[] = [
   {
-    displayName: t('envelope.fields.activate.envelopeId.displayName'),
+    displayName: 'Envelope ID',
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: t('envelope.fields.activate.envelopeId.description'),
+    description: 'ID of the envelope to activate',
     displayOptions: {
       show: {
         operation: ['activate'],

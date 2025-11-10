@@ -6,7 +6,6 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { deleteTemplate } from './delete.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 describe('delete: template', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -47,7 +46,7 @@ describe('delete: template', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('template.errors.delete'),
+      'Error deleting template',
     );
   });
 
