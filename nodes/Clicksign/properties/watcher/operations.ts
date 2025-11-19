@@ -1,36 +1,35 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../shared/translations';
 
 export const watcherOperations: INodeProperties = {
-  displayName: t('operation'),
+  displayName: 'Operation',
   name: 'operation',
   type: 'options',
   default: 'getAll',
   noDataExpression: true,
   options: [
     {
+      name: 'Create',
       value: 'create',
-      name: t('watcher.operations.create.name'),
-      action: t('watcher.operations.create.action'),
-      description: t('watcher.operations.create.description'),
+      action: 'Create watcher',
+      description: 'Create watcher',
     },
     {
+      name: 'List',
       value: 'getAll',
-      name: t('watcher.operations.getAll.name'),
-      action: t('watcher.operations.getAll.action'),
-      description: t('watcher.operations.getAll.description'),
+      action: 'List watchers',
+      description: 'List watchers',
     },
     {
+      name: 'Get Details',
       value: 'getDetails',
-      name: t('watcher.operations.getDetails.name'),
-      action: t('watcher.operations.getDetails.action'),
-      description: t('watcher.operations.getDetails.description'),
+      action: 'Get watcher details',
+      description: 'Get watcher details',
     },
     {
+      name: 'Delete',
       value: 'delete',
-      name: t('watcher.operations.delete.name'),
-      action: t('watcher.operations.delete.action'),
-      description: t('watcher.operations.delete.description'),
+      action: 'Delete watcher',
+      description: 'Delete watcher',
     },
   ],
   displayOptions: {

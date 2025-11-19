@@ -3,7 +3,6 @@ import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 import { formatBirthday, formatDocumentation } from '../shared/formatters';
-import { t } from '../../shared/translations';
 
 function formatPhoneNumber(phone: string): string {
   return phone.replace(/\D/g, '');
@@ -65,5 +64,5 @@ export async function createSigner(ef: IExecuteFunctions) {
     url: `/envelopes/${envelopeId}/signers`,
   };
 
-  return await clicksignRequest(ef, options, t('signer.errors.create'));
+  return await clicksignRequest(ef, options, 'Error creating the signer');
 }

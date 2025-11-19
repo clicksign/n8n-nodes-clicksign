@@ -1,14 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const getRequirementDetailsFields: INodeProperties[] = [
   {
-    displayName: t('requirement.fields.getDetails.envelopeId.displayName'),
+    displayName: 'Envelope ID',
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: t('requirement.fields.getDetails.envelopeId.description'),
+    description:
+      'ID of the envelope for which you want to list the requirements',
     displayOptions: {
       show: {
         operation: ['getDetails'],
@@ -17,12 +17,12 @@ export const getRequirementDetailsFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('requirement.fields.getDetails.requirementId.displayName'),
+    displayName: 'Requirement ID',
     name: 'requirementId',
     type: 'string',
     required: true,
     default: '',
-    description: t('requirement.fields.getDetails.requirementId.description'),
+    description: 'ID of the Requirement you want to view',
     displayOptions: {
       show: {
         operation: ['getDetails'],

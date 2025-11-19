@@ -10,7 +10,6 @@ import {
 } from './bulk.execute';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 import { clicksignRequest } from '../../shared/clicksignRequest';
-import { t } from '../../shared/translations';
 
 describe('bulk: requirement', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -87,7 +86,7 @@ describe('bulk: requirement', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('requirement.errors.bulk'),
+      'Error performing bulk requirement operation',
     );
   });
 
@@ -143,7 +142,7 @@ describe('bulk: requirement', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('requirement.errors.bulk'),
+      'Error performing bulk requirement operation',
     );
   });
 
@@ -180,7 +179,7 @@ describe('bulk: requirement', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('requirement.errors.bulk'),
+      'Error performing bulk requirement operation',
     );
   });
 

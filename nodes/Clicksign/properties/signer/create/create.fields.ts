@@ -1,14 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const createSignerFields: INodeProperties[] = [
   {
-    displayName: t('signer.fields.create.envelopeId.displayName'),
+    displayName: 'Envelope ID',
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: t('signer.fields.create.envelopeId.description'),
+    description: 'ID of the envelope to which the signer will be added',
     displayOptions: {
       show: {
         operation: ['create'],
@@ -17,13 +16,14 @@ export const createSignerFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('signer.fields.create.name.displayName'),
+    displayName: 'Name',
     name: 'name',
     type: 'string',
     default: '',
     placeholder: 'John Doe',
     required: true,
-    description: t('signer.fields.create.name.description'),
+    description:
+      "The signer's name, used to identify them (at least two words must be sent)",
     displayOptions: {
       show: {
         operation: ['create'],
@@ -32,13 +32,14 @@ export const createSignerFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('signer.fields.create.email.displayName'),
+    displayName: 'Email',
     name: 'email',
     type: 'string',
     default: '',
     placeholder: 'john@email.com',
     required: true,
-    description: t('signer.fields.create.email.description'),
+    description:
+      "The signer's email (required when email notification is configured)",
     displayOptions: {
       show: {
         operation: ['create'],
@@ -47,12 +48,13 @@ export const createSignerFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('signer.fields.create.phoneNumber.displayName'),
+    displayName: 'Phone',
     name: 'phoneNumber',
     type: 'string',
     default: '',
     placeholder: '11999999999',
-    description: t('signer.fields.create.phoneNumber.description'),
+    description:
+      "The signer's phone number, which must have 10 or 11 digits (required when notification setup requires phone)",
     displayOptions: {
       show: {
         operation: ['create'],
@@ -61,11 +63,12 @@ export const createSignerFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('signer.fields.create.hasDocumentation.displayName'),
+    displayName: 'Has CPF',
     name: 'hasDocumentation',
     type: 'boolean',
     default: true,
-    description: t('signer.fields.create.hasDocumentation.description'),
+    description:
+      'Defines whether the signer must provide CPF (Brazilian ID) and Date of Birth',
     displayOptions: {
       show: {
         operation: ['create'],
@@ -74,12 +77,12 @@ export const createSignerFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('signer.fields.create.documentation.displayName'),
+    displayName: 'CPF',
     name: 'documentation',
     type: 'string',
     default: '',
     placeholder: '17498999064',
-    description: t('signer.fields.create.documentation.description'),
+    description: "The signer's CPF (Brazilian ID)",
     displayOptions: {
       show: {
         operation: ['create'],
@@ -89,12 +92,12 @@ export const createSignerFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('signer.fields.create.birthday.displayName'),
+    displayName: 'Date Of Birth',
     name: 'birthday',
     type: 'string',
     default: '',
     placeholder: '10/10/1990',
-    description: t('signer.fields.create.birthday.description'),
+    description: "Signer's date of birth (e.g.: DD/MM/YYYY, YYYY-MM-DD)",
     displayOptions: {
       show: {
         operation: ['create'],
@@ -104,11 +107,12 @@ export const createSignerFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('signer.fields.create.group.displayName'),
+    displayName: 'Group',
     name: 'group',
     type: 'number',
     default: 1,
-    description: t('signer.fields.create.group.description'),
+    description:
+      'Determines which group the signer should be linked to, according to the signing order',
     displayOptions: {
       show: {
         operation: ['create'],
@@ -117,11 +121,11 @@ export const createSignerFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('signer.fields.create.refusable.displayName'),
+    displayName: 'Allow Refusing The Signature Request',
     name: 'refusable',
     type: 'boolean',
     default: false,
-    description: t('signer.fields.create.refusable.description'),
+    description: 'Defines whether the signer can refuse the request',
     displayOptions: {
       show: {
         operation: ['create'],
@@ -130,11 +134,12 @@ export const createSignerFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('signer.fields.create.locationRequired.displayName'),
+    displayName: 'Location Required',
     name: 'locationRequired',
     type: 'boolean',
     default: false,
-    description: t('signer.fields.create.locationRequired.description'),
+    description:
+      'Determines if the signer must share their location at the time of signing',
     displayOptions: {
       show: {
         operation: ['create'],
@@ -143,10 +148,10 @@ export const createSignerFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('signer.fields.create.communicateEvents.displayName'),
+    displayName: 'Event Notification',
     name: 'communicateEvents',
     type: 'fixedCollection',
-    description: t('signer.fields.create.communicateEvents.description'),
+    description: 'Configures notifications to the signer',
     default: {
       signature_request: 'email',
       signature_reminder: 'email',
@@ -160,34 +165,28 @@ export const createSignerFields: INodeProperties[] = [
     },
     options: [
       {
-        displayName: t(
-          'signer.fields.create.communicateEvents.events.displayName',
-        ),
+        displayName: 'Notification Configuration',
         name: 'events',
         values: [
           {
-            displayName: t(
-              'signer.fields.create.communicateEvents.events.signature_request',
-            ),
+            displayName: 'Signature Request',
             name: 'signature_request',
             type: 'options',
             options: [
               {
-                name: t('signer.fields.create.communicateEvents.events.none'),
+                name: 'None',
                 value: 'none',
               },
               {
-                name: t('signer.fields.create.communicateEvents.events.email'),
+                name: 'Email',
                 value: 'email',
               },
               {
-                name: t(
-                  'signer.fields.create.communicateEvents.events.whatsapp',
-                ),
+                name: 'Whatsapp',
                 value: 'whatsapp',
               },
               {
-                name: t('signer.fields.create.communicateEvents.events.sms'),
+                name: 'SMS',
                 value: 'sms',
               },
             ],
@@ -195,18 +194,16 @@ export const createSignerFields: INodeProperties[] = [
             default: 'email',
           },
           {
-            displayName: t(
-              'signer.fields.create.communicateEvents.events.signature_reminder',
-            ),
+            displayName: 'Signature Reminder',
             name: 'signature_reminder',
             type: 'options',
             options: [
               {
-                name: t('signer.fields.create.communicateEvents.events.none'),
+                name: 'None',
                 value: 'none',
               },
               {
-                name: t('signer.fields.create.communicateEvents.events.email'),
+                name: 'Email',
                 value: 'email',
               },
             ],
@@ -214,20 +211,16 @@ export const createSignerFields: INodeProperties[] = [
             default: 'email',
           },
           {
-            displayName: t(
-              'signer.fields.create.communicateEvents.events.document_signed',
-            ),
+            displayName: 'Document Signed',
             name: 'document_signed',
             type: 'options',
             options: [
               {
-                name: t('signer.fields.create.communicateEvents.events.email'),
+                name: 'Email',
                 value: 'email',
               },
               {
-                name: t(
-                  'signer.fields.create.communicateEvents.events.whatsapp',
-                ),
+                name: 'Whatsapp',
                 value: 'whatsapp',
               },
             ],

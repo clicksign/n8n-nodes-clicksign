@@ -1,42 +1,41 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../shared/translations';
 
 export const signerOperations: INodeProperties = {
-  displayName: t('operation'),
+  displayName: 'Operation',
   name: 'operation',
   type: 'options',
   default: 'create',
   noDataExpression: true,
   options: [
     {
+      name: 'Create',
       value: 'create',
-      name: t('singer.operations.create.name'),
-      action: t('singer.operations.create.action'),
-      description: t('singer.operations.create.description'),
+      action: 'Create signer',
+      description: 'Create signer',
     },
     {
+      name: 'Create Auto Signature',
       value: 'createAutoSignature',
-      name: t('singer.operations.createAutoSignature.name'),
-      action: t('singer.operations.createAutoSignature.action'),
-      description: t('singer.operations.createAutoSignature.description'),
+      action: 'Create automatic signature',
+      description: 'Create automatic signature',
     },
     {
+      name: 'Delete',
       value: 'delete',
-      name: t('singer.operations.delete.name'),
-      action: t('singer.operations.delete.action'),
-      description: t('singer.operations.delete.description'),
+      action: 'Delete signer',
+      description: 'Delete signer from the envelope',
     },
     {
-      value: 'getAll',
-      name: t('singer.operations.getAll.name'),
-      action: t('singer.operations.getAll.action'),
-      description: t('singer.operations.getAll.description'),
-    },
-    {
+      name: 'Get Details',
       value: 'getDetails',
-      name: t('singer.operations.getDetails.name'),
-      action: t('singer.operations.getDetails.action'),
-      description: t('singer.operations.getDetails.description'),
+      action: 'Get signer details',
+      description: 'Get details of a signer for an envelope',
+    },
+    {
+      name: 'List',
+      value: 'getAll',
+      action: 'List Signers',
+      description: 'List signers',
     },
   ],
   displayOptions: {

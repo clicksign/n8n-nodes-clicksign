@@ -1,14 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const createDocumentByTemplateFields: INodeProperties[] = [
   {
-    displayName: t('document.fields.createByTemplate.envelopeId.displayName'),
+    displayName: 'Envelope ID',
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: t('document.fields.createByTemplate.envelopeId.description'),
+    description: 'ID of the envelope that contains the document to create',
     displayOptions: {
       show: {
         operation: ['createByTemplate'],
@@ -17,13 +16,13 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('document.fields.createByTemplate.filename.displayName'),
+    displayName: 'Filename (.docx)',
     name: 'filename',
     type: 'string',
     required: true,
     default: '',
     placeholder: 'arquivo',
-    description: t('document.fields.createByTemplate.filename.description'),
+    description: 'Name of the file to create with extension .docx',
     displayOptions: {
       show: {
         operation: ['createByTemplate'],
@@ -32,12 +31,12 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('document.fields.createByTemplate.templateId.displayName'),
+    displayName: 'Template ID',
     name: 'templateId',
     type: 'string',
     required: true,
     default: '',
-    description: t('document.fields.createByTemplate.templateId.description'),
+    description: 'ID of the template to use for the creation',
     displayOptions: {
       show: {
         operation: ['createByTemplate'],
@@ -46,11 +45,12 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('document.fields.createByTemplate.templateData.displayName'),
+    displayName: 'Template Data',
     name: 'templateData',
     type: 'json',
     default: '{}',
-    description: t('document.fields.createByTemplate.templateData.description'),
+    description:
+      'JSON with key and value of the values that will fill the template',
     displayOptions: {
       show: {
         operation: ['createByTemplate'],
@@ -59,11 +59,11 @@ export const createDocumentByTemplateFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('document.fields.createByTemplate.metadata.displayName'),
+    displayName: 'Metadata',
     name: 'metadata',
     type: 'json',
     default: '{}',
-    description: t('document.fields.createByTemplate.metadata.description'),
+    description: 'JSON with metadata that is used in document webhooks returns',
     displayOptions: {
       show: {
         operation: ['createByTemplate'],

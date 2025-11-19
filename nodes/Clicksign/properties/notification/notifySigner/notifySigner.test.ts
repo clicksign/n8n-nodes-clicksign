@@ -6,7 +6,6 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { notifySigner } from './notifySigner.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 describe('notifySigner: notification', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -72,7 +71,7 @@ describe('notifySigner: notification', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('notification.errors.notifySigner'),
+      'Error sending notification to signer',
     );
   });
 
@@ -111,7 +110,7 @@ describe('notifySigner: notification', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('notification.errors.notifySigner'),
+      'Error sending notification to signer',
     );
   });
 

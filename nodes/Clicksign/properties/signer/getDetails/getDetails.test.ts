@@ -6,7 +6,6 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { getSignerDetails } from './getDetails.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 describe('getDetails: signer', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -57,7 +56,7 @@ describe('getDetails: signer', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('signer.errors.getDetails'),
+      'Error getting signer details',
     );
   });
 

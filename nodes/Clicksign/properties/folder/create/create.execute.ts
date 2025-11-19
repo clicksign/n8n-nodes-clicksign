@@ -2,7 +2,6 @@ import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 export async function createFolder(ef: IExecuteFunctions) {
   const name = getNodeParameterTyped<string>(ef, 'name');
@@ -35,5 +34,5 @@ export async function createFolder(ef: IExecuteFunctions) {
     url: `/folders`,
   };
 
-  return await clicksignRequest(ef, options, t('folder.errors.create'));
+  return await clicksignRequest(ef, options, 'Error creating folder');
 }

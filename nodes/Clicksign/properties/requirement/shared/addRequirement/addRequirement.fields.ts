@@ -1,5 +1,4 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../../shared/translations';
 
 type RequirementOperation = 'addAuth' | 'addQualification' | 'addRubric';
 
@@ -8,12 +7,12 @@ export function addRequirementFields(
 ): INodeProperties[] {
   return [
     {
-      displayName: t('requirement.shared.envelopeId.displayName'),
+      displayName: 'Envelope ID',
       name: 'envelopeId',
       type: 'string',
       required: true,
       default: '',
-      description: t('requirement.shared.envelopeId.description'),
+      description: 'ID of the Envelope that will receive the requirement',
       displayOptions: {
         show: {
           operation: [operation],
@@ -22,12 +21,12 @@ export function addRequirementFields(
       },
     },
     {
-      displayName: t('requirement.shared.documentId.displayName'),
+      displayName: 'Document ID',
       name: 'documentId',
       type: 'string',
       required: true,
       default: '',
-      description: t('requirement.shared.documentId.description'),
+      description: 'ID of the Document that will receive the requirement',
       displayOptions: {
         show: {
           operation: [operation],
@@ -36,12 +35,12 @@ export function addRequirementFields(
       },
     },
     {
-      displayName: t('requirement.shared.signerId.displayName'),
+      displayName: 'Signer ID',
       name: 'signerId',
       type: 'string',
       required: true,
       default: '',
-      description: t('requirement.shared.signerId.description'),
+      description: 'ID of the Signer that will receive the requirement',
       displayOptions: {
         show: {
           operation: [operation],

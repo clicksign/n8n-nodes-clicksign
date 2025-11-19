@@ -4,7 +4,6 @@ jest.mock('../../shared/clicksignRequest');
 
 import { getAllTemplates } from './getAll.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
-import { t } from '../../shared/translations';
 
 describe('getAll: template', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -33,7 +32,7 @@ describe('getAll: template', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('template.errors.getAll'),
+      'Error listing templates',
     );
   });
 

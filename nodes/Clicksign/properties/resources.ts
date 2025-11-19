@@ -1,48 +1,47 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../properties/shared/translations';
 
 export const resourceOptions: INodeProperties = {
-  displayName: t('resources.displayName'),
+  displayName: 'Resource',
   name: 'resource',
   type: 'options',
   noDataExpression: true,
   default: 'envelope',
   options: [
     {
-      name: t('resources.document'),
+      name: 'Document',
       value: 'document',
     },
     {
-      name: t('resources.envelope'),
+      name: 'Envelope',
       value: 'envelope',
     },
     {
-      name: t('resources.event'),
+      name: 'Event',
       value: 'event',
     },
     {
-      name: t('resources.template'),
-      value: 'template',
-    },
-    {
-      name: t('resources.notification'),
-      value: 'notification',
-    },
-    {
-      name: t('resources.watcher'),
-      value: 'watcher',
-    },
-    {
-      name: t('resources.folder'),
+      name: 'Folder',
       value: 'folder',
     },
     {
-      name: t('resources.requirement'),
+      name: 'Notification',
+      value: 'notification',
+    },
+    {
+      name: 'Requirement',
       value: 'requirement',
     },
     {
-      name: t('resources.signer'),
+      name: 'Signer',
       value: 'signer',
+    },
+    {
+      name: 'Template',
+      value: 'template',
+    },
+    {
+      name: 'Watcher',
+      value: 'watcher',
     },
   ],
 };

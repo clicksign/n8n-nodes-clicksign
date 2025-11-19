@@ -1,15 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
 import { templateColors } from '../shared/colors.options';
-import { t } from '../../shared/translations';
 
 export const createTemplateFields: INodeProperties[] = [
   {
-    displayName: t('template.fields.create.name.displayName'),
+    displayName: 'Name',
     name: 'name',
     type: 'string',
     required: true,
     default: '',
-    description: t('template.fields.create.name.description'),
+    description: 'Defines the Template name to facilitate future consultations',
     displayOptions: {
       show: {
         operation: ['create'],
@@ -18,12 +17,13 @@ export const createTemplateFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('template.fields.create.base64.displayName'),
+    displayName: 'File In Base 64',
     name: 'base64',
     type: 'string',
     required: true,
     default: '',
-    description: t('template.fields.create.base64.description'),
+    description:
+      'Content of the file in base 64 format that is being sent to Clicksign',
     displayOptions: {
       show: {
         operation: ['create'],
@@ -32,11 +32,11 @@ export const createTemplateFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('template.fields.create.color.displayName'),
+    displayName: 'Color',
     name: 'color',
     type: 'options',
     default: '',
-    description: t('template.fields.create.color.description'),
+    description: 'The identification color of the template',
     options: templateColors,
     displayOptions: {
       show: {

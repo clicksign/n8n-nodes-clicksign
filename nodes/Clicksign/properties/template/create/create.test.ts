@@ -6,7 +6,6 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { createTemplate } from './create.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 describe('create: template', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -73,7 +72,7 @@ describe('create: template', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('template.errors.create'),
+      'Error creating template',
     );
   });
 

@@ -1,7 +1,6 @@
 import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
-import { t } from '../../shared/translations';
 
 export async function getAllTemplates(ef: IExecuteFunctions) {
   const options: IHttpRequestOptions = {
@@ -9,5 +8,5 @@ export async function getAllTemplates(ef: IExecuteFunctions) {
     url: `/templates`,
   };
 
-  return await clicksignRequest(ef, options, t('template.errors.getAll'));
+  return await clicksignRequest(ef, options, 'Error listing templates');
 }

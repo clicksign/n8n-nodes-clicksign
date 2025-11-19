@@ -2,7 +2,6 @@ import { IExecuteFunctions } from 'n8n-workflow';
 
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 import { addRequirement } from '../shared/addRequirement/addRequirement.execute';
-import { t } from '../../shared/translations';
 
 export async function addQualificationRequirement(ef: IExecuteFunctions) {
   const envelopeId = getNodeParameterTyped<string>(ef, 'envelopeId');
@@ -18,6 +17,6 @@ export async function addQualificationRequirement(ef: IExecuteFunctions) {
     documentId,
     envelopeId,
     signerId,
-    errorMessage: t('requirement.errors.addQualification'),
+    errorMessage: 'Error adding qualification requirement',
   });
 }

@@ -2,7 +2,6 @@ import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 type Filter = 'status' | 'name' | 'created' | 'modified' | 'deadline_at';
 
@@ -46,5 +45,5 @@ export async function getAllEnvelopes(ef: IExecuteFunctions) {
     url: `/envelopes${parameters}`,
   };
 
-  return await clicksignRequest(ef, options, t('envelope.errors.getAll'));
+  return await clicksignRequest(ef, options, 'Error getting envelopes');
 }

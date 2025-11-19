@@ -1,15 +1,14 @@
 import { INodeProperties } from 'n8n-workflow';
 import { templateColors } from '../shared/colors.options';
-import { t } from '../../shared/translations';
 
 export const updateTemplateFields: INodeProperties[] = [
   {
-    displayName: t('template.fields.update.templateId.displayName'),
+    displayName: 'Template ID',
     name: 'templateId',
     type: 'string',
     required: true,
     default: '',
-    description: t('template.fields.update.templateId.description'),
+    description: 'ID of the Template to be updated',
     displayOptions: {
       show: {
         operation: ['update'],
@@ -18,11 +17,11 @@ export const updateTemplateFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('template.fields.update.name.displayName'),
+    displayName: 'Name',
     name: 'name',
     type: 'string',
     default: '',
-    description: t('template.fields.update.name.description'),
+    description: 'Defines the Template name to facilitate future consultations',
     displayOptions: {
       show: {
         operation: ['update'],
@@ -31,11 +30,11 @@ export const updateTemplateFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('template.fields.update.color.displayName'),
+    displayName: 'Color',
     name: 'color',
     type: 'options',
     default: '',
-    description: t('template.fields.update.color.description'),
+    description: 'The identification color of the template',
     options: templateColors,
     displayOptions: {
       show: {

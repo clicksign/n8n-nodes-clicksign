@@ -1,14 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const createFolderFields: INodeProperties[] = [
   {
-    displayName: t('folder.fields.create.name.displayName'),
+    displayName: 'Name',
     name: 'name',
     type: 'string',
     required: true,
     default: '',
-    description: t('folder.fields.create.name.description'),
+    description: 'Name of the folder to create',
     displayOptions: {
       show: {
         operation: ['create'],
@@ -17,11 +16,11 @@ export const createFolderFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('folder.fields.create.folderId.displayName'),
+    displayName: 'Folder ID',
     name: 'folderId',
     type: 'string',
     default: '',
-    description: t('folder.fields.create.folderId.description'),
+    description: 'ID of the source folder',
     displayOptions: {
       show: {
         operation: ['create'],

@@ -6,7 +6,6 @@ jest.mock('../../shared/getNodeParameterTyped');
 import { getAllDocuments } from './getAll.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 describe('getAll: document', () => {
   let mockExecuteFunctions: IExecuteFunctions;
@@ -47,7 +46,7 @@ describe('getAll: document', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('document.errors.getAll'),
+      'Error getting documents',
     );
   });
 

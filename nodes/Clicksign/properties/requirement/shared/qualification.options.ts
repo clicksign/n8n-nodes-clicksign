@@ -1,272 +1,270 @@
-import { t } from '../../shared/translations';
-
 export const qualificationsOptions = [
   {
-    name: t('qualification.receipt'),
+    name: 'Acknowledge Receipt',
     value: 'receipt',
   },
   {
-    name: t('qualification.administrator'),
+    name: 'Administrator',
     value: 'administrator',
   },
   {
-    name: t('qualification.lawyer'),
+    name: 'Lawyer',
     value: 'lawyer',
   },
   {
-    name: t('qualification.secured'),
+    name: 'Secured Party',
     value: 'secured',
   },
   {
-    name: t('qualification.consenting'),
+    name: 'Consenting Party',
     value: 'consenting',
   },
   {
-    name: t('qualification.consented'),
+    name: 'Consented Party',
     value: 'consented',
   },
   {
-    name: t('qualification.approve'),
+    name: 'Approve',
     value: 'approve',
   },
   {
-    name: t('qualification.sign'),
+    name: 'Sign',
     value: 'sign',
   },
   {
-    name: t('qualification.associate'),
+    name: 'Associate',
     value: 'associate',
   },
   {
-    name: t('qualification.guarantor'),
+    name: 'Guarantor',
     value: 'guarantor',
   },
   {
-    name: t('qualification.collateral_provider'),
+    name: 'Collateral Provider',
     value: 'collateral_provider',
   },
   {
-    name: t('qualification.transferor'),
+    name: 'Transferor',
     value: 'transferor',
   },
   {
-    name: t('qualification.transferee'),
+    name: 'Transferee',
     value: 'transferee',
   },
   {
-    name: t('qualification.comforter'),
+    name: 'Lender (Comodante)',
     value: 'comforter',
   },
   {
-    name: t('qualification.borrower'),
+    name: 'Borrower (Comodatário)',
     value: 'borrower',
   },
   {
-    name: t('qualification.guarantor_spouse'),
+    name: "Guarantor's Spouse",
     value: 'guarantor_spouse',
   },
   {
-    name: t('qualification.pledged'),
+    name: 'Pledged Party',
     value: 'pledged',
   },
   {
-    name: t('qualification.consignee'),
+    name: 'Consignee',
     value: 'consignee',
   },
   {
-    name: t('qualification.contractee'),
+    name: 'Contractee',
     value: 'contractee',
   },
   {
-    name: t('qualification.contractor'),
+    name: 'Contractor',
     value: 'contractor',
   },
   {
-    name: t('qualification.account_holder'),
+    name: 'Account Holder',
     value: 'account_holder',
   },
   {
-    name: t('qualification.real_estate_broker'),
+    name: 'Real Estate Broker',
     value: 'real_estate_broker',
   },
   {
-    name: t('qualification.insurance_broker'),
+    name: 'Insurance Broker',
     value: 'insurance_broker',
   },
   {
-    name: t('qualification.broker'),
+    name: 'Broker',
     value: 'broker',
   },
   {
-    name: t('qualification.creditor'),
+    name: 'Creditor',
     value: 'creditor',
   },
   {
-    name: t('qualification.joint_debtor'),
+    name: 'Joint Debtor',
     value: 'joint_debtor',
   },
   {
-    name: t('qualification.debtor'),
+    name: 'Debtor(s)',
     value: 'debtor',
   },
   {
-    name: t('qualification.director'),
+    name: 'Director',
     value: 'director',
   },
   {
-    name: t('qualification.distracting'),
+    name: 'Rescinding Party',
     value: 'distracting',
   },
   {
-    name: t('qualification.issuer'),
+    name: 'Issuer',
     value: 'issuer',
   },
   {
-    name: t('qualification.employee'),
+    name: 'Employee',
     value: 'employee',
   },
   {
-    name: t('qualification.employer'),
+    name: 'Employer',
     value: 'employer',
   },
   {
-    name: t('qualification.endorser'),
+    name: 'Endorser',
     value: 'endorser',
   },
   {
-    name: t('qualification.endorsee'),
+    name: 'Endorsee',
     value: 'endorsee',
   },
   {
-    name: t('qualification.surety'),
+    name: 'Surety',
     value: 'surety',
   },
   {
-    name: t('qualification.bailee'),
+    name: 'Bailee',
     value: 'bailee',
   },
   {
-    name: t('qualification.franchisee'),
+    name: 'Franchisee',
     value: 'franchisee',
   },
   {
-    name: t('qualification.franchisor'),
+    name: 'Franchisor',
     value: 'franchisor',
   },
   {
-    name: t('qualification.manager'),
+    name: 'Manager',
     value: 'manager',
   },
   {
-    name: t('qualification.intermediary'),
+    name: 'Intermediary',
     value: 'intermediary',
   },
   {
-    name: t('qualification.intervening'),
+    name: 'Intervening Party',
     value: 'intervening',
   },
   {
-    name: t('qualification.consenting_intervenor'),
+    name: 'Consenting Intervenor',
     value: 'consenting_intervenor',
   },
   {
-    name: t('qualification.intervening_guarantor'),
+    name: 'Intervening Guarantor',
     value: 'intervening_guarantor',
   },
   {
-    name: t('qualification.licensed'),
+    name: 'Licensee',
     value: 'licensed',
   },
   {
-    name: t('qualification.licensor'),
+    name: 'Licensor',
     value: 'licensor',
   },
   {
-    name: t('qualification.lessor'),
+    name: 'Lessor',
     value: 'lessor',
   },
   {
-    name: t('qualification.lessee'),
+    name: 'Lessee',
     value: 'lessee',
   },
   {
-    name: t('qualification.resident'),
+    name: 'Resident',
     value: 'resident',
   },
   {
-    name: t('qualification.lender'),
+    name: 'Lender (Mutuante)',
     value: 'lender',
   },
   {
-    name: t('qualification.grantee'),
+    name: 'Grantee',
     value: 'grantee',
   },
   {
-    name: t('qualification.grantor'),
+    name: 'Grantor',
     value: 'grantor',
   },
   {
-    name: t('qualification.buyer'),
+    name: 'Buying Party',
     value: 'buyer',
   },
   {
-    name: t('qualification.seller'),
+    name: 'Selling Party',
     value: 'seller',
   },
   {
-    name: t('qualification.president'),
+    name: 'President',
     value: 'president',
   },
   {
-    name: t('qualification.service_provider'),
+    name: 'Service Provider',
     value: 'service_provider',
   },
   {
-    name: t('qualification.attorney'),
+    name: 'Attorney',
     value: 'attorney',
   },
   {
-    name: t('qualification.owner'),
+    name: 'Owner',
     value: 'owner',
   },
   {
-    name: t('qualification.legal_representative'),
+    name: 'Legal Representative',
     value: 'legal_representative',
   },
   {
-    name: t('qualification.legal_guardian'),
+    name: 'Legal Guardian',
     value: 'legal_guardian',
   },
   {
-    name: t('qualification.co_responsible'),
+    name: 'Co-Responsible Party',
     value: 'co_responsible',
   },
   {
-    name: t('qualification.secretary'),
+    name: 'Secretary',
     value: 'secretary',
   },
   {
-    name: t('qualification.insured'),
+    name: 'Insured',
     value: 'insured',
   },
   {
-    name: t('qualification.building_manager'),
+    name: 'Building Manager',
     value: 'building_manager',
   },
   {
-    name: t('qualification.partner'),
+    name: 'Partner',
     value: 'partner',
   },
   {
-    name: t('qualification.treasurer'),
+    name: 'Treasurer',
     value: 'treasurer',
   },
   {
-    name: t('qualification.witness'),
+    name: 'Witness',
     value: 'witness',
   },
   {
-    name: t('qualification.surveyor'),
+    name: 'Surveyor',
     value: 'surveyor',
   },
 ];

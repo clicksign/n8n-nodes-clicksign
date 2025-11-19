@@ -2,7 +2,6 @@ import { IExecuteFunctions, IHttpRequestOptions } from 'n8n-workflow';
 
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
-import { t } from '../../shared/translations';
 
 export async function createTemplate(ef: IExecuteFunctions) {
   const name = getNodeParameterTyped<string>(ef, 'name');
@@ -25,5 +24,5 @@ export async function createTemplate(ef: IExecuteFunctions) {
     url: `/templates`,
   };
 
-  return await clicksignRequest(ef, options, t('template.errors.create'));
+  return await clicksignRequest(ef, options, 'Error creating template');
 }

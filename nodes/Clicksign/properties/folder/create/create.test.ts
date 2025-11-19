@@ -7,8 +7,6 @@ import { createFolder } from './create.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 
-import { t } from '../../shared/translations';
-
 describe('createFolder', () => {
   let mockExecuteFunctions: IExecuteFunctions;
 
@@ -66,7 +64,7 @@ describe('createFolder', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('folder.errors.create'),
+      'Error creating folder',
     );
   });
 
@@ -116,7 +114,7 @@ describe('createFolder', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('folder.errors.create'),
+      'Error creating folder',
     );
   });
 

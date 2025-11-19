@@ -2,16 +2,16 @@ import { INodeProperties } from 'n8n-workflow';
 
 import { addRequirementFields } from '../shared/addRequirement/addRequirement.fields';
 import { qualificationsOptions } from '../shared/qualification.options';
-import { t } from '../../shared/translations';
 
 export const addQualificationFields: INodeProperties[] = [
   ...addRequirementFields('addQualification'),
   {
-    displayName: t('requirement.fields.addQualification.role.displayName'),
+    displayName: 'Sign As',
     name: 'role',
     type: 'options',
     default: 'sign',
-    description: t('requirement.fields.addQualification.role.description'),
+    description:
+      'Determines the desired Qualification to accept the signatures',
     options: qualificationsOptions,
     displayOptions: {
       show: {

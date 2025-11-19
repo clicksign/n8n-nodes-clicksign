@@ -1,14 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const createDocumentByBase64: INodeProperties[] = [
   {
-    displayName: t('document.fields.createByBase64.envelopeId.displayName'),
+    displayName: 'Envelope ID',
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: t('document.fields.createByBase64.envelopeId.description'),
+    description: 'ID of the envelope that contains the document to create',
     displayOptions: {
       show: {
         operation: ['createByBase64'],
@@ -17,13 +16,13 @@ export const createDocumentByBase64: INodeProperties[] = [
     },
   },
   {
-    displayName: t('document.fields.createByBase64.filename.displayName'),
+    displayName: 'Filename (With Extension)',
     name: 'filename',
     type: 'string',
     required: true,
     default: '',
     placeholder: 'arquivo.pdf',
-    description: t('document.fields.createByBase64.filename.description'),
+    description: 'Name of the file to create with extension',
     displayOptions: {
       show: {
         operation: ['createByBase64'],
@@ -32,12 +31,12 @@ export const createDocumentByBase64: INodeProperties[] = [
     },
   },
   {
-    displayName: t('document.fields.createByBase64.fileBase64.displayName'),
+    displayName: 'File Base64',
     name: 'fileBase64',
     type: 'string',
     required: true,
     default: '',
-    description: t('document.fields.createByBase64.fileBase64.description'),
+    description: 'Base64 of the file to create',
     displayOptions: {
       show: {
         operation: ['createByBase64'],
@@ -46,11 +45,11 @@ export const createDocumentByBase64: INodeProperties[] = [
     },
   },
   {
-    displayName: t('document.fields.createByBase64.metadata.displayName'),
+    displayName: 'Metadata',
     name: 'metadata',
     type: 'json',
     default: '{}',
-    description: t('document.fields.createByBase64.metadata.description'),
+    description: 'JSON with metadata that is used in document webhooks returns',
     displayOptions: {
       show: {
         operation: ['createByBase64'],

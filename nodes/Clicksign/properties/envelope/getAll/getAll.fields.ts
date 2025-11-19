@@ -1,13 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const getAllFields: INodeProperties[] = [
   {
-    displayName: t('envelope.fields.getAll.status.displayName'),
+    displayName: 'Filter Status',
     name: 'status',
     type: 'string',
     default: '',
-    description: t('envelope.fields.getAll.status.description'),
+    description:
+      'Inform a status if you want to filter: draft, running, closed, canceled',
     displayOptions: {
       show: {
         operation: ['getAll'],
@@ -16,11 +16,11 @@ export const getAllFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('envelope.fields.getAll.name.displayName'),
+    displayName: 'Filter Name',
     name: 'name',
     type: 'string',
     default: '',
-    description: t('envelope.fields.getAll.name.description'),
+    description: 'Inform the full name of the envelope to consult',
     displayOptions: {
       show: {
         operation: ['getAll'],
@@ -29,11 +29,12 @@ export const getAllFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('envelope.fields.getAll.created.displayName'),
+    displayName: 'Filter Creation Date',
     name: 'created',
     type: 'string',
     default: '',
-    description: t('envelope.fields.getAll.created.description'),
+    description:
+      'Inform the creation date intervals in the specification format (ISO 8601 and separated by comma)',
     displayOptions: {
       show: {
         operation: ['getAll'],
@@ -42,11 +43,12 @@ export const getAllFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('envelope.fields.getAll.modified.displayName'),
+    displayName: 'Filter Modification Date',
     name: 'modified',
     type: 'string',
     default: '',
-    description: t('envelope.fields.getAll.modified.description'),
+    description:
+      'Inform the modification date intervals in the specification format (ISO 8601 and separated by comma)',
     displayOptions: {
       show: {
         operation: ['getAll'],
@@ -55,11 +57,12 @@ export const getAllFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('envelope.fields.getAll.deadline.displayName'),
+    displayName: 'Filter Deadline',
     name: 'deadline',
     type: 'string',
     default: '',
-    description: t('envelope.fields.getAll.deadline.description'),
+    description:
+      'Inform the deadline intervals in the specification format (ISO 8601 and separated by comma)',
     displayOptions: {
       show: {
         operation: ['getAll'],
@@ -68,11 +71,12 @@ export const getAllFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('envelope.fields.getAll.sort.displayName'),
+    displayName: 'Sort',
     name: 'sort',
     type: 'string',
     default: '',
-    description: t('envelope.fields.getAll.sort.description'),
+    description:
+      'Sort by envelope property (ex: name to sort by name in ascending order and -name to sort by name in descending order)',
     displayOptions: {
       show: {
         operation: ['getAll'],

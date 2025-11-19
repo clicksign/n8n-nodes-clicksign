@@ -1,14 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const updateEnvelopeFields: INodeProperties[] = [
   {
-    displayName: t('envelope.fields.update.envelopeId.displayName'),
+    displayName: 'Envelope ID',
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: t('envelope.fields.update.envelopeId.description'),
+    description: 'ID of the envelope to update',
     displayOptions: {
       show: {
         operation: ['update'],
@@ -17,11 +16,11 @@ export const updateEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('envelope.fields.update.envelopeName.displayName'),
+    displayName: 'Name',
     name: 'envelopeName',
     type: 'string',
     default: '',
-    description: t('envelope.fields.update.envelopeName.description'),
+    description: 'Name of the envelope',
     displayOptions: {
       show: {
         operation: ['update'],
@@ -30,11 +29,11 @@ export const updateEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('envelope.fields.update.locale.displayName'),
+    displayName: 'Locale',
     name: 'locale',
     type: 'options',
     default: 'pt-BR',
-    description: t('envelope.fields.update.locale.description'),
+    description: 'Locale used in emails, signature page and document log',
     displayOptions: {
       show: {
         operation: ['update'],
@@ -53,11 +52,12 @@ export const updateEnvelopeFields: INodeProperties[] = [
     ],
   },
   {
-    displayName: t('envelope.fields.update.autoClose.displayName'),
+    displayName: 'Automatically Close After All Signers Sign',
     name: 'autoClose',
     type: 'boolean',
     default: true,
-    description: t('envelope.fields.update.autoClose.description'),
+    description:
+      'If true, the envelope will be closed automatically after all signers have signed',
     displayOptions: {
       show: {
         operation: ['update'],
@@ -66,11 +66,12 @@ export const updateEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('envelope.fields.update.remindInterval.displayName'),
+    displayName: 'Remind Interval',
     name: 'remindInterval',
     type: 'number',
     default: null,
-    description: t('envelope.fields.update.remindInterval.description'),
+    description:
+      'Determines if the document will have automatic reminders enabled (1,2,3,7,14)',
     displayOptions: {
       show: {
         operation: ['update'],
@@ -82,11 +83,12 @@ export const updateEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('envelope.fields.update.blockAfterRefusal.displayName'),
+    displayName: 'Block After Refusal By Signer',
     name: 'blockAfterRefusal',
     type: 'boolean',
     default: false,
-    description: t('envelope.fields.update.blockAfterRefusal.description'),
+    description:
+      'Determines if the signature process will be paused or not after a signer has refused',
     displayOptions: {
       show: {
         operation: ['update'],
@@ -95,11 +97,12 @@ export const updateEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('envelope.fields.update.deadlineAt.displayName'),
+    displayName: 'Deadline At',
     name: 'deadlineAt',
     type: 'dateTime',
     default: null,
-    description: t('envelope.fields.update.deadlineAt.description'),
+    description:
+      'Deadline for the envelope and its documents (RFC 3339 format)',
     displayOptions: {
       show: {
         operation: ['update'],
@@ -108,11 +111,12 @@ export const updateEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('envelope.fields.update.defaultSubject.displayName'),
+    displayName: 'Default Subject',
     name: 'defaultSubject',
     type: 'string',
     default: '',
-    description: t('envelope.fields.update.defaultSubject.description'),
+    description:
+      'Define the subject of the email that will be sent to signers in the signature request',
     displayOptions: {
       show: {
         operation: ['update'],
@@ -121,11 +125,11 @@ export const updateEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('envelope.fields.update.defaultMessage.displayName'),
+    displayName: 'Default Message',
     name: 'defaultMessage',
     type: 'string',
     default: '',
-    description: t('envelope.fields.update.defaultMessage.description'),
+    description: 'Define the default message that will be sent to signers',
     displayOptions: {
       show: {
         operation: ['update'],
@@ -134,11 +138,11 @@ export const updateEnvelopeFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('envelope.fields.update.folderId.displayName'),
+    displayName: 'Folder ID',
     name: 'folderId',
     type: 'string',
     default: '',
-    description: t('envelope.fields.update.folderId.description'),
+    description: 'ID of the source folder',
     displayOptions: {
       show: {
         operation: ['update'],

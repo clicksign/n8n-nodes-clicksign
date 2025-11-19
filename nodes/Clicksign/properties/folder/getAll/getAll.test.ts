@@ -7,8 +7,6 @@ import { getAllFolders } from './getAll.execute';
 import { clicksignRequest } from '../../shared/clicksignRequest';
 import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 
-import { t } from '../../shared/translations';
-
 describe('getAll: folder', () => {
   let mockExecuteFunctions: IExecuteFunctions;
 
@@ -48,7 +46,7 @@ describe('getAll: folder', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('folder.errors.getAll'),
+      'Error getting folders',
     );
   });
 
@@ -77,7 +75,7 @@ describe('getAll: folder', () => {
     expect(clicksignRequest).toHaveBeenCalledWith(
       mockExecuteFunctions,
       expectedOptions,
-      t('folder.errors.getAll'),
+      'Error getting folders',
     );
   });
 

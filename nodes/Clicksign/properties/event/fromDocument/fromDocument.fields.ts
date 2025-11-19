@@ -1,14 +1,13 @@
 import { INodeProperties } from 'n8n-workflow';
-import { t } from '../../shared/translations';
 
 export const fromDocumentFields: INodeProperties[] = [
   {
-    displayName: t('event.fields.fromDocument.envelopeId.displayName'),
+    displayName: 'Envelope ID',
     name: 'envelopeId',
     type: 'string',
     required: true,
     default: '',
-    description: t('event.fields.fromDocument.envelopeId.description'),
+    description: 'ID of the envelope that contains the document to get events',
     displayOptions: {
       show: {
         operation: ['fromDocument'],
@@ -17,12 +16,12 @@ export const fromDocumentFields: INodeProperties[] = [
     },
   },
   {
-    displayName: t('event.fields.fromDocument.documentId.displayName'),
+    displayName: 'Document ID',
     name: 'documentId',
     type: 'string',
     required: true,
     default: '',
-    description: t('event.fields.fromDocument.documentId.description'),
+    description: 'ID of the document to get events',
     displayOptions: {
       show: {
         operation: ['fromDocument'],
