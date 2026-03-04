@@ -19,4 +19,17 @@ export const addRubricFields: INodeProperties[] = [
       },
     },
   },
+  {
+    displayName: 'Rubric Field',
+    name: 'rubric_field',
+    type: 'string',
+    default: '',
+    description: 'The rubric field identifier',
+    displayOptions: {
+      show: {
+        operation: ['addRubric'],
+        resource: ['requirement'],
+      },
+    },
+  },
 ];

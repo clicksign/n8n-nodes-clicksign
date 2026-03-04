@@ -8,11 +8,13 @@ export async function addRubricRequirement(ef: IExecuteFunctions) {
   const documentId = getNodeParameterTyped<string>(ef, 'documentId');
   const signerId = getNodeParameterTyped<string>(ef, 'signerId');
   const pages = getNodeParameterTyped<string>(ef, 'pages');
+  const rubricField = getNodeParameterTyped<string>(ef, 'rubric_field');
 
   return await addRequirement(ef, {
     attributes: {
       action: 'rubricate',
       pages,
+      rubricField,
     },
     documentId,
     envelopeId,
