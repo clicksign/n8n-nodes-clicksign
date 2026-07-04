@@ -231,4 +231,59 @@ export const createSignerFields: INodeProperties[] = [
       },
     ],
   },
+  {
+    displayName: 'Signature Host',
+    name: 'signatureHost',
+    type: 'fixedCollection',
+    default: {},
+    description:
+      'Determines the host data for an in-person (presential) signature',
+    displayOptions: {
+      show: {
+        operation: ['create'],
+        resource: ['signer'],
+      },
+    },
+    options: [
+      {
+        displayName: 'Host',
+        name: 'host',
+        values: [
+          {
+            displayName: 'Name',
+            name: 'name',
+            type: 'string',
+            default: '',
+            description: "The host's name",
+          },
+          {
+            displayName: 'Email',
+            name: 'email',
+            type: 'string',
+            placeholder: 'name@email.com',
+            default: '',
+            description: "The host's email",
+          },
+          {
+            displayName: 'Signature Request Notification',
+            name: 'signature_host_signature_request',
+            type: 'options',
+            default: 'email',
+            description:
+              'Notification type for the signature request sent to the host',
+            options: [
+              {
+                name: 'None',
+                value: 'none',
+              },
+              {
+                name: 'Email',
+                value: 'email',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ];

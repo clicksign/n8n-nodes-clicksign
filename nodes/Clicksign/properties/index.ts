@@ -9,6 +9,10 @@ import { template } from './template';
 import { folder } from './folder';
 import { event } from './event';
 import { watcher } from './watcher';
+import { webhook } from './webhook';
+import { user } from './user';
+import { membership } from './membership';
+import { whatsappAcceptance } from './whatsappAcceptance';
 
 export const clicksignProperties = [
   resourceOptions,
@@ -21,4 +25,8 @@ export const clicksignProperties = [
   ...folder,
   ...event,
   ...watcher,
+  ...webhook,
+  ...user,
+  ...membership,
+  ...whatsappAcceptance,
 ];

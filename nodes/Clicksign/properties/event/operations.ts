@@ -19,6 +19,12 @@ export const eventOperations: INodeProperties = {
       action: 'Events from document',
       description: 'Get events from a document',
     },
+    {
+      name: 'Create Custom Event',
+      value: 'createCustom',
+      action: 'Create a custom or image event',
+      description: 'Create a custom token event or an image event for a document',
+    },
   ],
   displayOptions: {
     show: {

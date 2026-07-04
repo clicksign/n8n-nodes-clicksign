@@ -1,5 +1,7 @@
 import { INodeProperties } from 'n8n-workflow';
 
+import { emailCustomizationFields } from '../shared/emailCustomization.fields';
+
 export const notifyEnvelopeFields: INodeProperties[] = [
   {
     displayName: 'Envelope ID',
@@ -28,4 +30,5 @@ export const notifyEnvelopeFields: INodeProperties[] = [
       },
     },
   },
+  ...emailCustomizationFields('notifyEnvelope'),
 ];

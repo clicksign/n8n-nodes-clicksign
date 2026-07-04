@@ -13,6 +13,8 @@ type AddRequirement = {
       auth?: string;
       role?: string;
       pages?: string;
+      kind?: string;
+      rubricField?: string;
       documentId: string;
       signerId: string;
     };
@@ -28,6 +30,8 @@ type AddOperation = {
       role?: string;
       auth?: string;
       pages?: string;
+      kind?: string;
+      rubric_field?: string;
     };
     relationships: {
       document: {
@@ -77,6 +81,8 @@ export function formatAddOperation(requirement: AddRequirement): AddOperation {
         role: details.role,
         auth: details.auth,
         pages: details.pages,
+        kind: details.kind,
+        rubric_field: details.rubricField,
       },
       relationships: {
         document: {

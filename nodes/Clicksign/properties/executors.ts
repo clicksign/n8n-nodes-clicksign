@@ -10,6 +10,7 @@ import { deleteEnvelope } from './envelope/delete/delete.execute';
 import { getAllDocuments } from './document/getAll/getAll.execute';
 import { createDocumentByTemplate } from './document/createByTemplate/createByTemplate.execute';
 import { createDocumentByBase64 } from './document/createByBase64/createByBase64.execute';
+import { createDocumentByDuplicate } from './document/createByDuplicate/createByDuplicate.execute';
 import { updateDocument } from './document/update/update.execute';
 import { getDocumentDetails } from './document/getDetails/getDetails.execute';
 import { deleteDocument } from './document/delete/delete.execute';
@@ -43,11 +44,32 @@ import { getFolderDetails } from './folder/getDetails/getDetails.execute';
 // Event
 import { eventsFromEnvelope } from './event/fromEnvelope/fromEnvelope.execute';
 import { eventsFromDocument } from './event/fromDocument/fromDocument.execute';
+import { createCustomEvent } from './event/createCustom/createCustom.execute';
 // Watcher
 import { createWatcher } from './watcher/create/create.execute';
 import { getAllWatchers } from './watcher/getAll/getAll.execute';
 import { getWatcherDetails } from './watcher/getDetails/getDetails.execute';
 import { deleteWatcher } from './watcher/delete/delete.execute';
+// Webhook
+import { createWebhook } from './webhook/create/create.execute';
+import { getAllWebhooks } from './webhook/getAll/getAll.execute';
+import { getWebhookDetails } from './webhook/getDetails/getDetails.execute';
+import { updateWebhook } from './webhook/update/update.execute';
+import { deleteWebhook } from './webhook/delete/delete.execute';
+// User
+import { createUser } from './user/create/create.execute';
+import { getAllUsers } from './user/getAll/getAll.execute';
+import { getUserDetails } from './user/getDetails/getDetails.execute';
+// Membership
+import { createMembership } from './membership/create/create.execute';
+import { getAllMemberships } from './membership/getAll/getAll.execute';
+import { updateMembership } from './membership/update/update.execute';
+import { deleteMembership } from './membership/delete/delete.execute';
+// WhatsApp Acceptance Term
+import { createWhatsappAcceptance } from './whatsappAcceptance/create/create.execute';
+import { getAllWhatsappAcceptance } from './whatsappAcceptance/getAll/getAll.execute';
+import { getWhatsappAcceptanceDetails } from './whatsappAcceptance/getDetails/getDetails.execute';
+import { updateWhatsappAcceptance } from './whatsappAcceptance/update/update.execute';
 
 type ResourceOperationFunctions = {
   [resource: string]: {
@@ -68,6 +90,7 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
     getAll: getAllDocuments,
     createByTemplate: createDocumentByTemplate,
     createByBase64: createDocumentByBase64,
+    createByDuplicate: createDocumentByDuplicate,
     update: updateDocument,
     getDetails: getDocumentDetails,
     delete: deleteDocument,
@@ -107,11 +130,36 @@ export const resourceOperationsFunctions: ResourceOperationFunctions = {
   event: {
     fromEnvelope: eventsFromEnvelope,
     fromDocument: eventsFromDocument,
+    createCustom: createCustomEvent,
   },
   watcher: {
     create: createWatcher,
     getAll: getAllWatchers,
     getDetails: getWatcherDetails,
     delete: deleteWatcher,
+  },
+  webhook: {
+    create: createWebhook,
+    getAll: getAllWebhooks,
+    getDetails: getWebhookDetails,
+    update: updateWebhook,
+    delete: deleteWebhook,
+  },
+  user: {
+    create: createUser,
+    getAll: getAllUsers,
+    getDetails: getUserDetails,
+  },
+  membership: {
+    create: createMembership,
+    getAll: getAllMemberships,
+    update: updateMembership,
+    delete: deleteMembership,
+  },
+  whatsappAcceptance: {
+    create: createWhatsappAcceptance,
+    getAll: getAllWhatsappAcceptance,
+    getDetails: getWhatsappAcceptanceDetails,
+    update: updateWhatsappAcceptance,
   },
 };

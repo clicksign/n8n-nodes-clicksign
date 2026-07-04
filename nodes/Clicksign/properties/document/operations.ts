@@ -14,6 +14,12 @@ export const documentsOperations: INodeProperties = {
       description: 'Create document by base64',
     },
     {
+      name: 'Create By Duplicate',
+      value: 'createByDuplicate',
+      action: 'Create document by duplicate',
+      description: 'Create document by duplicating an existing document',
+    },
+    {
       name: 'Create By Template',
       value: 'createByTemplate',
       action: 'Create document by template',

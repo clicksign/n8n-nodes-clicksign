@@ -19,11 +19,21 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 ## Operations
 
-This node supports the following Clicksign operations:
+This node supports the following Clicksign resources and operations:
 
-- **List Envelopes**: Retrieve all envelopes from your Clicksign account
-- **List Documents in Envelope**: Get all documents within a specific envelope
-- **Create Envelope**: Create a new envelope for document signing
+- **Envelope**: Create, List All, Get Details, Update (and Activate, which moves an envelope from `draft` to `running`), Delete
+- **Document**: Create By Base64, Create By Template, Create By Duplicate, List All, Get Details, Update, Delete
+- **Signer**: Create, List All, Get Details, Delete, Create Auto Signature Term
+- **Requirement**: Add Qualification, Add Authentication, Add Rubric, List All, Get Details, Delete, Bulk (add/remove multiple requirements in a single call)
+- **Watcher** (Signature Watcher): Create, List All, Get Details, Delete
+- **Notification**: Notify Envelope (all signers), Notify Signer
+- **Event**: From Envelope, From Document, Create Custom Event (custom token event or image event)
+- **Template**: Create, List All, Get Details, Update, Delete
+- **Folder**: Create, List All, Get Details
+- **Webhook**: Create, List All, Get Details, Update, Delete
+- **User**: Create, List All, Get Details
+- **Membership**: Create, List All, Update, Delete
+- **WhatsApp Acceptance Term**: Create, List All, Get Details, Update (cancel)
 
 ## Credentials
 
