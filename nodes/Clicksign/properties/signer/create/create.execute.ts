@@ -27,6 +27,13 @@ export async function createSigner(ef: IExecuteFunctions) {
     ef,
     'communicateEvents',
   );
+  const signatureHost = getNodeParameterTyped<{
+    host?: {
+      name?: string;
+      email?: string;
+      signature_host_signature_request?: string;
+    }[];
+  }>(ef, 'signatureHost');
 
   let cpf = null;
   let birthday = null;
@@ -39,6 +46,21 @@ export async function createSigner(ef: IExecuteFunctions) {
     cpf = documentationRaw ? formatDocumentation(documentationRaw) : null;
     birthday = birthdayRaw ? formatBirthday(birthdayRaw) : null;
   }
+
+  const hostEntry = signatureHost?.host?.[0];
+  const signatureHostObj =
+    hostEntry && (hostEntry.name || hostEntry.email)
+      ? {
+          signature_host: {
+            name: hostEntry.name,
+            email: hostEntry.email,
+            communicate_events: {
+              signature_host_signature_request:
+                hostEntry.signature_host_signature_request,
+            },
+          },
+        }
+      : {};
 
   const body = {
     data: {
@@ -54,6 +76,7 @@ export async function createSigner(ef: IExecuteFunctions) {
         refusable,
         location_required_enabled: locationRequired,
         communicate_events: communicateEvents.events,
+        ...signatureHostObj,
       },
     },
   };

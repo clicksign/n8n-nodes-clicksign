@@ -136,6 +136,36 @@ export const bulkFields: INodeProperties[] = [
                     name: 'pages',
                     type: 'string',
                     default: '',
+                    description:
+                      'Either Pages or Rubric Field must be informed',
+                    displayOptions: {
+                      show: {
+                        requirementType: ['rubricate'],
+                      },
+                    },
+                  },
+                  {
+                    displayName: 'Kind',
+                    name: 'kind',
+                    type: 'options',
+                    default: 'initials',
+                    options: [
+                      { name: 'Initials', value: 'initials' },
+                      { name: 'Manuscript', value: 'manuscript' },
+                    ],
+                    displayOptions: {
+                      show: {
+                        requirementType: ['rubricate'],
+                      },
+                    },
+                  },
+                  {
+                    displayName: 'Rubric Field',
+                    name: 'rubricField',
+                    type: 'string',
+                    default: '',
+                    description:
+                      'Either Pages or Rubric Field must be informed',
                     displayOptions: {
                       show: {
                         requirementType: ['rubricate'],

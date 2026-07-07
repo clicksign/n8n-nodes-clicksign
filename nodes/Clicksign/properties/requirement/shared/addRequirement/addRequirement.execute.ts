@@ -6,7 +6,7 @@ type RequirementPayload = {
   envelopeId: string;
   documentId: string;
   signerId: string;
-  attributes: Record<string, string>;
+  attributes: Record<string, unknown>;
   errorMessage: string;
 };
 

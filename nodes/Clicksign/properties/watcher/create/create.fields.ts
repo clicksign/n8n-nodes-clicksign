@@ -70,4 +70,75 @@ export const createWatcherFields: INodeProperties[] = [
       },
     },
   },
+  {
+    displayName: 'Event Notification',
+    name: 'communicateEvents',
+    type: 'fixedCollection',
+    default: {},
+    description: 'Configures how the watcher is notified of events',
+    displayOptions: {
+      show: {
+        operation: ['create'],
+        resource: ['watcher'],
+      },
+    },
+    options: [
+      {
+        displayName: 'Notification Configuration',
+        name: 'events',
+        values: [
+          {
+            displayName: 'Document Sent',
+            name: 'signature_watcher_document_sent',
+            type: 'options',
+            default: 'email',
+            options: [
+              { name: 'None', value: 'none' },
+              { name: 'Email', value: 'email' },
+            ],
+          },
+          {
+            displayName: 'Document Signed',
+            name: 'signature_watcher_document_signed',
+            type: 'options',
+            default: 'email',
+            options: [
+              { name: 'None', value: 'none' },
+              { name: 'Email', value: 'email' },
+            ],
+          },
+          {
+            displayName: 'Document Deadline',
+            name: 'signature_watcher_document_deadline',
+            type: 'options',
+            default: 'email',
+            options: [
+              { name: 'None', value: 'none' },
+              { name: 'Email', value: 'email' },
+            ],
+          },
+          {
+            displayName: 'Document Canceled',
+            name: 'signature_watcher_document_canceled',
+            type: 'options',
+            default: 'email',
+            options: [
+              { name: 'None', value: 'none' },
+              { name: 'Email', value: 'email' },
+            ],
+          },
+          {
+            displayName: 'Envelope Closed',
+            name: 'signature_watcher_envelope_closed',
+            type: 'options',
+            default: 'email',
+            options: [
+              { name: 'None', value: 'none' },
+              { name: 'Email', value: 'email' },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ];
