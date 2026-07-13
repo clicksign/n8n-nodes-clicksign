@@ -33,9 +33,14 @@ export const updateMembershipFields: INodeProperties[] = [
   {
     displayName: 'Consumption Accessible',
     name: 'consumptionAccessible',
-    type: 'boolean',
-    default: false,
+    type: 'options',
+    default: '',
     description: 'Whether the user has access to the billing page',
+    options: [
+      { name: 'Do Not Change', value: '' },
+      { name: 'Yes', value: true },
+      { name: 'No', value: false },
+    ],
     displayOptions: {
       show: {
         operation: ['update'],
@@ -46,9 +51,14 @@ export const updateMembershipFields: INodeProperties[] = [
   {
     displayName: 'Tracking Accessible',
     name: 'trackingAccessible',
-    type: 'boolean',
-    default: false,
+    type: 'options',
+    default: '',
     description: 'Whether the user has access to the sent emails page',
+    options: [
+      { name: 'Do Not Change', value: '' },
+      { name: 'Yes', value: true },
+      { name: 'No', value: false },
+    ],
     displayOptions: {
       show: {
         operation: ['update'],
@@ -59,9 +69,14 @@ export const updateMembershipFields: INodeProperties[] = [
   {
     displayName: 'Folder Management Accessible',
     name: 'folderManagementAccessible',
-    type: 'boolean',
-    default: true,
+    type: 'options',
+    default: '',
     description: 'Whether the user has access to folder management',
+    options: [
+      { name: 'Do Not Change', value: '' },
+      { name: 'Yes', value: true },
+      { name: 'No', value: false },
+    ],
     displayOptions: {
       show: {
         operation: ['update'],

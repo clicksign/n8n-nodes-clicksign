@@ -11,19 +11,22 @@ export const userOperations: INodeProperties = {
       name: 'Create',
       value: 'create',
       action: 'Create user',
-      description: 'Create user',
+      description:
+        'Create user (Available only for accounts with SSO enabled)',
     },
     {
       name: 'List All',
       value: 'getAll',
       action: 'List all users',
-      description: 'List many users',
+      description:
+        'List many users (Available only for accounts with SSO enabled)',
     },
     {
       name: 'Get Details',
       value: 'getDetails',
       action: 'Get details of a user',
-      description: 'Get details of a user',
+      description:
+        'Get details of a user (Available only for accounts with SSO enabled)',
     },
   ],
   displayOptions: {

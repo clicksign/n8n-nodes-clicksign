@@ -31,7 +31,7 @@ export const webhookEventOptions = [
   },
   { name: 'Liveness Refused', value: 'liveness_refused' },
   { name: 'Facematch Refused', value: 'facematch_refused' },
-  { name: 'Documentscopy Refused', value: 'documentscopy_refused' },
+  { name: 'Document Copy Refused', value: 'documentscopy_refused' },
   { name: 'Biometric Refused', value: 'biometric_refused' },
   { name: 'OCR Refused', value: 'ocr_refused' },
   { name: 'Signature Started', value: 'signature_started' },

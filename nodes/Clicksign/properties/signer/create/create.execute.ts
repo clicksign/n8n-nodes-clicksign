@@ -62,11 +62,23 @@ export async function createSigner(ef: IExecuteFunctions) {
         }
       : {};
 
+  const requiresPhone = Object.values(communicateEvents.events).some(
+    (value) => value === 'whatsapp' || value === 'sms',
+  );
+
+  if (requiresPhone && !phoneNumber) {
+    throw new Error(
+      'Phone is required when any event notification uses WhatsApp or SMS.',
+    );
+  }
+
+  const undefinedIfFalsy = (value: any) => (value ? value : undefined);
+
   const body = {
     data: {
       type: 'signers',
       attributes: {
-        name,
+        name: undefinedIfFalsy(name),
         email,
         phone_number: phoneNumber,
         has_documentation: hasDocumentation,

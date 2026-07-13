@@ -47,7 +47,10 @@ export async function createEnvelope(ef: IExecuteFunctions) {
         name,
         locale,
         auto_close: autoClose,
-        remind_interval: remindInterval === '' ? null : remindInterval,
+        remind_interval:
+          remindInterval === '' || remindInterval === 'null'
+            ? null
+            : remindInterval,
         block_after_refusal: blockAfterRefusal,
         deadline_at: undefinedIfFalsy(deadlineAt),
         default_subject: undefinedIfFalsy(defaultSubject),

@@ -100,6 +100,44 @@ describe('updateEnvelope', () => {
     );
   });
 
+  it('should omit remind_interval when no change is requested', async () => {
+    (getNodeParameterTyped as jest.Mock).mockImplementation(
+      (ef: IExecuteFunctions, name: string) => {
+        switch (name) {
+          case 'envelopeId':
+            return '12345';
+          case 'envelopeName':
+            return 'Updated Envelope Name';
+          case 'locale':
+            return 'en-US';
+          case 'autoClose':
+            return true;
+          case 'remindInterval':
+            return '';
+          case 'blockAfterRefusal':
+            return false;
+          case 'deadlineAt':
+            return undefined;
+          case 'defaultSubject':
+            return 'New Subject';
+          case 'defaultMessage':
+            return 'New Message Content';
+          case 'folderId':
+            return undefined;
+          default:
+            return undefined;
+        }
+      },
+    );
+
+    await updateEnvelope(mockExecuteFunctions);
+
+    const callArgs = (clicksignRequest as jest.Mock).mock.calls[0][1];
+
+    expect(callArgs.body.data.attributes.remind_interval).toBeUndefined();
+    expect(callArgs.body.data.attributes.name).toBe('Updated Envelope Name');
+  });
+
   it('should update envelope with folderId when provided', async () => {
     (getNodeParameterTyped as jest.Mock).mockImplementation(
       (ef: IExecuteFunctions, name: string) => {
@@ -131,6 +169,7 @@ describe('updateEnvelope', () => {
           deadline_at: undefined,
           default_subject: 'dummy_value',
           default_message: 'dummy_value',
+          deadline_partial_signature_action: 'dummy_value',
         },
         relationships: {
           folder: {
@@ -190,6 +229,7 @@ describe('updateEnvelope', () => {
           deadline_at: expectedExactFormattedDate,
           default_subject: 'dummy_value',
           default_message: 'dummy_value',
+          deadline_partial_signature_action: 'dummy_value',
         },
       },
     };

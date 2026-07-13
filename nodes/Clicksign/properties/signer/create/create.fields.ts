@@ -21,9 +21,9 @@ export const createSignerFields: INodeProperties[] = [
     type: 'string',
     default: '',
     placeholder: 'John Doe',
-    required: true,
+    required: false,
     description:
-      "The signer's name, used to identify them (at least two words must be sent)",
+      "The signer's name, used to identify them (optional if email or phone is provided)",
     displayOptions: {
       show: {
         operation: ['create'],
@@ -54,7 +54,7 @@ export const createSignerFields: INodeProperties[] = [
     default: '',
     placeholder: '11999999999',
     description:
-      "The signer's phone number, which must have 10 or 11 digits (required when notification setup requires phone)",
+      "The signer's phone number, which must have 10 or 11 digits (required when WhatsApp or SMS event notifications are selected)",
     displayOptions: {
       show: {
         operation: ['create'],

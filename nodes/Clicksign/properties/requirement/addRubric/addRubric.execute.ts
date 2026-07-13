@@ -11,6 +11,10 @@ export async function addRubricRequirement(ef: IExecuteFunctions) {
   const kind = getNodeParameterTyped<string>(ef, 'kind');
   const rubricField = getNodeParameterTyped<string>(ef, 'rubricField');
 
+  if (!pages && !rubricField) {
+    throw new Error('Either Pages or Rubric Field must be informed.');
+  }
+
   const undefinedIfFalsy = (value: any) => (value ? value : undefined);
 
   return await addRequirement(ef, {

@@ -69,11 +69,11 @@ export const createEnvelopeFields: INodeProperties[] = [
     },
     options: [
       { name: '1 Day', value: '1' },
-      { name: '14 Days', value: '14' },
       { name: '2 Days', value: '2' },
       { name: '3 Days', value: '3' },
       { name: '7 Days', value: '7' },
-      { name: 'None', value: '' },
+      { name: '14 Days', value: '14' },
+      { name: 'None', value: 'null' },
     ],
   },
   {

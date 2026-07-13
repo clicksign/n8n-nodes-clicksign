@@ -6,18 +6,18 @@ import { getNodeParameterTyped } from '../../shared/getNodeParameterTyped';
 export async function updateMembership(ef: IExecuteFunctions) {
   const membershipId = getNodeParameterTyped<string>(ef, 'membershipId');
   const role = getNodeParameterTyped<string>(ef, 'role');
-  const consumptionAccessible = getNodeParameterTyped<boolean>(
-    ef,
-    'consumptionAccessible',
-  );
-  const trackingAccessible = getNodeParameterTyped<boolean>(
-    ef,
-    'trackingAccessible',
-  );
-  const folderManagementAccessible = getNodeParameterTyped<boolean>(
-    ef,
-    'folderManagementAccessible',
-  );
+  const consumptionAccessible = getNodeParameterTyped<
+    string | boolean
+  >(ef, 'consumptionAccessible');
+  const trackingAccessible = getNodeParameterTyped<
+    string | boolean
+  >(ef, 'trackingAccessible');
+  const folderManagementAccessible = getNodeParameterTyped<
+    string | boolean
+  >(ef, 'folderManagementAccessible');
+
+  const optionalBoolean = (value: string | boolean) =>
+    value === '' ? undefined : value;
 
   const body = {
     data: {
@@ -25,9 +25,9 @@ export async function updateMembership(ef: IExecuteFunctions) {
       type: 'memberships',
       attributes: {
         role: role ? role : undefined,
-        consumption_accessible: consumptionAccessible,
-        tracking_accessible: trackingAccessible,
-        folder_management_accessible: folderManagementAccessible,
+        consumption_accessible: optionalBoolean(consumptionAccessible),
+        tracking_accessible: optionalBoolean(trackingAccessible),
+        folder_management_accessible: optionalBoolean(folderManagementAccessible),
       },
     },
   };

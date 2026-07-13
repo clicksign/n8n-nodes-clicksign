@@ -33,7 +33,7 @@ export const updateDocumentFields: INodeProperties[] = [
     displayName: 'Status',
     name: 'status',
     type: 'options',
-    default: 'canceled',
+    default: '',
     description:
       'Only possible to change status of running documents (in progress/activated)',
     displayOptions: {
@@ -43,6 +43,10 @@ export const updateDocumentFields: INodeProperties[] = [
       },
     },
     options: [
+      {
+        name: 'None',
+        value: '',
+      },
       {
         name: 'Canceled',
         value: 'canceled',

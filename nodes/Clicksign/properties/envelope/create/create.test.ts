@@ -95,6 +95,38 @@ describe('create: envelope', () => {
     );
   });
 
+  it('should send remind_interval as null when remindInterval is set to "null"', async () => {
+    (getNodeParameterTyped as jest.Mock).mockImplementation(
+      (ef: IExecuteFunctions, name: string) => {
+        switch (name) {
+          case 'envelopeName':
+            return 'Test Envelope';
+          case 'locale':
+            return 'pt-BR';
+          case 'autoClose':
+            return true;
+          case 'remindInterval':
+            return 'null';
+          case 'blockAfterRefusal':
+            return false;
+          case 'deadlineAt':
+            return undefined;
+          case 'defaultSubject':
+            return 'Documento para Assinatura';
+          case 'defaultMessage':
+            return 'Por favor, assine o documento.';
+          default:
+            return undefined;
+        }
+      },
+    );
+
+    await createEnvelope(mockExecuteFunctions);
+
+    const callArgs = (clicksignRequest as jest.Mock).mock.calls[0][1];
+    expect(callArgs.body.data.attributes.remind_interval).toBeNull();
+  });
+
   it('should correctly format and include deadlineAt when provided', async () => {
     const mockDate = '2025-07-23T10:00:00Z';
     const expectedIsoDate = formatLocalISODate(new Date(mockDate));

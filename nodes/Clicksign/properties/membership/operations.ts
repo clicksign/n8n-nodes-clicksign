@@ -11,25 +11,29 @@ export const membershipOperations: INodeProperties = {
       name: 'Create',
       value: 'create',
       action: 'Create membership',
-      description: 'Create membership',
+      description:
+        'Create membership (Available only for accounts with SSO enabled)',
     },
     {
       name: 'List All',
       value: 'getAll',
       action: 'List all memberships',
-      description: 'List many memberships',
+      description:
+        'List many memberships (Available only for accounts with SSO enabled)',
     },
     {
       name: 'Update',
       value: 'update',
       action: 'Update membership',
-      description: 'Update membership',
+      description:
+        'Update membership (Available only for accounts with SSO enabled)',
     },
     {
       name: 'Delete',
       value: 'delete',
       action: 'Delete membership',
-      description: 'Delete membership',
+      description:
+        'Delete membership (Available only for accounts with SSO enabled)',
     },
   ],
   displayOptions: {

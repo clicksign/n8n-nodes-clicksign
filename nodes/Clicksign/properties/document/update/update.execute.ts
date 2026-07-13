@@ -9,12 +9,14 @@ export async function updateDocument(ef: IExecuteFunctions) {
   const status = getNodeParameterTyped<string>(ef, 'status');
   const metadata = getNodeParameterTyped<string>(ef, 'metadata');
 
+  const undefinedIfFalsy = (value: any) => (value ? value : undefined);
+
   const body = {
     data: {
       type: 'documents',
       id: documentId,
       attributes: {
-        status,
+        status: undefinedIfFalsy(status),
         metadata: JSON.parse(metadata),
       },
     },
