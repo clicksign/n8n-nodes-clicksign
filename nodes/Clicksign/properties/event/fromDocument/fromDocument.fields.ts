@@ -29,4 +29,18 @@ export const fromDocumentFields: INodeProperties[] = [
       },
     },
   },
+  {
+    displayName: 'Filter By Event Name',
+    name: 'filterName',
+    type: 'string',
+    default: '',
+    description:
+      'Filter events by name (see the Eventos documentation for the available names)',
+    displayOptions: {
+      show: {
+        operation: ['fromDocument'],
+        resource: ['event'],
+      },
+    },
+  },
 ];

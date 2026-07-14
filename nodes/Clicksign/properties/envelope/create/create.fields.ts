@@ -56,20 +56,25 @@ export const createEnvelopeFields: INodeProperties[] = [
   {
     displayName: 'Remind Interval',
     name: 'remindInterval',
-    type: 'number',
+    type: 'options',
     required: true,
-    default: 3,
+    default: '3',
     description:
-      'Determines if the document will have automatic reminders enabled (1,2,3,7,14)',
+      'Determines if the document will have automatic reminders enabled, and at which interval (in days)',
     displayOptions: {
       show: {
         operation: ['create'],
         resource: ['envelope'],
       },
     },
-    typeOptions: {
-      integerOnly: true,
-    },
+    options: [
+      { name: '1 Day', value: '1' },
+      { name: '2 Days', value: '2' },
+      { name: '3 Days', value: '3' },
+      { name: '7 Days', value: '7' },
+      { name: '14 Days', value: '14' },
+      { name: 'None', value: 'null' },
+    ],
   },
   {
     displayName: 'Block After Refusal By Signer',
@@ -138,5 +143,24 @@ export const createEnvelopeFields: INodeProperties[] = [
         resource: ['envelope'],
       },
     },
+  },
+  {
+    displayName: 'Deadline Partial Signature Action',
+    name: 'deadlinePartialSignatureAction',
+    type: 'options',
+    default: '',
+    description:
+      'Action to take on the envelope when the deadline is reached with a partial signature',
+    displayOptions: {
+      show: {
+        operation: ['create'],
+        resource: ['envelope'],
+      },
+    },
+    options: [
+      { name: 'Not Set', value: '' },
+      { name: 'Closed', value: 'closed' },
+      { name: 'Canceled', value: 'canceled' },
+    ],
   },
 ];

@@ -9,7 +9,7 @@ export async function updateEnvelope(ef: IExecuteFunctions) {
   const name = getNodeParameterTyped<string>(ef, 'envelopeName');
   const locale = getNodeParameterTyped<string>(ef, 'locale');
   const autoClose = getNodeParameterTyped<boolean>(ef, 'autoClose');
-  const remindInterval = getNodeParameterTyped<number>(ef, 'remindInterval');
+  const remindInterval = getNodeParameterTyped<string>(ef, 'remindInterval');
   const blockAfterRefusal = getNodeParameterTyped<boolean>(
     ef,
     'blockAfterRefusal',
@@ -18,6 +18,10 @@ export async function updateEnvelope(ef: IExecuteFunctions) {
   const defaultSubject = getNodeParameterTyped<string>(ef, 'defaultSubject');
   const defaultMessage = getNodeParameterTyped<string>(ef, 'defaultMessage');
   const folderId = getNodeParameterTyped<string>(ef, 'folderId');
+  const deadlinePartialSignatureAction = getNodeParameterTyped<string>(
+    ef,
+    'deadlinePartialSignatureAction',
+  );
 
   const relationshipObj = folderId
     ? {
@@ -50,6 +54,9 @@ export async function updateEnvelope(ef: IExecuteFunctions) {
         deadline_at: undefinedIfFalsy(deadlineAt),
         default_subject: undefinedIfFalsy(defaultSubject),
         default_message: undefinedIfFalsy(defaultMessage),
+        deadline_partial_signature_action: undefinedIfFalsy(
+          deadlinePartialSignatureAction,
+        ),
       },
       ...relationshipObj,
     },

@@ -4,16 +4,23 @@ export const getAllFields: INodeProperties[] = [
   {
     displayName: 'Filter Status',
     name: 'status',
-    type: 'string',
+    type: 'options',
     default: '',
     description:
-      'Inform a status if you want to filter: draft, running, closed, canceled',
+      'Filter envelopes by status',
     displayOptions: {
       show: {
         operation: ['getAll'],
         resource: ['envelope'],
       },
     },
+    options: [
+      { name: 'None', value: '' },
+      { name: 'Draft', value: 'draft' },
+      { name: 'Running', value: 'running' },
+      { name: 'Closed', value: 'closed' },
+      { name: 'Canceled', value: 'canceled' },
+    ],
   },
   {
     displayName: 'Filter Name',

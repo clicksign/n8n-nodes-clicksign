@@ -122,6 +122,27 @@ describe('create: signer', () => {
     );
   });
 
+  it('should omit name when no name is provided', async () => {
+    mockImplementation(getNodeParameterTyped, {
+      name: '',
+      email: 'silva@example.com',
+      phoneNumber: '5511987654321',
+      hasDocumentation: false,
+      group: 1,
+      refusable: false,
+      locationRequired: false,
+      communicateEvents: { signature_request: 'email' },
+    });
+
+    await createSigner(mockExecuteFunctions);
+
+    const callArgs = (clicksignRequest as jest.Mock).mock.calls[0][1];
+
+    expect(callArgs.body.data.attributes.name).toBeUndefined();
+    expect(callArgs.body.data.attributes.email).toBe('silva@example.com');
+    expect(callArgs.body.data.attributes.phone_number).toBe('5511987654321');
+  });
+
   it('should correctly build request body with a formatted CPF', async () => {
     mockImplementation(getNodeParameterTyped, {
       name: 'Fulano De Tal',
@@ -233,7 +254,26 @@ describe('create: signer', () => {
       'Error creating the signer',
     );
   });
+  it('should require phone when any notification event uses WhatsApp or SMS', async () => {
+    mockImplementation(getNodeParameterTyped, {
+      name: 'Silva silva',
+      email: 'silva@example.com',
+      phoneNumber: '',
+      hasDocumentation: false,
+      group: 1,
+      refusable: false,
+      locationRequired: false,
+      communicateEvents: {
+        signature_request: 'whatsapp',
+        signature_reminder: 'email',
+        document_signed: 'email',
+      },
+    });
 
+    await expect(createSigner(mockExecuteFunctions)).rejects.toThrow(
+      'Phone is required when any event notification uses WhatsApp or SMS.',
+    );
+  });
   it('should correctly build request body with a formatted birthday', async () => {
     mockImplementation(getNodeParameterTyped, {
       name: 'Fulano De Tal',

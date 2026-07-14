@@ -27,6 +27,13 @@ export async function createSigner(ef: IExecuteFunctions) {
     ef,
     'communicateEvents',
   );
+  const signatureHost = getNodeParameterTyped<{
+    host?: {
+      name?: string;
+      email?: string;
+      signature_host_signature_request?: string;
+    }[];
+  }>(ef, 'signatureHost');
 
   let cpf = null;
   let birthday = null;
@@ -40,11 +47,38 @@ export async function createSigner(ef: IExecuteFunctions) {
     birthday = birthdayRaw ? formatBirthday(birthdayRaw) : null;
   }
 
+  const hostEntry = signatureHost?.host?.[0];
+  const signatureHostObj =
+    hostEntry && (hostEntry.name || hostEntry.email)
+      ? {
+          signature_host: {
+            name: hostEntry.name,
+            email: hostEntry.email,
+            communicate_events: {
+              signature_host_signature_request:
+                hostEntry.signature_host_signature_request,
+            },
+          },
+        }
+      : {};
+
+  const requiresPhone = Object.values(communicateEvents.events).some(
+    (value) => value === 'whatsapp' || value === 'sms',
+  );
+
+  if (requiresPhone && !phoneNumber) {
+    throw new Error(
+      'Phone is required when any event notification uses WhatsApp or SMS.',
+    );
+  }
+
+  const undefinedIfFalsy = (value: any) => (value ? value : undefined);
+
   const body = {
     data: {
       type: 'signers',
       attributes: {
-        name,
+        name: undefinedIfFalsy(name),
         email,
         phone_number: phoneNumber,
         has_documentation: hasDocumentation,
@@ -54,6 +88,7 @@ export async function createSigner(ef: IExecuteFunctions) {
         refusable,
         location_required_enabled: locationRequired,
         communicate_events: communicateEvents.events,
+        ...signatureHostObj,
       },
     },
   };

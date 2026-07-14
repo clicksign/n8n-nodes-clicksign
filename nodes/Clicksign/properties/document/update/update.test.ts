@@ -86,6 +86,38 @@ describe('update: document', () => {
     );
   });
 
+  it('should omit status when None is selected', async () => {
+    const mockMetadata =
+      '{"project_phase": "completed", "review_date": "2025-07-31"}';
+
+    (getNodeParameterTyped as jest.Mock).mockImplementation(
+      (ef: IExecuteFunctions, name: string) => {
+        switch (name) {
+          case 'envelopeId':
+            return 'envelope-id';
+          case 'documentId':
+            return 'document-id';
+          case 'status':
+            return '';
+          case 'metadata':
+            return mockMetadata;
+          default:
+            return undefined;
+        }
+      },
+    );
+
+    await updateDocument(mockExecuteFunctions);
+
+    expect(clicksignRequest).toHaveBeenCalledTimes(1);
+
+    const callArgs = (clicksignRequest as jest.Mock).mock.calls[0][1];
+    expect(callArgs.body.data.attributes.status).toBeUndefined();
+    expect(callArgs.body.data.attributes.metadata).toEqual(
+      JSON.parse(mockMetadata),
+    );
+  });
+
   it('should propagate SyntaxError if metadata is invalid JSON', async () => {
     (getNodeParameterTyped as jest.Mock).mockImplementation(
       (ef: IExecuteFunctions, name: string) => {

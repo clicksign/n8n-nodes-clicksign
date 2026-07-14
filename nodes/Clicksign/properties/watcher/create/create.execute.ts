@@ -8,6 +8,9 @@ export async function createWatcher(ef: IExecuteFunctions) {
   const email = getNodeParameterTyped<string>(ef, 'email');
   const kind = getNodeParameterTyped<string>(ef, 'kind');
   const attachDocuments = getNodeParameterTyped<string>(ef, 'attachDocuments');
+  const communicateEvents = getNodeParameterTyped<{
+    events?: Record<string, string>;
+  }>(ef, 'communicateEvents');
 
   const body = {
     data: {
@@ -16,6 +19,7 @@ export async function createWatcher(ef: IExecuteFunctions) {
         email,
         kind,
         attach_documents_enabled: attachDocuments,
+        communicate_events: communicateEvents?.events,
       },
     },
   };

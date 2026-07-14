@@ -55,4 +55,16 @@ export const authOptions = [
     name: 'Whatsapp',
     value: 'whatsapp',
   },
+  {
+    name: 'Identity Biometrics',
+    value: 'identity_biometrics',
+  },
+  {
+    name: 'In-Person (Presential)',
+    value: 'presential',
+  },
+  {
+    name: 'Embedded Signature',
+    value: 'embedded_signature',
+  },
 ];

@@ -8,7 +8,7 @@ export async function createEnvelope(ef: IExecuteFunctions) {
   const name = getNodeParameterTyped<string>(ef, 'envelopeName');
   const locale = getNodeParameterTyped<string>(ef, 'locale');
   const autoClose = getNodeParameterTyped<boolean>(ef, 'autoClose');
-  const remindInterval = getNodeParameterTyped<number>(ef, 'remindInterval');
+  const remindInterval = getNodeParameterTyped<string>(ef, 'remindInterval');
   const blockAfterRefusal = getNodeParameterTyped<boolean>(
     ef,
     'blockAfterRefusal',
@@ -17,6 +17,10 @@ export async function createEnvelope(ef: IExecuteFunctions) {
   const defaultSubject = getNodeParameterTyped<string>(ef, 'defaultSubject');
   const defaultMessage = getNodeParameterTyped<string>(ef, 'defaultMessage');
   const folderId = getNodeParameterTyped<string>(ef, 'folderId');
+  const deadlinePartialSignatureAction = getNodeParameterTyped<string>(
+    ef,
+    'deadlinePartialSignatureAction',
+  );
 
   const relationshipObj = folderId
     ? {
@@ -43,11 +47,17 @@ export async function createEnvelope(ef: IExecuteFunctions) {
         name,
         locale,
         auto_close: autoClose,
-        remind_interval: remindInterval,
+        remind_interval:
+          remindInterval === '' || remindInterval === 'null'
+            ? null
+            : remindInterval,
         block_after_refusal: blockAfterRefusal,
         deadline_at: undefinedIfFalsy(deadlineAt),
         default_subject: undefinedIfFalsy(defaultSubject),
         default_message: undefinedIfFalsy(defaultMessage),
+        deadline_partial_signature_action: undefinedIfFalsy(
+          deadlinePartialSignatureAction,
+        ),
       },
       ...relationshipObj,
     },

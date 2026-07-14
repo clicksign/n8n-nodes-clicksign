@@ -1,13 +1,15 @@
 # Folders
-node_modules
-dist
-tmp
-.vscode/
+.claude
+.husky
+.vscode
 .DS_Store
 .pnpm-store
 
+node_modules
+dist
+tmp
+
 # Files
 .env
-npm-debug.log*
 .tmp
 !.vscode/extensions.json

@@ -1,6 +1,6 @@
 # n8n-nodes-clicksign
 
-This is an n8n community node. It lets you use Clisign API in your n8n workflows.
+This is an n8n community node. It lets you use Clicksign API in your n8n workflows.
 
 Clicksign is a Brazilian electronic signature platform that provides legally valid document signing capabilities with features like automation, WhatsApp integration, and AI-powered document processing. It offers a comprehensive API for creating documents, managing signers, and automating contract workflows while ensuring compliance with Brazilian legislation for document integrity, authenticity, and non-repudiation.
 
@@ -12,6 +12,7 @@ Clicksign is a Brazilian electronic signature platform that provides legally val
 [Compatibility](#compatibility)
 [Usage](#usage)
 [Resources](#resources)
+[Release Notes](#release-notes)
 
 ## Installation
 
@@ -19,11 +20,23 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 ## Operations
 
-This node supports the following Clicksign operations:
+This node supports the following Clicksign resources and operations:
 
-- **List Envelopes**: Retrieve all envelopes from your Clicksign account
-- **List Documents in Envelope**: Get all documents within a specific envelope
-- **Create Envelope**: Create a new envelope for document signing
+- **Envelope**: Create, List All, Get Details, Update, Activate, Delete
+- **Document**: Create By Base64, Create By Template, Create By Duplicate, List All, Get Details, Update, Delete
+- **Signer**: Create, List All, Get Details, Delete, Create Auto Signature Term
+- **Requirement**: Add Qualification, Add Authentication, Add Rubric, List All, Get Details, Delete, Bulk
+- **Watcher**: Create, List All, Get Details, Delete
+- **Notification**: Notify Envelope, Notify Signer
+- **Event**: From Envelope, From Document, Create Custom Event
+- **Template**: Create, List All, Get Details, Update, Delete
+- **Folder**: Create, List All, Get Details
+- **Webhook**: Create, List All, Get Details, Update, Delete
+- **User**: Create, List All, Get Details
+- **Membership**: Create, List All, Update, Delete
+- **WhatsApp Acceptance Term**: Create, List All, Get Details, Update
+
+> Important: `User` and `Membership` endpoints are available only for accounts with SSO enabled.
 
 ## Credentials
 
@@ -60,7 +73,7 @@ This node allows you to integrate Clicksign electronic signature workflows into 
 
 ### Basic Workflow Examples
 
-#### 1. Automated envelope Creation
+#### 1. Automated Envelope Creation
 - Use the **Create Envelope** operation to generate new envelopes
 - Set up automatic reminders and deadlines for signers
 - Configure custom messages and subjects for your documents
@@ -115,3 +128,13 @@ For beginners, check out the [n8n Try it out](https://docs.n8n.io/try-it-out/) d
 * [n8n Community Forum](https://community.n8n.io/)
 * [n8n GitHub Discussions](https://github.com/n8n-io/n8n/discussions)
 * [Clicksign repository](https://github.com/clicksign/n8n-nodes-clicksign)
+
+## Release Notes
+
+These changes are included in the current branch compared with upstream `main`:
+
+- Added explicit note that `User` and `Membership` endpoints require accounts with SSO enabled.
+- `Signer` create now allows omitting `Name` and requires `Phone` when WhatsApp or SMS notifications are selected.
+- `Envelope` create now supports `None` for `Remind Interval` and sends `null` to the API.
+- `Envelope` list now uses a status select field with options `None`, `Draft`, `Running`, `Closed`, and `Canceled`.
+- `Document` update now supports `Status` = None and omits the status attribute when no change is requested.

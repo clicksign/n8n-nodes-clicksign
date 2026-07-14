@@ -21,9 +21,9 @@ export const createSignerFields: INodeProperties[] = [
     type: 'string',
     default: '',
     placeholder: 'John Doe',
-    required: true,
+    required: false,
     description:
-      "The signer's name, used to identify them (at least two words must be sent)",
+      "The signer's name, used to identify them (optional if email or phone is provided)",
     displayOptions: {
       show: {
         operation: ['create'],
@@ -54,7 +54,7 @@ export const createSignerFields: INodeProperties[] = [
     default: '',
     placeholder: '11999999999',
     description:
-      "The signer's phone number, which must have 10 or 11 digits (required when notification setup requires phone)",
+      "The signer's phone number, which must have 10 or 11 digits (required when WhatsApp or SMS event notifications are selected)",
     displayOptions: {
       show: {
         operation: ['create'],
@@ -226,6 +226,61 @@ export const createSignerFields: INodeProperties[] = [
             ],
 
             default: 'email',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    displayName: 'Signature Host',
+    name: 'signatureHost',
+    type: 'fixedCollection',
+    default: {},
+    description:
+      'Determines the host data for an in-person (presential) signature',
+    displayOptions: {
+      show: {
+        operation: ['create'],
+        resource: ['signer'],
+      },
+    },
+    options: [
+      {
+        displayName: 'Host',
+        name: 'host',
+        values: [
+          {
+            displayName: 'Name',
+            name: 'name',
+            type: 'string',
+            default: '',
+            description: "The host's name",
+          },
+          {
+            displayName: 'Email',
+            name: 'email',
+            type: 'string',
+            placeholder: 'name@email.com',
+            default: '',
+            description: "The host's email",
+          },
+          {
+            displayName: 'Signature Request Notification',
+            name: 'signature_host_signature_request',
+            type: 'options',
+            default: 'email',
+            description:
+              'Notification type for the signature request sent to the host',
+            options: [
+              {
+                name: 'None',
+                value: 'none',
+              },
+              {
+                name: 'Email',
+                value: 'email',
+              },
+            ],
           },
         ],
       },

@@ -60,10 +60,11 @@ describe('addRubric: requirement', () => {
     });
   });
 
-  it('should handle empty pages string correctly', async () => {
+  it('should send rubric requirement with rubricField when pages is empty', async () => {
     (getNodeParameterTyped as jest.Mock).mockImplementation(
       (ef: IExecuteFunctions, name: string) => {
         if (name === 'pages') return '';
+        if (name === 'rubricField') return 'rubric_tag';
         return 'dummy';
       },
     );
@@ -73,13 +74,29 @@ describe('addRubric: requirement', () => {
     expect(addRequirement).toHaveBeenCalledWith(mockExecuteFunctions, {
       attributes: {
         action: 'rubricate',
-        pages: '',
+        pages: undefined,
+        kind: 'dummy',
+        rubric_field: 'rubric_tag',
       },
       documentId: 'dummy',
       envelopeId: 'dummy',
       signerId: 'dummy',
       errorMessage: 'Error adding rubric requirement',
     });
+  });
+
+  it('should throw when neither pages nor rubricField are provided', async () => {
+    (getNodeParameterTyped as jest.Mock).mockImplementation(
+      (ef: IExecuteFunctions, name: string) => {
+        if (name === 'pages') return '';
+        if (name === 'rubricField') return '';
+        return 'dummy';
+      },
+    );
+
+    await expect(addRubricRequirement(mockExecuteFunctions)).rejects.toThrow(
+      'Either Pages or Rubric Field must be informed.',
+    );
   });
 
   it('should return the result from addRequirement', async () => {

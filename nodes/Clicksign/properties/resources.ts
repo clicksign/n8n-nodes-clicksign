@@ -24,6 +24,10 @@ export const resourceOptions: INodeProperties = {
       value: 'folder',
     },
     {
+      name: 'Membership',
+      value: 'membership',
+    },
+    {
       name: 'Notification',
       value: 'notification',
     },
@@ -40,8 +44,20 @@ export const resourceOptions: INodeProperties = {
       value: 'template',
     },
     {
+      name: 'User',
+      value: 'user',
+    },
+    {
       name: 'Watcher',
       value: 'watcher',
+    },
+    {
+      name: 'Webhook',
+      value: 'webhook',
+    },
+    {
+      name: 'WhatsApp Acceptance Term',
+      value: 'whatsappAcceptance',
     },
   ],
 };
