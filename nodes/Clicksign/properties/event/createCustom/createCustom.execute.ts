@@ -60,7 +60,7 @@ export async function createCustomEvent(ef: IExecuteFunctions) {
           data: {
             kind: tokenKind,
             occurred_at: occurredAt,
-            signer_name: signerName,
+            signer_name: undefinedIfFalsy(signerName),
             signer_email: undefinedIfFalsy(signerEmail),
             signer_phone_number: undefinedIfFalsy(signerPhoneNumber),
           },
